@@ -12,7 +12,7 @@ SCHEDULER = "cosine"  # choices: none, cosine, linear
 WARMUP_RATIO = 0.1
 MAX_GRAD_NORM = 2.0
 LAMBDA_CLEAN = 0.5  # weight for clean (t=0) reconstruction loss
-VAL_INTERVAL = 5   # validate every N epochs
+VAL_INTERVAL = 10   # validate every N epochs
 
 # G_psi Architecture
 GPSI_N_BLOCKS = 3   # number of AdaLN transformer blocks

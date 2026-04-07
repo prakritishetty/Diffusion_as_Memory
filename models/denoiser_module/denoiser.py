@@ -204,6 +204,7 @@ class TransformerBlock(nn.Module):
         super().__init__()
         
         # d_cond = d (t_emb) + u_dim (raw u); if u_dim=0 reverts to t-only conditioning
+        u_dim=0
         d_cond = d + u_dim
         self.adalan1 = AdaLN(d, d_cond)
         self.adalan2 = AdaLN(d, d_cond)
@@ -212,7 +213,7 @@ class TransformerBlock(nn.Module):
         self.self_attn = MultiHeadAttention(d, n_heads)
         
         # Cross-attention (x attends to u)
-        # self.cross_attn = MultiHeadAttention(d, n_heads)
+        self.cross_attn = MultiHeadAttention(d, n_heads)
         
         # Feed-forward network
         self.ffn = nn.Sequential(
@@ -240,17 +241,17 @@ class TransformerBlock(nn.Module):
         
         """
         # fuse timestep and u into a single conditioning vector [B, d + u_dim]
-        c = torch.cat([t_emb, u], dim=-1)
+        # c = torch.cat([t_emb, u], dim=-1)
 
         # a. AdaLN + b. Self-Attention
-        x_normalized = self.adalan1(x, c)
+        x_normalized = self.adalan1(x, t_emb)
         x = x + self.dropout(self.self_attn(x_normalized, x_normalized, x_normalized))
         
         # c. Cross-Attention (x attends to u, no AdaLN before it)
-        # x = x + self.dropout(self.cross_attn(x, u, u))
+        x = x + self.dropout(self.cross_attn(x, u, u))
         
         # d. AdaLN + e. FFN
-        x_normalized = self.adalan2(x, c)
+        x_normalized = self.adalan2(x, t_emb)
         x = x + self.dropout(self.ffn(x_normalized))
         
         return x
@@ -283,7 +284,7 @@ class Denoiser(nn.Module):
                 d=config.d,
                 n_heads=config.n_heads,
                 d_ff=config.d_ff,
-                u_dim=config.u_dim,
+                u_dim=0,
                 dropout=config.dropout
             )
             for _ in range(config.N_blocks)

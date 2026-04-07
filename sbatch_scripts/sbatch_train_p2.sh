@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition=superpod-a100
+#SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --nodes=1
 #SBATCH --time=20:00:00

@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
-#SBATCH --constraint="l40s|a100"
+#SBATCH --constraint="l40s|a100|h100|gh200"
 #SBATCH --nodes=1
 #SBATCH --time=20:00:00
 #SBATCH --job-name=denoiser-train

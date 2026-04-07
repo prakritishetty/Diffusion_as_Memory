@@ -176,14 +176,14 @@ def main():
     # val_loader = DataLoader(val_dataset, batch_size=10, shuffle = True)
 
     tokenizer = T5Tokenizer.from_pretrained("t5-small")
-    train_dataset = MSRAugmentedDataset("../data/final/train.json", tokenizer)
+    train_dataset = MSRAugmentedDataset("/work/pi_dagarwal_umass_edu/project_3/bdevarangadi/Diffusion_as_Memory/data/final/train.json", tokenizer)
     train_loader = DataLoader(train_dataset, batch_size=10, shuffle = True)
-    val_dataset = MSRAugmentedDataset("../data/final/validate.json", tokenizer)
+    val_dataset = MSRAugmentedDataset("/work/pi_dagarwal_umass_edu/project_3/bdevarangadi/Diffusion_as_Memory/data/final/validate.json", tokenizer)
     val_loader = DataLoader(val_dataset, batch_size=10, shuffle = True)
 
     encoder = TextEncoder()
     slot_pool = SlotPooling(hidden_dim = encoder.hidden_dim_size, num_slots = 8)
-    u_head = UHead(hidden_dim = encoder.hidden_dim_size, output_dim = 128)
+    u_head = UHead(hidden_dim = encoder.hidden_dim_size)
     v_head = VHead(hidden_dim = encoder.hidden_dim_size)
     decoder_x = DecoderX()
     g_psi = SemanticProjectionModule(config=G_psi_config,no_use_u=True,no_use_vt=True)

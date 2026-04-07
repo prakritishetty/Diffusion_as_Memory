@@ -238,7 +238,7 @@ class DenoiserTrainer:
             'config': {
                 'L': self.config.L,
                 'd': self.config.d,
-                'u_dim': self.config.u_dim,
+                'u_dim': 0,
                 'T': self.config.T,
                 'N_blocks': self.config.N_blocks,
                 'n_heads': self.config.n_heads,

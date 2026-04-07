@@ -124,7 +124,7 @@ def load_denoiser(denoiser_checkpoint, device):
         saved_cfg = checkpoint["config"]
         config.L = saved_cfg.get("L", config.L)
         config.d = saved_cfg.get("d", config.d)
-        config.u_dim = saved_cfg.get("u_dim", config.u_dim)
+        # config.u_dim = saved_cfg.get("u_dim", config.u_dim)
         config.T = saved_cfg.get("T", config.T)
         config.N_blocks = saved_cfg.get("N_blocks", config.N_blocks)
         config.n_heads = saved_cfg.get("n_heads", config.n_heads)

@@ -25,12 +25,29 @@ class ForgettingModel(nn.Module):
         """
         InfoNCE loss. TODO: look for other loss functions
         """
+        if u.shape != upos.shape:
+            raise ValueError(f"u and upos must have the same shape, got {u.shape} vs {upos.shape}")
+
         u = F.normalize(u, dim=-1)
         upos = F.normalize(upos, dim=-1)
-        logits = torch.matmul(u, upos.T) / temperature
-        labels = torch.arange(u.size(0), device=u.device)
-        loss = F.cross_entropy(logits, labels)
-        return loss
+
+        # # Backward-compatible path for [B, D]
+        # if u.dim() == 2:
+        #     logits = torch.matmul(u, upos.T) / temperature
+        #     labels = torch.arange(u.size(0), device=u.device)
+        #     return F.cross_entropy(logits, labels)
+
+        # Slot-wise contrastive path for [B, L, D]
+        if u.dim() == 3:
+            # For each slot index l, contrast examples across batch dimension B.
+            # This keeps positives aligned as (b, l) <-> (b, l).
+            u_slots = u.transpose(0, 1)       # [L, B, D]
+            upos_slots = upos.transpose(0, 1) # [L, B, D]
+            logits = torch.einsum("lbd,lcd->lbc", u_slots, upos_slots) / temperature  # [L, B, B]
+            labels = torch.arange(u.size(0), device=u.device).unsqueeze(0).expand(u.size(1), -1)
+            return F.cross_entropy(logits.reshape(-1, u.size(0)), labels.reshape(-1))
+
+        raise ValueError(f"Expected u to be 2D or 3D, got tensor with {u.dim()} dims")
     
     @property
     def device(self):

@@ -70,7 +70,7 @@ def build_p0_model(device, l_slots, u_dim):
     """
     encoder = TextEncoder()
     slot_pool = SlotPooling(hidden_dim=encoder.hidden_dim_size, num_slots=l_slots)
-    u_head = UHead(hidden_dim=encoder.hidden_dim_size, output_dim=u_dim)
+    u_head = UHead(hidden_dim=encoder.hidden_dim_size)
     v_head = VHead(hidden_dim=encoder.hidden_dim_size)
     decoder_x = DecoderX()
     g_psi = SemanticProjectionModule(config=G_psi_config,no_use_u=True,no_use_vt=True)

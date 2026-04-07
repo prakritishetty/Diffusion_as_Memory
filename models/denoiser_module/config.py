@@ -8,7 +8,7 @@ class DenoiserConfig:
     # Latent dimensions
     L = 8                     # number of slots (matches saved latent data)
     d = 512                   # embedding dimension
-    u_dim = 128               # raw u dimension before projection to [L, d]
+    # u_dim = 128               # raw u dimension before projection to [L, d]
     
     # Diffusion schedule
     T = 1000                  # total diffusion timesteps
