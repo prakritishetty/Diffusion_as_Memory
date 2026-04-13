@@ -1,0 +1,57 @@
+# sweep for scripts/training/train_phase2_sweep.py
+# Usage:
+#   wandb sweep --project diffusion-as-memory scripts/training/wandb_sweep_phase2.yaml
+#   wandb agent <entity>/<project>/<sweep_id>
+
+program: scripts/training/train_phase2_sweep.py
+method: bayes
+metric:
+  name: best_val_loss
+  goal: minimize
+
+parameters:
+  learning_rate:
+    distribution: log_uniform_values
+    min: 1e-6
+    max: 8e-5
+  weight_decay:
+    distribution: log_uniform_values
+    min: 1e-7
+    max: 1e-3
+  optimizer:
+    values: [adam]
+  scheduler:
+    values: [cosine, linear]
+  warmup_ratio:
+    values: [0.1]
+  max_grad_norm:
+    values: [1.0, 2.0]
+  label_source:
+    values: [xt, x]
+  xt_bucket_size:
+    values: [50, 100]
+  batch_size:
+    values: [12, 16]
+  epochs:
+    value: 300
+  val_interval:
+    value: 5
+
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - --p0-checkpoint
+  - ./checkpoints/p0/mod_g_psi/best_model.pt
+  - --denoiser-checkpoint
+  - ./checkpoints/p1/epoch_inc/best_model.pt
+  - --data-dir
+  - ./data/final
+  - --checkpoint-dir
+  - ./checkpoints/p2/sweeps
+  - --output-dir
+  - ./output/p2/sweeps
+  - --wandb-project
+  - diffusion-as-memory
+  - --label-source
+  - xt

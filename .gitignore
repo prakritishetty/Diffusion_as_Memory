@@ -1,3 +1,15 @@
 .venv
 /myvenv
 __pycache__/
+/data/latents/
+/denoiser_module/checkpoints/
+/checkpoints/
+slurm-*.out
+denoiser_module/guides/
+wandb/
+output/p0/
+output/p2/
+scripts/training/train_all_phases.py
+.nltk_data/
+UniEval/
+sbatch_scripts/slurm_output/

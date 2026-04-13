@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from models.gpsi import GPsi
+
 
 class ForgettingModel(nn.Module):
     def __init__(
@@ -11,7 +11,7 @@ class ForgettingModel(nn.Module):
         u_head: nn.Module,
         v_head: nn.Module,
         decoder_x: nn.Module,
-        decoder_y: nn.Module,
+        g_psi: nn.Module,
     ):
         super().__init__()
         self.encoder = encoder
@@ -19,8 +19,7 @@ class ForgettingModel(nn.Module):
         self.u_head = u_head
         self.v_head = v_head
         self.decoder_x = decoder_x
-        self.decoder_y = decoder_y
-        self.gpsi = GPsi(u_dim=128, d_model=self.encoder.hidden_dim_size)
+        self.g_psi = g_psi
 
     def info_nce_loss(self, u, upos, temperature=0.1):
         """
@@ -39,15 +38,15 @@ class ForgettingModel(nn.Module):
     
     def forward(self, batch):
         device = self.device
-        lambda_u, lambda_x, lambda_y = 1.0, 1.0, 1.0
+        lambda_u, lambda_x = 1.0, 1.0
 
         input_ids = batch["x_input_ids"].to(device)
         attention_mask = batch["x_attention"].to(device)
         xpos_input_ids = batch["xpos_input_ids"].to(device)
         xpos_attention_mask = batch["xpos_attention"].to(device)
         labels_x = batch["x_input_ids"].to(device)
-        labels_y = batch["y_input_ids"].to(device)
-        y_attention_mask = batch["y_attention"].to(device)
+        # labels_y = batch["y_input_ids"].to(device)
+        # y_attention_mask = batch["y_attention"].to(device)
 
         H = self.encoder(input_ids=input_ids, attention_mask=attention_mask)
         Hpos = self.encoder(input_ids=xpos_input_ids, attention_mask=xpos_attention_mask)
@@ -60,9 +59,6 @@ class ForgettingModel(nn.Module):
         u = self.u_head(outputs)
         upos = self.u_head(pos_outputs)
         v0 = self.v_head(outputs)
-        print("v0 last dim:", v0.shape[-1])
-        # print("shape of u", u.shape) # b, 128
-        # print("shape of v0", v0.shape) # b, 8, 128
 
         B, L, _ = v0.shape
         slot_mask = torch.ones((B,L), device = device)
@@ -70,16 +66,62 @@ class ForgettingModel(nn.Module):
         use_u_for_v0 = True  # can make this a config later, this is an optional flag for u+v0 instead of v0
 
         if use_u_for_v0:
-            v0 = self.gpsi(v0, u)
+            t_zero = torch.zeros(B, dtype=torch.long, device=device)
+            v0 = self.g_psi(v_hat_0=v0, t=t_zero)
 
         loss_x, logits_x = self.decoder_x(v0, slot_mask, labels_x)
-        loss_y, logits_y = self.decoder_y(u, labels_y)
+        # loss_y, logits_y = self.decoder_y(u, labels_y)
         loss_nce = self.info_nce_loss(u, upos)
 
         total_loss = (
             lambda_u * loss_nce +
-            lambda_x * loss_x +
-            lambda_y * loss_y
+            lambda_x * loss_x
+            # lambda_y * loss_y
         )
 
-        return total_loss, logits_x, logits_y
+        return total_loss, logits_x, loss_nce, loss_x
+
+    @torch.no_grad()
+    def encode_latents(self, batch):
+        """
+        Extract latent representations (u, v0) without running decoders.
+        """
+        device = self.device
+
+        input_ids = batch["x_input_ids"].to(device)
+        attention_mask = batch["x_attention"].to(device)
+
+        H = self.encoder(input_ids=input_ids, attention_mask=attention_mask)
+        outputs = self.slot_pooling(H, attention_mask)
+
+        u = self.u_head(outputs)    # [B, 128]
+        v0 = self.v_head(outputs)   # [B, 8, 512]
+
+        return u, v0
+
+
+    @torch.no_grad()
+    def encode_xt_latents(self, batch_input_ids, batch_attention_mask):
+        """
+        Adding this as a seperate function to not break other implementations.
+        Ideally this should be used for all encoding, as it is more flexible and can be used for both x and xt.
+        """
+        device = self.device
+
+        input_ids = batch_input_ids.to(device)
+        attention_mask = batch_attention_mask.to(device)
+
+        H = self.encoder(input_ids=input_ids, attention_mask=attention_mask)
+        outputs = self.slot_pooling(H, attention_mask)
+
+        u = self.u_head(outputs)    # [B, 128]
+        v0 = self.v_head(outputs)   # [B, 8, 512]
+
+        return u, v0
+    
+    @torch.no_grad()
+    def decode_latents(self, v0, attention_mask, max_new_tokens=64, num_beams=4):
+        """
+        Decode latent for inference.
+        """
+        return self.decoder_x.generate(v0, attention_mask)
