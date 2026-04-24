@@ -5,7 +5,8 @@ from transformers.modeling_outputs import BaseModelOutput
 
 
 class DecoderX(nn.Module):
-    def __init__(self, model_name = "t5-small"):
+    # def __init__(self, model_name = "t5-small"):
+    def __init__(self, model_name = "google/flan-t5-base"):
         super().__init__()
         self.model = T5ForConditionalGeneration.from_pretrained(model_name)
 

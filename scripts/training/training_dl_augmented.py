@@ -25,7 +25,7 @@ from models.uv_heads_prep.u_head import UHead
 from models.uv_heads_prep.v_head import VHead
 from models.decoder_prep.decoder_x import DecoderX
 from models.forgetting_model import ForgettingModel
-from models.g_psi_module.semantic_projection import SemanticProjectionModule
+from models.g_psi_module.semantic_projection_pretrained import SemanticProjectionModule
 from models.g_psi_module.g_psi_config import G_psi_config
 
 
@@ -175,10 +175,11 @@ def main():
     # val_dataset = MSRDataset("./data/final/validate.json")
     # val_loader = DataLoader(val_dataset, batch_size=10, shuffle = True)
 
-    tokenizer = T5Tokenizer.from_pretrained("t5-small")
-    train_dataset = MSRAugmentedDataset("/work/pi_dagarwal_umass_edu/project_3/bdevarangadi/Diffusion_as_Memory/data/final/train.json", tokenizer)
+    # tokenizer = T5Tokenizer.from_pretrained("t5-small")
+    tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-base")
+    train_dataset = MSRAugmentedDataset("../data/final/train.json", tokenizer)
     train_loader = DataLoader(train_dataset, batch_size=10, shuffle = True)
-    val_dataset = MSRAugmentedDataset("/work/pi_dagarwal_umass_edu/project_3/bdevarangadi/Diffusion_as_Memory/data/final/validate.json", tokenizer)
+    val_dataset = MSRAugmentedDataset("../data/final/validate.json", tokenizer)
     val_loader = DataLoader(val_dataset, batch_size=10, shuffle = True)
 
     encoder = TextEncoder()

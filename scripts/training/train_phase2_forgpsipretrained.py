@@ -169,6 +169,9 @@ def _build_scheduler(optimizer, cfg, total_steps):
 def train_epoch(
     p0_model,
     denoiser,
+    u_projection_bridge,
+    down_projection_bridge,
+    projection_bridge,
     noise_schedule,
     dataloader,
     optimizer,
@@ -196,13 +199,18 @@ def train_epoch(
 
         # Noisy reconstruction loss (labels = degraded xt)
         t = torch.randint(1, T_DIFFUSION + 1, (batch_size,), device=device)
+
+        u_for_denoiser = u_projection_bridge(u)
+        v0 = down_projection_bridge(v0)
         vt, _ = forward_diffusion(v0, t, noise_schedule)
         with torch.no_grad():
-            eps_hat = denoiser(vt, t, u)
+            eps_hat = denoiser(vt, t, u_for_denoiser)
             v_hat_0 = step_by_step_estimate(vt, eps_hat, t, noise_schedule)
+        
+        v_hat_0_768 = projection_bridge(v_hat_0)
 
         labels_noisy, _ = select_xt_labels(batch, t, device, XT_BUCKET_SIZE)   # [B, seq_len]
-        vt_tilde = p0_model.g_psi(t=t, v_t=v_hat_0, u=u)    # [B, L, d]
+        vt_tilde = p0_model.g_psi(t=t, v_t=v_hat_0_768, u=u)    # [B, L, d]
         slot_mask = torch.ones(batch_size, L_SLOTS, device=device)
         loss_recon, logits = p0_model.decoder_x(vt_tilde, slot_mask, labels_noisy)
 
@@ -226,7 +234,7 @@ def train_epoch(
 
 
 @torch.no_grad()
-def validate_epoch(p0_model, denoiser, noise_schedule, dataloader, device):
+def validate_epoch(p0_model, denoiser, u_projection_bridge, down_projection_bridge, projection_bridge, noise_schedule, dataloader, device):
     """Run one validation epoch. Returns (total_loss, sample_outputs)."""
     p0_model.g_psi.eval()
     p0_model.decoder_x.eval()
@@ -239,12 +247,15 @@ def validate_epoch(p0_model, denoiser, noise_schedule, dataloader, device):
 
         u, v0 = p0_model.encode_latents(batch)
 
-
+        u_for_denoiser = u_projection_bridge(u)
         # Noisy (labels = degraded xt)
+        v0 = down_projection_bridge(v0)
         t = torch.randint(1, T_DIFFUSION + 1, (batch_size,), device=device)
         vt, _ = forward_diffusion(v0, t, noise_schedule)
-        eps_hat = denoiser(vt, t, u)
+        eps_hat = denoiser(vt, t, u_for_denoiser)
         v_hat_0 = step_by_step_estimate(vt, eps_hat, t, noise_schedule)
+        v_hat_0 = projection_bridge(v_hat_0)
+
         labels_noisy, xt_index = select_xt_labels(batch, t, device, XT_BUCKET_SIZE)   # [B, seq_len]
         # Noisy reconstruction
         vt_tilde = p0_model.g_psi(t=t, v_t=v_hat_0, u=u)
@@ -313,6 +324,9 @@ def main():
 
     print("\nLoading P1 denoiser checkpoint...")
     denoiser = load_denoiser(args.denoiser_checkpoint, device)
+    u_projection_bridge = torch.nn.Linear(128, 512).to(device)
+    down_projection_bridge = torch.nn.Linear(768,512).to(device)
+    projection_bridge = torch.nn.Linear(512, 768).to(device)
 
     # Freeze everything in P0 model
     for param in p0_model.parameters():
@@ -347,7 +361,7 @@ def main():
 
     # Optimizer (only G_psi + decoder)
     optimizer = torch.optim.Adam(
-        list(p0_model.g_psi.parameters()) + list(p0_model.decoder_x.parameters()),
+        list(p0_model.g_psi.parameters()) + list(p0_model.decoder_x.parameters()) + list(projection_bridge.parameters()) + list(down_projection_bridge.parameters()) + list(u_projection_bridge.parameters()),
         lr=LEARNING_RATE,
         weight_decay=WEIGHT_DECAY,
     )
@@ -410,6 +424,9 @@ def main():
         train_loss = train_epoch(
             p0_model,
             denoiser,
+            u_projection_bridge,
+            down_projection_bridge,
+            projection_bridge,
             noise_schedule,
             train_loader,
             optimizer,
@@ -435,7 +452,7 @@ def main():
         # Validate every VAL_INTERVAL epochs and on the last epoch
         if (epoch + 1) % VAL_INTERVAL == 0 or (epoch + 1) == EPOCHS:
             val_loss, sample_outputs = validate_epoch(
-                p0_model, denoiser, noise_schedule, val_loader, device,
+                p0_model, denoiser, u_projection_bridge, down_projection_bridge, projection_bridge, noise_schedule, val_loader, device,
             )
 
             print(

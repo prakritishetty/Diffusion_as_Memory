@@ -30,5 +30,5 @@ XT_BUCKET_SIZE = T_DIFFUSION // 10
 
 # Latent Dimensions (must match P0/P1)
 L_SLOTS = 8
-D_MODEL = 512
+D_MODEL = 768
 U_DIM = 128

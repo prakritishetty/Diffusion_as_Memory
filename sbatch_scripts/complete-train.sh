@@ -36,12 +36,12 @@ set -e
 
 ################################
 echo "start training phase 2..."
-python /work/pi_dagarwal_umass_edu/project_3/bdevarangadi/Diffusion_as_Memory/scripts/training/train_phase2.py \
-    --p0-checkpoint ./checkpoints/p0/rev-diff/best_model.pt \
-    --denoiser-checkpoint ./checkpoints/p1/rev-diff/best_model.pt \
-    --checkpoint-dir ./checkpoints/p2/rev-diff \
-    --output-dir ./output/p2/rev-diff \
-    --data-dir ./data/final \
+python ../scripts/training/train_phase2.py \
+    --p0-checkpoint /project/pi_dagarwal_umass_edu/project_3/checkpoints_apr20_prak_gpsipretrain/p0/train_19thapr_prak/best_model.pt \
+    --denoiser-checkpoint /project/pi_dagarwal_umass_edu/project_3/checkpoints_apr_19/p1/rev-diff-dim-inc/best_model.pt \
+    --checkpoint-dir /project/pi_dagarwal_umass_edu/project_3/checkpoints_apr20_prak_gpsipretrain/p2/train_20thapr_prak/rev-diff \
+    --output-dir ../output/p2/output_20thapr_prak \
+    --data-dir ../data/final \
     --wandb-project diffusion-as-memory \
     --wandb-run-name p2-gpsi-run_$(date +%Y%m%d_%H%M%S)
 echo "Training complete!"

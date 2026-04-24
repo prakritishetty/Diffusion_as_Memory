@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition=superpod-a100
+#SBATCH --partition=gpu-preempt
 #SBATCH --gres=gpu:1
 #SBATCH --nodes=1
 #SBATCH --time=20:00:00
@@ -14,13 +14,12 @@ echo "Job ID: $SLURM_JOB_ID"
 echo "Node: $SLURM_JOB_NODELIST"
 echo "Start time: $(date)"
 
-module load conda/latest
-conda activate ./myvenv
+
 python3 ../scripts/training/training_dl_augmented.py \
- --latents-dir ../data/latents/temp \
- --checkpoint-dir ../checkpoints/p0/train_29Mar_prak \
- --output-dir ../output/p0/train_29Mar_prak \
+ --latents-dir /project/pi_dagarwal_umass_edu/project_3/latents_apr20_prak_gpsipretrain \
+ --checkpoint-dir /project/pi_dagarwal_umass_edu/project_3/checkpoints_apr20_prak_gpsipretrain/p0/train_19thapr_prak \
+ --output-dir ../output/p0/train_20thapr_prak_gpsipretrain \
  --wandb-project diffusion-as-memory \
- --wandb-run-name p0-training-run_$(date +%Y%m%d_%H%M%S)
+ --wandb-run-name p0-training-run-prak-gpsipretrain-decoderbetter_$(date +%Y%m%d_%H%M%S)
 
 echo "End time: $(date)"

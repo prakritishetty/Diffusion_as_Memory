@@ -1,5 +1,6 @@
 class G_psi_config:
-    d: int = 512
+    # d: int = 512
+    d: int = 768
     u_dim: int = 128
     n_blocks: int = 3
     d_ff: int = 2048

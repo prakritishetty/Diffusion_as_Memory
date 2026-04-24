@@ -3,7 +3,7 @@ import torch.nn as nn
 from transformers import T5EncoderModel
 
 class TextEncoder(nn.Module):
-    def __init__(self, model_name="t5-small"):
+    def __init__(self, model_name="google/flan-t5-base"):
         super().__init__()
         self.encoder = T5EncoderModel.from_pretrained(model_name)
         self.hidden_dim_size = self.encoder.config.d_model

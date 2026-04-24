@@ -8,7 +8,7 @@ from models.uv_heads_prep.u_head import UHead
 from models.uv_heads_prep.v_head import VHead
 from models.decoder_prep.decoder_x import DecoderX
 from models.forgetting_model import ForgettingModel
-from models.g_psi_module.semantic_projection import SemanticProjectionModule
+from models.g_psi_module.semantic_projection_pretrained import SemanticProjectionModule
 from models.g_psi_module.g_psi_config import G_psi_config
 
 
