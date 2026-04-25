@@ -54,6 +54,9 @@ def get_dataset(dataset_name, metadata=False, synthetic_train_path=None):
         dataset['valid'] = dataset['validation']
         del(dataset['validation'])
         dataset = process_wmt14_dataset(dataset, 'en-en')
+    elif dataset_name == 'privasis':
+        dataset = load_dataset('nvidia/Privasis-Zero')
+        dataset = process_privasis_dataset(dataset)
     else:
         raise NotImplementedError
     return dataset
@@ -72,6 +75,29 @@ def process_roc_dataset(dataset):
     val_test_ds = dataset['valid'].train_test_split(train_size=1000, shuffle=False)
     dataset['valid'] = val_test_ds['train']
     dataset['test'] = val_test_ds['test']
+    return dataset
+
+def process_privasis_dataset(dataset):
+    def process_privasis_text(example):
+        return {'record': PreTrainedTokenizerBase.clean_up_tokenization(example["record"].strip())}
+    
+    
+    if 'validation' not in dataset.keys() and 'valid' not in dataset.keys():
+        train_test_ds = dataset['train'].train_test_split(test_size=0.1, seed=42)
+        train_val_ds = train_test_ds['train'].train_test_split(test_size=0.1, seed=42)
+        
+        from datasets import DatasetDict
+        dataset = DatasetDict({
+            'train': train_val_ds['train'],
+            'valid': train_val_ds['test'],
+            'test': train_test_ds['test']
+        })
+    elif 'valid' not in dataset.keys() and 'validation' in dataset.keys():
+        dataset['valid'] = dataset['validation']
+        del dataset['validation']
+
+    dataset = dataset.map(process_privasis_text, remove_columns=[col for col in dataset['train'].column_names if col != 'record'])
+    dataset = dataset.shuffle(seed=42)
     return dataset
 
 def process_ag_news_dataset(dataset):
