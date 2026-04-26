@@ -79,7 +79,7 @@ def process_roc_dataset(dataset):
 
 def process_privasis_dataset(dataset):
     def process_privasis_text(example):
-        return {'record': PreTrainedTokenizerBase.clean_up_tokenization(example["record"].strip())}
+        return {'text': PreTrainedTokenizerBase.clean_up_tokenization(example["record"].strip())}
     
     
     if 'validation' not in dataset.keys() and 'valid' not in dataset.keys():
@@ -96,7 +96,7 @@ def process_privasis_dataset(dataset):
         dataset['valid'] = dataset['validation']
         del dataset['validation']
 
-    dataset = dataset.map(process_privasis_text, remove_columns=[col for col in dataset['train'].column_names if col != 'record'])
+    dataset = dataset.map(process_privasis_text, remove_columns=list(dataset['train'].column_names))
     dataset = dataset.shuffle(seed=42)
     return dataset
 
