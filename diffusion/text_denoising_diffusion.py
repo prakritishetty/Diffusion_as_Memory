@@ -590,6 +590,8 @@ class Trainer(object):
         mixed_precision = 'no',
         decoding_loss = False,
         decoding_loss_weight = 1.0,
+        no_validation = False,
+        max_train_samples = None,
     ):
         super().__init__()
 
@@ -613,8 +615,9 @@ class Trainer(object):
         if self.accelerator.is_main_process:
             if args.output_dir is None:
                 args.output_dir = file_utils.get_output_dir(args)
-                with open(os.path.join(args.output_dir, 'args.json'), 'w') as f:
-                    json.dump(args.__dict__, f, indent=2)
+            os.makedirs(args.output_dir, exist_ok=True)
+            with open(os.path.join(args.output_dir, 'args.json'), 'w') as f:
+                json.dump(args.__dict__, f, indent=2)
             results_folder = args.output_dir
             run = os.path.split(__file__)[-1].split(".")[0]
             if args.wandb_name:
@@ -631,6 +634,7 @@ class Trainer(object):
         self.num_samples = num_samples
         self.seq2seq_candidates = seq2seq_candidates
         self.save_and_sample_every = save_and_sample_every
+        self.no_validation = no_validation
 
         self.train_batch_size = train_batch_size
         self.eval_batch_size = eval_batch_size
@@ -696,11 +700,21 @@ class Trainer(object):
         dataset = text_dataset.get_dataset(dataset_name,)
 
         self.dataset = dataset.shuffle(seed=42)
+
+        # Optionally subset training data for quick sanity-check runs
+        if max_train_samples is not None and max_train_samples < len(self.dataset['train']):
+            self.dataset['train'] = self.dataset['train'].select(range(max_train_samples))
+            if self.accelerator.is_main_process:
+                self.accelerator.print(f'[INFO] Subsampled diffusion training set to {max_train_samples} examples.')
+        
         if args.eval_test:
             self.num_samples = min(self.num_samples,len(self.dataset['test']))
             print(f'Using {self.num_samples} samples for evaluation')
         else:
             self.num_samples = min(self.num_samples,len(self.dataset['valid']))
+            # Cap validation for fast runs if training was capped
+            if max_train_samples is not None:
+                self.num_samples = min(self.num_samples, 50) 
             print(f'Using {self.num_samples} samples for evaluation')
         # Subsample train and val splits for computing language generation during runtime
         
@@ -1271,21 +1285,22 @@ class Trainer(object):
                         self.diffusion.train()
                     accelerator.log(logs, step=self.step)              
                     if self.step % self.save_and_sample_every == 0:
-                        if self.seq2seq:
-                            if 'wmt' in self.args.dataset_name:
-                                for guidance_strength in [1.0, 2.0]:
-                                    self.sample_seq2seq(cls_free_guidance=guidance_strength, incremental=False)
-                            else:
-                                self.sample_seq2seq()
-                            self.sample_seq2seq(split='train')
-                        else:
-                            self.sample()
-                        if self.class_conditional:
-                            for class_id in range(self.diffusion.diffusion_model.num_classes):
-                                self.sample(num_samples=100, class_id=class_id)
+                        accelerator.wait_for_everyone()
                         self.save()
-                        
-                        self.diffusion.train() 
+                        if not self.no_validation:
+                            if self.seq2seq:
+                                if 'wmt' in self.args.dataset_name:
+                                    for guidance_strength in [1.0, 2.0]:
+                                        self.sample_seq2seq(cls_free_guidance=guidance_strength, incremental=False)
+                                else:
+                                    self.sample_seq2seq()
+                                self.sample_seq2seq(split='train')
+                            else:
+                                self.sample()
+                            if self.class_conditional:
+                                for class_id in range(self.diffusion.diffusion_model.num_classes):
+                                    self.sample(num_samples=100, class_id=class_id)
+                        self.diffusion.train()
                 pbar.update(1)
             accelerator.wait_for_everyone()
         self.save()

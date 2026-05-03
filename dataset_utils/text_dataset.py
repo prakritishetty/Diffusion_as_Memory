@@ -55,7 +55,7 @@ def get_dataset(dataset_name, metadata=False, synthetic_train_path=None):
         del(dataset['validation'])
         dataset = process_wmt14_dataset(dataset, 'en-en')
     elif dataset_name == 'privasis':
-        dataset = load_dataset('nvidia/Privasis-Zero')
+        dataset = load_dataset('nvidia/Privasis-Zero', 'corpus')
         dataset = process_privasis_dataset(dataset)
     else:
         raise NotImplementedError
@@ -96,7 +96,7 @@ def process_privasis_dataset(dataset):
         dataset['valid'] = dataset['validation']
         del dataset['validation']
 
-    dataset = dataset.map(process_privasis_text, remove_columns=list(dataset['train'].column_names))
+    dataset = dataset.map(process_privasis_text, remove_columns=[col for col in dataset['train'].column_names])
     dataset = dataset.shuffle(seed=42)
     return dataset
 

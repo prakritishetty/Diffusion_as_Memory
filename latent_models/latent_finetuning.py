@@ -96,6 +96,9 @@ class Trainer(object):
         adam_weight_decay = 0.01,
         num_samples = None,
         eval_every = 1000,
+        save_every = 5000,
+        no_validation = False,
+        max_val_batches = None,
         results_folder = './results',
         mixed_precision = 'no',
         seed=43,
@@ -123,6 +126,7 @@ class Trainer(object):
         if self.accelerator.is_main_process:
             if args.output_dir is None:
                 args.output_dir = file_utils.get_output_dir(args)
+            os.makedirs(args.output_dir, exist_ok=True)
             results_folder = args.output_dir
             with open(os.path.join(args.output_dir, 'args.json'), 'w') as f:
                 json.dump(args.__dict__, f, indent=2)
@@ -140,6 +144,9 @@ class Trainer(object):
             self.accelerator.print(f'num trainable params: {num_trainable_params}')
 
         self.eval_every = eval_every
+        self.save_every = save_every
+        self.no_validation = no_validation
+        self.max_val_batches = max_val_batches
 
         self.train_batch_size = train_batch_size
         self.eval_batch_size = eval_batch_size
@@ -153,6 +160,18 @@ class Trainer(object):
 
         if args.eval:
             self.dataset['train'] = self.dataset['train'].select(range(1000))
+
+        # Optionally subset training data for quick sanity-check runs
+        max_train_samples = getattr(args, 'max_train_samples', None)
+        if max_train_samples is not None and max_train_samples < len(self.dataset['train']):
+            self.dataset['train'] = self.dataset['train'].select(range(max_train_samples))
+            if self.accelerator.is_main_process:
+                self.accelerator.print(f'[INFO] Subsampled training set to {max_train_samples} examples.')
+        if max_train_samples is not None:
+            # Also cap validation to the same proportion for speed
+            val_cap = max(100, max_train_samples // 10)
+            if val_cap < len(self.dataset['valid']):
+                self.dataset['valid'] = self.dataset['valid'].select(range(val_cap))
         self.dataloader = text_dataset.get_dataloader(args, self.dataset['train'], config, self.tokenizer, args.max_seq_len, context_tokenizer=self.tokenizer)
         self.val_dataloader = text_dataset.get_dataloader(args, self.dataset['valid'], config, self.tokenizer, args.max_seq_len, shuffle=False, context_tokenizer=self.tokenizer)
         self.max_seq_len = args.max_seq_len
@@ -232,7 +251,9 @@ class Trainer(object):
         ref_text = []
         accelerator = self.accelerator
         device = self.accelerator.device
-        for batch in tqdm(self.val_dataloader):
+        for batch_idx, batch in enumerate(tqdm(self.val_dataloader)):
+            if self.max_val_batches is not None and batch_idx >= self.max_val_batches:
+                break
             for strategy in generate_kwargs.keys():
                 gen_kwargs = generate_kwargs[strategy]
                 gen_kwargs['max_length'] = self.max_seq_len
@@ -391,10 +412,17 @@ class Trainer(object):
                     accelerator.log(logs, step=self.step)
 
                 if self.step % self.eval_every == 0:
-                    self.validation()
+                    # Always save before validation so a crash doesn't lose progress
                     accelerator.wait_for_everyone()
                     self.save()
-                    self.lm.train() 
+                    if not self.no_validation:
+                        self.validation()
+                    self.lm.train()
+                elif self.step % self.save_every == 0:
+                    # Periodic save even when skipping validation
+                    accelerator.wait_for_everyone()
+                    self.save()
+                    self.lm.train()
 
                 pbar.update(1)
         self.validation()

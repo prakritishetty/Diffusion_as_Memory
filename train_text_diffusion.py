@@ -89,6 +89,8 @@ def main(args):
         results_folder = args.output_dir,
         amp = args.amp,
         mixed_precision = args.mixed_precision,
+        no_validation = args.no_validation,
+        max_train_samples = args.max_train_samples,
     )
 
     if args.eval:
@@ -230,6 +232,11 @@ if __name__ == "__main__":
     parser.add_argument("--resume_dir", type=str, default=None)
     parser.add_argument("--latent_model_path", type=str, default=None)
     parser.add_argument("--init_path", type=str, default=None)
+    parser.add_argument("--no_validation", action="store_true", default=False, 
+                        help="Skip expensive sampling and decoding during training.")
+    parser.add_argument("--max_train_samples", type=int, default=None, 
+                        help="Limit training dataset to this many samples.")
+
     
     args = parser.parse_args()
     assert not (args.eval and args.resume_training)
