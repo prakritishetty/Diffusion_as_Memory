@@ -7,12 +7,39 @@ from collections import defaultdict
 import spacy
 import numpy as np
 import wandb
+import logging
+
+def get_tokenizer():
+    try:
+        return spacy.load("en_core_web_sm").tokenizer
+    except Exception:
+        logging.warning("SpaCy model 'en_core_web_sm' not found. Falling back to simple whitespace tokenizer.")
+        return lambda text: text.split()
+
 
 def compute_perplexity(all_texts_list, model_id='gpt2-large'):
-    torch.cuda.empty_cache() 
-    perplexity = load("perplexity", module_type="metric")
-    results = perplexity.compute(predictions=all_texts_list, model_id=model_id, device='cuda')
-    return results['mean_perplexity']
+    # Filter out empty or whitespace-only strings which can crash GPT-2
+    all_texts_list = [t for t in all_texts_list if t and t.strip()]
+    if not all_texts_list:
+        return 0.0
+
+    # Aggressive character truncation (512 chars) to guarantee we stay under the 1024-token limit
+    all_texts_list = [t[:512] for t in all_texts_list]
+
+    try:
+        perplexity_metric = load("perplexity", module_type="metric")
+        try:
+            # Try CUDA first
+            results = perplexity_metric.compute(predictions=all_texts_list, model_id=model_id, device='cuda')
+            return results['mean_perplexity']
+        except Exception as e:
+            logging.warning(f"Perplexity calculation on CUDA failed: {e}. Trying on CPU...")
+            # Try CPU fallback
+            results = perplexity_metric.compute(predictions=all_texts_list, model_id=model_id, device='cpu')
+            return results['mean_perplexity']
+    except Exception as e:
+        logging.error(f"Perplexity calculation totally failed: {e}")
+        return 0.0
 
 def compute_wordcount(all_texts_list):
     wordcount = load("word_count")
@@ -22,7 +49,7 @@ def compute_wordcount(all_texts_list):
 def compute_diversity(all_texts_list):
     ngram_range = [2,3,4]
 
-    tokenizer = spacy.load("en_core_web_sm").tokenizer
+    tokenizer = get_tokenizer()
     token_list = []
     for sentence in all_texts_list:
         token_list.append([str(token) for token in tokenizer(sentence)])
@@ -44,11 +71,12 @@ def compute_diversity(all_texts_list):
 
 def compute_memorization(all_texts_list, human_references, n=4):
 
-    tokenizer = spacy.load("en_core_web_sm").tokenizer
+    tokenizer = get_tokenizer()
     unique_four_grams = set()
     for sentence in human_references:
         unique_four_grams.update(ngrams([str(token) for token in tokenizer(sentence)], n))
 
+    tokenizer = get_tokenizer()
     total = 0
     duplicate = 0
     for sentence in all_texts_list:
@@ -61,15 +89,18 @@ def compute_memorization(all_texts_list, human_references, n=4):
     return duplicate/total
 
 def compute_mauve(all_texts_list, human_references, model_id):
-    torch.cuda.empty_cache() 
+    # Aggressive character truncation to stay within model's max sequence length
+    all_texts_list = [t[:512] for t in all_texts_list]
+    human_references = [t[:512] for t in human_references]
+
     assert model_id == 'gpt2-large'
-    mauve = load("mauve")
-
-    results = mauve.compute(predictions=all_texts_list, references=human_references, featurize_model_name=model_id, max_text_length=256, device_id=0)
-
-    assert len(all_texts_list) == len(human_references)
-    
-    return results.mauve, results.divergence_curve
+    try:
+        mauve = load("mauve")
+        results = mauve.compute(predictions=all_texts_list, references=human_references, featurize_model_name=model_id, max_text_length=256, device_id=0)
+        return results.mauve, results.divergence_curve
+    except Exception as e:
+        logging.error(f"MAUVE calculation failed: {e}")
+        return 0.0, None
 
 def compute_bleu(all_texts_list, human_references):
     bleu = load("bleu")

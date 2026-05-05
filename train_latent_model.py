@@ -26,6 +26,9 @@ def main(args):
         adam_betas = (args.adam_beta1, args.adam_beta2),
         adam_weight_decay = args.adam_weight_decay,
         eval_every = args.eval_every,
+        save_every = args.save_every,
+        no_validation = args.no_validation,
+        max_val_batches = args.max_val_batches,
         results_folder = args.output_dir,
         mixed_precision=args.mixed_precision,
     )
@@ -89,6 +92,15 @@ if __name__ == "__main__":
     parser.add_argument("--eval", action="store_true")
     parser.add_argument("--resume_training", action="store_true", default=False)
     parser.add_argument("--resume_dir", type=str, default=None)
+    # --- Fast training flags ---
+    parser.add_argument("--no_validation", action="store_true", default=False,
+                        help="Skip full beam-search validation during training. Saves checkpoints via --save_every instead.")
+    parser.add_argument("--save_every", type=int, default=5000,
+                        help="Save a checkpoint every N steps (used when --no_validation is set, or as a fallback).")
+    parser.add_argument("--max_val_batches", type=int, default=None,
+                        help="Cap validation to this many batches (e.g. 50). None means full validation set.")
+    parser.add_argument("--max_train_samples", type=int, default=None,
+                        help="Use only this many training samples (e.g. 50000 for a quick sanity-check run).")
 
     args = parser.parse_args()
 

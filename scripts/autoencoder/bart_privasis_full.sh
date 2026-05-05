@@ -1,9 +1,8 @@
 #!/bin/bash
 # ============================================================
-# FAST MODE: --no_validation skips beam-search eval entirely.
-# --save_every 5000 saves a checkpoint every 5k steps.
-# --max_train_samples 50000 uses only 50k examples (~5% of 1M)
-#   for a quick sanity-check run. Remove it for the full run.
+# FULL RUN: Uses the entire ~1M Privasis-Zero corpus.
+# Remove --max_train_samples and run this once you've verified
+# the pipeline works with the 50k sanity-check script.
 # ============================================================
 
 python train_latent_model.py \
@@ -20,7 +19,6 @@ python train_latent_model.py \
     --eval_every 1000 \
     --no_validation \
     --save_every 5000 \
-    --max_train_samples 50000 \
-    --wandb_name baseline_privasis_autoencoder \
-    --output_dir saved_latent_models_outputs/baseline_privasis_ae \
-    --save_dir saved_latent_models/privasis_autoencoder
+    --wandb_name baseline_privasis_autoencoder_full \
+    --output_dir saved_latent_models_outputs/baseline_privasis_ae_full \
+    --save_dir saved_latent_models/privasis_autoencoder_full

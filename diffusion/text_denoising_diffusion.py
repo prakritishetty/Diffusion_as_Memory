@@ -507,15 +507,16 @@ class GaussianDiffusion(nn.Module):
         else:
             raise ValueError(f'invalid loss type {self.loss_type}')
 
-    def forward(self, txt_latent, mask, class_id, seq2seq_cond=None, seq2seq_mask=None, return_x_start=False, *args, **kwargs):
+    def forward(self, txt_latent, mask, class_id, seq2seq_cond=None, seq2seq_mask=None, return_x_start=False, target_latent=None, times=None, *args, **kwargs):
         batch, l, d, device, max_seq_len, = *txt_latent.shape, txt_latent.device, self.max_seq_len
         assert l == max_seq_len, f'length must be {self.max_seq_len}'
         
+        target_latent = default(target_latent, txt_latent)
+
         # sample random times
-
-        times = torch.zeros((batch,), device = device).float().uniform_(0, 1.)
+        if not exists(times):
+            times = torch.zeros((batch,), device = device).float().uniform_(0, 1.)
         # noise sample
-
         noise = torch.randn_like(txt_latent)
 
         alpha = self.train_schedule(times)
@@ -540,25 +541,29 @@ class GaussianDiffusion(nn.Module):
               
 
         # predict and take gradient step
-
         predictions = self.diffusion_model_predictions(z_t, mask, times, x_self_cond=self_cond, class_id=class_id, seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)          
+        
         if self.objective == 'pred_x0':
-            target = txt_latent
+            target = target_latent
             pred = predictions.pred_x_start
         elif self.objective == 'pred_noise':
-            target = noise
-            pred = predictions.pred_noise
+            # If target is different from source, we need to calculate the "effective" noise
+            # Standard noise prediction is only valid if target == source.
+            # However, we can still use pred_x0 as the primary output for the loss.
+            # Let's force target calculation if they are different.
+            target = target_latent
+            pred = predictions.pred_x_start
         elif self.objective == 'pred_v':
-            target = alpha.sqrt() * noise - (1-alpha).sqrt() * txt_latent
-            assert exists(predictions.pred_v)
-            pred = predictions.pred_v
+            # Standard v prediction also assumes target == source.
+            # We'll use pred_x0 as the fallback for multi-level training.
+            target = target_latent
+            pred = predictions.pred_x_start
             
         loss = self.loss_fn(pred, target, reduction = 'none')
         loss = rearrange([reduce(loss[i][:torch.sum(mask[i])], 'l d -> 1', 'mean') for i in range(txt_latent.shape[0])], 'b 1 -> b 1')
 
-
         if return_x_start:
-            return loss.mean(), predictions.pred_x_start
+            return loss.mean(), predictions.pred_x_start, times
         return loss.mean()
 
 # trainer class
@@ -590,6 +595,8 @@ class Trainer(object):
         mixed_precision = 'no',
         decoding_loss = False,
         decoding_loss_weight = 1.0,
+        no_validation = False,
+        max_train_samples = None,
     ):
         super().__init__()
 
@@ -613,8 +620,9 @@ class Trainer(object):
         if self.accelerator.is_main_process:
             if args.output_dir is None:
                 args.output_dir = file_utils.get_output_dir(args)
-                with open(os.path.join(args.output_dir, 'args.json'), 'w') as f:
-                    json.dump(args.__dict__, f, indent=2)
+            os.makedirs(args.output_dir, exist_ok=True)
+            with open(os.path.join(args.output_dir, 'args.json'), 'w') as f:
+                json.dump(args.__dict__, f, indent=2)
             results_folder = args.output_dir
             run = os.path.split(__file__)[-1].split(".")[0]
             if args.wandb_name:
@@ -631,6 +639,7 @@ class Trainer(object):
         self.num_samples = num_samples
         self.seq2seq_candidates = seq2seq_candidates
         self.save_and_sample_every = save_and_sample_every
+        self.no_validation = no_validation
 
         self.train_batch_size = train_batch_size
         self.eval_batch_size = eval_batch_size
@@ -696,11 +705,21 @@ class Trainer(object):
         dataset = text_dataset.get_dataset(dataset_name,)
 
         self.dataset = dataset.shuffle(seed=42)
+
+        # Optionally subset training data for quick sanity-check runs
+        if max_train_samples is not None and max_train_samples < len(self.dataset['train']):
+            self.dataset['train'] = self.dataset['train'].select(range(max_train_samples))
+            if self.accelerator.is_main_process:
+                self.accelerator.print(f'[INFO] Subsampled diffusion training set to {max_train_samples} examples.')
+        
         if args.eval_test:
             self.num_samples = min(self.num_samples,len(self.dataset['test']))
             print(f'Using {self.num_samples} samples for evaluation')
         else:
             self.num_samples = min(self.num_samples,len(self.dataset['valid']))
+            # Cap validation for fast runs if training was capped
+            if max_train_samples is not None:
+                self.num_samples = min(self.num_samples, 50) 
             print(f'Using {self.num_samples} samples for evaluation')
         # Subsample train and val splits for computing language generation during runtime
         
@@ -1180,6 +1199,64 @@ class Trainer(object):
                                 self.ema.ema_model.latent_scale = self.diffusion.latent_scale
                             latent = self.diffusion.normalize_latent(latent)
                         
+                        source_latent = latent
+                        target_latent = latent
+                        target_tokens = data['input_ids']
+
+                        if self.dataset_name == 'privasis_abstraction':
+                            # data['input_ids'] shape is [B, 11, L]
+                            # data['num_levels'] shape is [B]
+                            
+                            # We need to sample times here to know which level to pick
+                            # Or we can let GaussianDiffusion return the times it sampled
+                            # But GaussianDiffusion currently samples times inside forward.
+                            # To be consistent, let's sample them here.
+                            times = torch.rand(latent.shape[0], device=device)
+                            
+                            # Pick source (L0) and target (Lk)
+                            # input_ids is [B, 11, L]
+                            # abstractions are indices 0..10
+                            
+                            B = latent.shape[0]
+                            L = latent.shape[-2]
+                            D = latent.shape[-1]
+                            
+                            source_input_ids = data['input_ids'][:, 0, :] # L0
+                            source_mask = data['attention_mask'][:, 0, :]
+                            
+                            # Recalculate source latent
+                            encoder_outputs_0 = self.bart_model.get_encoder()(input_ids = source_input_ids, attention_mask = source_mask)
+                            if self.using_latent_model:
+                                source_latent = self.bart_model.get_diffusion_latent(encoder_outputs_0, source_mask)
+                            else:
+                                source_latent = encoder_outputs_0.last_hidden_state
+                            
+                            if self.args.normalize_latent:
+                                source_latent = self.diffusion.normalize_latent(source_latent)
+
+                            # Determine k for each example
+                            # num_levels includes L0, so abstractions are 0 to num_levels-1
+                            k = (times * (data['num_levels'] - 1)).long()
+                            
+                            # We need target_latent for each k.
+                            # To avoid N encoder passes, we can batch all unique k's?
+                            # Or just do one batch pass for all selected target levels.
+                            target_input_ids = torch.stack([data['input_ids'][i, k[i], :] for i in range(B)])
+                            target_mask = torch.stack([data['attention_mask'][i, k[i], :] for i in range(B)])
+                            target_tokens = target_input_ids # used for decoder loss
+                            
+                            encoder_outputs_k = self.bart_model.get_encoder()(input_ids = target_input_ids, attention_mask = target_mask)
+                            if self.using_latent_model:
+                                target_latent = self.bart_model.get_diffusion_latent(encoder_outputs_k, target_mask)
+                            else:
+                                target_latent = encoder_outputs_k.last_hidden_state
+                            
+                            if self.args.normalize_latent:
+                                target_latent = self.diffusion.normalize_latent(target_latent)
+                            
+                            # Update latent for the next step (it will be passed to diffusion)
+                            latent = source_latent
+                        
                     seq2seq_cond = None
                     seq2seq_mask = None
                     with accelerator.autocast():
@@ -1194,13 +1271,31 @@ class Trainer(object):
                         mask = torch.ones(latent.shape[0], self.num_encoder_latents, dtype=torch.bool).to(device)
                     else:
                         mask = data['attention_mask'].bool()
-                    if self.decoding_loss:
-                        raise NotImplementedError
-                    else:
-                        loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)
+                    if self.decoding_loss and (self.step % self.args.decoding_loss_every == 0):
+                        loss, pred_x0, _ = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, return_x_start=True, target_latent=target_latent, times=times)
+                        
+                        if self.args.normalize_latent:
+                            pred_x0 = self.diffusion.unnormalize_latent(pred_x0)
+                        
+                        # Decoder loss
+                        if self.latent_model_path:
+                            decoder_input = self.bart_model.get_decoder_input(pred_x0)
+                        else:
+                            decoder_input = pred_x0
+                        
+                        outputs = self.bart_model(encoder_outputs=BaseModelOutput(last_hidden_state=decoder_input), labels=target_tokens)
+                        d_loss = outputs.loss
+                        
+                        loss = loss + d_loss * self.decoding_loss_weight
+                        decoding_loss += d_loss.item()
+                        
                         loss = loss / self.gradient_accumulate_every
                         total_loss += loss.item()
-                    self.accelerator.backward(loss)                
+                    else:
+                        loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, target_latent=target_latent, times=times)
+                        loss = loss / self.gradient_accumulate_every
+                        total_loss += loss.item()
+                    self.accelerator.backward(loss)
 
                 accelerator.clip_grad_norm_(self.diffusion.parameters(), self.args.clip_grad_norm)
                 grad_norm = compute_grad_norm(self.diffusion.parameters())
@@ -1271,21 +1366,22 @@ class Trainer(object):
                         self.diffusion.train()
                     accelerator.log(logs, step=self.step)              
                     if self.step % self.save_and_sample_every == 0:
-                        if self.seq2seq:
-                            if 'wmt' in self.args.dataset_name:
-                                for guidance_strength in [1.0, 2.0]:
-                                    self.sample_seq2seq(cls_free_guidance=guidance_strength, incremental=False)
-                            else:
-                                self.sample_seq2seq()
-                            self.sample_seq2seq(split='train')
-                        else:
-                            self.sample()
-                        if self.class_conditional:
-                            for class_id in range(self.diffusion.diffusion_model.num_classes):
-                                self.sample(num_samples=100, class_id=class_id)
+                        accelerator.wait_for_everyone()
                         self.save()
-                        
-                        self.diffusion.train() 
+                        if not self.no_validation:
+                            if self.seq2seq:
+                                if 'wmt' in self.args.dataset_name:
+                                    for guidance_strength in [1.0, 2.0]:
+                                        self.sample_seq2seq(cls_free_guidance=guidance_strength, incremental=False)
+                                else:
+                                    self.sample_seq2seq()
+                                self.sample_seq2seq(split='train')
+                            else:
+                                self.sample()
+                            if self.class_conditional:
+                                for class_id in range(self.diffusion.diffusion_model.num_classes):
+                                    self.sample(num_samples=100, class_id=class_id)
+                        self.diffusion.train()
                 pbar.update(1)
             accelerator.wait_for_everyone()
         self.save()

@@ -55,8 +55,13 @@ def get_dataset(dataset_name, metadata=False, synthetic_train_path=None):
         del(dataset['validation'])
         dataset = process_wmt14_dataset(dataset, 'en-en')
     elif dataset_name == 'privasis':
-        dataset = load_dataset('nvidia/Privasis-Zero')
+        dataset = load_dataset('nvidia/Privasis-Zero', 'corpus')
         dataset = process_privasis_dataset(dataset)
+    elif dataset_name == 'privasis_abstraction':
+        # Load the GPT-generated abstraction dataset
+        data_files = {"train": "privasis_gpt4o_abstraction.json"}
+        dataset = load_dataset("json", data_files=data_files)
+        dataset = process_privasis_abstraction_dataset(dataset)
     else:
         raise NotImplementedError
     return dataset
@@ -96,8 +101,28 @@ def process_privasis_dataset(dataset):
         dataset['valid'] = dataset['validation']
         del dataset['validation']
 
-    dataset = dataset.map(process_privasis_text, remove_columns=list(dataset['train'].column_names))
+    dataset = dataset.map(process_privasis_text, remove_columns=[col for col in dataset['train'].column_names])
     dataset = dataset.shuffle(seed=42)
+    return dataset
+
+def process_privasis_abstraction_dataset(dataset):
+    def process_abstraction(example):
+        # x is L0, xt is [L1, ..., LN]
+        # We want to return a list of all levels for easier processing
+        return {'text': example['x'], 'abstractions': example['xt']}
+    
+    if 'validation' not in dataset.keys() and 'valid' not in dataset.keys():
+        train_test_ds = dataset['train'].train_test_split(test_size=0.1, seed=42)
+        train_val_ds = train_test_ds['train'].train_test_split(test_size=0.1, seed=42)
+        
+        from datasets import DatasetDict
+        dataset = DatasetDict({
+            'train': train_val_ds['train'],
+            'valid': train_val_ds['test'],
+            'test': train_test_ds['test']
+        })
+    
+    dataset = dataset.map(process_abstraction, remove_columns=[col for col in dataset['train'].column_names])
     return dataset
 
 def process_ag_news_dataset(dataset):
@@ -146,7 +171,26 @@ def parse_metadata(metadata):
 
 def get_dataloader(args, dataset, model_config, tokenizer, max_seq_len, mode='diffusion', shuffle=True, context_tokenizer=None):
     def tokenization(example):
-        # print('EXAMPLE: ', example)
+        if mode == 'diffusion' and args.dataset_name == 'privasis_abstraction':
+            # Tokenize all levels of abstraction
+            # text is L0, abstractions is [L1, ..., LN]
+            all_texts = [example['text']] + example['abstractions']
+            
+            # Pad to a fixed number of levels (e.g., 11) to handle batching easily
+            max_levels = 11 
+            if len(all_texts) < max_levels:
+                all_texts = all_texts + [all_texts[-1]] * (max_levels - len(all_texts))
+            else:
+                all_texts = all_texts[:max_levels]
+                
+            tokenized = tokenizer(all_texts, padding="max_length", truncation=True, max_length=max_seq_len)
+            
+            return {
+                'input_ids': tokenized['input_ids'],
+                'attention_mask': tokenized['attention_mask'],
+                'num_levels': len(example['abstractions']) + 1 # actual levels before padding
+            }
+        
         if mode == 'diffusion' and args.dataset_name in {'xsum', 'qqp',  'wmt14-en-de', 'wmt14-de-en'}:
             # import pdb; pdb.set_trace()
             assert context_tokenizer is not None
