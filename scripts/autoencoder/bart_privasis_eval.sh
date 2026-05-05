@@ -21,5 +21,5 @@ python train_latent_model.py \
     --wandb_name baseline_privasis_autoencoder_eval \
     --output_dir saved_latent_models_outputs/baseline_privasis_ae \
     --save_dir saved_latent_models/privasis_autoencoder \
-    --resume_dir saved_latent_models/privasis_autoencoder \
+    --resume_dir saved_latent_models_outputs/baseline_privasis_ae \
     --eval

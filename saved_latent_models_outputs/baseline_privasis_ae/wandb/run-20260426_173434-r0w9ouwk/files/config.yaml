@@ -1,0 +1,211 @@
+_wandb:
+    value:
+        cli_version: 0.24.2
+        e:
+            ep5rl6bd23frv1nw29vwhlmvp21qxe1h:
+                args:
+                    - --dataset_name
+                    - privasis
+                    - --enc_dec_model
+                    - facebook/bart-base
+                    - --train_batch_size
+                    - "16"
+                    - --eval_batch_size
+                    - "16"
+                    - --num_encoder_latents
+                    - "32"
+                    - --num_decoder_latents
+                    - "32"
+                    - --dim_ae
+                    - "256"
+                    - --num_layers
+                    - "2"
+                    - --learning_rate
+                    - "5e-5"
+                    - --num_train_steps
+                    - "100000"
+                    - --eval_every
+                    - "1000"
+                    - --wandb_name
+                    - baseline_privasis_autoencoder
+                    - --output_dir
+                    - saved_latent_models_outputs/baseline_privasis_ae
+                    - --save_dir
+                    - saved_latent_models/privasis_autoencoder
+                codePath: train_latent_model.py
+                codePathLocal: train_latent_model.py
+                cpu_count: 24
+                cpu_count_logical: 24
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "250902839296"
+                        used: "27056369664"
+                email: prakritishetty02@gmail.com
+                executable: /home/psshetty_umass_edu/.conda/envs/latent-lang-diff/bin/python
+                git:
+                    commit: f653342261154e13c6890c9f8d8413d2f8958804
+                    remote: https://github.com/prakritishetty/Diffusion_as_Memory.git
+                gpu: Quadro RTX 8000
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Turing
+                      cudaCores: 4608
+                      memoryTotal: "51539607552"
+                      name: Quadro RTX 8000
+                      uuid: GPU-41c42af1-b160-96e6-60ea-42a91d5d7fbf
+                host: gypsum-gpu182
+                memory:
+                    total: "404318580736"
+                os: Linux-6.8.0-101-generic-x86_64-with-glibc2.17
+                program: train_latent_model.py
+                python: CPython 3.8.13
+                root: saved_latent_models_outputs/baseline_privasis_ae
+                slurm:
+                    cluster_name: unity
+                    conf: /var/spool/slurm/slurmd/conf-cache/slurm.conf
+                    cpus_on_node: "1"
+                    gpus: "1"
+                    gpus_on_node: "1"
+                    gtids: "0"
+                    job_account: pi_hzamani_umass_edu
+                    job_cpus_per_node: "1"
+                    job_end_time: "1777235093"
+                    job_gid: "4005"
+                    job_gpus: "3"
+                    job_id: "56277295"
+                    job_name: interactive
+                    job_nodelist: gypsum-gpu182
+                    job_num_nodes: "1"
+                    job_partition: gpu
+                    job_qos: short
+                    job_start_time: "1777220693"
+                    job_uid: "4005"
+                    job_user: psshetty_umass_edu
+                    jobid: "56277295"
+                    launch_node_ipaddr: 10.100.1.1
+                    localid: "0"
+                    mem_per_node: "40960"
+                    mpi_type: pmi2
+                    nnodes: "1"
+                    nodeid: "0"
+                    nodelist: gypsum-gpu182
+                    oom_kill_step: "0"
+                    pmi2_proc_mapping: (vector,(0,1,1))
+                    pmi2_srun_port: "9475"
+                    pmi2_step_nodes: gypsum-gpu182
+                    prio_process: "0"
+                    procid: "0"
+                    pty_port: "2427"
+                    pty_win_col: "129"
+                    pty_win_row: "17"
+                    script_context: prolog_task
+                    srun_comm_host: 10.100.1.1
+                    srun_comm_port: "27207"
+                    step_id: "4294967290"
+                    step_launcher_port: "27207"
+                    step_nodelist: gypsum-gpu182
+                    step_num_nodes: "1"
+                    step_num_tasks: "1"
+                    step_tasks_per_node: "1"
+                    stepid: "4294967290"
+                    stepmgr: gypsum-gpu182
+                    submit_dir: /gypsum/work1/zamani/prakriti/privasis_baseline
+                    submit_host: login1
+                    task_pid: "3035198"
+                    tasks_per_node: "1"
+                    topology_addr: 100gcore-mlag..tors-r1pcc07.gypsum-gpu182
+                    topology_addr_pattern: switch.switch.switch.node
+                startedAt: "2026-04-26T17:34:34.181604Z"
+                writerId: ep5rl6bd23frv1nw29vwhlmvp21qxe1h
+        m: []
+        python_version: 3.8.13
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 33
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 75
+                - 100
+            "2":
+                - 1
+                - 5
+                - 11
+                - 33
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 75
+                - 100
+            "3":
+                - 13
+                - 61
+            "4": 3.8.13
+            "5": 0.24.2
+            "6": 4.46.3
+            "12": 0.24.2
+            "13": linux-x86_64
+adam_beta1:
+    value: 0.9
+adam_beta2:
+    value: 0.999
+adam_weight_decay:
+    value: 0.01
+dataset_name:
+    value: privasis
+dim_ae:
+    value: 256
+enc_dec_model:
+    value: facebook/bart-base
+eval:
+    value: false
+eval_batch_size:
+    value: 16
+eval_every:
+    value: 1000
+l2_normalize_latents:
+    value: false
+learning_rate:
+    value: 5e-05
+lm_mode:
+    value: freeze
+lr_schedule:
+    value: linear
+lr_warmup_steps:
+    value: 500
+max_seq_len:
+    value: 64
+mixed_precision:
+    value: "no"
+num_decoder_latents:
+    value: 32
+num_devices:
+    value: 1
+num_encoder_latents:
+    value: 32
+num_layers:
+    value: 2
+num_train_steps:
+    value: 100000
+optimizer:
+    value: adamw
+output_dir:
+    value: saved_latent_models_outputs/baseline_privasis_ae
+resume_dir:
+    value: null
+resume_training:
+    value: false
+save_dir:
+    value: saved_latent_models/privasis_autoencoder
+train_batch_size:
+    value: 16
+wandb_name:
+    value: baseline_privasis_autoencoder

@@ -227,7 +227,7 @@ def get_dataloader(args, dataset, model_config, tokenizer, max_seq_len, mode='di
     if args.dataset_name in {'xsum', 'qqp'} or 'wmt14' in args.dataset_name:
         dataset = dataset.map(tokenization, remove_columns=['text', 'context'], batched=True, num_proc=None)
     else:
-        dataset = dataset.map(tokenization, remove_columns='text')
+        dataset = dataset.map(tokenization, remove_columns=dataset['train'].column_names)
             
     dl = DataLoader(
             dataset,

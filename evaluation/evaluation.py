@@ -17,6 +17,8 @@ def get_tokenizer():
         return lambda text: text.split()
 
 
+
+
 def compute_perplexity(all_texts_list, model_id='gpt2-large'):
     # Filter out empty or whitespace-only strings which can crash GPT-2
     all_texts_list = [t for t in all_texts_list if t and t.strip()]

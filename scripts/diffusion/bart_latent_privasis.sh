@@ -9,7 +9,7 @@ LATENT_MODEL_PATH="saved_latent_models/privasis_autoencoder"
 python train_text_diffusion.py \
     --dataset_name privasis \
     --enc_dec_model facebook/bart-base \
-    --latent_model_path $LATENT_MODEL_PATH \
+    --latent_model_path saved_latent_models_outputs/baseline_privasis_ae \
     --tx_dim 512 \
     --tx_depth 6 \
     --train_batch_size 16 \

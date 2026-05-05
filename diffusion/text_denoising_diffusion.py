@@ -1175,6 +1175,7 @@ class Trainer(object):
                 decoding_loss = 0.
                 for grad_accum_step in range(self.gradient_accumulate_every):
                     data = next(self.data_iter).to(device)
+                    times = None
                     with torch.no_grad():
                         encoder_outputs = self.bart_model.get_encoder()(input_ids = data['input_ids'], attention_mask = data['attention_mask'])
                         if self.using_latent_model:
