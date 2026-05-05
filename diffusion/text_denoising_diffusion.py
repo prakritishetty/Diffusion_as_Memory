@@ -731,7 +731,10 @@ class Trainer(object):
         self.test_dataloader = text_dataset.get_dataloader(args, self.dataset['test'], self.bart_model.config, self.tokenizer, self.max_seq_len, shuffle=False, context_tokenizer=self.context_tokenizer)
 
         if not self.seq2seq:
-            training_lengths = [min(sum(self.dataloader.dataset[idx]['attention_mask']), self.max_seq_len) for idx in range(self.dataloader.dataset.num_rows)]
+            if self.args.dataset_name == 'privasis_abstraction':
+                training_lengths = [min(sum(self.dataloader.dataset[idx]['attention_mask'][0]), self.max_seq_len) for idx in range(self.dataloader.dataset.num_rows)]
+            else:
+                training_lengths = [min(sum(self.dataloader.dataset[idx]['attention_mask']), self.max_seq_len) for idx in range(self.dataloader.dataset.num_rows)]
             length_counts = Counter(training_lengths)
             probs = torch.tensor([length_counts[idx]/self.dataloader.dataset.num_rows for idx in range(self.max_seq_len+1)])
             assert probs[0] == 0, 'Can\'t have examples of length 0'
@@ -1271,7 +1274,10 @@ class Trainer(object):
                     if self.using_latent_model:
                         mask = torch.ones(latent.shape[0], self.num_encoder_latents, dtype=torch.bool).to(device)
                     else:
-                        mask = data['attention_mask'].bool()
+                        if self.dataset_name == 'privasis_abstraction':
+                            mask = source_mask.bool()
+                        else:
+                            mask = data['attention_mask'].bool()
                     if self.decoding_loss and (self.step % self.args.decoding_loss_every == 0):
                         loss, pred_x0, _ = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, return_x_start=True, target_latent=target_latent, times=times)
                         
