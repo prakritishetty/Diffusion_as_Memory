@@ -1206,8 +1206,8 @@ class Trainer(object):
                             else:
                                 source_latent = encoder_outputs_0.last_hidden_state
                             
-                            if self.args.normalize_latent:
-                                source_latent = self.diffusion.normalize_latent(source_latent)
+                            # Latents will be normalized later in the unified step
+                            source_latent = source_latent
 
                             # sample random times to determine k for each example
                             if not exists(times):
@@ -1228,9 +1228,6 @@ class Trainer(object):
                             else:
                                 target_latent = encoder_outputs_k.last_hidden_state
                             
-                            if self.args.normalize_latent:
-                                target_latent = self.diffusion.normalize_latent(target_latent)
-                            
                             latent = source_latent
                         else:
                             encoder_outputs = self.bart_model.get_encoder()(input_ids = data['input_ids'], attention_mask = data['attention_mask'])
@@ -1245,22 +1242,21 @@ class Trainer(object):
 
                         if self.args.normalize_latent:
                             if self.step==0 and grad_accum_step==0:
+                                # Stats calculation logic...
                                 if self.using_latent_model:
                                     latent_vecs = rearrange(latent, 'b s d -> (b s) d')
                                 else:
-                                    # Fallback for non-latent models: concatenate valid tokens
                                     mask_for_vecs = source_mask if self.dataset_name == 'privasis_abstraction' else data['attention_mask']
                                     latent_vecs = torch.cat([latent[i][:torch.sum(mask_for_vecs[i])] for i in range(latent.shape[0])], dim=0)
                                 
-                                # Add mean stats to model and EMA wrapper
                                 self.diffusion.latent_mean = torch.mean(latent_vecs, dim=0)
                                 self.ema.ema_model.latent_mean = self.diffusion.latent_mean
-
-                                # Add var stats to model and EMA wrapper
                                 self.diffusion.latent_scale = torch.std(latent_vecs-self.diffusion.latent_mean, unbiased=False).clamp(min=0.1)
-
                                 self.ema.ema_model.latent_scale = self.diffusion.latent_scale
+                            
                             latent = self.diffusion.normalize_latent(latent)
+                            if exists(target_latent):
+                                target_latent = self.diffusion.normalize_latent(target_latent)
                         
                     seq2seq_cond = None
                     seq2seq_mask = None
