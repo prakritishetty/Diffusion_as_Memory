@@ -24,7 +24,7 @@
   "scale": 1.0,
   "sampling_timesteps": 250,
   "normalize_latent": false,
-  "save_and_sample_every": 100,
+  "save_and_sample_every": 5000,
   "num_samples": 16,
   "seq2seq_candidates": 5,
   "max_seq_len": 64,
@@ -48,7 +48,7 @@
   "resume_dir": null,
   "latent_model_path": "saved_latent_models_outputs/baseline_privasis_ae",
   "init_path": null,
-  "no_validation": false,
+  "no_validation": true,
   "max_train_samples": 50000,
   "trainable_params": 31798528,
   "num_devices": 1

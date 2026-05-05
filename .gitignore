@@ -131,4 +131,5 @@ dmypy.json
 # Additional Files
 **/saved_diff_models
 **/saved_latent_models
+saved_latent_models_outputs/
 *.pt
