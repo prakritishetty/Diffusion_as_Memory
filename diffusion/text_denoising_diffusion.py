@@ -778,6 +778,15 @@ class Trainer(object):
         self.val_iter = cycle(self.val_dataloader)
         self.reference_dict = {}
 
+    def to_device(self, data, device):
+        if isinstance(data, dict):
+            return {k: self.to_device(v, device) for k, v in data.items()}
+        elif isinstance(data, list):
+            return [self.to_device(v, device) for v in data]
+        elif hasattr(data, "to"):
+            return data.to(device)
+        return data
+
     def save(self, best=False):
         if not self.accelerator.is_local_main_process:
             return
@@ -998,7 +1007,7 @@ class Trainer(object):
         diffusion = accelerator.unwrap_model(self.diffusion)
         prefix += f'guide{cls_free_guidance}/' if cls_free_guidance != 1.0 else ''
         for batch in dataloader:
-            data = batch.to(device)
+            data = self.to_device(batch, device)
             seq2seq_cond = diffusion.context_encoder(input_ids = data['cond_input_ids'], attention_mask = data['cond_attention_mask']).last_hidden_state.float()
             seq2seq_mask = data['cond_attention_mask'].bool()
             pred_cand_list = []
@@ -1177,7 +1186,7 @@ class Trainer(object):
                 total_loss = 0.
                 decoding_loss = 0.
                 for grad_accum_step in range(self.gradient_accumulate_every):
-                    data = next(self.data_iter).to(device)
+                    data = self.to_device(next(self.data_iter), device)
                     times = None
                     with torch.no_grad():
                         encoder_outputs = self.bart_model.get_encoder()(input_ids = data['input_ids'], attention_mask = data['attention_mask'])
@@ -1335,7 +1344,7 @@ class Trainer(object):
                             total_val_loss = 0.
                             total_val_ema_loss = 0.
                             for grad_accum_step in range(self.gradient_accumulate_every):
-                                data = next(self.val_iter).to(device)
+                                data = self.to_device(next(self.val_iter), device)
                                 
                                 encoder_outputs = self.bart_model.get_encoder()(input_ids = data['input_ids'], attention_mask = data['attention_mask'])
                                 if self.using_latent_model:
