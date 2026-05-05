@@ -1241,36 +1241,40 @@ class Trainer(object):
                             target_latent = latent
                             target_tokens = data['input_ids']
 
-                        if self.args.normalize_latent:
-                            if self.stats_count < 50:
-                                # Accumulate dimension-wise stats over 50 batches
-                                with torch.no_grad():
-                                    if self.using_latent_model:
-                                        curr_vecs = rearrange(latent, 'b s d -> (b s) d')
-                                    else:
-                                        mask_for_stats = source_mask if self.dataset_name == 'privasis_abstraction' else data['attention_mask']
-                                        curr_vecs = latent[mask_for_stats.bool()]
-                                    
-                                    curr_vecs = curr_vecs[torch.isfinite(curr_vecs).all(dim=1)]
-                                    
-                                    if curr_vecs.shape[0] > 1:
-                                        batch_mean = torch.mean(curr_vecs, dim=0)
-                                        # Dimension-wise standard deviation
-                                        batch_std = torch.std(curr_vecs, dim=0, unbiased=False)
-                                        
-                                        alpha_s = 1.0 / (self.stats_count + 1)
-                                        self.diffusion.latent_mean = (1 - alpha_s) * self.diffusion.latent_mean + alpha_s * batch_mean
-                                        self.diffusion.latent_scale = (1 - alpha_s) * self.diffusion.latent_scale + alpha_s * batch_std.clamp(min=1e-3)
-                                        
-                                        self.ema.ema_model.latent_mean = self.diffusion.latent_mean
-                                        self.ema.ema_model.latent_scale = self.diffusion.latent_scale
-                                        self.stats_count += 1
+                    if self.stats_count < 100:
+                        # PURE WARM-UP: Only accumulate stats, skip training
+                        with torch.no_grad():
+                            if self.using_latent_model:
+                                curr_vecs = rearrange(latent, 'b s d -> (b s) d')
+                            else:
+                                mask_for_stats = source_mask if self.dataset_name == 'privasis_abstraction' else data['attention_mask']
+                                curr_vecs = latent[mask_for_stats.bool()]
                             
-                            latent = self.diffusion.normalize_latent(latent)
-                            if exists(target_latent) and (target_latent is not latent):
-                                target_latent = self.diffusion.normalize_latent(target_latent)
-                            elif exists(target_latent):
-                                target_latent = latent
+                            curr_vecs = curr_vecs[torch.isfinite(curr_vecs).all(dim=1)]
+                            if curr_vecs.shape[0] > 1:
+                                batch_mean = torch.mean(curr_vecs, dim=0)
+                                batch_std = torch.std(curr_vecs, dim=0, unbiased=False)
+                                
+                                alpha_s = 1.0 / (self.stats_count + 1)
+                                self.diffusion.latent_mean = (1 - alpha_s) * self.diffusion.latent_mean + alpha_s * batch_mean
+                                self.diffusion.latent_scale = (1 - alpha_s) * self.diffusion.latent_scale + alpha_s * batch_std.clamp(min=1e-3)
+                                
+                                self.ema.ema_model.latent_mean = self.diffusion.latent_mean
+                                self.ema.ema_model.latent_scale = self.diffusion.latent_scale
+                                self.stats_count += 1
+                        continue # Skip training logic during warm-up
+
+                    # TRAINING START (Only after 100 steps of warm-up)
+                    if self.args.normalize_latent:
+                        latent = self.diffusion.normalize_latent(latent)
+                        if exists(target_latent) and (target_latent is not latent):
+                            target_latent = self.diffusion.normalize_latent(target_latent)
+                        elif exists(target_latent):
+                            target_latent = latent
+                    
+                    seq2seq_cond = None
+                    seq2seq_mask = None
+                    # ... (rest of training logic)
                         
                     seq2seq_cond = None
                     seq2seq_mask = None
@@ -1291,8 +1295,7 @@ class Trainer(object):
                         else:
                             mask = data['attention_mask'].bool()
                     if self.decoding_loss and (self.step % self.args.decoding_loss_every == 0):
-                        # DIAGNOSTIC: Also forcing target_latent=latent here
-                        loss, pred_x0, _ = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, return_x_start=True, target_latent=latent, times=times)
+                        loss, pred_x0, _ = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, return_x_start=True, target_latent=target_latent, times=times)
                         
                         diffusion_loss_val = loss.item()
 
@@ -1317,34 +1320,39 @@ class Trainer(object):
                         loss = loss / self.gradient_accumulate_every
                         total_loss += loss.item()
                     else:
-                        # DIAGNOSTIC STEP: Forcing target_latent = latent to test if L0->Lk mapping is the issue
-                        # In normal training this would be target_latent, but we are isolating the spikes.
-                        loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, target_latent=latent, times=times)
+                        loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, target_latent=target_latent, times=times)
                         diffusion_loss_val = loss.item()
                         loss = loss / self.gradient_accumulate_every
                         total_loss += loss.item()
                     self.accelerator.backward(loss)
 
-                accelerator.clip_grad_norm_(self.diffusion.parameters(), self.args.clip_grad_norm)
-                grad_norm = compute_grad_norm(self.diffusion.parameters())
-                accelerator.wait_for_everyone()
-                self.opt.step()
-                self.lr_scheduler.step()
-                self.opt.zero_grad()
-                accelerator.wait_for_everyone()
+                if self.stats_count >= 100:
+                    accelerator.clip_grad_norm_(self.diffusion.parameters(), self.args.clip_grad_norm)
+                    grad_norm = compute_grad_norm(self.diffusion.parameters())
+                    accelerator.wait_for_everyone()
+                    self.opt.step()
+                    self.lr_scheduler.step()
+                    self.opt.zero_grad()
+                    accelerator.wait_for_everyone()
 
-                self.step += 1
+                    self.step += 1
+                
                 if accelerator.is_main_process:
-                    logs = {
-                        "loss": total_loss,
-                        "diffusion_loss": diffusion_loss_val,
-                        "decoding_loss": decoding_loss_val,
-                        "learning_rate": self.lr_scheduler.get_last_lr()[0],
-                        "grad_norm": grad_norm,
-                        "step": self.step, 
-                        "epoch": (self.step*self.gradient_accumulate_every)/len(self.dataloader), 
-                        "samples": self.step*self.train_batch_size*self.gradient_accumulate_every*self.num_devices
-                    }
+                    if self.stats_count < 100:
+                        pbar.set_description(f"Warm-up Stats: {int(self.stats_count.item())}/100")
+                        pbar.update(0)
+                    else:
+                        logs = {
+                            "loss": total_loss,
+                            "diffusion_loss": diffusion_loss_val,
+                            "decoding_loss": decoding_loss_val,
+                            "learning_rate": self.lr_scheduler.get_last_lr()[0],
+                            "grad_norm": grad_norm if 'grad_norm' in locals() else 0,
+                            "step": self.step, 
+                            "epoch": (self.step*self.gradient_accumulate_every)/len(self.dataloader), 
+                            "samples": self.step*self.train_batch_size*self.gradient_accumulate_every*self.num_devices
+                        }
+                        # ... (WandB and EMA logic)
                     self.ema.to(device)
                     self.ema.update()
 
