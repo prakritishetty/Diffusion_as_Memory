@@ -1241,7 +1241,7 @@ class Trainer(object):
                             target_latent = latent
                             target_tokens = data['input_ids']
 
-                    if self.stats_count < 100:
+                    if self.diffusion.stats_count < 100:
                         # PURE WARM-UP: Only accumulate stats, skip training
                         with torch.no_grad():
                             if self.using_latent_model:
@@ -1255,14 +1255,19 @@ class Trainer(object):
                                 batch_mean = torch.mean(curr_vecs, dim=0)
                                 batch_std = torch.std(curr_vecs, dim=0, unbiased=False)
                                 
-                                alpha_s = 1.0 / (self.stats_count + 1)
+                                alpha_s = 1.0 / (self.diffusion.stats_count + 1)
                                 self.diffusion.latent_mean = (1 - alpha_s) * self.diffusion.latent_mean + alpha_s * batch_mean
                                 self.diffusion.latent_scale = (1 - alpha_s) * self.diffusion.latent_scale + alpha_s * batch_std.clamp(min=1e-3)
                                 
                                 self.ema.ema_model.latent_mean = self.diffusion.latent_mean
                                 self.ema.ema_model.latent_scale = self.diffusion.latent_scale
-                                self.stats_count += 1
-                        continue # Skip training logic during warm-up
+                                self.diffusion.stats_count += 1
+                                
+                                if self.diffusion.stats_count == 100:
+                                    print(f"\n[Stats Warm-up Complete]")
+                                    print(f"Latent Mean (min/max): {self.diffusion.latent_mean.min().item():.4f} / {self.diffusion.latent_mean.max().item():.4f}")
+                                    print(f"Latent Scale (min/max): {self.diffusion.latent_scale.min().item():.4f} / {self.diffusion.latent_scale.max().item():.4f}")
+                        continue 
 
                     # TRAINING START (Only after 100 steps of warm-up)
                     if self.args.normalize_latent:
@@ -1326,7 +1331,7 @@ class Trainer(object):
                         total_loss += loss.item()
                     self.accelerator.backward(loss)
 
-                if self.stats_count >= 100:
+                if self.diffusion.stats_count >= 100:
                     accelerator.clip_grad_norm_(self.diffusion.parameters(), self.args.clip_grad_norm)
                     grad_norm = compute_grad_norm(self.diffusion.parameters())
                     accelerator.wait_for_everyone()
@@ -1338,8 +1343,8 @@ class Trainer(object):
                     self.step += 1
                 
                 if accelerator.is_main_process:
-                    if self.stats_count < 100:
-                        pbar.set_description(f"Warm-up Stats: {int(self.stats_count.item())}/100")
+                    if self.diffusion.stats_count < 100:
+                        pbar.set_description(f"Warm-up Stats: {int(self.diffusion.stats_count.item())}/100")
                         pbar.update(0)
                     else:
                         logs = {
