@@ -1257,7 +1257,7 @@ class Trainer(object):
                                 self.ema.ema_model.latent_mean = self.diffusion.latent_mean
 
                                 # Add var stats to model and EMA wrapper
-                                self.diffusion.latent_scale = torch.std(latent_vecs-self.diffusion.latent_mean, unbiased=False)
+                                self.diffusion.latent_scale = torch.std(latent_vecs-self.diffusion.latent_mean, unbiased=False).clamp(min=0.1)
 
                                 self.ema.ema_model.latent_scale = self.diffusion.latent_scale
                             latent = self.diffusion.normalize_latent(latent)
@@ -1282,6 +1282,8 @@ class Trainer(object):
                     if self.decoding_loss and (self.step % self.args.decoding_loss_every == 0):
                         loss, pred_x0, _ = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, return_x_start=True, target_latent=target_latent, times=times)
                         
+                        diffusion_loss_val = loss.item()
+
                         if self.args.normalize_latent:
                             pred_x0 = self.diffusion.unnormalize_latent(pred_x0)
                         
@@ -1291,16 +1293,21 @@ class Trainer(object):
                         else:
                             decoder_input = pred_x0
                         
+                        # Use a separate forward pass for the decoder to avoid messy graph issues
                         outputs = self.bart_model(encoder_outputs=BaseModelOutput(last_hidden_state=decoder_input), labels=target_tokens)
                         d_loss = outputs.loss
                         
-                        loss = loss + d_loss * self.decoding_loss_weight
+                        # Safety: clamp decoding loss to prevent explosion
+                        d_loss = torch.clamp(d_loss, max=10.0)
+                        
+                        loss = loss + d_loss * self.args.decoding_loss_weight
                         decoding_loss += d_loss.item()
                         
                         loss = loss / self.gradient_accumulate_every
                         total_loss += loss.item()
                     else:
                         loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, target_latent=target_latent, times=times)
+                        diffusion_loss_val = loss.item()
                         loss = loss / self.gradient_accumulate_every
                         total_loss += loss.item()
                     self.accelerator.backward(loss)
@@ -1317,14 +1324,14 @@ class Trainer(object):
                 if accelerator.is_main_process:
                     logs = {
                         "loss": total_loss,
+                        "diffusion_loss": diffusion_loss_val,
+                        "decoding_loss": decoding_loss,
                         "learning_rate": self.lr_scheduler.get_last_lr()[0],
                         "grad_norm": grad_norm,
                         "step": self.step, 
                         "epoch": (self.step*self.gradient_accumulate_every)/len(self.dataloader), 
                         "samples": self.step*self.train_batch_size*self.gradient_accumulate_every*self.num_devices
                     }
-                    if self.decoding_loss:
-                        logs['decoding_loss'] = decoding_loss
                     self.ema.to(device)
                     self.ema.update()
 
