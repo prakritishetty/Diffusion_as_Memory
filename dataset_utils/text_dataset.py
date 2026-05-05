@@ -215,7 +215,9 @@ def get_dataloader(args, dataset, model_config, tokenizer, max_seq_len, mode='di
             text = example["text"]
         return tokenizer(text, padding="max_length", truncation=True, max_length=max_seq_len)
 
-    if 'mbart' in args.enc_dec_model:
+    if args.dataset_name == 'privasis_abstraction':
+        collate_fn = default_data_collator
+    elif 'mbart' in args.enc_dec_model:
         collate_fn=default_data_collator
     elif 'bart' in args.enc_dec_model:
         collate_fn=DataCollatorForBartDenoisingLM(tokenizer, model_config.decoder_start_token_id)
