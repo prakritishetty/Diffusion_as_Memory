@@ -229,9 +229,10 @@ class GaussianDiffusion(nn.Module):
         self.train_prob_self_cond = train_prob_self_cond
         self.seq2seq_unconditional_prob = seq2seq_unconditional_prob
 
-        # Buffers for latent mean and scale values
-        self.register_buffer('latent_mean', torch.tensor([0]*self.latent_dim).to(torch.float32))
-        self.register_buffer('latent_scale', torch.tensor(1).to(torch.float32))
+        # Buffers for per-dimension latent mean and scale values
+        self.register_buffer('latent_mean', torch.zeros(self.latent_dim))
+        self.register_buffer('latent_scale', torch.ones(self.latent_dim))
+        self.register_buffer('stats_count', torch.zeros(1))
 
     def predict_start_from_noise(self, z_t, t, noise, sampling=False):
         time_to_alpha = self.sampling_schedule if sampling else self.train_schedule
@@ -1241,22 +1242,35 @@ class Trainer(object):
                             target_tokens = data['input_ids']
 
                         if self.args.normalize_latent:
-                            if self.step==0 and grad_accum_step==0:
-                                # Stats calculation logic...
-                                if self.using_latent_model:
-                                    latent_vecs = rearrange(latent, 'b s d -> (b s) d')
-                                else:
-                                    mask_for_vecs = source_mask if self.dataset_name == 'privasis_abstraction' else data['attention_mask']
-                                    latent_vecs = torch.cat([latent[i][:torch.sum(mask_for_vecs[i])] for i in range(latent.shape[0])], dim=0)
-                                
-                                self.diffusion.latent_mean = torch.mean(latent_vecs, dim=0)
-                                self.ema.ema_model.latent_mean = self.diffusion.latent_mean
-                                self.diffusion.latent_scale = torch.std(latent_vecs-self.diffusion.latent_mean, unbiased=False).clamp(min=0.1)
-                                self.ema.ema_model.latent_scale = self.diffusion.latent_scale
+                            if self.stats_count < 50:
+                                # Accumulate dimension-wise stats over 50 batches
+                                with torch.no_grad():
+                                    if self.using_latent_model:
+                                        curr_vecs = rearrange(latent, 'b s d -> (b s) d')
+                                    else:
+                                        mask_for_stats = source_mask if self.dataset_name == 'privasis_abstraction' else data['attention_mask']
+                                        curr_vecs = latent[mask_for_stats.bool()]
+                                    
+                                    curr_vecs = curr_vecs[torch.isfinite(curr_vecs).all(dim=1)]
+                                    
+                                    if curr_vecs.shape[0] > 1:
+                                        batch_mean = torch.mean(curr_vecs, dim=0)
+                                        # Dimension-wise standard deviation
+                                        batch_std = torch.std(curr_vecs, dim=0, unbiased=False)
+                                        
+                                        alpha_s = 1.0 / (self.stats_count + 1)
+                                        self.diffusion.latent_mean = (1 - alpha_s) * self.diffusion.latent_mean + alpha_s * batch_mean
+                                        self.diffusion.latent_scale = (1 - alpha_s) * self.diffusion.latent_scale + alpha_s * batch_std.clamp(min=1e-3)
+                                        
+                                        self.ema.ema_model.latent_mean = self.diffusion.latent_mean
+                                        self.ema.ema_model.latent_scale = self.diffusion.latent_scale
+                                        self.stats_count += 1
                             
                             latent = self.diffusion.normalize_latent(latent)
-                            if exists(target_latent):
+                            if exists(target_latent) and (target_latent is not latent):
                                 target_latent = self.diffusion.normalize_latent(target_latent)
+                            elif exists(target_latent):
+                                target_latent = latent
                         
                     seq2seq_cond = None
                     seq2seq_mask = None
@@ -1272,7 +1286,8 @@ class Trainer(object):
                         mask = torch.ones(latent.shape[0], self.num_encoder_latents, dtype=torch.bool).to(device)
                     else:
                         if self.dataset_name == 'privasis_abstraction':
-                            mask = source_mask.bool()
+                            # Use the mask corresponding to the target level if target_latent exists
+                            mask = target_mask.bool() if exists(target_latent) else source_mask.bool()
                         else:
                             mask = data['attention_mask'].bool()
                     if self.decoding_loss and (self.step % self.args.decoding_loss_every == 0):
