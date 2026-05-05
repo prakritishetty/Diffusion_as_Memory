@@ -1189,55 +1189,17 @@ class Trainer(object):
                     data = self.to_device(next(self.data_iter), device)
                     times = None
                     with torch.no_grad():
-                        encoder_outputs = self.bart_model.get_encoder()(input_ids = data['input_ids'], attention_mask = data['attention_mask'])
-                        if self.using_latent_model:
-                            latent = self.bart_model.get_diffusion_latent(encoder_outputs, data['attention_mask'])      
-                        else:                      
-                            latent = encoder_outputs.last_hidden_state
-                        
-                        if self.args.normalize_latent:
-                            if self.step==0 and grad_accum_step==0:
-                                if self.using_latent_model:
-                                    latent_vecs = rearrange(latent, 'b s d -> (b s) d')
-                                else:
-                                    latent_vecs = torch.cat([latent[i][:torch.sum(data['attention_mask'][i])] for i in range(latent.shape[0])], dim=0)
-                                
-                                # Add mean stats to model and EMA wrapper
-                                self.diffusion.latent_mean = torch.mean(latent_vecs, dim=0)
-                                self.ema.ema_model.latent_mean = self.diffusion.latent_mean
-
-                                # Add var stats to model and EMA wrapper
-                                self.diffusion.latent_scale = torch.std(latent_vecs-self.diffusion.latent_mean, unbiased=False)
-
-                                self.ema.ema_model.latent_scale = self.diffusion.latent_scale
-                            latent = self.diffusion.normalize_latent(latent)
-                        
-                        source_latent = latent
-                        target_latent = latent
-                        target_tokens = data['input_ids']
-
                         if self.dataset_name == 'privasis_abstraction':
                             # data['input_ids'] shape is [B, 11, L]
                             # data['num_levels'] shape is [B]
                             
-                            # We need to sample times here to know which level to pick
-                            # Or we can let GaussianDiffusion return the times it sampled
-                            # But GaussianDiffusion currently samples times inside forward.
-                            # To be consistent, let's sample them here.
-                            times = torch.rand(latent.shape[0], device=device)
-                            
-                            # Pick source (L0) and target (Lk)
-                            # input_ids is [B, 11, L]
-                            # abstractions are indices 0..10
-                            
-                            B = latent.shape[0]
-                            L = latent.shape[-2]
-                            D = latent.shape[-1]
+                            B = data['input_ids'].shape[0]
+                            L = data['input_ids'].shape[-1]
                             
                             source_input_ids = data['input_ids'][:, 0, :] # L0
                             source_mask = data['attention_mask'][:, 0, :]
                             
-                            # Recalculate source latent
+                            # Calculate source latent
                             encoder_outputs_0 = self.bart_model.get_encoder()(input_ids = source_input_ids, attention_mask = source_mask)
                             if self.using_latent_model:
                                 source_latent = self.bart_model.get_diffusion_latent(encoder_outputs_0, source_mask)
@@ -1247,13 +1209,15 @@ class Trainer(object):
                             if self.args.normalize_latent:
                                 source_latent = self.diffusion.normalize_latent(source_latent)
 
+                            # sample random times to determine k for each example
+                            if not exists(times):
+                                times = torch.rand(B, device=device)
+                                
                             # Determine k for each example
                             # num_levels includes L0, so abstractions are 0 to num_levels-1
                             k = (times * (data['num_levels'] - 1)).long()
                             
-                            # We need target_latent for each k.
-                            # To avoid N encoder passes, we can batch all unique k's?
-                            # Or just do one batch pass for all selected target levels.
+                            # One batch pass for all selected target levels.
                             target_input_ids = torch.stack([data['input_ids'][i, k[i], :] for i in range(B)])
                             target_mask = torch.stack([data['attention_mask'][i, k[i], :] for i in range(B)])
                             target_tokens = target_input_ids # used for decoder loss
@@ -1267,8 +1231,36 @@ class Trainer(object):
                             if self.args.normalize_latent:
                                 target_latent = self.diffusion.normalize_latent(target_latent)
                             
-                            # Update latent for the next step (it will be passed to diffusion)
                             latent = source_latent
+                        else:
+                            encoder_outputs = self.bart_model.get_encoder()(input_ids = data['input_ids'], attention_mask = data['attention_mask'])
+                            if self.using_latent_model:
+                                latent = self.bart_model.get_diffusion_latent(encoder_outputs, data['attention_mask'])      
+                            else:                      
+                                latent = encoder_outputs.last_hidden_state
+                            
+                            source_latent = latent
+                            target_latent = latent
+                            target_tokens = data['input_ids']
+
+                        if self.args.normalize_latent:
+                            if self.step==0 and grad_accum_step==0:
+                                if self.using_latent_model:
+                                    latent_vecs = rearrange(latent, 'b s d -> (b s) d')
+                                else:
+                                    # Fallback for non-latent models: concatenate valid tokens
+                                    mask_for_vecs = source_mask if self.dataset_name == 'privasis_abstraction' else data['attention_mask']
+                                    latent_vecs = torch.cat([latent[i][:torch.sum(mask_for_vecs[i])] for i in range(latent.shape[0])], dim=0)
+                                
+                                # Add mean stats to model and EMA wrapper
+                                self.diffusion.latent_mean = torch.mean(latent_vecs, dim=0)
+                                self.ema.ema_model.latent_mean = self.diffusion.latent_mean
+
+                                # Add var stats to model and EMA wrapper
+                                self.diffusion.latent_scale = torch.std(latent_vecs-self.diffusion.latent_mean, unbiased=False)
+
+                                self.ema.ema_model.latent_scale = self.diffusion.latent_scale
+                            latent = self.diffusion.normalize_latent(latent)
                         
                     seq2seq_cond = None
                     seq2seq_mask = None
@@ -1346,29 +1338,27 @@ class Trainer(object):
                             for grad_accum_step in range(self.gradient_accumulate_every):
                                 data = self.to_device(next(self.val_iter), device)
                                 
-                                encoder_outputs = self.bart_model.get_encoder()(input_ids = data['input_ids'], attention_mask = data['attention_mask'])
-                                if self.using_latent_model:
-                                    latent = self.bart_model.get_diffusion_latent(encoder_outputs, data['attention_mask'])      
-                                else:                      
-                                    latent = encoder_outputs.last_hidden_state
-                                
-                                if self.args.normalize_latent:
-                                    latent = self.diffusion.normalize_latent(latent)
-                                
-                                seq2seq_cond = None
-                                seq2seq_mask = None
-                                if self.seq2seq and random.random() < (1-self.seq2seq_unconditional_prob):
-                                    with torch.no_grad():
-                                        if self.num_devices > 1:
-                                            seq2seq_cond = self.diffusion.module.context_encoder(input_ids = data['cond_input_ids'], attention_mask = data['cond_attention_mask']).last_hidden_state.float()
-                                        else:
-                                            seq2seq_cond = self.diffusion.context_encoder(input_ids = data['cond_input_ids'], attention_mask = data['cond_attention_mask']).last_hidden_state.float()
-                                    seq2seq_mask = data['cond_attention_mask'].bool()
-                                
-                                if self.using_latent_model:
-                                    mask = torch.ones((latent.shape[0], self.num_encoder_latents), dtype=torch.bool).to(device)
+                                if self.dataset_name == 'privasis_abstraction':
+                                    B = data['input_ids'].shape[0]
+                                    source_input_ids = data['input_ids'][:, 0, :] # L0
+                                    source_mask = data['attention_mask'][:, 0, :]
+                                    encoder_outputs = self.bart_model.get_encoder()(input_ids = source_input_ids, attention_mask = source_mask)
+                                    if self.using_latent_model:
+                                        latent = self.bart_model.get_diffusion_latent(encoder_outputs, source_mask)      
+                                    else:                      
+                                        latent = encoder_outputs.last_hidden_state
+                                    mask = source_mask.bool()
                                 else:
-                                    mask = data['attention_mask'].bool()
+                                    encoder_outputs = self.bart_model.get_encoder()(input_ids = data['input_ids'], attention_mask = data['attention_mask'])
+                                    if self.using_latent_model:
+                                        latent = self.bart_model.get_diffusion_latent(encoder_outputs, data['attention_mask'])      
+                                    else:                      
+                                        latent = encoder_outputs.last_hidden_state
+                                    
+                                    if self.using_latent_model:
+                                        mask = torch.ones((latent.shape[0], self.num_encoder_latents), dtype=torch.bool).to(device)
+                                    else:
+                                        mask = data['attention_mask'].bool()
                                 loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)
                                 loss = loss / self.gradient_accumulate_every
                                 total_val_loss += loss.item()
