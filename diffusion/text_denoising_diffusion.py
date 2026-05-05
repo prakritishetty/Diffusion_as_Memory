@@ -1178,6 +1178,7 @@ class Trainer(object):
         accelerator = self.accelerator
         device = accelerator.device
 
+        decoding_loss_val = 0.
         with tqdm(initial = self.step, total = self.train_num_steps, disable = not accelerator.is_main_process) as pbar:
 
             while self.step < self.train_num_steps:
@@ -1185,7 +1186,6 @@ class Trainer(object):
                 #TODO center and normalize BART latent space with empirical est. of mean/var.
 
                 total_loss = 0.
-                decoding_loss = 0.
                 for grad_accum_step in range(self.gradient_accumulate_every):
                     data = self.to_device(next(self.data_iter), device)
                     times = None
@@ -1291,7 +1291,8 @@ class Trainer(object):
                         else:
                             mask = data['attention_mask'].bool()
                     if self.decoding_loss and (self.step % self.args.decoding_loss_every == 0):
-                        loss, pred_x0, _ = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, return_x_start=True, target_latent=target_latent, times=times)
+                        # DIAGNOSTIC: Also forcing target_latent=latent here
+                        loss, pred_x0, _ = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, return_x_start=True, target_latent=latent, times=times)
                         
                         diffusion_loss_val = loss.item()
 
@@ -1304,22 +1305,22 @@ class Trainer(object):
                         else:
                             decoder_input = pred_x0
                         
-                        # Decoder loss pass (Decoupled from optimization for debugging)
+                        # Decoder loss pass (Restored to optimization)
                         outputs = self.bart_model(encoder_outputs=BaseModelOutput(last_hidden_state=decoder_input), labels=target_tokens)
                         d_loss = outputs.loss
                         
-                        # Monitor it, but DO NOT add it to the backpropagated loss
                         decoding_loss_val = d_loss.item()
                         
-                        # Optimization is now driven ONLY by diffusion MSE
-                        loss = loss 
+                        # Added back to the optimization objective
+                        loss = loss + d_loss * self.args.decoding_loss_weight
                         
                         loss = loss / self.gradient_accumulate_every
                         total_loss += loss.item()
                     else:
-                        loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, target_latent=target_latent, times=times)
+                        # DIAGNOSTIC STEP: Forcing target_latent = latent to test if L0->Lk mapping is the issue
+                        # In normal training this would be target_latent, but we are isolating the spikes.
+                        loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, target_latent=latent, times=times)
                         diffusion_loss_val = loss.item()
-                        decoding_loss_val = 0
                         loss = loss / self.gradient_accumulate_every
                         total_loss += loss.item()
                     self.accelerator.backward(loss)
