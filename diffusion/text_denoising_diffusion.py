@@ -723,7 +723,7 @@ class Trainer(object):
             print(f'Using {self.num_samples} samples for evaluation')
         # Subsample train and val splits for computing language generation during runtime
         
-        self.train_val_dataloader = text_dataset.get_dataloader(args, dataset['train'].select(range(1000)), self.bart_model.config, self.tokenizer, self.max_seq_len, shuffle=False, context_tokenizer=self.context_tokenizer)
+        self.train_val_dataloader = text_dataset.get_dataloader(args, dataset['train'].select(range(min(1000, len(dataset['train'])))), self.bart_model.config, self.tokenizer, self.max_seq_len, shuffle=False, context_tokenizer=self.context_tokenizer)
         if args.resume_training:
             dataset['train'] = dataset['train'].shuffle()
         self.dataloader = text_dataset.get_dataloader(args, self.dataset['train'], self.bart_model.config, self.tokenizer, self.max_seq_len, context_tokenizer=self.context_tokenizer)
