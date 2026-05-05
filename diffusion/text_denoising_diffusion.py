@@ -1304,21 +1304,22 @@ class Trainer(object):
                         else:
                             decoder_input = pred_x0
                         
-                        # Use a separate forward pass for the decoder to avoid messy graph issues
+                        # Decoder loss pass (Decoupled from optimization for debugging)
                         outputs = self.bart_model(encoder_outputs=BaseModelOutput(last_hidden_state=decoder_input), labels=target_tokens)
                         d_loss = outputs.loss
                         
-                        # Safety: clamp decoding loss to prevent explosion
-                        d_loss = torch.clamp(d_loss, max=10.0)
+                        # Monitor it, but DO NOT add it to the backpropagated loss
+                        decoding_loss_val = d_loss.item()
                         
-                        loss = loss + d_loss * self.args.decoding_loss_weight
-                        decoding_loss += d_loss.item()
+                        # Optimization is now driven ONLY by diffusion MSE
+                        loss = loss 
                         
                         loss = loss / self.gradient_accumulate_every
                         total_loss += loss.item()
                     else:
                         loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, target_latent=target_latent, times=times)
                         diffusion_loss_val = loss.item()
+                        decoding_loss_val = 0
                         loss = loss / self.gradient_accumulate_every
                         total_loss += loss.item()
                     self.accelerator.backward(loss)
@@ -1336,7 +1337,7 @@ class Trainer(object):
                     logs = {
                         "loss": total_loss,
                         "diffusion_loss": diffusion_loss_val,
-                        "decoding_loss": decoding_loss,
+                        "decoding_loss": decoding_loss_val,
                         "learning_rate": self.lr_scheduler.get_last_lr()[0],
                         "grad_norm": grad_norm,
                         "step": self.step, 
