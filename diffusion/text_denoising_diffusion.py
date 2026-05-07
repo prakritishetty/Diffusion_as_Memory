@@ -1392,10 +1392,14 @@ class Trainer(object):
                                         mask = torch.ones((latent.shape[0], self.num_encoder_latents), dtype=torch.bool).to(device)
                                     else:
                                         mask = data['attention_mask'].bool()
-                                loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)
+                                seq2seq_cond = None
+                        seq2seq_mask = None
+                        loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)
                                 loss = loss / self.gradient_accumulate_every
                                 total_val_loss += loss.item()
-                                loss = self.ema.ema_model(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)
+                                seq2seq_cond = None
+                        seq2seq_mask = None
+                        loss = self.ema.ema_model(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)
                                 loss = loss / self.gradient_accumulate_every
                                 total_val_ema_loss += loss.item()
 
