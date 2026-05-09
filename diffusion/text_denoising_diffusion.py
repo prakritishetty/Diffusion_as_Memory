@@ -548,17 +548,15 @@ class GaussianDiffusion(nn.Module):
             target = target_latent
             pred = predictions.pred_x_start
         elif self.objective == 'pred_noise':
-            # If target is different from source, we need to calculate the "effective" noise
-            # Standard noise prediction is only valid if target == source.
-            # However, we can still use pred_x0 as the primary output for the loss.
-            # Let's force target calculation if they are different.
-            target = target_latent
-            pred = predictions.pred_x_start
+            # The model predicts noise. Since target_latent might differ from the source txt_latent,
+            # we supervise the model with the "effective" noise that would reconstruct target_latent from z_t.
+            # effective_noise = (z_t - alpha.sqrt() * target_latent) / (1-alpha).sqrt()
+            target = (z_t - alpha.sqrt() * target_latent) / (1-alpha).sqrt().clamp(min=1e-8)
+            pred = predictions.pred_noise
         elif self.objective == 'pred_v':
-            # Standard v prediction also assumes target == source.
-            # We'll use pred_x0 as the fallback for multi-level training.
-            target = target_latent
-            pred = predictions.pred_x_start
+            effective_noise = (z_t - alpha.sqrt() * target_latent) / (1-alpha).sqrt().clamp(min=1e-8)
+            target = alpha.sqrt() * effective_noise - (1-alpha).sqrt() * target_latent
+            pred = predictions.pred_v
             
         loss = self.loss_fn(pred, target, reduction = 'none')
         loss = rearrange([reduce(loss[i][:torch.sum(mask[i])], 'l d -> 1', 'mean') for i in range(txt_latent.shape[0])], 'b 1 -> b 1')
