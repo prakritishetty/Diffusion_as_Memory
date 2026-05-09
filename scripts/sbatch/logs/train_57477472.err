@@ -9,21 +9,22 @@ Loading conda version miniforge3-24.7.1
 wandb: WARNING The anonymous setting has no effect and will be removed in a future version.
 wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/psshetty_umass_edu/.netrc.
 wandb: Currently logged in as: prakritishetty02 (balachandradevarangadi-umass-amherst) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run 53gtiqnl
 wandb: Tracking run with wandb version 0.24.2
-wandb: Run data is saved locally in saved_diff_models/controlled_privasis_diff/wandb/run-20260508_045728-o59js5za
+wandb: Run data is saved locally in ../../saved_diff_models/controlled_privasis_diff/wandb/run-20260509_210044-53gtiqnl
 wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run tough-snowball-38
+wandb: Syncing run azure-bee-52
 wandb: ⭐️ View project at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion
-wandb: 🚀 View run at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion/runs/o59js5za
+wandb: 🚀 View run at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion/runs/53gtiqnl
 Traceback (most recent call last):
   File "../../train_text_diffusion.py", line 260, in <module>
     main(args)
   File "../../train_text_diffusion.py", line 71, in main
     trainer = Trainer(
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 716, in __init__
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 706, in __init__
     dataset = text_dataset.get_dataset(dataset_name,)
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/text_dataset.py", line 63, in get_dataset
-    dataset = load_dataset("json", data_files=data_files)
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/text_dataset.py", line 61, in get_dataset
+    dataset = load_dataset("json", data_files={"train": "privasis_gpt4o_abstraction_1.json"})
   File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/load.py", line 2132, in load_dataset
     builder_instance = load_dataset_builder(
   File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/load.py", line 1853, in load_dataset_builder
@@ -38,16 +39,16 @@ Traceback (most recent call last):
     resolve_pattern(
   File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/data_files.py", line 411, in resolve_pattern
     raise FileNotFoundError(error_msg)
-FileNotFoundError: Unable to find '/gypsum/work1/zamani/prakriti/privasis_baseline/scripts/sbatch/privasis_gpt4o_abstraction.json'
+FileNotFoundError: Unable to find '/gypsum/work1/zamani/prakriti/privasis_baseline/scripts/sbatch/privasis_gpt4o_abstraction_1.json'
 Traceback (most recent call last):
   File "../../train_text_diffusion.py", line 260, in <module>
     main(args)
   File "../../train_text_diffusion.py", line 71, in main
     trainer = Trainer(
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 716, in __init__
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 706, in __init__
     dataset = text_dataset.get_dataset(dataset_name,)
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/text_dataset.py", line 63, in get_dataset
-    dataset = load_dataset("json", data_files=data_files)
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/text_dataset.py", line 61, in get_dataset
+    dataset = load_dataset("json", data_files={"train": "privasis_gpt4o_abstraction_1.json"})
   File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/load.py", line 2132, in load_dataset
     builder_instance = load_dataset_builder(
   File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/load.py", line 1853, in load_dataset_builder
@@ -62,4 +63,4 @@ Traceback (most recent call last):
     resolve_pattern(
   File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/data_files.py", line 411, in resolve_pattern
     raise FileNotFoundError(error_msg)
-FileNotFoundError: Unable to find '/gypsum/work1/zamani/prakriti/privasis_baseline/scripts/sbatch/privasis_gpt4o_abstraction.json'
+FileNotFoundError: Unable to find '/gypsum/work1/zamani/prakriti/privasis_baseline/scripts/sbatch/privasis_gpt4o_abstraction_1.json'
