@@ -564,7 +564,7 @@ class GaussianDiffusion(nn.Module):
         loss = rearrange([reduce(loss[i][:torch.sum(mask[i])], 'l d -> 1', 'mean') for i in range(txt_latent.shape[0])], 'b 1 -> b 1')
 
         if return_x_start:
-            return loss.mean(), predictions.pred_x_start, times
+            return loss.mean(), predictions.pred_x_start, times, z_t
         return loss.mean()
 
 # trainer class
@@ -747,9 +747,14 @@ class Trainer(object):
             probs = torch.tensor([label_counts[idx]/self.dataloader.dataset.num_rows for idx in range(self.diffusion.diffusion_model.num_classes)])
             self.class_categorical = torch.distributions.Categorical(probs=probs)
         
-        # optimizer
+        # Freeze Encoder, Unfreeze Decoder
+        for param in self.bart_model.get_encoder().parameters():
+            param.requires_grad = False
+        for param in self.bart_model.get_decoder().parameters():
+            param.requires_grad = True
 
-        self.opt = optimizer.get_adamw_optimizer(diffusion.parameters(), lr = train_lr, betas = adam_betas, weight_decay=adam_weight_decay)
+        optim_params = list(self.diffusion.parameters()) + list(self.bart_model.get_decoder().parameters())
+        self.opt = optimizer.get_adamw_optimizer(optim_params, lr = train_lr, betas = adam_betas, weight_decay=adam_weight_decay)
 
         # scheduler
 
@@ -1174,6 +1179,122 @@ class Trainer(object):
         print(metrics)
         torch.cuda.empty_cache() 
 
+    @torch.no_grad()
+    def log_forget_recall_table(self):
+        if not self.accelerator.is_main_process:
+            return
+            
+        print("[WandB] Generating Forgetting & Recall Table...")
+        device = self.accelerator.device
+        self.bart_model.eval()
+        self.ema.ema_model.eval()
+        
+        # Take a few samples from validation
+        num_samples = min(5, len(self.dataset['valid']))
+        subset = self.dataset['valid'].select(range(num_samples))
+        dl = text_dataset.get_dataloader(self.args, subset, self.bart_model.config, self.tokenizer, self.max_seq_len, shuffle=False)
+        data = next(iter(dl))
+        data = self.to_device(data, device)
+        
+        B = data['input_ids'].shape[0]
+        if self.dataset_name == 'privasis_abstraction':
+            source_input_ids = data['input_ids'][:, 0, :]
+            source_mask = data['attention_mask'][:, 0, :]
+        else:
+            source_input_ids = data['input_ids']
+            source_mask = data['attention_mask']
+            
+        encoder_outputs = self.bart_model.get_encoder()(input_ids=source_input_ids, attention_mask=source_mask)
+        if self.using_latent_model:
+            x0 = self.bart_model.get_diffusion_latent(encoder_outputs, source_mask)
+        else:
+            x0 = encoder_outputs.last_hidden_state
+            
+        mask = source_mask.bool()
+        
+        forgetting_table = wandb.Table(columns=["Original"] + [f"t={t:.1f}" for t in [0.2, 0.4, 0.6, 0.8, 1.0]])
+        recall_table = wandb.Table(columns=["Noise (t=1.0)"] + [f"t={t:.1f}" for t in [0.8, 0.6, 0.4, 0.2, 0.0]])
+        
+        # Original Texts
+        orig_texts = self.tokenizer.batch_decode(source_input_ids, skip_special_tokens=True)
+        
+        # Forgetting
+        for i in range(B):
+            row = [orig_texts[i]]
+            for t_val in [0.2, 0.4, 0.6, 0.8, 1.0]:
+                times = torch.full((B,), t_val, device=device)
+                alpha = self.diffusion.train_schedule(times)
+                alpha = right_pad_dims_to(x0, alpha)
+                noise = torch.randn_like(x0)
+                z_t = alpha.sqrt() * x0 + (1-alpha).sqrt() * noise
+                
+                # Decode z_t
+                out = self.bart_model.generate(
+                    inputs_embeds=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t),
+                    max_length=64
+                )
+                text = self.tokenizer.decode(out[i], skip_special_tokens=True)
+                row.append(text)
+            forgetting_table.add_data(*row)
+            
+        # Recall
+        z_T = torch.randn_like(x0)
+        timesteps = self.diffusion.get_sampling_timesteps(B, device)
+        z_t = z_T
+        
+        recall_history = {t: [] for t in [1.0, 0.8, 0.6, 0.4, 0.2, 0.0]}
+        
+        for idx, (t, t_next) in enumerate(timesteps):
+            t_ratio = t[0].item()
+            
+            # Snapshots at ~0.8, 0.6, 0.4, 0.2
+            for target_t in [0.8, 0.6, 0.4, 0.2]:
+                if abs(t_ratio - target_t) < 1.0/self.diffusion.sampling_timesteps:
+                    out = self.bart_model.generate(
+                        inputs_embeds=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t),
+                        max_length=64
+                    )
+                    texts = self.tokenizer.batch_decode(out, skip_special_tokens=True)
+                    recall_history[target_t] = texts
+            
+            # Denoise step
+            model_output = self.diffusion.diffusion_model_predictions(z_t, mask, t, class_id=None, sampling=True)
+            alpha = self.diffusion.sampling_schedule(t)
+            alpha_next = self.diffusion.sampling_schedule(t_next)
+            alpha, alpha_next = map(partial(right_pad_dims_to, z_t), (alpha, alpha_next))
+            alpha_now = alpha/alpha_next
+            eps = model_output.pred_noise
+            if t_next[0] <= 0:
+                z_t = model_output.pred_x_start
+            else:
+                noise = torch.randn_like(z_t)
+                z_t = 1/alpha_now.sqrt() * (z_t - (1-alpha_now)/(1-alpha).sqrt() * eps) + torch.sqrt(1 - alpha_now) * noise
+                
+        # Final output
+        out = self.bart_model.generate(
+            inputs_embeds=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t),
+            max_length=64
+        )
+        recall_history[0.0] = self.tokenizer.batch_decode(out, skip_special_tokens=True)
+        
+        # Initial noise output
+        out = self.bart_model.generate(
+            inputs_embeds=z_T if not self.using_latent_model else self.bart_model.get_decoder_input(z_T),
+            max_length=64
+        )
+        recall_history[1.0] = self.tokenizer.batch_decode(out, skip_special_tokens=True)
+        
+        for i in range(B):
+            row = [recall_history[t][i] if len(recall_history[t])>i else "" for t in [1.0, 0.8, 0.6, 0.4, 0.2, 0.0]]
+            recall_table.add_data(*row)
+            
+        wandb.log({
+            "Forgetting_Table": forgetting_table,
+            "Recall_Table": recall_table
+        }, step=self.step)
+        
+        self.bart_model.train()
+
     def train(self):
         accelerator = self.accelerator
         device = accelerator.device
@@ -1300,18 +1421,18 @@ class Trainer(object):
                         else:
                             mask = data['attention_mask'].bool()
                     if self.decoding_loss and (self.step % self.args.decoding_loss_every == 0):
-                        loss, pred_x0, _ = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, return_x_start=True, target_latent=target_latent, times=times)
+                        loss, pred_x0, _, z_t = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask, return_x_start=True, target_latent=target_latent, times=times)
                         
                         diffusion_loss_val = loss.item()
 
                         if self.args.normalize_latent:
-                            pred_x0 = self.diffusion.unnormalize_latent(pred_x0)
+                            z_t = self.diffusion.unnormalize_latent(z_t)
                         
-                        # Decoder loss
+                        # Decoder loss on z_t
                         if self.latent_model_path:
-                            decoder_input = self.bart_model.get_decoder_input(pred_x0)
+                            decoder_input = self.bart_model.get_decoder_input(z_t)
                         else:
-                            decoder_input = pred_x0
+                            decoder_input = z_t
                         
                         # Decoder loss pass (Restored to optimization)
                         outputs = self.bart_model(encoder_outputs=BaseModelOutput(last_hidden_state=decoder_input), labels=target_tokens)
@@ -1361,7 +1482,11 @@ class Trainer(object):
                     self.ema.to(device)
                     self.ema.update()
 
-                    # Log to WandB
+                    # Log to WandB Tables
+                    if self.step % 50 == 0:
+                        self.log_forget_recall_table()
+
+                    # Validation
                     if self.step % 50 == 0:
                         self.diffusion.eval()
                         self.ema.ema_model.eval()
@@ -1393,13 +1518,13 @@ class Trainer(object):
                                     else:
                                         mask = data['attention_mask'].bool()
                                 seq2seq_cond = None
-                        seq2seq_mask = None
-                        loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)
+                                seq2seq_mask = None
+                                loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)
                                 loss = loss / self.gradient_accumulate_every
                                 total_val_loss += loss.item()
                                 seq2seq_cond = None
-                        seq2seq_mask = None
-                        loss = self.ema.ema_model(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)
+                                seq2seq_mask = None
+                                loss = self.ema.ema_model(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)
                                 loss = loss / self.gradient_accumulate_every
                                 total_val_ema_loss += loss.item()
 

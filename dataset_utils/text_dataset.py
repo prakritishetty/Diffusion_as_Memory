@@ -57,6 +57,16 @@ def get_dataset(dataset_name, metadata=False, synthetic_train_path=None):
     elif dataset_name == 'privasis':
         dataset = load_dataset('nvidia/Privasis-Zero', 'corpus')
         dataset = process_privasis_dataset(dataset)
+    elif dataset_name == 'privasis_abstraction':
+        dataset = load_dataset("json", data_files={"train": "privasis_gpt4o_abstraction_1.json"})
+        train_test_ds = dataset['train'].train_test_split(test_size=0.1, seed=42)
+        train_val_ds = train_test_ds['train'].train_test_split(test_size=0.1, seed=42)
+        from datasets import DatasetDict
+        dataset = DatasetDict({
+            'train': train_val_ds['train'],
+            'valid': train_val_ds['test'],
+            'test': train_test_ds['test']
+        })
     else:
         raise NotImplementedError
     return dataset
@@ -166,6 +176,11 @@ def get_dataloader(args, dataset, model_config, tokenizer, max_seq_len, mode='di
                 model_inputs[f'cond_{k}'] = cond_inputs[k]
 
             return model_inputs
+        elif mode == 'diffusion' and args.dataset_name == 'privasis_abstraction':
+            all_texts = [example['x']] + example['xt']
+            model_inputs = tokenizer(all_texts, padding="max_length", truncation=True, max_length=max_seq_len)
+            model_inputs['num_levels'] = len(all_texts)
+            return model_inputs
         else:
             text = example["text"]
         return tokenizer(text, padding="max_length", truncation=True, max_length=max_seq_len)
@@ -181,6 +196,8 @@ def get_dataloader(args, dataset, model_config, tokenizer, max_seq_len, mode='di
     
     if args.dataset_name in {'xsum', 'qqp'} or 'wmt14' in args.dataset_name:
         dataset = dataset.map(tokenization, remove_columns=['text', 'context'], batched=True, num_proc=None)
+    elif args.dataset_name == 'privasis_abstraction':
+        dataset = dataset.map(tokenization, remove_columns=['x', 'xt', 'id'], batched=False)
     else:
         dataset = dataset.map(tokenization, remove_columns='text')
             
