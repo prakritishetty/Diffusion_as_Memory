@@ -1319,6 +1319,9 @@ class Trainer(object):
 
                 total_loss = 0.
                 did_backward = False
+                diffusion_loss_val = 0.0
+                decoding_loss_val = 0.0
+                grad_norm = 0.0
                 for grad_accum_step in range(self.gradient_accumulate_every):
                     data = self.to_device(next(self.data_iter), device)
                     times = None
