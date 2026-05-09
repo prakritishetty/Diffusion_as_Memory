@@ -138,6 +138,10 @@ def main():
                 print(f"Batch failed after retries, skipping: {e}")
             
             current_batch = []
+        
+        if current_batch:
+            print(f"Processing final batch of {len(current_batch)}...")
+            process_and_save_batch(current_batch, all_processed_data, OUTPUT_FILE)
 
     # Final Log to W&B
     df_rows = []
@@ -153,6 +157,15 @@ def main():
     
     print(f"Done! Total {len(all_processed_data)} samples saved to {OUTPUT_FILE}.")
     wandb.finish()
+
+def process_and_save_batch(batch, data_list, filename):
+    try:
+        processed_batch = generate_abstractions_batch(batch)
+        data_list.extend(processed_batch)
+        with open(filename, "w") as f:
+            json.dump(data_list, f, indent=2)
+    except Exception as e:
+        print(f"Batch failed: {e}")
 
 if __name__ == "__main__":
     main()
