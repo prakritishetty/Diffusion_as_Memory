@@ -178,8 +178,16 @@ def get_dataloader(args, dataset, model_config, tokenizer, max_seq_len, mode='di
             return model_inputs
         elif mode == 'diffusion' and args.dataset_name == 'privasis_abstraction':
             all_texts = [example['x']] + example['xt']
+            num_levels = len(all_texts)
+            MAX_LEVELS = 15
+            if num_levels < MAX_LEVELS:
+                all_texts.extend([all_texts[-1]] * (MAX_LEVELS - num_levels))
+            elif num_levels > MAX_LEVELS:
+                all_texts = all_texts[:MAX_LEVELS]
+                num_levels = MAX_LEVELS
+                
             model_inputs = tokenizer(all_texts, padding="max_length", truncation=True, max_length=max_seq_len)
-            model_inputs['num_levels'] = len(all_texts)
+            model_inputs['num_levels'] = num_levels
             return model_inputs
         else:
             text = example["text"]
