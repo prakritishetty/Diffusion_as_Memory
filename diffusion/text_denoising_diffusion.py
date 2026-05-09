@@ -1341,6 +1341,7 @@ class Trainer(object):
                     data = self.to_device(next(self.data_iter), device)
                     times = None
                     with torch.no_grad():
+                        self.bart_model.get_encoder().eval() # Force eval mode to disable dropout!
                         if self.dataset_name == 'privasis_abstraction':
                             # data['input_ids'] shape is [B, 11, L]
                             # data['num_levels'] shape is [B]
