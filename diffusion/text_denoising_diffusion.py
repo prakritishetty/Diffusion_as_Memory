@@ -886,25 +886,26 @@ class Trainer(object):
 
         # Extract references
         reference_texts = {}
-        if exists(class_id):
+        text_col = 'text' if 'text' in self.dataset['valid'].column_names else 'x'
+        if self.class_conditional:
             for filter_class_id in range(self.diffusion.diffusion_model.num_classes):
                 filtered_dataset = self.dataset.filter(lambda example: example["label"]==filter_class_id)
                 if test:
-                    reference_texts[f'ref{filter_class_id}_test'] = filtered_dataset['test']['text']
+                    reference_texts[f'ref{filter_class_id}_test'] = filtered_dataset['test'][text_col]
                     continue
-                reference_texts[f'ref{filter_class_id}_val'] = filtered_dataset['valid']['text']
-                reference_texts[f'ref{filter_class_id}_train'] = filtered_dataset['train']['text']
+                reference_texts[f'ref{filter_class_id}_val'] = filtered_dataset['valid'][text_col]
+                reference_texts[f'ref{filter_class_id}_train'] = filtered_dataset['train'][text_col]
             
             for key, reference_text in reference_texts.items():
                 num_samples = min(num_samples, len(reference_text))
             reference_texts = {k: v[:num_samples] for k, v in reference_texts.items()}
         else:
             if test:
-                reference_texts[f'test'] = self.dataset['test']['text'][:num_samples]
-                reference_texts['train'] = self.dataset['train']['text'][:num_samples]
+                reference_texts[f'test'] = self.dataset['test'][text_col][:num_samples]
+                reference_texts['train'] = self.dataset['train'][text_col][:num_samples]
             else:
-                reference_texts['val'] = self.dataset['valid']['text'][:num_samples]
-                reference_texts['train'] = self.dataset['train']['text'][:num_samples]
+                reference_texts['val'] = self.dataset['valid'][text_col][:num_samples]
+                reference_texts['train'] = self.dataset['train'][text_col][:num_samples]
 
         milestone = self.step // self.save_and_sample_every
         # Stores generation outputs for each strategy
@@ -1237,6 +1238,13 @@ class Trainer(object):
                     max_length=64
                 )
                 text = self.tokenizer.decode(out[i], skip_special_tokens=True)
+                
+                if self.dataset_name == 'privasis_abstraction':
+                    target_level = int(t_val * (data['num_levels'][i].item() - 1))
+                    target_input_ids = data['input_ids'][i, target_level, :]
+                    target_text = self.tokenizer.decode(target_input_ids, skip_special_tokens=True)
+                    text = f"Gen: {text}\n---\nTgt: {target_text}"
+                    
                 row.append(text)
             forgetting_table.add_data(*row)
             
@@ -1296,7 +1304,15 @@ class Trainer(object):
         recall_history[1.0] = self.tokenizer.batch_decode(out, skip_special_tokens=True)
         
         for i in range(B):
-            row = [recall_history[t][i] if len(recall_history[t])>i else "" for t in [1.0, 0.8, 0.6, 0.4, 0.2, 0.0]]
+            row = []
+            for t_val in [1.0, 0.8, 0.6, 0.4, 0.2, 0.0]:
+                text = recall_history[t_val][i] if len(recall_history[t_val])>i else ""
+                if self.dataset_name == 'privasis_abstraction':
+                    target_level = int(t_val * (data['num_levels'][i].item() - 1))
+                    target_input_ids = data['input_ids'][i, target_level, :]
+                    target_text = self.tokenizer.decode(target_input_ids, skip_special_tokens=True)
+                    text = f"Gen: {text}\n---\nTgt: {target_text}"
+                row.append(text)
             recall_table.add_data(*row)
             
         wandb.log({
