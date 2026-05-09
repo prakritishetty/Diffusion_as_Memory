@@ -839,10 +839,11 @@ class Trainer(object):
 
     def log_reference_metrics(self, test=False):
         accelerator = self.accelerator
+        text_col = 'text' if 'text' in self.dataset['valid'].column_names else 'x'
         if test:
-            train_subset = self.dataset['train']['text'][:self.num_samples]
-            train_subset2 = self.dataset['train']['text'][self.num_samples:(2*self.num_samples)] 
-            test_subset = self.dataset['test']['text'][:self.num_samples]
+            train_subset = self.dataset['train'][text_col][:self.num_samples]
+            train_subset2 = self.dataset['train'][text_col][self.num_samples:(2*self.num_samples)] 
+            test_subset = self.dataset['test'][text_col][:self.num_samples]
             self.reference_dict['reference/test_perplexity'] = evaluation.compute_perplexity(test_subset)
             for mauve_model_id in ["gpt2-large"]:
                 self.reference_dict[f'reference/{mauve_model_id}_train_test_mauve'], _ = evaluation.compute_mauve(train_subset, test_subset, mauve_model_id)
@@ -850,13 +851,13 @@ class Trainer(object):
                 ngram_metrics = evaluation.compute_diversity(test_subset)
             for k, v in ngram_metrics.items():
                 self.reference_dict[f"reference/test_{k}"] = v
-            self.reference_dict[f"reference/test_memorization"] = evaluation.compute_memorization(test_subset, self.dataset['train']['text'])
+            self.reference_dict[f"reference/test_memorization"] = evaluation.compute_memorization(test_subset, self.dataset['train'][text_col])
             self.reference_dict['reference/test_unique_wordcount'] = evaluation.compute_wordcount(test_subset)
             return
 
-        val_subset = self.dataset['valid']['text'][:self.num_samples]
-        train_subset = self.dataset['train']['text'][:self.num_samples]
-        train_subset2 = self.dataset['train']['text'][self.num_samples:(2*self.num_samples)] 
+        val_subset = self.dataset['valid'][text_col][:self.num_samples]
+        train_subset = self.dataset['train'][text_col][:self.num_samples]
+        train_subset2 = self.dataset['train'][text_col][self.num_samples:(2*self.num_samples)] 
         self.reference_dict['reference/train_perplexity'] = evaluation.compute_perplexity(train_subset)
         self.reference_dict['reference/val_perplexity'] = evaluation.compute_perplexity(val_subset)
         for mauve_model_id in ["gpt2-large"]:
@@ -868,7 +869,7 @@ class Trainer(object):
         ngram_metrics = evaluation.compute_diversity(train_subset)
         for k, v in ngram_metrics.items():
             self.reference_dict[f"reference/train_{k}"] = v
-        self.reference_dict[f"reference/val_memorization"] = evaluation.compute_memorization(val_subset, self.dataset['train']['text'])
+        self.reference_dict[f"reference/val_memorization"] = evaluation.compute_memorization(val_subset, self.dataset['train'][text_col])
         self.reference_dict['reference/train_unique_wordcount'] = evaluation.compute_wordcount(train_subset)
         self.reference_dict['reference/val_unique_wordcounts'] = evaluation.compute_wordcount(val_subset)
         torch.cuda.empty_cache() 
