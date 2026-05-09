@@ -1,0 +1,90 @@
+Removing conda version miniforge3-24.7.1
+No conda package cache directories found outside your home directory. To
+prevent conda from filling up your home directory, you can create a new
+directory at `/work/pi_<your_pi_name>/$USER/.conda/pkgs` and reload the module. 
+No conda environment directories found outside your home directory. To prevent
+conda from filling up your home directory, you can create a new directory at
+`/work/pi_<your_pi_name>/$USER/.conda/envs` and reload the module. 
+Loading conda version miniforge3-24.7.1
+wandb: WARNING The anonymous setting has no effect and will be removed in a future version.
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/psshetty_umass_edu/.netrc.
+wandb: Currently logged in as: prakritishetty02 (balachandradevarangadi-umass-amherst) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.24.2
+wandb: Run data is saved locally in ../../saved_diff_models/controlled_privasis_diff/wandb/run-20260509_210726-yrpah4qr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vibrant-darkness-54
+wandb: ⭐️ View project at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion
+wandb: 🚀 View run at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion/runs/yrpah4qr
+Map:   0%|          | 0/163 [00:00<?, ? examples/s]Map:  13%|█▎        | 21/163 [00:00<00:00, 204.71 examples/s]Map:  31%|███       | 50/163 [00:00<00:00, 243.53 examples/s]Map:  52%|█████▏    | 85/163 [00:00<00:00, 286.89 examples/s]Map:  72%|███████▏  | 117/163 [00:00<00:00, 294.84 examples/s]Map:  91%|█████████▏| 149/163 [00:00<00:00, 246.18 examples/s]Map: 100%|██████████| 163/163 [00:00<00:00, 227.90 examples/s]
+/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Map:   0%|          | 0/163 [00:00<?, ? examples/s]Map:  16%|█▌        | 26/163 [00:00<00:00, 175.07 examples/s]Map:  34%|███▍      | 56/163 [00:00<00:00, 232.55 examples/s]Map:  51%|█████     | 83/163 [00:00<00:00, 244.98 examples/s]Map:  74%|███████▍  | 121/163 [00:00<00:00, 288.35 examples/s]Map:  94%|█████████▍| 153/163 [00:00<00:00, 296.74 examples/s]Map: 100%|██████████| 163/163 [00:00<00:00, 239.64 examples/s]
+Map:   0%|          | 0/19 [00:00<?, ? examples/s]Map: 100%|██████████| 19/19 [00:00<00:00, 196.44 examples/s]
+Map:   0%|          | 0/21 [00:00<?, ? examples/s]Map: 100%|██████████| 21/21 [00:00<00:00, 219.90 examples/s]
+  0%|          | 0/60000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Warm-up Stats: 1/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 1/100:   0%|          | 0/60000 [00:01<?, ?it/s]
+Map:   0%|          | 0/5 [00:00<?, ? examples/s][AMap: 100%|██████████| 5/5 [00:00<00:00, 123.08 examples/s]
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Warm-up Stats: 1/100:   0%|          | 0/60000 [00:37<?, ?it/s]
+Traceback (most recent call last):
+  File "../../train_text_diffusion.py", line 260, in <module>
+    main(args)
+  File "../../train_text_diffusion.py", line 125, in main
+    trainer.train()
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 1542, in train
+    logs["val_loss"] = total_val_loss
+UnboundLocalError: local variable 'logs' referenced before assignment
+Traceback (most recent call last):
+  File "../../train_text_diffusion.py", line 260, in <module>
+    main(args)
+  File "../../train_text_diffusion.py", line 125, in main
+    trainer.train()
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 1542, in train
+    logs["val_loss"] = total_val_loss
+UnboundLocalError: local variable 'logs' referenced before assignment
