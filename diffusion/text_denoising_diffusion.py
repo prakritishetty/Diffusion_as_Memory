@@ -1229,8 +1229,11 @@ class Trainer(object):
                 z_t = alpha.sqrt() * x0 + (1-alpha).sqrt() * noise
                 
                 # Decode z_t
+                from transformers.modeling_outputs import BaseModelOutput
+                encoder_output = BaseModelOutput(last_hidden_state=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t))
                 out = self.bart_model.generate(
-                    inputs_embeds=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t),
+                    encoder_outputs=encoder_output,
+                    attention_mask=mask.clone(),
                     max_length=64
                 )
                 text = self.tokenizer.decode(out[i], skip_special_tokens=True)
@@ -1239,7 +1242,7 @@ class Trainer(object):
             
         # Recall
         z_T = torch.randn_like(x0)
-        timesteps = self.diffusion.get_sampling_timesteps(B, device)
+        timesteps = self.diffusion.get_sampling_timesteps(B, device=device)
         z_t = z_T
         
         recall_history = {t: [] for t in [1.0, 0.8, 0.6, 0.4, 0.2, 0.0]}
@@ -1250,8 +1253,11 @@ class Trainer(object):
             # Snapshots at ~0.8, 0.6, 0.4, 0.2
             for target_t in [0.8, 0.6, 0.4, 0.2]:
                 if abs(t_ratio - target_t) < 1.0/self.diffusion.sampling_timesteps:
+                    from transformers.modeling_outputs import BaseModelOutput
+                    encoder_output = BaseModelOutput(last_hidden_state=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t))
                     out = self.bart_model.generate(
-                        inputs_embeds=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t),
+                        encoder_outputs=encoder_output,
+                        attention_mask=mask.clone(),
                         max_length=64
                     )
                     texts = self.tokenizer.batch_decode(out, skip_special_tokens=True)
@@ -1271,15 +1277,20 @@ class Trainer(object):
                 z_t = 1/alpha_now.sqrt() * (z_t - (1-alpha_now)/(1-alpha).sqrt() * eps) + torch.sqrt(1 - alpha_now) * noise
                 
         # Final output
+        from transformers.modeling_outputs import BaseModelOutput
+        encoder_output = BaseModelOutput(last_hidden_state=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t))
         out = self.bart_model.generate(
-            inputs_embeds=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t),
+            encoder_outputs=encoder_output,
+            attention_mask=mask.clone(),
             max_length=64
         )
         recall_history[0.0] = self.tokenizer.batch_decode(out, skip_special_tokens=True)
         
         # Initial noise output
+        encoder_output_T = BaseModelOutput(last_hidden_state=z_T if not self.using_latent_model else self.bart_model.get_decoder_input(z_T))
         out = self.bart_model.generate(
-            inputs_embeds=z_T if not self.using_latent_model else self.bart_model.get_decoder_input(z_T),
+            encoder_outputs=encoder_output_T,
+            attention_mask=mask.clone(),
             max_length=64
         )
         recall_history[1.0] = self.tokenizer.batch_decode(out, skip_special_tokens=True)
