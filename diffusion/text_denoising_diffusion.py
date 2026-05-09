@@ -1478,6 +1478,7 @@ class Trainer(object):
                     if self.diffusion.stats_count < 100:
                         pbar.set_description(f"Warm-up Stats: {int(self.diffusion.stats_count.item())}/100")
                         pbar.update(0)
+                        continue
                     else:
                         logs = {
                             "loss": total_loss,
