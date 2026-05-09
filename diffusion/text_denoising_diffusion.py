@@ -956,7 +956,7 @@ class Trainer(object):
             ngram_metrics = evaluation.compute_diversity(all_texts_list)
             for k, v in ngram_metrics.items():
                 metrics[f"model/{strategy}/{class_id_prefix}{k}"] = v
-            metrics[f"model/{strategy}/{class_id_prefix}memorization"] = evaluation.compute_memorization(all_texts_list, self.dataset['train']['text'])
+            metrics[f"model/{strategy}/{class_id_prefix}memorization"] = evaluation.compute_memorization(all_texts_list, self.dataset['train'][text_col])
             table = wandb.Table( 
                 columns=['Samples'], data=[[text] for text in all_texts_list])
             accelerator.log({f"model/{strategy}/{class_id_prefix}samples": table}, self.step)
