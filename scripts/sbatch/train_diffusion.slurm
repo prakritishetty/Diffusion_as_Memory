@@ -17,9 +17,9 @@ conda activate latent-lang-diff
 mkdir -p logs
 
 echo "Starting Diffusion Training..."
-python train_text_diffusion.py \
+python ../../train_text_diffusion.py \
     --dataset_name privasis_abstraction \
-    --output_dir saved_diff_models/controlled_privasis_diff \
+    --output_dir ../../saved_diff_models/controlled_privasis_diff \
     --num_train_steps 60000 \
     --train_batch_size 16 \
     --max_seq_len 64 \
