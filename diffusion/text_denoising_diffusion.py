@@ -1318,6 +1318,7 @@ class Trainer(object):
                 #TODO center and normalize BART latent space with empirical est. of mean/var.
 
                 total_loss = 0.
+                did_backward = False
                 for grad_accum_step in range(self.gradient_accumulate_every):
                     data = self.to_device(next(self.data_iter), device)
                     times = None
@@ -1462,8 +1463,9 @@ class Trainer(object):
                         loss = loss / self.gradient_accumulate_every
                         total_loss += loss.item()
                     self.accelerator.backward(loss)
+                    did_backward = True
 
-                if self.diffusion.stats_count >= 100:
+                if did_backward:
                     accelerator.clip_grad_norm_(self.diffusion.parameters(), self.args.clip_grad_norm)
                     grad_norm = compute_grad_norm(self.diffusion.parameters())
                     accelerator.wait_for_everyone()
