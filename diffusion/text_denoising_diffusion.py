@@ -1467,7 +1467,14 @@ class Trainer(object):
                             decoder_input = z_t
                         
                         # Decoder loss pass (Restored to optimization)
-                        outputs = self.bart_model(encoder_outputs=BaseModelOutput(last_hidden_state=decoder_input), labels=target_tokens)
+                        labels = target_tokens.clone()
+                        labels[labels == self.tokenizer.pad_token_id] = -100
+                        
+                        outputs = self.bart_model(
+                            encoder_outputs=BaseModelOutput(last_hidden_state=decoder_input), 
+                            attention_mask=mask.long(),
+                            labels=labels
+                        )
                         d_loss = outputs.loss
                         
                         decoding_loss_val = d_loss.item()
