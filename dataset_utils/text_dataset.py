@@ -58,7 +58,15 @@ def get_dataset(dataset_name, metadata=False, synthetic_train_path=None):
         dataset = load_dataset('nvidia/Privasis-Zero', 'corpus')
         dataset = process_privasis_dataset(dataset)
     elif dataset_name == 'privasis_abstraction':
-        dataset = load_dataset("json", data_files={"train": "privasis_gpt4o_abstraction_1.json"})
+        # Allow overriding data file via env var so we can switch datasets without code changes
+        data_file = os.environ.get("PRIVASIS_DATA_FILE", "privasis_gpt4o_abstraction_10k.json")
+        # Fall back to original small file if new file doesn't exist yet
+        if not os.path.exists(data_file):
+            data_file = "privasis_gpt4o_abstraction_1.json"
+            print(f"[WARN] 10k file not found, falling back to: {data_file}")
+        else:
+            print(f"[INFO] Loading dataset from: {data_file}")
+        dataset = load_dataset("json", data_files={"train": data_file})
         train_test_ds = dataset['train'].train_test_split(test_size=0.1, seed=42)
         train_val_ds = train_test_ds['train'].train_test_split(test_size=0.1, seed=42)
         from datasets import DatasetDict
