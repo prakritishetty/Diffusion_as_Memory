@@ -1,0 +1,41 @@
+Removing conda version miniforge3-24.7.1
+No conda package cache directories found outside your home directory. To
+prevent conda from filling up your home directory, you can create a new
+directory at `/work/pi_<your_pi_name>/$USER/.conda/pkgs` and reload the module. 
+No conda environment directories found outside your home directory. To prevent
+conda from filling up your home directory, you can create a new directory at
+`/work/pi_<your_pi_name>/$USER/.conda/envs` and reload the module. 
+Loading conda version miniforge3-24.7.1
+wandb: WARNING The anonymous setting has no effect and will be removed in a future version.
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/psshetty_umass_edu/.netrc.
+wandb: Currently logged in as: prakritishetty02 (balachandradevarangadi-umass-amherst) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.24.2
+wandb: Run data is saved locally in ../../saved_diff_models/controlled_privasis_diff/wandb/run-20260510_131919-d8kx7xh5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run honest-hill-77
+wandb: ⭐️ View project at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion
+wandb: 🚀 View run at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion/runs/d8kx7xh5
+Traceback (most recent call last):
+  File "../../train_text_diffusion.py", line 260, in <module>
+    main(args)
+  File "../../train_text_diffusion.py", line 71, in main
+    trainer = Trainer(
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 704, in __init__
+    dataset = text_dataset.get_dataset(dataset_name,)
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/text_dataset.py", line 64, in get_dataset
+    if not os.path.exists(data_file):
+  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/genericpath.py", line 19, in exists
+    os.stat(path)
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+Traceback (most recent call last):
+  File "../../train_text_diffusion.py", line 260, in <module>
+    main(args)
+  File "../../train_text_diffusion.py", line 71, in main
+    trainer = Trainer(
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 704, in __init__
+    dataset = text_dataset.get_dataset(dataset_name,)
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/text_dataset.py", line 64, in get_dataset
+    if not os.path.exists(data_file):
+  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/genericpath.py", line 19, in exists
+    os.stat(path)
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not NoneType

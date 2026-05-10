@@ -1,0 +1,34 @@
+No conda package cache directories found outside your home directory. To
+prevent conda from filling up your home directory, you can create a new
+directory at `/work/pi_<your_pi_name>/$USER/.conda/pkgs` and reload the module. 
+No conda environment directories found outside your home directory. To prevent
+conda from filling up your home directory, you can create a new directory at
+`/work/pi_<your_pi_name>/$USER/.conda/envs` and reload the module. 
+Loading conda version miniforge3-24.7.1
+Traceback (most recent call last):
+  File "../../train_text_diffusion.py", line 10, in <module>
+    from diffusion.text_denoising_diffusion import GaussianDiffusion, Trainer
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 47, in <module>
+    from evaluation import evaluation
+  File "/gypsum/work1/zamani/prakriti/privasis_baseline/evaluation/evaluation.py", line 7, in <module>
+    import spacy
+  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/spacy/__init__.py", line 14, in <module>
+    from . import pipeline  # noqa: F401
+  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/spacy/pipeline/__init__.py", line 1, in <module>
+    from .attributeruler import AttributeRuler
+  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/spacy/pipeline/attributeruler.py", line 6, in <module>
+    from .pipe import Pipe
+  File "spacy/pipeline/pipe.pyx", line 1, in init spacy.pipeline.pipe
+  File "spacy/vocab.pyx", line 1, in init spacy.vocab
+  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/spacy/tokens/__init__.py", line 1, in <module>
+    from .doc import Doc
+  File "spacy/tokens/doc.pyx", line 36, in init spacy.tokens.doc
+  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/spacy/schemas.py", line 6, in <module>
+    from pydantic import StrictStr, StrictInt, StrictFloat, StrictBool, ConstrainedStr
+  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/pydantic/__init__.py", line 412, in __getattr__
+    return _getattr_migration(attr_name)
+  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/pydantic/_migration.py", line 302, in wrapper
+    raise PydanticImportError(f'`{import_path}` has been removed in V2.')
+pydantic.errors.PydanticImportError: `pydantic:ConstrainedStr` has been removed in V2.
+
+For further information visit https://errors.pydantic.dev/2.10/u/import-error
