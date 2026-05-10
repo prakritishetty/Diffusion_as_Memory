@@ -1352,6 +1352,13 @@ class Trainer(object):
         device = accelerator.device
 
         decoding_loss_val = 0.
+        # When resuming, latent stats are already computed - skip warm-up
+        if self.step > 0 and self.diffusion.stats_count < 100:
+            print(f"[Resume] Skipping warm-up, forcing stats_count=100 (resuming from step {self.step})")
+            self.diffusion.stats_count = torch.tensor(100, dtype=self.diffusion.stats_count.dtype,
+                                                       device=self.diffusion.stats_count.device)
+            if hasattr(self, 'ema'):
+                self.ema.ema_model.stats_count = self.diffusion.stats_count
         with tqdm(initial = self.step, total = self.train_num_steps, disable = not accelerator.is_main_process) as pbar:
 
             while self.step < self.train_num_steps:
@@ -1360,9 +1367,12 @@ class Trainer(object):
 
                 total_loss = 0.
                 did_backward = False
-                diffusion_loss_val = 0.0
                 decoding_loss_val = 0.0
+                diffusion_loss_val = 0.0
                 grad_norm = 0.0
+                # NOTE: decoding_loss_val persists from previous step so tqdm shows last real value
+                if not hasattr(self, '_last_decoding_loss'):
+                    self._last_decoding_loss = 0.0
                 for grad_accum_step in range(self.gradient_accumulate_every):
                     data = self.to_device(next(self.data_iter), device)
                     times = None
@@ -1503,6 +1513,7 @@ class Trainer(object):
                         d_loss = outputs.loss
                         
                         decoding_loss_val = d_loss.item()
+                        self._last_decoding_loss = decoding_loss_val
                         
                         # Added back to the optimization objective
                         loss = loss + d_loss * self.args.decoding_loss_weight
@@ -1519,8 +1530,7 @@ class Trainer(object):
 
                 if did_backward:
                     optim_params = list(self.diffusion.parameters())
-                    if self.decoding_loss:
-                        optim_params += list(self.bart_model.get_decoder().parameters())
+                    # BART decoder is frozen; only clip diffusion params
                     accelerator.clip_grad_norm_(optim_params, self.args.clip_grad_norm)
                     grad_norm = compute_grad_norm(self.diffusion.parameters())
                     accelerator.wait_for_everyone()
@@ -1540,7 +1550,7 @@ class Trainer(object):
                         logs = {
                             "loss": total_loss,
                             "diffusion_loss": diffusion_loss_val,
-                            "decoding_loss": decoding_loss_val,
+                            "decoding_loss": self._last_decoding_loss,  # Show last real value, not 0
                             "learning_rate": self.lr_scheduler.get_last_lr()[0],
                             "grad_norm": grad_norm if 'grad_norm' in locals() else 0,
                             "step": self.step, 
