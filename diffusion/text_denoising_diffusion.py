@@ -933,7 +933,7 @@ class Trainer(object):
                         attention_mask = None
                         encoder_output = BaseModelOutput(last_hidden_state=self.bart_model.get_decoder_input(latents.clone()))
                     else:
-                        attention_mask = mask.clone()
+                        attention_mask = mask.long()
                         encoder_output = BaseModelOutput(last_hidden_state=latents.clone())
                     sample_ids = self.bart_model.generate(encoder_outputs=encoder_output, attention_mask=attention_mask, **kwargs)
                     texts_list = [self.tokenizer.decode(g, skip_special_tokens=True, clean_up_tokenization_spaces=True) for g in sample_ids]
@@ -1233,7 +1233,7 @@ class Trainer(object):
                 encoder_output = BaseModelOutput(last_hidden_state=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t))
                 out = self.bart_model.generate(
                     encoder_outputs=encoder_output,
-                    attention_mask=mask.clone(),
+                    attention_mask=mask.long(),
                     max_length=64
                 )
                 text = self.tokenizer.decode(out[i], skip_special_tokens=True)
@@ -1264,7 +1264,7 @@ class Trainer(object):
                     encoder_output = BaseModelOutput(last_hidden_state=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t))
                     out = self.bart_model.generate(
                         encoder_outputs=encoder_output,
-                        attention_mask=mask.clone(),
+                        attention_mask=mask.long(),
                         max_length=64
                     )
                     texts = self.tokenizer.batch_decode(out, skip_special_tokens=True)
@@ -1288,7 +1288,7 @@ class Trainer(object):
         encoder_output = BaseModelOutput(last_hidden_state=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t))
         out = self.bart_model.generate(
             encoder_outputs=encoder_output,
-            attention_mask=mask.clone(),
+            attention_mask=mask.long(),
             max_length=64
         )
         recall_history[0.0] = self.tokenizer.batch_decode(out, skip_special_tokens=True)
@@ -1297,7 +1297,7 @@ class Trainer(object):
         encoder_output_T = BaseModelOutput(last_hidden_state=z_T if not self.using_latent_model else self.bart_model.get_decoder_input(z_T))
         out = self.bart_model.generate(
             encoder_outputs=encoder_output_T,
-            attention_mask=mask.clone(),
+            attention_mask=mask.long(),
             max_length=64
         )
         recall_history[1.0] = self.tokenizer.batch_decode(out, skip_special_tokens=True)
@@ -1492,7 +1492,10 @@ class Trainer(object):
                     did_backward = True
 
                 if did_backward:
-                    accelerator.clip_grad_norm_(self.diffusion.parameters(), self.args.clip_grad_norm)
+                    optim_params = list(self.diffusion.parameters())
+                    if self.decoding_loss:
+                        optim_params += list(self.bart_model.get_decoder().parameters())
+                    accelerator.clip_grad_norm_(optim_params, self.args.clip_grad_norm)
                     grad_norm = compute_grad_norm(self.diffusion.parameters())
                     accelerator.wait_for_everyone()
                     self.opt.step()

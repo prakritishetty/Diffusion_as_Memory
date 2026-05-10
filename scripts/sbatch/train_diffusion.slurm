@@ -24,6 +24,7 @@ python ../../train_text_diffusion.py \
     --train_batch_size 16 \
     --max_seq_len 64 \
     --decoding_loss \
-    --decoding_loss_every 100 \
+    --normalize_latent \
+    --decoding_loss_every 5 \
     --decoding_loss_weight 1.0
 echo "Done."
