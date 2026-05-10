@@ -1231,11 +1231,15 @@ class Trainer(object):
                 noise = torch.randn_like(x0)
                 z_t = alpha.sqrt() * x0 + (1-alpha).sqrt() * noise
                 
-                # Decode z_t
+                # Decode pred_x0 (Model's belief of the clean latent at time t)
+                with torch.no_grad():
+                    model_output = self.diffusion.diffusion_model_predictions(z_t, mask, times)
+                    pred_x0 = model_output.pred_x_start
+                    
                 if self.args.normalize_latent:
-                    z_t_unnorm = self.diffusion.unnormalize_latent(z_t)
+                    z_t_unnorm = self.diffusion.unnormalize_latent(pred_x0)
                 else:
-                    z_t_unnorm = z_t
+                    z_t_unnorm = pred_x0
                     
                 from transformers.modeling_outputs import BaseModelOutput
                 encoder_output = BaseModelOutput(last_hidden_state=z_t_unnorm if not self.using_latent_model else self.bart_model.get_decoder_input(z_t_unnorm))
@@ -1268,10 +1272,14 @@ class Trainer(object):
             # Snapshots at ~0.8, 0.6, 0.4, 0.2
             for target_t in [0.8, 0.6, 0.4, 0.2]:
                 if abs(t_ratio - target_t) < 1.0/self.diffusion.sampling_timesteps:
+                    with torch.no_grad():
+                        model_output = self.diffusion.diffusion_model_predictions(z_t, mask, t)
+                        pred_x0 = model_output.pred_x_start
+                        
                     if self.args.normalize_latent:
-                        z_t_unnorm = self.diffusion.unnormalize_latent(z_t)
+                        z_t_unnorm = self.diffusion.unnormalize_latent(pred_x0)
                     else:
-                        z_t_unnorm = z_t
+                        z_t_unnorm = pred_x0
                     from transformers.modeling_outputs import BaseModelOutput
                     encoder_output = BaseModelOutput(last_hidden_state=z_t_unnorm if not self.using_latent_model else self.bart_model.get_decoder_input(z_t_unnorm))
                     out = self.bart_model.generate(
