@@ -3,7 +3,6 @@
 #SBATCH --partition=gpu
 #SBATCH --gpus=1
 #SBATCH --constraint="gh200|h100|a100|a40|l40s|rtx8000"
-#SBATCH --qos=short
 #SBATCH --time=04:00:00
 #SBATCH --mem=50G
 #SBATCH --output=logs/train_%j.out
