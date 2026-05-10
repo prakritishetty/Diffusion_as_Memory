@@ -745,13 +745,11 @@ class Trainer(object):
             probs = torch.tensor([label_counts[idx]/self.dataloader.dataset.num_rows for idx in range(self.diffusion.diffusion_model.num_classes)])
             self.class_categorical = torch.distributions.Categorical(probs=probs)
         
-        # Freeze Encoder, Unfreeze Decoder
-        for param in self.bart_model.get_encoder().parameters():
+        # Freeze Encoder and Decoder! The language model must remain a static manifold.
+        for param in self.bart_model.parameters():
             param.requires_grad = False
-        for param in self.bart_model.get_decoder().parameters():
-            param.requires_grad = True
 
-        optim_params = list(self.diffusion.parameters()) + list(self.bart_model.get_decoder().parameters())
+        optim_params = list(self.diffusion.parameters())
         self.opt = optimizer.get_adamw_optimizer(optim_params, lr = train_lr, betas = adam_betas, weight_decay=adam_weight_decay)
 
         # scheduler
