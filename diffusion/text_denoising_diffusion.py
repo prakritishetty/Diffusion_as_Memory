@@ -1210,6 +1210,9 @@ class Trainer(object):
         else:
             x0 = encoder_outputs.last_hidden_state
             
+        if self.args.normalize_latent:
+            x0 = self.diffusion.normalize_latent(x0)
+            
         mask = source_mask.bool()
         
         forgetting_table = wandb.Table(columns=["Original"] + [f"t={t:.1f}" for t in [0.2, 0.4, 0.6, 0.8, 1.0]])
@@ -1229,8 +1232,13 @@ class Trainer(object):
                 z_t = alpha.sqrt() * x0 + (1-alpha).sqrt() * noise
                 
                 # Decode z_t
+                if self.args.normalize_latent:
+                    z_t_unnorm = self.diffusion.unnormalize_latent(z_t)
+                else:
+                    z_t_unnorm = z_t
+                    
                 from transformers.modeling_outputs import BaseModelOutput
-                encoder_output = BaseModelOutput(last_hidden_state=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t))
+                encoder_output = BaseModelOutput(last_hidden_state=z_t_unnorm if not self.using_latent_model else self.bart_model.get_decoder_input(z_t_unnorm))
                 out = self.bart_model.generate(
                     encoder_outputs=encoder_output,
                     attention_mask=mask.long(),
@@ -1260,8 +1268,12 @@ class Trainer(object):
             # Snapshots at ~0.8, 0.6, 0.4, 0.2
             for target_t in [0.8, 0.6, 0.4, 0.2]:
                 if abs(t_ratio - target_t) < 1.0/self.diffusion.sampling_timesteps:
+                    if self.args.normalize_latent:
+                        z_t_unnorm = self.diffusion.unnormalize_latent(z_t)
+                    else:
+                        z_t_unnorm = z_t
                     from transformers.modeling_outputs import BaseModelOutput
-                    encoder_output = BaseModelOutput(last_hidden_state=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t))
+                    encoder_output = BaseModelOutput(last_hidden_state=z_t_unnorm if not self.using_latent_model else self.bart_model.get_decoder_input(z_t_unnorm))
                     out = self.bart_model.generate(
                         encoder_outputs=encoder_output,
                         attention_mask=mask.long(),
@@ -1284,8 +1296,12 @@ class Trainer(object):
                 z_t = 1/alpha_now.sqrt() * (z_t - (1-alpha_now)/(1-alpha).sqrt() * eps) + torch.sqrt(1 - alpha_now) * noise
                 
         # Final output
+        if self.args.normalize_latent:
+            z_t_unnorm = self.diffusion.unnormalize_latent(z_t)
+        else:
+            z_t_unnorm = z_t
         from transformers.modeling_outputs import BaseModelOutput
-        encoder_output = BaseModelOutput(last_hidden_state=z_t if not self.using_latent_model else self.bart_model.get_decoder_input(z_t))
+        encoder_output = BaseModelOutput(last_hidden_state=z_t_unnorm if not self.using_latent_model else self.bart_model.get_decoder_input(z_t_unnorm))
         out = self.bart_model.generate(
             encoder_outputs=encoder_output,
             attention_mask=mask.long(),
@@ -1294,7 +1310,11 @@ class Trainer(object):
         recall_history[0.0] = self.tokenizer.batch_decode(out, skip_special_tokens=True)
         
         # Initial noise output
-        encoder_output_T = BaseModelOutput(last_hidden_state=z_T if not self.using_latent_model else self.bart_model.get_decoder_input(z_T))
+        if self.args.normalize_latent:
+            z_T_unnorm = self.diffusion.unnormalize_latent(z_T)
+        else:
+            z_T_unnorm = z_T
+        encoder_output_T = BaseModelOutput(last_hidden_state=z_T_unnorm if not self.using_latent_model else self.bart_model.get_decoder_input(z_T_unnorm))
         out = self.bart_model.generate(
             encoder_outputs=encoder_output_T,
             attention_mask=mask.long(),
@@ -1560,6 +1580,10 @@ class Trainer(object):
                                         mask = torch.ones((latent.shape[0], self.num_encoder_latents), dtype=torch.bool).to(device)
                                     else:
                                         mask = data['attention_mask'].bool()
+                                        
+                                if self.args.normalize_latent:
+                                    latent = self.diffusion.normalize_latent(latent)
+                                        
                                 seq2seq_cond = None
                                 seq2seq_mask = None
                                 loss = self.diffusion(latent, mask, class_id=(data['label'] if self.class_conditional else None), seq2seq_cond=seq2seq_cond, seq2seq_mask=seq2seq_mask)
