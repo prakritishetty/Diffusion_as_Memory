@@ -59,10 +59,10 @@ def get_dataset(dataset_name, metadata=False, synthetic_train_path=None):
         dataset = process_privasis_dataset(dataset)
     elif dataset_name == 'privasis_abstraction':
         # Allow overriding data file via env var so we can switch datasets without code changes
-        data_file = os.environ.get("PRIVASIS_DATA_FILE", "privasis_gpt4o_abstraction_10k.json")
+        data_file = os.environ.get("PRIVASIS_DATA_FILE", "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/privasis_gpt4o_abstraction_10k.json")
         # Fall back to original small file if new file doesn't exist yet
         if not os.path.exists(data_file):
-            data_file = "privasis_gpt4o_abstraction_1.json"
+            data_file = "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/privasis_gpt4o_abstraction_1.json"
             print(f"[WARN] 10k file not found, falling back to: {data_file}")
         else:
             print(f"[INFO] Loading dataset from: {data_file}")
@@ -184,11 +184,32 @@ def get_dataloader(args, dataset, model_config, tokenizer, max_seq_len, mode='di
                 model_inputs[f'cond_{k}'] = cond_inputs[k]
 
             return model_inputs
+        # elif mode == 'diffusion' and args.dataset_name == 'privasis_abstraction':
+        #     all_texts = [example['x']] + example['xt']
+        #     num_levels = len(all_texts)
+        #     MAX_LEVELS = 15
+        #     if num_levels < MAX_LEVELS:
+        #         all_texts.extend([all_texts[-1]] * (MAX_LEVELS - num_levels))
+        #     elif num_levels > MAX_LEVELS:
+        #         all_texts = all_texts[:MAX_LEVELS]
+        #         num_levels = MAX_LEVELS
+                
+        #     model_inputs = tokenizer(all_texts, padding="max_length", truncation=True, max_length=max_seq_len)
+        #     model_inputs['num_levels'] = num_levels
+        #     return model_inputs
         elif mode == 'diffusion' and args.dataset_name == 'privasis_abstraction':
-            all_texts = [example['x']] + example['xt']
+            # Safety Check: Ensure example['xt'] is a list
+            xt_list = example.get('xt') 
+            if xt_list is None:
+                xt_list = []
+                
+            all_texts = [example['x']] + xt_list
+            
             num_levels = len(all_texts)
             MAX_LEVELS = 15
+            
             if num_levels < MAX_LEVELS:
+                # If xt was empty, this just pads with the original sentence 'x'
                 all_texts.extend([all_texts[-1]] * (MAX_LEVELS - num_levels))
             elif num_levels > MAX_LEVELS:
                 all_texts = all_texts[:MAX_LEVELS]

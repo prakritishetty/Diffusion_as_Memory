@@ -1,0 +1,45 @@
+_wandb:
+    value:
+        cli_version: 0.24.2
+        e:
+            p8zpq9tayaxp2odxrl9aaqbfe819pefn:
+                codePath: dataset_utils/create_privacy_dataset_10k.py
+                codePathLocal: create_privacy_dataset_10k.py
+                cpu_count: 16
+                cpu_count_logical: 16
+                disk:
+                    /:
+                        total: "34290188288"
+                        used: "14626885632"
+                email: prakritishetty02@gmail.com
+                executable: /home/psshetty_umass_edu/.conda/envs/latent-lang-diff/bin/python
+                git:
+                    commit: de8738ddb5050fa267684b4c2b6e974bb7a6dd0e
+                    remote: https://github.com/prakritishetty/Diffusion_as_Memory.git
+                host: login2
+                memory:
+                    total: "135163207680"
+                os: Linux-6.8.0-111-generic-x86_64-with-glibc2.17
+                program: create_privacy_dataset_10k.py
+                python: CPython 3.8.13
+                root: /gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils
+                startedAt: "2026-05-10T13:11:50.026492Z"
+                writerId: p8zpq9tayaxp2odxrl9aaqbfe819pefn
+        m: []
+        python_version: 3.8.13
+        t:
+            "1":
+                - 49
+                - 51
+                - 95
+            "2":
+                - 1
+                - 49
+                - 51
+                - 95
+            "3":
+                - 13
+            "4": 3.8.13
+            "5": 0.24.2
+            "12": 0.24.2
+            "13": linux-x86_64

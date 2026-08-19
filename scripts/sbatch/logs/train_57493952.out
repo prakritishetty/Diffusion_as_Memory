@@ -1,0 +1,6 @@
+Starting Diffusion Training...
+[INFO] Loading dataset from: /gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/privasis_gpt4o_abstraction_10k.json
+Using 16 samples for evaluation
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mswept-snowball-82[0m at: [34mhttps://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion/runs/w0q99yu8[0m
+Done.

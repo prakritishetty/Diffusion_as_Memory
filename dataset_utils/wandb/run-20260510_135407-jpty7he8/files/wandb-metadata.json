@@ -1,0 +1,28 @@
+{
+  "os":  "Linux-6.8.0-111-generic-x86_64-with-glibc2.39",
+  "python":  "CPython 3.9.23",
+  "startedAt":  "2026-05-10T13:54:07.436133Z",
+  "program":  "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/create_privacy_dataset_10k.py",
+  "codePath":  "dataset_utils/create_privacy_dataset_10k.py",
+  "codePathLocal":  "create_privacy_dataset_10k.py",
+  "git":  {
+    "remote":  "https://github.com/prakritishetty/Diffusion_as_Memory.git",
+    "commit":  "20f9d497bc316928ca91a1ad61ae32f20f8e327f"
+  },
+  "email":  "prakritishetty02@gmail.com",
+  "root":  "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils",
+  "host":  "login2",
+  "executable":  "/home/psshetty_umass_edu/.conda/envs/priv-gen/bin/python",
+  "cpu_count":  16,
+  "cpu_count_logical":  16,
+  "disk":  {
+    "/":  {
+      "total":  "34290188288",
+      "used":  "14626885632"
+    }
+  },
+  "memory":  {
+    "total":  "135163207680"
+  },
+  "writerId":  "oxkpjp6q43x8dgwj10wcyjhnqern414y"
+}

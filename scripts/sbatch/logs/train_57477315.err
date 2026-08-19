@@ -1,103 +1,0 @@
-Removing conda version miniforge3-24.7.1
-No conda package cache directories found outside your home directory. To
-prevent conda from filling up your home directory, you can create a new
-directory at `/work/pi_<your_pi_name>/$USER/.conda/pkgs` and reload the module. 
-No conda environment directories found outside your home directory. To prevent
-conda from filling up your home directory, you can create a new directory at
-`/work/pi_<your_pi_name>/$USER/.conda/envs` and reload the module. 
-Loading conda version miniforge3-24.7.1
-wandb: WARNING The anonymous setting has no effect and will be removed in a future version.
-wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/psshetty_umass_edu/.netrc.
-wandb: Currently logged in as: prakritishetty02 (balachandradevarangadi-umass-amherst) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
-wandb: Tracking run with wandb version 0.24.2
-wandb: Run data is saved locally in ../../saved_diff_models/controlled_privasis_diff/wandb/run-20260509_205511-x60hbufm
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run floral-armadillo-51
-wandb: ⭐️ View project at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion
-wandb: 🚀 View run at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion/runs/x60hbufm
-Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 203 examples [00:00, 785.16 examples/s]Generating train split: 203 examples [00:00, 761.12 examples/s]
-Map:   0%|          | 0/163 [00:00<?, ? examples/s]Map:  12%|█▏        | 20/163 [00:00<00:00, 188.50 examples/s]Map:  31%|███       | 50/163 [00:00<00:00, 246.67 examples/s]Map:  53%|█████▎    | 86/163 [00:00<00:00, 296.26 examples/s]Map:  72%|███████▏  | 118/163 [00:00<00:00, 302.23 examples/s]Map:  99%|█████████▉| 161/163 [00:00<00:00, 289.68 examples/s]Map: 100%|██████████| 163/163 [00:00<00:00, 247.44 examples/s]
-/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
-  warnings.warn(_create_warning_msg(
-Map:   0%|          | 0/163 [00:00<?, ? examples/s]Map:  18%|█▊        | 29/163 [00:00<00:00, 278.50 examples/s]Map:  38%|███▊      | 62/163 [00:00<00:00, 296.22 examples/s]Map:  58%|█████▊    | 95/163 [00:00<00:00, 308.42 examples/s]Map:  80%|████████  | 131/163 [00:00<00:00, 325.06 examples/s]Map: 100%|██████████| 163/163 [00:00<00:00, 283.82 examples/s]
-Map:   0%|          | 0/19 [00:00<?, ? examples/s]Map: 100%|██████████| 19/19 [00:00<00:00, 206.43 examples/s]
-Map:   0%|          | 0/21 [00:00<?, ? examples/s]Map: 100%|██████████| 21/21 [00:00<00:00, 246.08 examples/s]
-  0%|          | 0/60000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-  0%|          | 0/60000 [00:01<?, ?it/s]
-Traceback (most recent call last):
-  File "../../train_text_diffusion.py", line 260, in <module>
-    main(args)
-  File "../../train_text_diffusion.py", line 125, in main
-    trainer.train()
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 1311, in train
-    data = self.to_device(next(self.data_iter), device)
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 68, in cycle
-    for data in dl:
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/accelerate/data_loader.py", line 550, in __iter__
-    current_batch = next(dataloader_iter)
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
-    data = self._next_data()
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1344, in _next_data
-    return self._process_data(data)
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1370, in _process_data
-    data.reraise()
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/_utils.py", line 706, in reraise
-    raise exception
-ValueError: Caught ValueError in DataLoader worker process 0.
-Original Traceback (most recent call last):
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 309, in _worker_loop
-    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 55, in fetch
-    return self.collate_fn(data)
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/denoising_collator.py", line 29, in __call__
-    {k: torch.LongTensor([examples[i][k] for i in range(len(examples))]) for k, v in examples[0].items()}
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/denoising_collator.py", line 29, in <dictcomp>
-    {k: torch.LongTensor([examples[i][k] for i in range(len(examples))]) for k, v in examples[0].items()}
-ValueError: expected sequence of length 8 at dim 1 (got 6)
-
-Traceback (most recent call last):
-  File "../../train_text_diffusion.py", line 260, in <module>
-    main(args)
-  File "../../train_text_diffusion.py", line 125, in main
-    trainer.train()
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 1311, in train
-    data = self.to_device(next(self.data_iter), device)
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 68, in cycle
-    for data in dl:
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/accelerate/data_loader.py", line 550, in __iter__
-    current_batch = next(dataloader_iter)
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
-    data = self._next_data()
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1344, in _next_data
-    return self._process_data(data)
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1370, in _process_data
-    data.reraise()
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/_utils.py", line 706, in reraise
-    raise exception
-ValueError: Caught ValueError in DataLoader worker process 0.
-Original Traceback (most recent call last):
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 309, in _worker_loop
-    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 55, in fetch
-    return self.collate_fn(data)
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/denoising_collator.py", line 29, in __call__
-    {k: torch.LongTensor([examples[i][k] for i in range(len(examples))]) for k, v in examples[0].items()}
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/dataset_utils/denoising_collator.py", line 29, in <dictcomp>
-    {k: torch.LongTensor([examples[i][k] for i in range(len(examples))]) for k, v in examples[0].items()}
-ValueError: expected sequence of length 8 at dim 1 (got 6)
-

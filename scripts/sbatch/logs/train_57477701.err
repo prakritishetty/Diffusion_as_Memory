@@ -1,289 +1,0 @@
-Removing conda version miniforge3-24.7.1
-No conda package cache directories found outside your home directory. To
-prevent conda from filling up your home directory, you can create a new
-directory at `/work/pi_<your_pi_name>/$USER/.conda/pkgs` and reload the module. 
-No conda environment directories found outside your home directory. To prevent
-conda from filling up your home directory, you can create a new directory at
-`/work/pi_<your_pi_name>/$USER/.conda/envs` and reload the module. 
-Loading conda version miniforge3-24.7.1
-wandb: WARNING The anonymous setting has no effect and will be removed in a future version.
-wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/psshetty_umass_edu/.netrc.
-wandb: Currently logged in as: prakritishetty02 (balachandradevarangadi-umass-amherst) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
-wandb: Tracking run with wandb version 0.24.2
-wandb: Run data is saved locally in ../../saved_diff_models/controlled_privasis_diff/wandb/run-20260509_215058-ahbunjrm
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run balmy-planet-60
-wandb: ⭐️ View project at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion
-wandb: 🚀 View run at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion/runs/ahbunjrm
-Map:   0%|          | 0/163 [00:00<?, ? examples/s]Map:  13%|█▎        | 22/163 [00:00<00:00, 211.00 examples/s]Map:  29%|██▉       | 48/163 [00:00<00:00, 228.15 examples/s]Map:  47%|████▋     | 76/163 [00:00<00:00, 247.28 examples/s]Map:  65%|██████▌   | 106/163 [00:00<00:00, 261.53 examples/s]Map:  84%|████████▍ | 137/163 [00:00<00:00, 221.05 examples/s]Map: 100%|██████████| 163/163 [00:00<00:00, 185.85 examples/s]Map: 100%|██████████| 163/163 [00:00<00:00, 201.53 examples/s]
-/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
-  warnings.warn(_create_warning_msg(
-Map:   0%|          | 0/163 [00:00<?, ? examples/s]Map:  13%|█▎        | 21/163 [00:00<00:00, 199.54 examples/s]Map:  25%|██▌       | 41/163 [00:00<00:00, 170.79 examples/s]Map:  40%|████      | 66/163 [00:00<00:00, 200.08 examples/s]Map:  58%|█████▊    | 95/163 [00:00<00:00, 224.67 examples/s]Map:  75%|███████▌  | 123/163 [00:00<00:00, 239.71 examples/s]Map:  93%|█████████▎| 152/163 [00:00<00:00, 254.04 examples/s]Map: 100%|██████████| 163/163 [00:00<00:00, 209.95 examples/s]
-Map:   0%|          | 0/19 [00:00<?, ? examples/s]Map: 100%|██████████| 19/19 [00:00<00:00, 175.32 examples/s]
-Map:   0%|          | 0/21 [00:00<?, ? examples/s]Map: 100%|██████████| 21/21 [00:00<00:00, 195.57 examples/s]
-  0%|          | 0/60000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 1/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 1/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 2/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 3/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 4/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 5/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 5/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 6/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 7/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 8/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 9/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 10/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 10/100:   0%|          | 0/60000 [00:01<?, ?it/s]Warm-up Stats: 11/100:   0%|          | 0/60000 [00:02<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 12/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 12/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 13/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 14/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 15/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 16/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 17/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 17/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 18/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 19/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 20/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 21/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 22/100:   0%|          | 0/60000 [00:02<?, ?it/s]Warm-up Stats: 22/100:   0%|          | 0/60000 [00:02<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 23/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 23/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 24/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 25/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 26/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 27/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 28/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 28/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 29/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 30/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 31/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 32/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 33/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 33/100:   0%|          | 0/60000 [00:03<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 34/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 34/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 35/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 36/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 37/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 38/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 38/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 39/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 40/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 41/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 42/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 43/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 43/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 44/100:   0%|          | 0/60000 [00:04<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 45/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 45/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 46/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 47/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 48/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 49/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 49/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 50/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 51/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 52/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 53/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 54/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 54/100:   0%|          | 0/60000 [00:04<?, ?it/s]Warm-up Stats: 55/100:   0%|          | 0/60000 [00:04<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 56/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 56/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 57/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 58/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 59/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 60/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 61/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 61/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 62/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 63/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 64/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 65/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 66/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 66/100:   0%|          | 0/60000 [00:05<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 67/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 67/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 68/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 69/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 70/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 71/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 71/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 72/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 73/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 74/100:   0%|          | 0/60000 [00:05<?, ?it/s]Warm-up Stats: 75/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 76/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 76/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 77/100:   0%|          | 0/60000 [00:06<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 78/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 78/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 79/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 80/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 81/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 82/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 83/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 83/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 84/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 85/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 86/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 87/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 88/100:   0%|          | 0/60000 [00:06<?, ?it/s]Warm-up Stats: 88/100:   0%|          | 0/60000 [00:06<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 89/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 89/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 90/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 91/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 92/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 93/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 94/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 94/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 95/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 96/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 97/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 98/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 99/100:   0%|          | 0/60000 [00:07<?, ?it/s]Warm-up Stats: 99/100:   0%|          | 0/60000 [00:07<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-
-Map:   0%|          | 0/5 [00:00<?, ? examples/s][AMap: 100%|██████████| 5/5 [00:00<00:00, 108.73 examples/s]
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 99/100:   0%|          | 0/60000 [00:47<?, ?it/s, decoding_loss=0, diffusion_loss=0, epoch=0, grad_norm=0, learning_rate=0, loss=0, samples=0, step=0, val_ema_loss=34.9, val_loss=59.9]
-sampling loop time step:   0%|          | 0/250 [00:00<?, ?it/s][A
-sampling loop time step:   4%|▎         | 9/250 [00:00<00:02, 84.85it/s][A
-sampling loop time step:   7%|▋         | 18/250 [00:00<00:02, 87.80it/s][A
-sampling loop time step:  11%|█         | 28/250 [00:00<00:02, 89.53it/s][A
-sampling loop time step:  15%|█▌        | 38/250 [00:00<00:02, 90.00it/s][A
-sampling loop time step:  19%|█▉        | 48/250 [00:00<00:02, 90.15it/s][A
-sampling loop time step:  23%|██▎       | 58/250 [00:00<00:02, 90.43it/s][A
-sampling loop time step:  27%|██▋       | 68/250 [00:00<00:02, 90.06it/s][A
-sampling loop time step:  31%|███       | 78/250 [00:00<00:01, 90.35it/s][A
-sampling loop time step:  35%|███▌      | 88/250 [00:00<00:01, 90.27it/s][A
-sampling loop time step:  39%|███▉      | 98/250 [00:01<00:01, 90.24it/s][A
-sampling loop time step:  43%|████▎     | 108/250 [00:01<00:01, 90.27it/s][A
-sampling loop time step:  47%|████▋     | 118/250 [00:01<00:01, 90.36it/s][A
-sampling loop time step:  51%|█████     | 128/250 [00:01<00:01, 90.52it/s][A
-sampling loop time step:  55%|█████▌    | 138/250 [00:01<00:01, 90.69it/s][A
-sampling loop time step:  59%|█████▉    | 148/250 [00:01<00:01, 90.73it/s][A
-sampling loop time step:  63%|██████▎   | 158/250 [00:01<00:01, 90.71it/s][A
-sampling loop time step:  67%|██████▋   | 168/250 [00:01<00:00, 90.78it/s][A
-sampling loop time step:  71%|███████   | 178/250 [00:01<00:00, 90.52it/s][A
-sampling loop time step:  75%|███████▌  | 188/250 [00:02<00:00, 90.55it/s][A
-sampling loop time step:  79%|███████▉  | 198/250 [00:02<00:00, 90.57it/s][A
-sampling loop time step:  83%|████████▎ | 208/250 [00:02<00:00, 90.54it/s][A
-sampling loop time step:  87%|████████▋ | 218/250 [00:02<00:00, 90.56it/s][A
-sampling loop time step:  91%|█████████ | 228/250 [00:02<00:00, 90.55it/s][A
-sampling loop time step:  95%|█████████▌| 238/250 [00:02<00:00, 90.61it/s][A
-sampling loop time step:  99%|█████████▉| 248/250 [00:02<00:00, 90.65it/s][Asampling loop time step: 100%|██████████| 250/250 [00:02<00:00, 90.28it/s]
-
-  0%|          | 0/1 [00:00<?, ?it/s][A
-100%|██████████| 1/1 [00:00<00:00,  4.55it/s][A100%|██████████| 1/1 [00:00<00:00,  4.51it/s]
-WARNING:root:SpaCy model 'en_core_web_sm' not found. Falling back to simple whitespace tokenizer.
-Warm-up Stats: 99/100:   0%|          | 0/60000 [01:10<?, ?it/s, decoding_loss=0, diffusion_loss=0, epoch=0, grad_norm=0, learning_rate=0, loss=0, samples=0, step=0, val_ema_loss=34.9, val_loss=59.9]
-Traceback (most recent call last):
-  File "../../train_text_diffusion.py", line 260, in <module>
-    main(args)
-  File "../../train_text_diffusion.py", line 125, in main
-    trainer.train()
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 1581, in train
-    self.sample()
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
-    return func(*args, **kwargs)
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 959, in sample
-    metrics[f"model/{strategy}/{class_id_prefix}memorization"] = evaluation.compute_memorization(all_texts_list, self.dataset['train']['text'])
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 2762, in __getitem__
-    return self._getitem(key)
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 2746, in _getitem
-    pa_subtable = query_table(self._data, key, indices=self._indices)
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/formatting/formatting.py", line 590, in query_table
-    _check_valid_column_key(key, table.column_names)
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/formatting/formatting.py", line 527, in _check_valid_column_key
-    raise KeyError(f"Column {key} not in the dataset. Current columns in the dataset: {columns}")
-KeyError: "Column text not in the dataset. Current columns in the dataset: ['id', 'x', 'xt']"
-Traceback (most recent call last):
-  File "../../train_text_diffusion.py", line 260, in <module>
-    main(args)
-  File "../../train_text_diffusion.py", line 125, in main
-    trainer.train()
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 1581, in train
-    self.sample()
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
-    return func(*args, **kwargs)
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 959, in sample
-    metrics[f"model/{strategy}/{class_id_prefix}memorization"] = evaluation.compute_memorization(all_texts_list, self.dataset['train']['text'])
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 2762, in __getitem__
-    return self._getitem(key)
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 2746, in _getitem
-    pa_subtable = query_table(self._data, key, indices=self._indices)
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/formatting/formatting.py", line 590, in query_table
-    _check_valid_column_key(key, table.column_names)
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/datasets/formatting/formatting.py", line 527, in _check_valid_column_key
-    raise KeyError(f"Column {key} not in the dataset. Current columns in the dataset: {columns}")
-KeyError: "Column text not in the dataset. Current columns in the dataset: ['id', 'x', 'xt']"

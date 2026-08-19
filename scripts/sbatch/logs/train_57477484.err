@@ -1,83 +1,0 @@
-Removing conda version miniforge3-24.7.1
-No conda package cache directories found outside your home directory. To
-prevent conda from filling up your home directory, you can create a new
-directory at `/work/pi_<your_pi_name>/$USER/.conda/pkgs` and reload the module. 
-No conda environment directories found outside your home directory. To prevent
-conda from filling up your home directory, you can create a new directory at
-`/work/pi_<your_pi_name>/$USER/.conda/envs` and reload the module. 
-Loading conda version miniforge3-24.7.1
-wandb: WARNING The anonymous setting has no effect and will be removed in a future version.
-wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/psshetty_umass_edu/.netrc.
-wandb: Currently logged in as: prakritishetty02 (balachandradevarangadi-umass-amherst) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
-wandb: setting up run qd458l0b
-wandb: Tracking run with wandb version 0.24.2
-wandb: Run data is saved locally in ../../saved_diff_models/controlled_privasis_diff/wandb/run-20260509_210218-qd458l0b
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run sweet-water-53
-wandb: ⭐️ View project at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion
-wandb: 🚀 View run at https://wandb.ai/balachandradevarangadi-umass-amherst/text_denoising_diffusion/runs/qd458l0b
-Map:   0%|          | 0/163 [00:00<?, ? examples/s]Map:   9%|▉         | 15/163 [00:00<00:01, 143.41 examples/s]Map:  26%|██▋       | 43/163 [00:00<00:00, 218.60 examples/s]Map:  45%|████▌     | 74/163 [00:00<00:00, 253.31 examples/s]Map:  65%|██████▌   | 106/163 [00:00<00:00, 276.43 examples/s]Map:  84%|████████▍ | 137/163 [00:00<00:00, 239.04 examples/s]Map: 100%|██████████| 163/163 [00:00<00:00, 172.66 examples/s]Map: 100%|██████████| 163/163 [00:00<00:00, 195.61 examples/s]
-/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
-  warnings.warn(_create_warning_msg(
-Map:   0%|          | 0/163 [00:00<?, ? examples/s]Map:  16%|█▌        | 26/163 [00:00<00:00, 169.80 examples/s]Map:  34%|███▍      | 56/163 [00:00<00:00, 230.12 examples/s]Map:  50%|█████     | 82/163 [00:00<00:00, 237.60 examples/s]Map:  73%|███████▎  | 119/163 [00:00<00:00, 280.52 examples/s]Map:  93%|█████████▎| 151/163 [00:00<00:00, 283.95 examples/s]Map: 100%|██████████| 163/163 [00:00<00:00, 237.69 examples/s]
-Map:   0%|          | 0/19 [00:00<?, ? examples/s]Map: 100%|██████████| 19/19 [00:00<00:00, 191.83 examples/s]
-Map:   0%|          | 0/21 [00:00<?, ? examples/s]Map: 100%|██████████| 21/21 [00:00<00:00, 174.71 examples/s]
-  0%|          | 0/60000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 1/100:   0%|          | 0/60000 [00:03<?, ?it/s]Warm-up Stats: 1/100:   0%|          | 0/60000 [00:03<?, ?it/s]
-Map:   0%|          | 0/5 [00:00<?, ? examples/s][AMap: 100%|██████████| 5/5 [00:00<00:00, 106.03 examples/s]
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Warm-up Stats: 1/100:   0%|          | 0/60000 [00:29<?, ?it/s]
-Traceback (most recent call last):
-  File "../../train_text_diffusion.py", line 260, in <module>
-    main(args)
-  File "../../train_text_diffusion.py", line 125, in main
-    trainer.train()
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 1487, in train
-    self.log_forget_recall_table()
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
-    return func(*args, **kwargs)
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 1242, in log_forget_recall_table
-    timesteps = self.diffusion.get_sampling_timesteps(B, device)
-TypeError: get_sampling_timesteps() takes 2 positional arguments but 3 were given
-Traceback (most recent call last):
-  File "../../train_text_diffusion.py", line 260, in <module>
-    main(args)
-  File "../../train_text_diffusion.py", line 125, in main
-    trainer.train()
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 1487, in train
-    self.log_forget_recall_table()
-  File "/home/psshetty_umass_edu/.conda/envs/latent-lang-diff/lib/python3.8/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
-    return func(*args, **kwargs)
-  File "/gypsum/work1/zamani/prakriti/privasis_baseline/diffusion/text_denoising_diffusion.py", line 1242, in log_forget_recall_table
-    timesteps = self.diffusion.get_sampling_timesteps(B, device)
-TypeError: get_sampling_timesteps() takes 2 positional arguments but 3 were given

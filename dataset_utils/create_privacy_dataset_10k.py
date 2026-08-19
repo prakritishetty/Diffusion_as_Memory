@@ -13,7 +13,7 @@ API_KEY = "sk-AXYHuFT9GozKcTi1q8m1nw"
 API_BASE = "https://thekeymaker.umass.edu/"
 
 NUM_SAMPLES = 10000       # Target: 10k examples
-BATCH_SIZE = 10           # Increased from 5 for faster throughput
+BATCH_SIZE = 5           # Increased from 5 for faster throughput
 WANDB_PROJECT = "text_denoising_diffusion"
 WANDB_NAME = "privacy_abstraction_gpt4o_10k"
 OUTPUT_FILE = "privasis_gpt4o_abstraction_10k.json"  # New separate file
