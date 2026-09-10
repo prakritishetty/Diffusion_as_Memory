@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": " One is moved to enquire how the sound is articulated by speakers of other English dialects or in other regions -LRB- New England, for example -RRB-, but the book does not go into that much detail. ''",
+        "v0": " One is moved to reclore the the sound is articulated by other of other languages ors or countries other languages,LRB- New England - for example,RRB-, the the book does not go into detail detail detail. ''",
+        "original_y": "Inquiry about how sounds are articulated in different dialects or regions, but details are lacking.",
+        "u": "Languagesufficientry  language things sound usedd. multiple languagess. addresses. with there exist unclear."
+    },
+    {
+        "original_x": "The final rule was determined to be an  economically significant '' regulatory action under the Order. eos> It was reviewed by the Office of Management and Budget and was approved as complying with the requirements of the Order on December 17, 1997. eos",
+        "v0": "The final rule was determined to be an  regulatory significant '' regulatory action under the Order of. eos> It was reviewed by the Office of Management and Budget by approved approved by complianceing with the requirements of the Order on December 17, 1997. eos",
+        "original_y": "economically significant regulation.",
+        "u": "action significant regulatory."
+    },
+    {
+        "original_x": "The Secretary of HHS has certified that the final rule will not have a significant impact on a substantial number of small entities.",
+        "v0": "The Secretary of HHS has confirmed that the final rule will not have a significant impact on a small number of small businesses.",
+        "original_y": "Rule impacts small entities negligibly.",
+        "u": "Regulation regarding significant business.atingating."
+    },
+    {
+        "original_x": "You, our alumni and friends, have helped put this School at the forefront of journalism education in this country. eos> As we become independent, please help us strengthen the distinction of your degree. eos>",
+        "v0": "You, your alumni  friends, have helped put this institution at the forefront of journalism in in this country. eos> As we become independent, we help us strengthen our distinction of this degree. eos>",
+        "original_y": "Support has elevated this school's journalism education.",
+        "u": "Help from earned the institution's reputation.."
+    },
+    {
+        "original_x": "The patient was diagnosed with diabetes on October 10, 2023, and prescribed insulin therapy.",
+        "v0": "The patient was diagnosed with diabetes on October 20, 20,23, and prescribed diabetes therapy by",
+        "original_y": "Success of activism allows microeconomics to survive.",
+        "u": "Patients in  and forbiologis to develop."
+    },
+    {
+        "original_x": " It would be wonderful if you could take the time to visit your School, and see for yourself the progress we have made over the years and share in the pride of our heritage! ''",
+        "v0": " It would be wonderful if you would take the time to visit our school, and see what yourself the progress you have made in the years to share the the pride of our heritage. ''",
+        "original_y": "Visiting a school to acknowledge progress and heritage evokes pride.",
+        "u": "prideGra a place with promote and and its.despite  pride."
+    },
+    {
+        "original_x": "The one thing I am most proud of is that the IRT is a leader across the country in providing theatre experiences for students. eos> The work the IRT does with teachers and students has a profound impact on their lives. eos>",
+        "v0": "One one I I am proud proud of is the the IRT is a leader in the country for providing theatre for for students. eos> The work the IRT does with students and students has a profound impact on their lives. eos>",
+        "original_y": "Providing theatre experiences for students is a source of pride.",
+        "u": "TheatreEducat quality to to students. importanta significant of inspiration."
+    },
+    {
+        "original_x": "Ordinarily this is such a happy sight - an image of the anticipation that we feel inside as the holiday season approaches once again. eos>",
+        "v0": "Ordinarily this is  a happy sight - an image of the anticipation that the once once the the holiday season approaches once again. eos>",
+        "original_y": "Happy anticipation of a recurring seasonal event.",
+        "u": "anticipation holiday of a futurecherished theme trend."
+    },
+    {
+        "original_x": "According to Miyares, the DBA is the first organization to target the role of disabled persons in business. eos> Current DBA data shows 32 percent of all persons assisted by DBA are veterans ; 10 per cent are service connected disabled veterans ; and 22 per",
+        "v0": "According to Miyares, the DBA is the first organization to target the role of disabled persons in the. eos> D DBA data shows 32 percent of D D disabled by disabledBA programs connected ; 22 percent cent are connectedd with  ; and 22 percent cent",
+        "original_y": "Organization targets disabled persons in business.",
+        "u": "Organizations disabled veterans.."
+    },
+    {
+        "original_x": " Your help today will enable us to strengthen further America's philanthropic heritage by expanding the Center's crucial educational, leadership and outreach programs. ''",
+        "v0": " Your help today will enable us to strengthen America America's philanthropic legacy by expanding its Center's crucial cultural programs, leadership and outreach programs. ''",
+        "original_y": "Help strengthens philanthropic heritage through education and outreach.",
+        "u": "Funding community communityaanthrop society through integrated and education."
+    }
+]

@@ -1,0 +1,248 @@
+\documentclass{article}
+
+% ---------------------------------------------------------------------------
+% TRACK SELECTION -- Track 01 (Extended Abstracts, up to 4 pages of main text).
+% The default option below is double-blind submission. If the track is run as a
+% workshop, comment the line below and uncomment ONE of the workshop lines,
+% then set \workshoptitle{...}.
+% ---------------------------------------------------------------------------
+\usepackage{neurips_2026}
+% \usepackage[dblblindworkshop]{neurips_2026}   % workshop, double-blind
+% \usepackage[sglblindworkshop]{neurips_2026}   % workshop, single-blind
+% \usepackage[position]{neurips_2026}           % position-paper track
+% \usepackage[preprint]{neurips_2026}           % arXiv / preprint
+% \workshoptitle{WORKSHOP TITLE}                % REQUIRED for workshop options
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\title{Memory as a Noise Schedule: Graded Recall with Latent Text Diffusion}
+
+\author{%
+  Balachandra Devarangadi Sunil \\
+  University of Massachusetts Amherst \\
+  \texttt{bdevarangadi@umass.edu} \\
+  \And
+  Isheeta Sinha \\
+  University of Massachusetts Amherst \\
+  \texttt{issinha@umass.edu} \\
+  \AND
+  Kavisha Ghodasara \\
+  University of Massachusetts Amherst \\
+  \texttt{kghodasara@umass.edu} \\
+  \And
+  Prakriti Shetty \\
+  University of Massachusetts Amherst \\
+  \texttt{psshetty@umass.edu} \\
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Retrieval-augmented generation treats memory as binary: a passage is either retrieved in full or not at all. We ask whether memory can instead be modeled as a \emph{graded} process, in which a single stored item is recalled at a controllable level of detail. We instantiate this as a latent text-diffusion architecture where forward diffusion over a detail latent simulates progressive forgetting, and reverse diffusion conditioned on a fixed gist code simulates progressive recall. Trained on abstraction trajectories derived from the MSR abstractive-compression corpus, the model learns a strong detail-bearing latent (BERTScore F1 $0.932$) and a denoiser that reduces validation noise-prediction error by roughly an order of magnitude, yet it fails at the property we actually care about: only $32.5\%$ of test trajectories are monotonic in detail. Our main contribution is a diagnosis. The failure is not intrinsic to the diffusion formulation but stems from a supervision artifact: because abstraction trajectories contain $4.9$ levels on average while the timestep-to-level map assumes $10$, roughly $61\%$ of sampled timesteps collapse onto the single most abstract target, reducing a graded objective to a near-binary one. We propose a normalized per-example timestep mapping and argue that long-form question answering is a better testbed, where reverse-diffusion depth becomes an explicit answer-detail budget.
+\end{abstract}
+
+\section{Introduction}
+
+Memory in current language-agent systems is dominated by retrieval-augmented generation (RAG)~\citep{lewis2020}, which stores text externally and fetches it on demand. This works well for factual lookup but treats a memory item as atomic: it is returned in full or not at all. Human recall is not like this. We routinely produce the gist of an episode without its specifics, and elaborate further only when the context demands it.
+
+We study whether this graded behavior can be modeled directly. Concretely, we want a single stored memory to support a \emph{trajectory} of reconstructions, from a coarse gist to a fully specified episode, with a controllable knob selecting the operating point. Two capabilities motivate this: (i) \textbf{early exit}, where generation stops once enough detail has surfaced, saving tokens and context; and (ii) \textbf{budgeted elaboration}, where the amount of recalled detail is matched to what the request warrants.
+
+Diffusion models offer a natural mechanism. Forward diffusion is a graded corruption process and reverse diffusion is a learned recovery process~\citep{ho2020,nichol2021}, and recent work shows diffusion operates effectively over continuous language representations~\citep{li2022,lovelace2023}. If the diffusion timestep can be made to correspond to a \emph{semantic} level of detail rather than merely a noise level, then the number of reverse steps becomes a detail dial.
+
+This extended abstract reports work in progress. Our contributions are:
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item An architecture separating a stable gist code from a diffusable detail latent, decoding readable text at any timestep (Section~\ref{sec:method}).
+  \item Preliminary results showing the components work individually while the system fails to achieve monotonic recall (Section~\ref{sec:results}).
+  \item A quantitative diagnosis: the timestep-to-detail supervision map collapses ${\sim}61\%$ of the training signal onto one target (Section~\ref{sec:diagnosis}), reframing a negative result as a fixable design flaw.
+  \item A reformulation around long-form QA, where the detail budget is externally meaningful (Section~\ref{sec:qa}).
+\end{itemize}
+
+\section{Method}
+\label{sec:method}
+
+\paragraph{Latent representation.}
+An input memory $x$ is encoded with a pretrained T5 encoder~\citep{raffel2020} into hidden states $H$. Because $H$ varies in length, we compress it into a fixed set of $L$ slots using cross-attention with learnable queries $Q$,
+\begin{equation}
+h = \mathrm{CrossAttn}(Q, K{=}H, V{=}H), \qquad h \in \mathbb{R}^{L \times d}.
+\end{equation}
+Two linear heads split $h$ into a compact \emph{gist} code $u \in \mathbb{R}^{k}$ and a slot-structured \emph{detail} latent $v_0 \in \mathbb{R}^{L \times d}$. The detail latent is trained to reconstruct the source, $\mathcal{L}_{\text{rec-}x} = -\log p_\theta(x \mid v_0)$, and the encoder is additionally trained with an InfoNCE objective pulling $x$ toward a semantics-preserving perturbation $x^{+}$.
+
+\paragraph{Forgetting as forward diffusion.}
+Following DDPM~\citep{ho2020}, we corrupt only the detail latent, leaving $u$ untouched so that it can serve as a stable cue:
+\begin{equation}
+v_t = \sqrt{\bar\alpha_t}\, v_0 + \sqrt{1-\bar\alpha_t}\, \epsilon, \qquad \epsilon \sim \mathcal{N}(0, I),
+\end{equation}
+with a cosine schedule~\citep{nichol2021}. The signal-to-noise ratio $\mathrm{SNR}(t) = \bar\alpha_t / (1-\bar\alpha_t)$ decays monotonically, so $t$ is intended to index a \emph{forgetting level}.
+
+\paragraph{Recall as reverse diffusion.}
+A transformer denoiser $\epsilon_\theta(v_t, t, u)$ predicts the injected noise, conditioned on the timestep and gist code through adaptive layer normalization. We consider two ways to obtain a clean latent for decoding. The \emph{one-step} estimate inverts the forward equation directly,
+\begin{equation}
+\hat v_0 = \frac{v_t - \sqrt{1-\bar\alpha_t}\,\hat\epsilon}{\sqrt{\bar\alpha_t}},
+\label{eq:onestep}
+\end{equation}
+whereas the \emph{multi-step} estimate applies the reverse-process mean iteratively from $t$ down to $0$, preserving the full trajectory.
+
+\paragraph{Decoding at any timestep.}
+A semantic projection module $G_\psi(v_t, u, t)$ maps a latent state into the decoder's input space using AdaLN modulation, $\gamma(u,t) \odot \mathrm{LN}(v_t) + \beta(u,t)$. It receives no standalone objective; its gradient comes through the decoder, which is trained with cross-entropy against the reference text $x_t$ at forgetting level $t$: $\mathcal{L}_{\text{dec}} = -\log p_\theta(x_t \mid \hat v_t)$.
+
+\section{Experimental Setup}
+
+\paragraph{Data.}
+We use the MSR Abstractive Text Compression corpus~\citep{toutanova2016}, augmented with progressive abstraction trajectories. Each record contains a source $x$, a trajectory $x_t$ of increasingly abstract rewrites, and a short gist $y$. Splits contain $3{,}001$ / $1{,}001$ / $933$ records with disjoint identifiers. Sources average $36.8$ words, the final trajectory level averages $4.0$ words, and $y$ averages $7.6$ words.
+
+\paragraph{Configuration.}
+The backbone is T5-small ($d{=}512$). The denoiser uses $6$ blocks, $8$ heads, $d_{\text{ff}}{=}2048$, dropout $0.1$, over $L{=}8$ slots, with $T{=}1000$ cosine-schedule timesteps. Training used a single A100.
+
+\paragraph{Metrics.}
+We report BERTScore~\citep{zhang2020} for semantic similarity and UniEval~\citep{zhong2022} for factual consistency and summarization quality. For graded behavior we report a \emph{monotonicity score}, the fraction of test trajectories whose BERTScore against the source decreases monotonically with $t$, and an \emph{entailment score} computed with an NLI model on adjacent trajectory pairs, where detail loss requires the more detailed text to entail the more abstract one but not conversely.
+
+\section{Preliminary Results}
+\label{sec:results}
+
+\paragraph{The detail latent is informative but not faithful.}
+Decoding $v_0$ directly recovers the source with high surface similarity (Table~\ref{tab:results}, top), confirming that the bottleneck retains episodic content. Factual consistency is far weaker, and inspection shows why: reconstructions frequently preserve the sentence frame while corrupting content words. High BERTScore therefore overstates reconstruction quality, a caveat for any latent-space text model evaluated primarily by similarity.
+
+\paragraph{The denoiser trains, but one-step recovery is unstable at high $t$.}
+Validation noise-prediction MSE falls from $1.000$ to $0.104$ over 100 epochs (best $0.091$), so the latent diffusion process itself is learnable. However, Eq.~\ref{eq:onestep} divides by $\sqrt{\bar\alpha_t}$, which approaches zero as $t \to T$: measured one-step latent error grows from $0.0038$ at $t{=}50$ to $0.102$ at $t{=}750$ and then diverges at $t{=}1000$. The final timestep is unusable for one-step decoding and must be excluded or clipped. Multi-step estimation avoids this and is marginally better on similarity (BERTScore F1 $0.825$ vs.\ $0.820$) while trading away UniEval consistency ($0.600$ vs.\ $0.643$); its real advantage is qualitative, since one-step decoding collapses early to degenerate phrases (\emph{``There is a view idea.''}) where multi-step retains recognizable content. We adopt multi-step estimation.
+
+\paragraph{But graded recall does not emerge.}
+Table~\ref{tab:results} (bottom) reports the properties the architecture was designed to produce, evaluated on the full test split. Both are weak. Fewer than a third of trajectories are monotonic even under the more favorable joint-training setup, and the entailment scores show that adjacent levels frequently fail the directional detail-loss test. The typical failure is non-monotonic ordering rather than degenerate text: intermediate levels are often \emph{more} specific than earlier ones.
+
+\begin{table}[h]
+  \centering
+  \small
+  \caption{Preliminary results on the MSR test split. \textbf{Top:} direct decoding from the detail latent $v_0$ --- semantic similarity is high, factual consistency is not. \textbf{Bottom:} graded-recall behavior --- both target properties remain far from the intended behavior.}
+  \label{tab:results}
+  \begin{tabular}{lcc}
+    \toprule
+    \multicolumn{3}{l}{\emph{Latent reconstruction quality} ($n{=}50$)} \\
+    \midrule
+    BERTScore F1                  & \multicolumn{2}{c}{0.932} \\
+    UniEval (summarization)       & \multicolumn{2}{c}{0.757} \\
+    UniEval (factual consistency) & \multicolumn{2}{c}{0.537} \\
+    \midrule
+    \multicolumn{3}{l}{\emph{Graded recall} ($n{=}933$)} \\
+    \midrule
+    Setup             & Monotonicity   & Entailment \\
+    Separate training & 0.164          & \textbf{0.628} \\
+    Joint training    & \textbf{0.325} & 0.587 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Diagnosis: The Supervision Map Is the Bottleneck}
+\label{sec:diagnosis}
+
+The natural reading of Table~\ref{tab:results} is that diffusion timesteps do not correspond to semantic detail levels. We find a more specific and more actionable explanation.
+
+Training samples a timestep uniformly, $t \sim \mathcal{U}\{1, T\}$, and selects a supervision target by bucketing,
+\begin{equation}
+k \;=\; \min\!\left(\left\lfloor t / B \right\rfloor,\; n_i - 1\right),
+\label{eq:bucket}
+\end{equation}
+with bucket width $B{=}100$ and $n_i$ the number of levels available for example $i$. This implicitly assumes $n_i \approx 10$. In reality the trajectories are far shorter: they average $4.9$ levels. The $\min$ therefore clamps a large majority of timesteps onto the last available level.
+
+Table~\ref{tab:collapse} quantifies the effect. Across all three splits, roughly $61\%$ of uniformly sampled timesteps map to the single most abstract target. The model is thus trained on a signal that is close to binary --- ``slightly abstracted'' for small $t$, ``maximally abstracted'' for everything else --- and is given almost no gradient distinguishing intermediate levels from one another. A model trained this way should not be expected to produce smooth trajectories, and the observed non-monotonic middle region is exactly the region that is undersupervised.
+
+\begin{table}[h]
+  \centering
+  \small
+  \caption{Collapse of the timestep-to-level map under Eq.~\ref{eq:bucket} with $B{=}100$, $T{=}1000$. Most sampled timesteps receive the most abstract target regardless of position.}
+  \label{tab:collapse}
+  \begin{tabular}{lccc}
+    \toprule
+    Split & Records & Mean levels & \% mapped to final level \\
+    \midrule
+    Train      & 3{,}001 & 4.88 & 61.3 \\
+    Validation & 1{,}001 & 4.97 & 60.5 \\
+    Test       & 933     & 4.85 & 61.6 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+This suggests a direct fix: replace the fixed bucket with a normalized, per-example map $k = \lfloor (t/T) \cdot n_i \rfloor$, so that every trajectory is stretched across the full diffusion horizon and each available level receives comparable supervision. A second implication concerns the terminal state. Standard diffusion drives $v_T$ to pure noise, so the most abstract end of the trajectory is anchored on \emph{nothing}; the observed collapse into degenerate text at high $t$ is consistent with this. Anchoring the terminal state on the gist $y$ instead would give forgetting a semantic floor rather than a noise floor. We regard these two changes, rather than a larger denoiser, as the critical next experiments.
+
+\section{Toward Budgeted Long-Form QA}
+\label{sec:qa}
+
+The diagnosis above also indicates that abstractive compression is a weak testbed: its trajectories are short, synthetic, and carry no external notion of how much detail is appropriate, since the ``correct'' abstraction level is defined only by the generated reference.
+
+We are therefore reframing the task around \textbf{long-form question answering}~\citep{fan2019,stelmakh2022}, where detail budgets are externally grounded. Given a question $q$ and a stored memory, the system should produce an answer whose specificity is set by the number of reverse-diffusion steps. This maps cleanly onto the existing architecture: the gist code $u$ becomes the encoded question, making recall genuinely cue-conditioned rather than conditioned on a summary of the answer itself, and reverse-diffusion depth becomes an explicit compute-for-detail dial.
+
+The reframing also changes what is measured. Rather than asking whether abstraction is monotonic against a synthetic reference, we ask: (i) does answer quality improve monotonically with depth, yielding a usable quality-versus-budget curve; (ii) does each step \emph{add} facts without contradicting earlier ones, checkable by entailment against the retrieved evidence; and (iii) can early exit match full-depth quality at lower token cost? Criterion (ii) supplies the step-wise monotonicity signal our current objective lacks, since it is evaluable at every step rather than only on decoded endpoints.
+
+\section{Conclusion}
+
+We set out to model memory as a graded process using latent text diffusion. The representational components work: the detail latent preserves substantial content and the denoiser trains cleanly. The target behavior does not emerge --- monotonic recall reaches only $0.325$. Our main finding is that this is attributable to a specific, fixable defect in how diffusion timesteps are mapped to supervision targets, which collapses roughly $61\%$ of the training signal onto a single abstraction level. We are pursuing a normalized timestep mapping, a gist-anchored terminal state, and a shift to long-form QA, where the detail budget is externally meaningful and step-wise monotonicity is directly measurable.
+
+\begin{thebibliography}{99}
+
+\bibitem[Fan et al.(2019)Fan, Jernite, Perez, Grangier, Weston, and Auli]{fan2019}
+A.~Fan, Y.~Jernite, E.~Perez, D.~Grangier, J.~Weston, and M.~Auli.
+\newblock ELI5: Long form question answering.
+\newblock In \emph{Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics}, 2019.
+
+\bibitem[Ho et al.(2020)Ho, Jain, and Abbeel]{ho2020}
+J.~Ho, A.~Jain, and P.~Abbeel.
+\newblock Denoising diffusion probabilistic models.
+\newblock In \emph{Advances in Neural Information Processing Systems}, volume~33, 2020.
+
+\bibitem[Lewis et al.(2020)]{lewis2020}
+P.~Lewis et~al.
+\newblock Retrieval-augmented generation for knowledge-intensive NLP tasks.
+\newblock In \emph{Advances in Neural Information Processing Systems}, volume~33, 2020.
+
+\bibitem[Li et al.(2022)Li, Thickstun, Gulrajani, Liang, and Hashimoto]{li2022}
+X.~L. Li, J.~Thickstun, I.~Gulrajani, P.~Liang, and T.~B. Hashimoto.
+\newblock Diffusion-LM improves controllable text generation.
+\newblock In \emph{Advances in Neural Information Processing Systems}, volume~35, pages 4328--4343, 2022.
+
+\bibitem[Lovelace et al.(2023)Lovelace, Kishore, Wan, Shekhtman, and Weinberger]{lovelace2023}
+J.~Lovelace, V.~Kishore, C.~Wan, E.~Shekhtman, and K.~Q. Weinberger.
+\newblock Latent diffusion for language generation.
+\newblock In \emph{Advances in Neural Information Processing Systems}, volume~36, 2023.
+
+\bibitem[Nichol and Dhariwal(2021)]{nichol2021}
+A.~Q. Nichol and P.~Dhariwal.
+\newblock Improved denoising diffusion probabilistic models.
+\newblock In \emph{Proceedings of the 38th International Conference on Machine Learning}, 2021.
+
+\bibitem[Raffel et al.(2020)]{raffel2020}
+C.~Raffel, N.~Shazeer, A.~Roberts, K.~Lee, S.~Narang, M.~Matena, Y.~Zhou, W.~Li, and P.~J. Liu.
+\newblock Exploring the limits of transfer learning with a unified text-to-text transformer.
+\newblock \emph{Journal of Machine Learning Research}, 21(140):1--67, 2020.
+
+\bibitem[Stelmakh et al.(2022)Stelmakh, Luan, Dhingra, and Chang]{stelmakh2022}
+I.~Stelmakh, Y.~Luan, B.~Dhingra, and M.-W. Chang.
+\newblock ASQA: Factoid questions meet long-form answers.
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing}, 2022.
+
+\bibitem[Toutanova et al.(2016)Toutanova, Brockett, Tran, and Amershi]{toutanova2016}
+K.~Toutanova, C.~Brockett, K.~M. Tran, and S.~Amershi.
+\newblock A dataset and evaluation metrics for abstractive compression of sentences and short paragraphs.
+\newblock In \emph{Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing}, pages 340--350, 2016.
+
+\bibitem[Zhang et al.(2020)Zhang, Kishore, Wu, Weinberger, and Artzi]{zhang2020}
+T.~Zhang, V.~Kishore, F.~Wu, K.~Q. Weinberger, and Y.~Artzi.
+\newblock BERTScore: Evaluating text generation with BERT.
+\newblock In \emph{International Conference on Learning Representations}, 2020.
+
+\bibitem[Zhong et al.(2022)]{zhong2022}
+M.~Zhong, Y.~Liu, D.~Yin, Y.~Mao, Y.~Jiao, P.~Liu, C.~Zhu, H.~Ji, and J.~Han.
+\newblock Towards a unified multi-dimensional evaluator for text generation.
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing}, 2022.
+
+\end{thebibliography}
+
+\end{document}

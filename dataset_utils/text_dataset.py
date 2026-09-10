@@ -13,6 +13,12 @@ def exists(x):
     return x is not None
 
 
+# Datasets whose records carry a level-wise trajectory (x + xt) instead of a single text field.
+ABSTRACTION_DATASETS = {'privasis_abstraction', 'msr'}
+
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
 def get_dataset(dataset_name, metadata=False, synthetic_train_path=None):
     if dataset_name == 'roc':
         roc_data_path = 'datasets/ROCstory'
@@ -74,6 +80,14 @@ def get_dataset(dataset_name, metadata=False, synthetic_train_path=None):
             'train': train_val_ds['train'],
             'valid': train_val_ds['test'],
             'test': train_test_ds['test']
+        })
+    elif dataset_name == 'msr':
+        # Splits ship as separate files with disjoint ids, so they are used as-is rather than re-split.
+        data_dir = os.environ.get('MSR_DATA_DIR', os.path.join(_REPO_ROOT, 'data', 'final'))
+        dataset = load_dataset("json", data_files={
+            'train': os.path.join(data_dir, 'train.json'),
+            'valid': os.path.join(data_dir, 'validate.json'),
+            'test': os.path.join(data_dir, 'test.json'),
         })
     else:
         raise NotImplementedError
@@ -184,7 +198,7 @@ def get_dataloader(args, dataset, model_config, tokenizer, max_seq_len, mode='di
                 model_inputs[f'cond_{k}'] = cond_inputs[k]
 
             return model_inputs
-        elif mode == 'diffusion' and args.dataset_name == 'privasis_abstraction':
+        elif mode == 'diffusion' and args.dataset_name in ABSTRACTION_DATASETS:
             all_texts = [example['x']] + example['xt']
             num_levels = len(all_texts)
             MAX_LEVELS = 15
@@ -212,8 +226,9 @@ def get_dataloader(args, dataset, model_config, tokenizer, max_seq_len, mode='di
     
     if args.dataset_name in {'xsum', 'qqp'} or 'wmt14' in args.dataset_name:
         dataset = dataset.map(tokenization, remove_columns=['text', 'context'], batched=True, num_proc=None)
-    elif args.dataset_name == 'privasis_abstraction':
-        dataset = dataset.map(tokenization, remove_columns=['x', 'xt', 'id'], batched=False)
+    elif args.dataset_name in ABSTRACTION_DATASETS:
+        # Drop every source column; MSR carries an extra string `y` the collator would try to tensorize.
+        dataset = dataset.map(tokenization, remove_columns=list(dataset.column_names), batched=False)
     else:
         dataset = dataset.map(tokenization, remove_columns='text')
             

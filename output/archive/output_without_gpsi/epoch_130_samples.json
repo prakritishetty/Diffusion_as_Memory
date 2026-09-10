@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "The law school has more than 5,700 alumni, approximately 80 % of whom reside in Indiana. eos> The balance practice law throughout the country and live in 48 different states. eos>",
+        "v0": "The law school has more than 5,700 alumni, approximately 80 % of whom reside in Indiana. eos> The balance law throughoutfully the country and live in 48 different states. eos>",
+        "original_y": "Large group of people associated with an institution primarily located in one place.",
+        "u": "Some population of people living with  education.. for in California area."
+    },
+    {
+        "original_x": "We all hear about today's increases in neglect, abuse and abandonment of those who can't fight back : children.",
+        "v0": "We all hear about today's increases in neglect, abuse  abandonment of children who abandonn't fight back : children '",
+        "original_y": "Vulnerable individuals are experiencing harm.",
+        "u": "Violenceulnerable individuals face burden abuse due"
+    },
+    {
+        "original_x": " All around our country, Christmas presents bearing the names of school children will stay in their ribbons and wrappings under the tree because of the escalating epidemic of violence against children in recent years. ''",
+        "v0": " All around our country, Christmas presents bearing the names of children children in stay in their ribbons and stay them under the tree because of the increasingescaating effects of violence in children in recent years. ''",
+        "original_y": "Violence impacting children and holiday gifts.",
+        "u": "Parents ing children' families decorations."
+    },
+    {
+        "original_x": "To the south of the Staatsoper on the corner of the square is St. Hedwigs-Kathedrale, from 1747, a huge, domed structure built for the Catholics incorporated into Protestant Prussia by Frederick's conquest of Polish Si",
+        "v0": "To the south of the townoper on the corner of the St is St. Hedwig--Hhedl m, 17 1747, a 17 structure, 17med structure built by the Catholics intoincorporated into Frederick Frederickhe by con Si's conquest of Si Sid",
+        "original_y": "Large domed structure built for Catholics, incorporating religious elements into a region through conquest.",
+        "u": "Significant structurer structure representing by  people. representinginvolving various elements into a system. jons"
+    },
+    {
+        "original_x": "Yeah, in a parking lot he's dead, bent over the trunk of a Trans Am, face smeared against the rear window.",
+        "v0": "Yeah, in a parking lot he's dead, bent over the trunk of a Trans Am, face-swaring against the rear window.",
+        "original_y": "Death occurred in a vehicle-related setting.",
+        "u": "Someone due through a vehicle.related situation."
+    },
+    {
+        "original_x": "The Commissioner has certified that the interim final rule will not have a significant economic impact on a substantial number of small entities since the rule only affects individuals.",
+        "v0": "The Commissioner has certified that the interim final rule will not have a significant impact impact on a small number of small businesses since the small affect affects individuals.",
+        "original_y": "Rule has minimal economic impact on individuals.",
+        "u": "Regulation doesn significant impact impact. the."
+    },
+    {
+        "original_x": " Participants are invited to submit similar examples -- from newspapers, magazines, or broadcast news -- of what The New Yorker used to call ''  letters we never finished reading '' '' -LRB- or something like that -RRB-. ",
+        "v0": " Participants are invited to submit similar examples -- from newspapers or, newspapers, or news -- about about the the New Yorker called to call ''  letters we never read reading '' -' or-LRB- or something like that 'RRB-. '",
+        "original_y": "Examples of unfinished content are encouraged.",
+        "u": "Popular of re works are available."
+    },
+    {
+        "original_x": " It is terrible that something so frightening should be given the name of something so pure and beautiful, '' says Luz Marlene Sierra Mayorga, a Bogot\u00e1 engineer, referring to  miraculous fishing '' -- which is what? e",
+        "v0": " It is terrible that so so frightening should be given so name of something so beautiful and beautiful, '' says Luis Sierragas Sierra Mayor a, referring gota expert, referring to what fishing fishing,' which which is what''eo",
+        "original_y": "Something frightening is being associated with something pure and beautiful.",
+        "u": "interesting is to related considered with  else and magical."
+    },
+    {
+        "original_x": "This is the time of year when we give thanks for the warmth and love that surrounds us.",
+        "v0": "This is the time of year when we give thanks for the warmth and love that surrounds us.",
+        "original_y": "warmth and love.",
+        "u": "Exc, appreciation are"
+    },
+    {
+        "original_x": "Explainer was humming along just great, hitting the nails on the head, until the last sentence : And a browser's source code is only a fraction of the size of that of an operating system.",
+        "v0": "Explainer was humming up just fine, hitting the head on the head, until the final sentence, until, source's only is is only a fraction of the operating of an operating an operating system.",
+        "original_y": "Something was going well until a surprising comparison was made.",
+        "u": "A is wrong wrong over somethinga system conclusion. applied."
+    }
+]

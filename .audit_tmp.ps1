@@ -1,0 +1,13 @@
+$ErrorActionPreference='Stop'
+function Items($p){$j=(Get-Content $p -Raw|ConvertFrom-Json);if($j -is [array]){@($j)}elseif($j.data){@($j.data)}elseif($j.records){@($j.records)}else{@($j)}}
+function E($v){$null -eq $v -or ($v -is [string] -and [string]::IsNullOrWhiteSpace($v)) -or ($v -is [array] -and $v.Count -eq 0)}
+function J($v){if($null -eq $v){''}else{$v|ConvertTo-Json -Compress -Depth 100}}
+$ps='data/final/train.json','data/final/validate.json','data/final/test.json','data/final/generated_xt_dataset_with_y.jsonl';$S=@{}
+foreach($p in $ps){$S[$p]=if($p.EndsWith('jsonl')){@(Get-Content $p|? Trim|% {$_|ConvertFrom-Json})}else{Items $p}}
+'=== RECORD STATISTICS ==='
+foreach($p in $ps){$a=@($S[$p]);$l=@($a|%{if($_.xt){@($_.xt).Count}else{0}});$so=@($l|sort);$med=if($so.Count%2){$so[[math]::Floor($so.Count/2)]}else{($so[$so.Count/2-1]+$so[$so.Count/2])/2};$h=(($l|group|sort Name|%{"$($_.Name):$($_.Count)"})-join ' ');$d=@{};$hd=$false;foreach($r in $a){foreach($q in @($r.psobject.Properties|? Name -match domain)){$hd=$true;$v=if(E $q.Value){'<empty>'}else{[string]$q.Value};if(!$d[$v]){$d[$v]=0};$d[$v]++}};$ds=if($hd){(($d.GetEnumerator()|sort Name|%{"$($_.Name):$($_.Value)"})-join ' ')}else{'NONE'};$any=@($a|?{$x=J $_.x;@($_.xt|%{J $_})-contains $x}).Count;$first=@($a|?{$t=@($_.xt);$t.Count -gt 0 -and (J $_.x) -eq (J $t[0])}).Count;"$p count=$($a.Count) missing_empty(id,x,xt,y)=($(@($a|?{E $_.id}).Count),$(@($a|?{E $_.x}).Count),$(@($a|?{E $_.xt}).Count),$(@($a|?{E $_.y}).Count)) xt_hist={$h} min=$(($l|measure -Min).Minimum) max=$(($l|measure -Max).Maximum) mean=$(($l|measure -Average).Average) median=$med truncated_gt10=$(@($l|?{$_ -gt 10}).Count) x_in_any_xt=$any x_eq_xt0=$first domain={$ds}"}
+'=== TIMESTEP MAPPING ==='
+foreach($p in $ps[0..2]){$a=@($S[$p]);$c=@{};$tot=0;$fin=0;foreach($r in $a){$n=if($r.xt){@($r.xt).Count}else{0};for($t=1;$t -le 1000;$t++){if($n){$i=[math]::Min([math]::Floor($t/100),$n-1);$k="$i";if(!$c[$k]){$c[$k]=0};$c[$k]++;$tot++;if($i -eq $n-1){$fin++}}}};$z=(($c.GetEnumerator()|sort {[int]$_.Name}|%{"idx$($_.Name)=$([math]::Round(100*$_.Value/$tot,6))%"})-join ' ');"$p assignments=$tot index_percentages={$z} final_clamped=$([math]::Round(100*$fin/$tot,6))%"}
+'=== GENERATED TO FINAL OVERLAP ==='
+$g=@($S[$ps[3]]);$m=@{};foreach($r in $g){if(!(E $r.id)){$m[[string]$r.id]=$r}};foreach($p in $ps[0..2]){$a=@($S[$p]);$id=0;$full=0;foreach($r in $a){if(!(E $r.id)-and$m.ContainsKey([string]$r.id){$id++;if((J $r)-(eq(J $m[[string]$r.id]))){$full++}}};"$p generated_id_overlap=$id/$($a.Count) exact_full_record_overlap=$full/$($a.Count)"}
+"generated_count=$($g.Count)"

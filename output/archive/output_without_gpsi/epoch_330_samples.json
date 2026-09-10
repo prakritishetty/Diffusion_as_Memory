@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "Also in Merrion Street, next to the front garden of Leinster House, is the Victorian collection of the Natural History Museum -LRB- see page 64 -RRB-.",
+        "v0": "Also in Merrill , next to the front garden of theinster Street, is the Victorian collection of the Natural History Museum -LRB- see page 64 -RRB-.",
+        "original_y": "Victorian collection near a garden.",
+        "u": "Historical museum with a historical."
+    },
+    {
+        "original_x": "What I am getting at are titles with skew spellings, rogue punctuation, and  weird and wonderful '' names and words that are difficult to relate to anything meaningful.",
+        "v0": "What I am getting at are titles with skew spellings, rogue punctuation, and strange strange words unusual words'' words and words that are nothing to relate to anything meaningful.",
+        "original_y": "Unconventional titles with unusual features are hard to understand.",
+        "u": "Wordexpectedfirmal words and humorous names. common to find."
+    },
+    {
+        "original_x": "A variation on this theme occurs in Alba de C\u00e9spedes'The Secret -LRB- translated from the Italian by Isabel Quigly : Simon and Schuster, New York, 1958, page 114 -RRB- where she confides that I still had",
+        "v0": "A variation on this theme occurs in Alba de Li\u00f3io  - Translation Translat by-LRB- translated from the Italian by Isabellecden, From  Franceg, 1958 York - 1958 - where 5258--RRB- where I stilld that I still had",
+        "original_y": "Someone spent time organizing personal belongings.",
+        "u": "quotes shares  with  itemss."
+    },
+    {
+        "original_x": "This is the time of year when we give thanks for the warmth and love that surrounds us.",
+        "v0": "This is the time of year when we give thanks for the warmth and love that surrounds us.",
+        "original_y": "warmth and love.",
+        "u": "Exc, appreciation are"
+    },
+    {
+        "original_x": "Apparel, textile, and fiber firms and retailers have recently joined to launch the Quick Response Program, designed to improve information flow, standardize recording systems, and improve turnaround time throughout the system. eos> The program could be an important boon to productivity and",
+        "v0": "Textilarel, textile, and retailers manufacturers have recently have recently launched the launch the Quick Response Program, designed to improve patient retention, improveize recording system, and improve turnaround time in the system. eos> This program can be an important boon to productivity and",
+        "original_y": "Businesses collaborating to improve efficiency and information flow within a system.",
+        "u": "Technology canleveraging to improve customer and reduce storage. a system."
+    },
+    {
+        "original_x": "They bombed the Bogota offices last month, destroying its computer and causing $ 2.5 million in damage.",
+        "v0": "They bombed the Bogota offices last month, destroying its computer and causing $ 2.5 million in damage.",
+        "original_y": "Damage and destruction occurred.",
+        "u": "Los to destruction caused over"
+    },
+    {
+        "original_x": "One of us will call you to discuss how your company can become an important highly visible partner with the JCC in support of our scholarship programs.",
+        "v0": "One of us will call you to discuss how your company can become an important public visible partner with the JCC in support of our scholarship programs.",
+        "original_y": "Partnership opportunity to support scholarship programs.",
+        "u": "Collaboration to to support scholarship programs."
+    },
+    {
+        "original_x": "Having exhausted all of her options, Cecilia turned to her family priest where she found support and guidance. eos> Cecilia was brought to a residential outreach maternity service funded by United Way of Central Indiana. eos>",
+        "v0": "Having exhausted all of her options, shecilia turned to her family where where she received guidance and guidance. eos> Cecilia was  to a residential care missionmaternity service funded by United Way of Central Indiana. eos>",
+        "original_y": "Seeking support and guidance during difficult times.",
+        "u": "Supportking assistance for  for  life."
+    },
+    {
+        "original_x": "Reviewers have noted some possible sources of upward bias in the long-term studies. eos> Some have noted that the less robust estimates based on the Six-Cities Study are significantly higher than those based on the more broadly distributed ACS data sets. eo",
+        "v0": "Reviewers have noted some sources sources of upward bias in the long-term studies. eos> However have noted that the less robust bio inbased on the Six-City study are less higher than those based on the more   dataACS data sets. eo",
+        "original_y": "Potential bias in studies.",
+        "u": "Risk negative over public "
+    },
+    {
+        "original_x": " Brown, however, had no explanation for the behavior at the Kennedy ticket counter -- entirely typical behavior that often makes the already unpleasant air travel experience completely unbearable. ''",
+        "v0": " Brown, however, had no explanation for the behavior at the Kennedy counter counter- entirely typical behavior that makes makes the much unpleasant travel travel experience unbe unarable. ''",
+        "original_y": "unpleasant experience, typical behavior.",
+        "u": "Experience behavior   behavior,"
+    }
+]

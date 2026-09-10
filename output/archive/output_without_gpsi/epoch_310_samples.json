@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "This just in -LRB- via e-mail -RRB- regarding George W. Bush's smirk from the University of North Carolina's John Shelton Reed, who co-edits Southern Cultures magazine :",
+        "v0": "This just in -LRB- via e-mail 'RRB- regarding George W. Reed's smirk from the University of North Carolina's co Wlton , who co-hosts Southern Cultures magazine :",
+        "original_y": "Communication regarding a person's expression.",
+        "u": "A between a divorce's viewing."
+    },
+    {
+        "original_x": "Your support is a vote of confidence in the ongoing work of the Indianapolis Museum of Art. eos> From docent-led tours to art instruction delivered via satellite, your support is critical. eos>",
+        "v0": "Your support is a support of confidence in the ongoing work of the Indianapolis Museum of Art. eos> From do- toursled tours to art delivered delivered via satellite support, your support is critical. eos>",
+        "original_y": "Support for ongoing work.",
+        "u": "Support for art work."
+    },
+    {
+        "original_x": "But, we might ask, could we not have a complete physical description of Gertrude or the engine block such that all possible properties might be derived from that complete physical description? eos> The answer is almost certainly no. eos>",
+        "v0": "But, we might ask, we we not complete a complete description description of Gertrude or the block block any that all physical physical might be derived from the description description description. eos> The answer is almost certainly not, eos>",
+        "original_y": "Can complete descriptions fully explain all properties?",
+        "u": "Somecell  without functional the functional."
+    },
+    {
+        "original_x": "He praised IBM for being '' a critical partner in our economic development efforts '' in New York state.",
+        "v0": "He praised IBM for being '' a critical partner in our economic development efforts '' in New York state.",
+        "original_y": "Positive partnership supporting economic development.",
+        "u": "Strong development with  and."
+    },
+    {
+        "original_x": "The company said it is in the process of phasing out John Deere, its current source of production for midsized motor home chassis. eos> In anticipation of the start - up of its new factory, the company said a larger - than ",
+        "v0": "The company is it is  the process of phasing out John Deer 'its current source of production for medium- home house models. eos> In the of the start of- up of  new factory, the company said ita larger, than -",
+        "original_y": "A company is ending a relationship with a supplier for vehicle parts.",
+        "u": "Company company is starting productiona transition with manufacturera new. the assembly."
+    },
+    {
+        "original_x": "Intending to ease consumer access to mental health care, New Mexico legislators in March passed a law allowing psychologists to prescribe psychotropic medications, such as antidepressants.",
+        "v0": "Inte to ease access access to mental health , New Mexico legislators passed March passed a bill allowing clinicians to prescribe psychotherapy medications, such as antidepressants.",
+        "original_y": "Easing access to mental health care through medication prescriptions.",
+        "u": "Avalusier professionals to medication health professionals is healthcare programss."
+    },
+    {
+        "original_x": " Knowledge is a violent, bright, hot thing, but you would never know that watching Moyers, '' says Laurence Jarvik, author of PBS : Behind the Screen and a Moyers critic. eos>",
+        "v0": " Knowledge is a violent, hot city, hot thing, but you never never know that watching Moorers, foundera' says Laurence Jarvis, author of Behinditch, Behind the Screen and a Moyers critic. eos>",
+        "original_y": "Knowledge can be intense and impactful, but some find a critic's perspective lacking.",
+        "u": "A of be challenging,  the. with it people ita movie iss..."
+    },
+    {
+        "original_x": "At the busy Front Street shops in Philipsburg, you can buy Delft blue, jewels, Thai silks, linens, Peruvian mirrors, old silver, and liquor.",
+        "v0": "At the busy Street Street shops in Philipsburg, you can buy Delft blue, silks, Thai  , Thas, Peruvian silks, old silver, and silver.",
+        "original_y": "Variety of goods available for purchase.",
+        "u": " of items and to personal."
+    },
+    {
+        "original_x": "Time derides John Gray, the author of Men Are From Mars, Women Are From Venus, as an egomaniacal huckster who's making millions selling banalities to vulnerable couples. eos>",
+        "v0": "Timeriesives John Moore, author author of Men From From Men, Men Are An Venus, An an egoistn woman,ippoman who's making millions selling banishties to vulnerable couples. eos>",
+        "original_y": "Author criticized for profiting from simplistic relationship advice.",
+        "u": "Asreveals for mising vulnerable vulnerable views.."
+    },
+    {
+        "original_x": "The fourth row, labeled  Subtotal '' shows the First-Class household mail as the sum of mail in the above three sectors. eos> This is the First-Class Mail either sent or received by all households and is subject to analysis by HDS",
+        "v0": "The fourth row, labeled  Firstttal '' shows the First-Class household name as the sum of the in the above three sectors. eos> This is the first-Class Mail which sent or received by mail subscribers and is subject to analysis by HDS",
+        "original_y": "Sum of mail in sectors is shown.",
+        "u": "Wastem payments usage various like used."
+    }
+]

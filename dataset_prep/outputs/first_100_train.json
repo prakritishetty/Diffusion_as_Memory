@@ -1,0 +1,1244 @@
+[
+  {
+    "id": "106",
+    "x": "'' Except for this small vocal minority , we have just not gotten a lot of groundswell against this from members , '' says APA president Philip G. Zimbardo of Stanford University .",
+    "x+": "`` Except for this small vocal minority , we have not gotten a lot of groundswell against this , '' says APA president Zimbardo .",
+    "xt": [
+      "`` Except for a vocal minority , we have n't gotten much groundswell from members , '' says Philip G. Zimbardo of Stanford University .",
+      "APA president of Stanford has stated that except for a vocal minority they have not gotten a lot of pushback from members .",
+      "APA president Philip G. Zimbardo of Stanford says they have not had much opposition against this ."
+    ],
+    "summary": "minor opposition against something from a group.",
+    "summary_processed": true
+  },
+  {
+    "id": "46",
+    "x": "Date with destiny : After Vanderbilt opens with Georgia Tech , the Commodores will play host to Furman , which is Johnson 's former team and a Division I-AA powerhouse .",
+    "x+": "After Vanderbilt opens with Georgia Tech , the Commodores will host Furman , Johnson 's former Division I-AA team .",
+    "xt": [
+      "After Vanderbilt opens with Georgia Tech , the Commodores play Furman , Johnson 's former team and a Division I-AA powerhouse .",
+      "After Vanderbilt opens with Georgia Tech , the Commodores will play host to Furman , which is Johnson 's former team .",
+      "After Vandervilt vs. Georgia Tech , the Commodores will play Furman , Johnson 's former team .",
+      "Date with destiny : The Commodores will play host to Furman , which is Johnson 's former team ."
+    ],
+    "summary": "A team will play a game against a former team that is a strong competitor.",
+    "summary_processed": true
+  },
+  {
+    "id": "76",
+    "x": "The court upheld the sentence of another death row inmate , Robert O. Marshall , convicted of arranging the murder of his wife at a picnic area on the Garden State Parkway .",
+    "x+": "The court upheld the death sentence of Robert O. Marshal , convicted of arranging the murder of his wife .",
+    "xt": [
+      "The court upheld the sentence of death row inmate , Robert O. Marshall , convicted of arranging the murder of his wife .",
+      "Convicted of arranging the murder of his wife , the court upheld the sentence of another death row inmate , Robert O. Marshall .",
+      "the court upheld the death sentence of Robert O. Marshall , convicted of arranging his wife 's murder .",
+      "Robert O. Marshalls sentence has been upheld by the court after being convicted of arranging his wifes murder ."
+    ],
+    "summary": "A person was convicted for arranging the death of their spouse.",
+    "summary_processed": true
+  },
+  {
+    "id": "53",
+    "x": "He said companies engaged in e-commerce would be able to set up offices , employ staff and own equipment in the open zone , including fully-owned foreign companies .",
+    "x+": "Companies in e-commerce will be able to set up offices , employ staff , and own equipment in the open zone .",
+    "xt": [
+      "Companies engaged in e-commerce would be able to set up offices , employ staff and own equipment in the open zone .",
+      "`` Companies involved in e-commerce can set up offices , employ staff and own equipment in the open zone , '' he said .",
+      "E-commerce foreign companies are able to set up offices , employ staff and own equipment in this open zone ."
+    ],
+    "summary": "Companies can establish operations, hire employees, and possess resources in a designated area, including foreign entities.",
+    "summary_processed": true
+  },
+  {
+    "id": "38",
+    "x": "Sheikh Mohamed , who is also the Defense Minister of the United Arab Emirates , announced at the inauguration ceremony that '' we want to make Dubai a new trading center . ''",
+    "x+": "Sheikh Mohamed , the Defense Minister of the United Arab Emirates , announced that `` we want to make Dubai a new trading center . ''",
+    "xt": [
+      "Sheikh Mohamed announced at the inauguration ceremony that `` we want to make Dubai a new trading center . ''",
+      "Sheikh Mohamed , announced at the inauguration ceremony that '' we want to make Dubai a new trading center . ''"
+    ],
+    "summary": "A leader announced a desire to establish a trading center.",
+    "summary_processed": true
+  },
+  {
+    "id": "35",
+    "x": "Taking a cue from California , more politicians will launch their campaigns by backing initiatives , says David Magleby of Brigham Young University .",
+    "x+": "David Magleby said that more politicians will launch their campaigns by backing initiatives .",
+    "xt": [
+      "More politicians will launch their campaigns by backing initiatives , says David Magleby .",
+      "David Magleby of Brigham Young University says that politicians will launch campaigns by backing initiatives .",
+      "David Magleby says that more politicians will launch campaigns by backing initiatives ."
+    ],
+    "summary": "Politicians will begin campaigns by supporting initiatives.",
+    "summary_processed": true
+  },
+  {
+    "id": "93",
+    "x": "The APA has scheduled 30 minutes at its meeting in August for an RxP debate , but its leadership believes it already has an accurate sense of support for its RxP policy .",
+    "x+": "The APA scheduled 30 minutes at its meeting for an RxP debate , but believes it has a good sense of support for its policy .",
+    "xt": [
+      "The APA will meet for 30 minutes in August for an RxP debate , but leadership believes it already has support for its policy .",
+      "The APA has a 30 minute meeting in August for Rxp policy , they believe it already has support .",
+      "The APA has schedules a slot for the RxP debate in August , but believes is already has a sense of support for the issue ."
+    ],
+    "summary": "Leadership believes they have a good understanding of support for a policy.",
+    "summary_processed": true
+  },
+  {
+    "id": "16",
+    "x": "The thrift said that '' after these charges and assuming no dramatic fluctuation in interest rates , the association expects to achieve near record earnings in 1990 . ''",
+    "x+": "The thrift said the association expects near record earnings in 1990 , after these charges and with stable interest rates .",
+    "xt": [
+      "The thrift association expects near record earnings for 1990 assuming little changes in interest rates .",
+      "`` The association expects to achieve near record earnings in 1990 after the changes with no fluctuation in interest rates . ''",
+      "The thrift said : '' with no large change in interest rates , the association expects near record earnings in 1990 . ''",
+      "`` The association expects to achieve near record earnings in 1990 . ''"
+    ],
+    "summary": "Expects high earnings assuming stable interest rates.",
+    "summary_processed": true
+  },
+  {
+    "id": "52",
+    "x": "But a senior State Department official also acknowledged that some in the administration and Congress are pushing for more direct military cooperation , which would require congressional approval .",
+    "x+": "A State Department official acknowledged that the administration and Congress are pushing for more direct military cooperation .",
+    "xt": [
+      "But a State Department official acknowledged some are pushing for more direct military cooperation , which would require congressional approval .",
+      "An official acknowledged that for more military cooperation , congressional approval would be necessary .",
+      "But a senior State Department official also acknowledged that some are pushing for more direct military cooperation ."
+    ],
+    "summary": "Some officials want increased military cooperation requiring approval.",
+    "summary_processed": true
+  },
+  {
+    "id": "48",
+    "x": "Following the suggestion of President Theodore Roosevelt , the sculptor Augustus Saint - Gaudens redesigned the coin in 1907 in high relief , forever after giving the coins the designation '' saints . ''",
+    "x+": "At President Theodore Roosevelt 's suggestion , sculptor Saint - Gaudens redesigned the coin in 1907 in high relief .",
+    "xt": [
+      "As per suggestion of President Roosevelt , sculptor Augustus Saint-Gaudens redesigned the coin in 1907 , henceforth designating the coins `` saints . ''",
+      "Augustus Saint-Gaudens redesigned the coin in 1907 per the suggestion of Theodore Roosevelt .",
+      "Following the suggestion of President Theodore Roosevelt , the sculptor Augustus Saint - Gaudens redesigned the coin in 1907 in high relief ."
+    ],
+    "summary": "Redesign of a coin led to a lasting designation.",
+    "summary_processed": true
+  },
+  {
+    "id": "36_37",
+    "x": "-LRB- UNDATED -RRB-",
+    "x+": "Chefs and seafood retailers are wading into fisheries management .",
+    "xt": [
+      "Chefs and retailers are entering a most pressing resource issue of the day : fisheries management .",
+      "Retailers have discovered the hottest natural resource issue of the day : fisheries management",
+      "Seafood retailers and chefs are wading into fisheries management ."
+    ],
+    "summary": "No content.",
+    "summary_processed": true
+  },
+  {
+    "id": "75",
+    "x": "The minister who has a personal website on the internet , further said that he wanted Dubai to become the best place in the world for the advanced -LRB- hitech -RRB- technological companies .",
+    "x+": "The minister said that he wanted Dubai to become the best place in the world for advanced technological companies .",
+    "xt": [
+      "The minister stated that he wanted Dubai to become the best in the word for advanced technological companies .",
+      "`` I want Dubai to become the best place in the world for the advanced -LRB- hitech -RRB- technological companies , '' Said the minister .",
+      "The minister further sad that he wanted Dubai to become the best place in the world for the advanced technological companies ."
+    ],
+    "summary": "A person wants a place to be a global hub for technology companies.",
+    "summary_processed": true
+  },
+  {
+    "id": "55",
+    "x": "Microsoft plans to announce on Wednesday a partnership with AT&T Wireless Services to offer software for wireless devices and services , a person close to the talks said Tuesday night .",
+    "x+": "Microsoft will announce on Wednesday a partnership with AT&T Wireless Services to offer software for wireless devices and services .",
+    "xt": [
+      "Microsoft plans a partnership with AT&T Wireless that will offer software for wireless devices and services .",
+      "Microsoft plans to announce on Wednesday a partnership with AT&T Wireless Services , a person close to the talks said on Tuesday night .",
+      "Microsoft plans to announce a partnership with AT&T to offer software for wireless devices and services .",
+      "A partnership between Microsoft and AT&T to include software for wireless devices and services ."
+    ],
+    "summary": "Partnership to offer software for wireless devices.",
+    "summary_processed": true
+  },
+  {
+    "id": "57",
+    "x": "Chairman Theodore Cooper called the program part of the company 's two-year strategy to implement budget constraints and '' an effective headcount-control program . ''",
+    "x+": "Theodore Cooper called the program part of the company 's tactic to enact budget limits and `` a headcount-control program . ''",
+    "xt": [
+      "`` The company will implement a budget constraint and an effective headcount-control program , '' said Theodore Cooper .",
+      "Theodore Cooper called the program part of the company 's two-year strategy to implement budget constraints .",
+      "Theodore Cooper called the program `` an effective headcount-control program . ''",
+      "Chairman Theodore Cooper called the program ` an effective headcount-control program ''"
+    ],
+    "summary": "Strategy to implement constraints and control.",
+    "summary_processed": true
+  },
+  {
+    "id": "42",
+    "x": "Fenton commented that the double eagle had been on '' a long historic journey , with a very satisfying ending . ''",
+    "x+": "The double eagle was on `` a long historic journey , with a very satisfying ending . ''",
+    "xt": [
+      "Fenton said the double eagle 's been on a `` long journey with a satisfying ending . ''",
+      "Fenton said `` a long historic journey , with a very satisfying ending . ''"
+    ],
+    "summary": "a valuable item concluded a significant journey.",
+    "summary_processed": true
+  },
+  {
+    "id": "44",
+    "x": "The new plant is part of IBM 's push to gain a strong lead in chip - making beyond the personal computer business , where Intel and East Asian chip producers hold the advantage .",
+    "x+": "Where Intel and East Asian chip producers reign supreme , the new plant is IBM 's push to gain a lead in chip-making",
+    "xt": [
+      "IBM 's new plant is part of their push to become a leader in chip making beyond personal computers , where others hold the advantage .",
+      "The new plant is part of IBM 's push to gain a strong lead in chip-making where Intel and Asian producers hold the advantage .",
+      "Intel and East Asian chip producers hold the advantage in chip-making and IBM wants to gain a strong lead with a new plant .",
+      "The new plant is part of IBM 's push to gain a strong lead in chip making beyond the personal computer business ."
+    ],
+    "summary": "A company is trying to become a leader in chip production, facing competition in the personal computer market.",
+    "summary_processed": true
+  },
+  {
+    "id": "54",
+    "x": "Powell is among the representatives from 13 nations outside Southeast Asia , including China , Japan and Russia , that are taking part in the annual meeting of the group 's regional forum .",
+    "x+": "Powell is among representatives from 13 nations that are taking part in the annual meeting of the group 's regional forum .",
+    "xt": [
+      "Powell is just one of the representatives from 13 nations outside of Southeast Asia taking part in the meeting of the regional forum .",
+      "Powell is among the representatives from 13 nations outside Southeast Asia taking part in the group 's yearly , regional forum .",
+      "Powell is among the representatives that are taking part in the annual meeting of the group 's regional forum .",
+      "Powell is among the representatives from 13 nations taking part in the annual meeting of the regional forum ."
+    ],
+    "summary": "Representatives from various nations are participating in an annual meeting.",
+    "summary_processed": true
+  },
+  {
+    "id": "70_71",
+    "x": "'' The most - asked question is , ` Do you know you look like Steve Martin ? '",
+    "x+": "At SEC Kickoff 2002 , Johnson said he is most often asked `` Do you know you look like Steve Martin ? ''",
+    "xt": [
+      "Johnson told writers at the SEC Kickoff his top question , `` Do you know you look like Steve Martin ? ''",
+      "'' The most asked question is , ` Do you know you look like Steve Martin ? '",
+      "Johnson said that people like to ask him if he knows he looks like Steve Martin .",
+      "'' ` Do you know you look like Steve Martin ? ' is the most asked question , '' Said Johnson at SEC Kickoff ."
+    ],
+    "summary": "Appearance resemblance is frequently commented on.",
+    "summary_processed": true
+  },
+  {
+    "id": "58",
+    "x": "Valley Federal Savings & Loan Association took an $ 89.9 million charge as it reported a third - quarter loss of $ 70.7 million , or $ 12.09 a share .",
+    "x+": "VFS&LA took a quarter loss of $ 70.7 million or $ 12.09 a share , an $ 89.9 million charge .",
+    "xt": [
+      "Valley Federal Savings & Loan Association reported a third quarter loss of $ 70.7 million , or $ 12.09 a share .",
+      "Valley Federal Savings & Loan Association took an 89.9 mill .",
+      "Valley Federal Savings and Loan association reported a 3rf quarter loss of $ 70.7 million .",
+      "Valley Federal Savings & Loan Association was charged ~ $ 90 million after report of third quarter loss ."
+    ],
+    "summary": "Financial institution reports significant losses and a large charge.",
+    "summary_processed": true
+  },
+  {
+    "id": "104",
+    "x": "Pacific First Financial Corp. said shareholders approved its acquisition by Royal Trustco Ltd. of Toronto for $ 27 a share , or $ 212 million .",
+    "x+": "Pacific First Financial 's shareholders approved its buy by Royal Trustco for $ 27/share , or $ 212 million .",
+    "xt": [
+      "Pacific First Financial Corp. said shareholders approved its acquisition for $ 27 a share .",
+      "Pacific 's shareholders approved the acquisition by Royal Trustco Ltd. for $ 27 a share , or $ 212 million .",
+      "Shareholders approved acquisition by Royal Trustco Ltd. for $ 27 a share , or $ 212 million ."
+    ],
+    "summary": "Acquisition approved for a significant sum.",
+    "summary_processed": true
+  },
+  {
+    "id": "21",
+    "x": "In addition , Hadson said it will write off about $ 3.5 million in costs related to international exploration leases where exploration efforts have been unsuccessful .",
+    "x+": "Hadson said it will write off about $ 3.5 million in costs where exploration efforts have been unsuccesful",
+    "xt": [
+      "Also , Hadson said it will write off about $ 3.5 million in costs related to unsuccessful international exploration leases .",
+      "Hadson said it will write off about $ 3.5 million in costs related to unsuccessful exploration efforts .",
+      "Hadson said it will write off $ 3.5 million related to international exploration leases ."
+    ],
+    "summary": "Costs related to unsuccessful exploration efforts will be written off.",
+    "summary_processed": true
+  },
+  {
+    "id": "101",
+    "x": "The plan was filed jointly with unsecured creditors in federal bankruptcy court in New York and must be approved by the court .",
+    "x+": "The plan was filed in federal bankruptcy court with unsecured creditors and must be approved .",
+    "xt": [
+      "The plan was filed with creditors in bankruptcy court and must be approved by the court .",
+      "The plan was filed with unsecured creditors and must be approved by the court .",
+      "The plan filed jointly with unsecured creditors in federal bankruptcy court must be approved ."
+    ],
+    "summary": "A plan was filed and needs approval.",
+    "summary_processed": true
+  },
+  {
+    "id": "74",
+    "x": "N.V. DSM said net income in the third quarter jumped 63 % as the company had substantially lower extraordinary charges to account for a restructuring program .",
+    "x+": "N.V. DSM said the net income in the third quarter jumped 63 % , after lowering charges to their account .",
+    "xt": [
+      "Lower extraordinary charges from restructuring resulted in a third quarter net income jump of 63 % for NV .",
+      "N.V. DSM said net income in the 3rd quarter jumped 63 % after lowering charges to account for a restructuring program .",
+      "N.V. DSM said net income jumped 63 % in the third quarter because the company had substantially lower changes ."
+    ],
+    "summary": "Company reports significant profit increase due to reduced expenses.",
+    "summary_processed": true
+  },
+  {
+    "id": "8",
+    "x": "Mr. Stronach will direct an effort to reduce overhead and curb capital spending '' until a more satisfactory level of profit is achieved and maintained , '' Magna said .",
+    "x+": "Mr. Stronach will direct spending cuts and reduce overhead until a higher profit level is achieved .",
+    "xt": [
+      "Stronach will be reducing overhead and capital spending to achieve a more satisfactory level of profit .",
+      "Mr. Stronach will direct an effort to reduce overhead and curb capital spending , Magna said .",
+      "Mr. Stronach will reduce overhead and curb spending '' until a more satisfactory level of profit is achieved and maintained , ''",
+      "Mr. Stronach will direct an effort to reduce overhead and curb capital spending ."
+    ],
+    "summary": "Efforts to reduce costs and spending to improve profit.",
+    "summary_processed": true
+  },
+  {
+    "id": "47",
+    "x": "Japan surrendered within days of the detonation of the atomic bombs that killed 140,000 people in Hiroshima on Aug. 6 , 1945 , and 70,000 in Nagasaki three days later .",
+    "x+": "Japan surrendered within days after the atomic bombs killed over 210,000 in Hiroshima and Nagasaki .",
+    "xt": [
+      "Japan surrendered with days of the detonation of the atomic bombs that killed 140,000 in Hiroshima and 70,000 in Nagasaki .",
+      "After the bombings of Hiroshima and Nagasaki , Japan surrendered within days .",
+      "Japan surrendered within days of the detonation of the atomic bombs ."
+    ],
+    "summary": "Devastating events led to surrender and significant loss of life.",
+    "summary_processed": true
+  },
+  {
+    "id": "22",
+    "x": "The British paper , packaging and publishing concern , said profit from continuing lines fell 10 % to # 118 million from # 130.6 million .",
+    "x+": "The British paper said profit from continuing lines fell 10 % to 118 million from 130.6 million .",
+    "xt": [
+      "The British paper said profit from continuing lines fell 10 % .",
+      "Packaging and publishing concern reveal a 10 % drop in profits from 130.6 to 118 million .",
+      "Profit declined to # 118 million for the British paper , packaging and publishing concern ."
+    ],
+    "summary": "A company experienced a decrease in profit.",
+    "summary_processed": true
+  },
+  {
+    "id": "88",
+    "x": "Hadson Corp. said it expects to report a third - quarter net loss of $ 17 million to $ 19 million because of special reserves and continued low natural - gas prices .",
+    "x+": "Hadson Corp. expects a third quarter net loss of more than $ 17 million because of special reserves and low gas prices .",
+    "xt": [
+      "Hadson Corp. said it expects to report a 3rd quarter loss of $ 17m to $ 19m due to special reserves and low gas prices .",
+      "Hadson Corp. expects to report a third quarter net loss of up to $ 19 million .",
+      "Hadson Corp. expects a third - quarter net loss because of low gas prices ."
+    ],
+    "summary": "Financial loss due to market conditions.",
+    "summary_processed": true
+  },
+  {
+    "id": "39",
+    "x": "Upjohn Co. said it will offer an early retirement package to as many as 1,100 employees in a cost-cutting move expected to result in a fourth-quarter charge .",
+    "x+": "Upjohn Co. will offer an early retirement package to some employees to cut costs for the 4th quarter charge .",
+    "xt": [
+      "Upjohn Co. offers early retirement package to as many as 1,100 employees to result in fourth-quarter change .",
+      "Up to 1,100 employees will be offered an early retirement package to cut costs .",
+      "Upjohn Co. said it will offer an early retirement package to as many as 1,100 employees .",
+      "Upjohn Co. will offer early retirement packages for up to 1,100 employees for a 4th-quarter charge ."
+    ],
+    "summary": "Company offering retirement to employees to reduce costs.",
+    "summary_processed": true
+  },
+  {
+    "id": "97",
+    "x": "With the barrage of crack cocaine-connected killings in the 1980s came the realization that young people were too often full-fledged players in the violence .",
+    "x+": "With many crack-cocaine related killings in the 80s came the realization that youths were players in the violence .",
+    "xt": [
+      "Crack Cocaine - connected killings in the 1980s brought realization that young people can be very violent .",
+      "With crack cocaine killings happening in the 1980s , they realized that too many young people were players in violence",
+      "In 1980 realization that young people were fully in violence came from crack cocaine - connected killings ."
+    ],
+    "summary": "Violence involving young people was a problem.",
+    "summary_processed": true
+  },
+  {
+    "id": "28",
+    "x": "Travelers Corp. 's third-quarter net income rose 11 % , even though claims stemming from Hurricane Hugo reduced results $ 40 million .",
+    "x+": "Travelers Corp. 's 3rd-quarter income rose 11 % , even though claims lowered from `` Hugo '' by 40 mil .",
+    "xt": [
+      "Traveler 's third-quarter net income rose 11 % , even after Hurricane Hugo claims were $ 40 million .",
+      "Travelers Corp 's third-quarter net income rose 11 % .",
+      "Travelers Corp. 's net income rose , even as claims stemming from Hurricane reduced results sharply .",
+      "Travelers Corp. 's claims reduced $ 40 million in the third-quarter with net income rising 11 % ,"
+    ],
+    "summary": "Company income increased despite negative impact from a natural disaster.",
+    "summary_processed": true
+  },
+  {
+    "id": "69",
+    "x": "The sweetened offer has acceptances from more than 50 % of Weisfield 's shareholders , and it is scheduled for completion by Dec. 10 .",
+    "x+": "More than 50 % of Weisfield 's shareholders have accepted the offer , due for completion Dec. 10 .",
+    "xt": [
+      "The offer was accepted by more than 50 % of Weisfield 's shareholders , and will be done Dec. 10 .",
+      "This offer has been accepted by over 50 % of Weisfield 's shareholders , set to complete by Dec. 10 .",
+      "The sweetened offer has acceptances from more than 50 % of Weisfield 's shareholders .",
+      "Scheduled for completion on Dec. 10 , Weisfield 's shareholders have a 50 % acceptance ."
+    ],
+    "summary": "Agreement on an offer, involving a significant portion of shareholders, with a planned completion date.",
+    "summary_processed": true
+  },
+  {
+    "id": "79",
+    "x": "The minister , who has his own website , also said : '' I want Dubai to be the best place in the world for state-of-the-art technology companies . ''",
+    "x+": "The minister also stated that he wants Dubai to be the best in the world for top technology companies .",
+    "xt": [
+      "The minister said he wants Dubai to be the best for state-of-the-art technology companies .",
+      "`` I want Dubai to be the best place in the world for state-of-the-art technology , '' said the minister .",
+      "The minister said that he wants Dubai to be the best place in the world for technology companies .",
+      "the ministers website said he wants Dubai to be the best place in the world for top tech companies"
+    ],
+    "summary": "A person wants a location to be a leading hub for advanced technology.",
+    "summary_processed": true
+  },
+  {
+    "id": "32",
+    "x": "Timex is a major U.S. producer and seller of watches , including low - priced battery - operated watches assembled in the Philippines and other developing nations covered by the U.S. tariff preferences .",
+    "x+": "Timex is a major U.S. producer and seller of watches assembled in the Philippines and other developing nations covered by the U.S. tariff preferences .",
+    "xt": [
+      "Timex watches assembled in developing nations like the Philippines are covered by the U.S. tariff preferences .",
+      "Timex is a U.S. producer and seller of watches assembled in developing nations covered by the U.S. tariff preferences ."
+    ],
+    "summary": "A company produces and sells watches, including affordable options manufactured in developing countries with U.S. trade benefits.",
+    "summary_processed": true
+  },
+  {
+    "id": "19",
+    "x": "The New Jersey Supreme Court on Tuesday overturned the death sentence of Leslie Ann Nelson , a transsexual go-go dancer who killed a police officer and an investigator with an AK-47 rifle .",
+    "x+": "The NJ Supreme Court on Tuesday overturned the death sentence of Leslie Ann Nelson who used AK-47 to kill a policeman and an investigator .",
+    "xt": [
+      "The New Jersey Supreme Court overturned the death sentence of Leslie Ann Nelson on Tuesday .",
+      "The New Jersey Supreme Court on Tuesday overturned the death sentence of Leslie Ann Nelson , who killed a police officer and an investigator .",
+      "The New Jersey Supreme Court overturned the death sentence of Leslie Ann Nelson , who killed a police officer",
+      "The New Jersey Supreme Court overturned the death sentence of Leslie Ann Nelson , who killed a police officer and an investigator ."
+    ],
+    "summary": "A person committed a violent crime resulting in fatalities.",
+    "summary_processed": true
+  },
+  {
+    "id": "66",
+    "x": "Critics say that is not nearly enough compared with other prescribers , such as M.D. psychiatrists or nurse practitioners who have at least six years ' medical education and clinical experience .",
+    "x+": "Critics say it is not enough when compared to M.D. psychiatrists or nurse practitioners who have at least six years experience .",
+    "xt": [
+      "Critics say it is not nearly enough compared with other prescribers who have at least six years medical education and clinical experience .",
+      "Critics say that is not nearly enough compared with other prescribers , such as M.D. psychiatrists or nurse practitioners .",
+      "Critics disagree saying that trained professionals have at least 6 years of training ."
+    ],
+    "summary": "Insufficient training compared to other professionals.",
+    "summary_processed": true
+  },
+  {
+    "id": "63",
+    "x": "Xerox Corp. has told employees in its Crum & Forster personal insurance operations that it is laying off about 300 people , or 25 % of the staff .",
+    "x+": "Xerox Corp. has told Crum & Forster employees that 300 people will be laid off .",
+    "xt": [
+      "About 300 people will be layed off from Xerox Corp. in its Crum & Forster personal insurance operations .",
+      "Xerox will lay off 300 employees from the Crum & Foster personal insurance operations .",
+      "Xerox Corp. has told employees that it is laying off about 25 % of the staff .",
+      "Xerox Corp. has told employees in its insurance operations that it is laying off about 25 % of the staff ."
+    ],
+    "summary": "Company reducing workforce by a significant percentage.",
+    "summary_processed": true
+  },
+  {
+    "id": "103",
+    "x": "Fore of the mint said the high price for the coin was reached '' because it is one of a kind , it is beautiful and it has a great story . ''",
+    "x+": "The coin 's high price was reached `` because it is one of a kind , beautiful and has a great story . ''",
+    "xt": [
+      "Fore said the coin 's price was reached `` because it is one of a kind , beautiful and has a great story . ''",
+      "The price for the coin was reached because it 's one of a kind , is beautiful , and has a great story .",
+      "Fore of the mint said the coin is valuable because of its uniqueness and beauty ."
+    ],
+    "summary": "Unique, beautiful item with a compelling history.",
+    "summary_processed": true
+  },
+  {
+    "id": "86",
+    "x": "Travelers 's employee benefits group , which includes its group health insurance operations , posted earnings of $ 24 million , compared with a loss of $ 3 million last year .",
+    "x+": "Traveler 's employee benefits group posted earnings of $ 24 million , compared with a loss of $ 3 million last year .",
+    "xt": [
+      "Travelers 's employee benefits group , including group insurance , earned $ 24 million , compared to a $ 3 million loss last year .",
+      "Travelers 's employee benefits group posted earnings of $ 24 million , compared with a loss of $ 3 million last year .",
+      "Travelers 's employee benefits group posted earnings of $ 24 million , compared with a loss of $ 3 million last year ."
+    ],
+    "summary": "Company benefits group reported significant earnings increase compared to a prior loss.",
+    "summary_processed": true
+  },
+  {
+    "id": "50",
+    "x": "Customers holding contracts for Waertsilae Marine 's undelivered ships are expected to subscribe most of the remaining 170 million markkaa in share capital , government officials said .",
+    "x+": "Customers of Waertsilae Marine 's with undelivered ships are expected to subscribe the remaining 170 million markkaa in share capital .",
+    "xt": [
+      "Those holding contracts for Waertsilae Marine 's undelivered ships are expected to subscribe the remaining 170 million markkaa .",
+      "Officials said customers of Waertsilae Marine 's undelivered ships are expected to subscribe the remaining 170 million markaa in capital .",
+      "Those holding contracts for Waertsilae Marine 's undelivered ships will subscribe most of the remaining markkka in share capital .",
+      "Customers holding contracts for Waertsilae Marine 's undelivered ships are expected to subscribe most of the remaining in share capital ."
+    ],
+    "summary": "Customers with contracts are expected to invest in share capital.",
+    "summary_processed": true
+  },
+  {
+    "id": "84",
+    "x": "One way would be to speed up the flow of health supplies and other urgent commodities to the country under a U.N. humanitarian program , he said .",
+    "x+": "One way would be to expedite the health supplies and other commodities under a U.N. humanitarian program .",
+    "xt": [
+      "One way would be to speed up the flow of supplies and commodities to the country under a UN program .",
+      "One solution is speed up the flow of needed supplies to the country using U.N. humanitarian program ."
+    ],
+    "summary": "Urgent supplies and aid are needed in a country through a program.",
+    "summary_processed": true
+  },
+  {
+    "id": "26",
+    "x": "Travelers estimated that the California earthquake last month will result in a fourth - quarter pre-tax charge of less than $ 10 million .",
+    "x+": "The CA earthquake will cause an estimated fourth - quarter pre-tax under $ 10 million .",
+    "xt": [
+      "The California earthquake may result in a fourth-quarter pre-tax charge of under $ 10 million .",
+      "The California earthquake last month will result in a fourth quarter pre-tax charge of less than $ 10 M",
+      "Travelers estimates the latest California quake will result in a pre-tax charge of < $ 10 million ."
+    ],
+    "summary": "Financial impact from a natural disaster is expected to be relatively small.",
+    "summary_processed": true
+  },
+  {
+    "id": "61",
+    "x": "Rod Moore , executive director of the West Coast Seafood Processors Association , suggests that activists with an agenda are manipulating chefs and retailers .",
+    "x+": "Rod Moore suggests that activists with an agenda are manipulating chefs and retailers .",
+    "xt": [
+      "Executive director Rob Moore believes that activist with an agenda manipulate chefs and retailers .",
+      "Rod Moore , of West Coast Seafood Processors Association , suggests activists are manipulating chefs and retailers .",
+      "activist with an agenda are manipulating chefs n reatilers , say rod moore of west coast seafood processors ass"
+    ],
+    "summary": "Group with an agenda is influencing others.",
+    "summary_processed": true
+  },
+  {
+    "id": "30",
+    "x": "The seafood industry is less than thrilled about this surge of interest in ocean ecosystems from people who are not scientists .",
+    "x+": "The seafood industry is unhappy with the surge of interest in ocean ecosystems from the public .",
+    "xt": [
+      "The seafood industry is n't happy about non-scientist showing more interest in ocean ecosystems .",
+      "More people are interested in ocean ecosystems and the seafood industry is not happy .",
+      "The seafood industry is less than thrilled about this surge of interest in ocean ecosystems ."
+    ],
+    "summary": "Industry dislikes interest from non-experts.",
+    "summary_processed": true
+  },
+  {
+    "id": "56",
+    "x": "Karnes knew the 509th was preparing for a special bombing mission , but he had no idea what kind of bombs were involved .",
+    "x+": "The 509th was preparing for a special mission but Karnes did n't know the type of bombs .",
+    "xt": [
+      "Karnes had no idea what kind of bombs were involved when preparing for 509th mission .",
+      "Karnes knew the 509th was preparing for a special bombing mission .",
+      "Karnes only knew that the 509th was preparing for a special bombing mission ."
+    ],
+    "summary": "Preparation for a mission involving weaponry.",
+    "summary_processed": true
+  },
+  {
+    "id": "31",
+    "x": "His brief stop in Malaysia also highlighted the moral ambiguities of the effort to prevent terrorism and its emphasis on cooperation with governments that the United States has often criticized .",
+    "x+": "His stop in Malaysia highlighted moral ambiguities of efforts to prevent terrorism and cooporation with governments the U.S. has often criticized .",
+    "xt": [
+      "His stop in Malaysia also highlighted the moral ambiguities of the effort to prevent terrorism and its emphasis on cooperation with governments",
+      "His stop highlighted the moral ambiguities of the effort to prevent terrorism and its cooperation with governments criticized by the U.S.A.",
+      "His visit to Malaysia highlights the morality of anti-terrorism with governments often criticized by the US ."
+    ],
+    "summary": "Efforts to prevent terrorism involve cooperation with criticized governments, raising moral questions.",
+    "summary_processed": true
+  },
+  {
+    "id": "109",
+    "x": "He did not speak to reporters in Jordan , but he told The Associated Press before leaving the United States that he hopes to '' separate the humanitarian work from the political issues . ''",
+    "x+": "He told The Associated Press before leaving the U.S that he hopes to separate the humanitarian work from the political issues .",
+    "xt": [
+      "He told The Associated Press before leaving the United States that he hopes to `` separate the humanitarian work from the political issues . ''",
+      "Before leaving the United States he told reporters he hopes to `` separate the humanitarian work from the political issues . ''",
+      "He told The Associated Press that he hopes `` to separate humanitarian work and political issues . ''"
+    ],
+    "summary": "Separating humanitarian work from political issues.",
+    "summary_processed": true
+  },
+  {
+    "id": "90",
+    "x": "But he insisted the international community can do a much better job in helping Iraq deal with its economic and health problems .",
+    "x+": "The international community could greatly help Iraq deal with economic and health problems .",
+    "xt": [
+      "He insisted the international community can assist Iraq with its economic and health problems .",
+      "He insisted the international community can do a better job helping Iraq deal with its problems .",
+      "he says the international community could do a better job to help Iraq deal with its problems .",
+      "he insisted the international community can greatly help Iraq deal with its national problems ."
+    ],
+    "summary": "International community can improve assistance with economic and health issues.",
+    "summary_processed": true
+  },
+  {
+    "id": "102",
+    "x": "But as the day wore on , the Red Sox tried harder and by Tuesday night were able to get the player they wanted for their lineup .",
+    "x+": "But the Red Sox persisted and by Tuesday had the player they wanted for their lineup .",
+    "xt": [
+      "By Tuesday night the Red Sox were able to get the player they wanted .",
+      "By Tuesday night the Red Sox were able to get the player they wanted for their lineup ."
+    ],
+    "summary": "Effort leads to acquiring a desired player.",
+    "summary_processed": true
+  },
+  {
+    "id": "43",
+    "x": "Reuters Holdings PLC said Michael Reupke resigned as general manager to pursue unspecified interests , a move the news organization termed an '' amicable separation . ''",
+    "x+": "Reuters Holdings PLC said Michael Reupke resigned as general manager to pursue unspecified interests .",
+    "xt": [
+      "R.H. PLC said Michael Reupke resigned as general manager to pursue other interests .",
+      "Reuters Holdings PLC said Michael Reupke resigned as GM to pursue unspecified interests .",
+      "Michael Reupke resigned as general manager pursuing certain interests , Reuters Holdings PLC said was `` amicable separation . ''",
+      "Michael Reupke resigned as GM to pursue other interests , an `` amicable separation . ''"
+    ],
+    "summary": "amicable departure for unspecified reasons.",
+    "summary_processed": true
+  },
+  {
+    "id": "95",
+    "x": "'' I am concerned that nonmedically trained people as legitimate prescribers of drugs will not be accepted by the American public , '' says psychologist Gerald C. Davison of the University of Southern California .",
+    "x+": "`` I am concerned that nonmedically trained people as legitimate prescribers of drugs will not be accepted by the American public , '' says Dr. Davison of USC .",
+    "xt": [
+      "`` I am concerned that nonmedically trained people as prescribers of drugs will not be accepted by the American public , '' says psychologist Gerald C. Davison .",
+      "Psychologist Gerald C. Davidson of the USC says that he is concerned that untrained drug prescribers will not be accepted by the American public .",
+      "Gerald Davison of University of Southern California is concerned non trained people will be legitimate drug prescribers ."
+    ],
+    "summary": "Concerns exist regarding non-medical professionals prescribing drugs and public acceptance.",
+    "summary_processed": true
+  },
+  {
+    "id": "17",
+    "x": "The inauguration of Dubai Internet City coincides with the opening of an annual IT show in Dubai , the Gulf Information Technology Exhibition -LRB- Gitex -RRB- , the biggest in the Middle East .",
+    "x+": "The inauguration of Dubai Internet City coincides with the opening of the Gulf Information Technology Exhibition , an annual IT show .",
+    "xt": [
+      "The inauguration of Dubai Internet City coincides with the opening of Gitex , in Dubai .",
+      "The inauguration of Dubai Internet City coincides with the opening of an IT show in Dubai , the Gulf Information Technology Exhibition .",
+      "The inauguration of Dubai Internet City coincides with the opening of an annual IT show in Dubai ."
+    ],
+    "summary": "Major IT event opening in Dubai.",
+    "summary_processed": true
+  },
+  {
+    "id": "77",
+    "x": "The preliminary stages of the project , the only one of its kind according to its designers , are estimated at $ 200 million .",
+    "x+": "The preliminary stages of the project are estimated at $ 200 million .",
+    "xt": [
+      "The preliminary stages of this unique project are estimated at $ 200 million .",
+      "According to it 's designers the project is estimated to cost $ 200 million .",
+      "designer says , one of a kind begining stages of the proect are estimated at $ 200 million"
+    ],
+    "summary": "A unique project has significant initial costs.",
+    "summary_processed": true
+  },
+  {
+    "id": "73",
+    "x": "Intending to ease consumer access to mental health care , New Mexico legislators in March passed a law allowing psychologists to prescribe psychotropic medications , such as antidepressants .",
+    "x+": "New Mexico legislators in March passed a law allowing psychologists to prescribe psychotropic medications , such as antidepressants .",
+    "xt": [
+      "Intending to ease access to mental health care , New Mexico legislators passed a law allowing psychologists to prescribe medications .",
+      "New Mexico legislators passed a law to allow psychologists to prescribe psychotropic medications .",
+      "To ease consumer access to mental health care , New Mexico legislators passed a law allowing psychologists to prescribe antidepressants .",
+      "New Mexico legislators passed a law allowing psychologists to prescribe psychotropic medications ."
+    ],
+    "summary": "Easing access to mental health care through medication prescriptions.",
+    "summary_processed": true
+  },
+  {
+    "id": "83",
+    "x": "Bengie is expected to be activated from the disabled list today , giving the Angels both Molina brothers on the active major - league roster for the first time .",
+    "x+": "Bengie will be activated from the disabled list today , putting both the Molina brothers on the Angels active roster .",
+    "xt": [
+      "Bengie will likely be off the disabled list , giving the Angels both Molina brothers on the roster for the first time .",
+      "For the first time both Molina brothers will be active on the major league roster for the Angels .",
+      "Bengie is expected to be able to play today , giving the Angels both Molina brothers on the active roster .",
+      "Bengie is leaving the disabled list , giving the Angels 2 Molina boys on the active major league roster will be a first ."
+    ],
+    "summary": "Players returning from injury enable a team to field siblings together.",
+    "summary_processed": true
+  },
+  {
+    "id": "68",
+    "x": "Ralston Purina Co. reported a 47 % decline in fourth-quarter earnings , reflecting restructuring costs as well as a more difficult pet food market .",
+    "x+": "Ralston Purina Co. reported a 47 % decline in fourth-quarter earnings .",
+    "xt": [
+      "Ralsont Purina Co. reported a 47 % decline in 4th quarter earnings .",
+      "A decline in earnings for Ralston Purina Co. reflect restructuring costs and a more difficult pet food market .",
+      "Ralston Purina Co. declined 47 % in the fourth-quarter , due to restructuring and a difficult pet food market ."
+    ],
+    "summary": "Company reports decreased earnings due to market challenges and restructuring.",
+    "summary_processed": true
+  },
+  {
+    "id": "45",
+    "x": "The committee 's action comes six months after federal prosecutors ended a lengthy criminal investigation into Torricelli 's activities without filing criminal charges .",
+    "x+": "The committee 's action comes after federal prosecutors completed an investigation , opting not to charge Torricelli .",
+    "xt": [
+      "The committee 's action comes 6 months after prosecutors ended a lengthy criminal investigation into Torricelli 's activities .",
+      "The committee 's action comes six months after federal prosecutors ended an investigation into Torricelli 's activities .",
+      "Actions taken by the committee come six months after a six month long criminal investigation to Torricelli 's activities ."
+    ],
+    "summary": "Investigation concluded without charges.",
+    "summary_processed": true
+  },
+  {
+    "id": "94",
+    "x": "The e-commerce free zone is situated in north Dubai , near the industrial free zone in Jebel Ali , the top regional and tenth international leading area in container transit .",
+    "x+": "The e-commerce free zone is in north Dubai , near the industrial free zone in Jebel Ali , a leading area in container transit .",
+    "xt": [
+      "The e-commerce free zone is in north Dubai , near Jebel Ali , the top regional and 10th international area in container transit .",
+      "The e-commerce free zone is located near the industrial free zone in Jebel Ali , north Dubai .",
+      "The e-commerce free zone is situated in north Dubia , near the industrial free zone in Jebel Ali .",
+      "The e-commerce free zone is situated in north Dubai , near Jebel Asi , The tenth international leading area in container transit ."
+    ],
+    "summary": "A significant area facilitates trade and industry, demonstrating international importance.",
+    "summary_processed": true
+  },
+  {
+    "id": "34",
+    "x": "RMS International Inc. , Hasbrouk Heights , N.J. , facing a cash-flow squeeze , said it is seeking other financing sources and waivers from debenture holders .",
+    "x+": "Facing a cash flow squeeze , RMS International Inc. is seeking other financing sources and waivers .",
+    "xt": [
+      "RMS International Inc. is seeking other financing sources and waivers from debenture holders .",
+      "RMS International Inc. is facing a cash-flow squeeze , said it is seeking other financing sources ."
+    ],
+    "summary": "Company facing financial difficulties, seeking funding.",
+    "summary_processed": true
+  },
+  {
+    "id": "96",
+    "x": "The offer , advertised in today 's editions of The Wall Street Journal , is scheduled to expire at the end of November .",
+    "x+": "The offer in today 's edition of Wall Street Journal will expire at the end of November .",
+    "xt": [
+      "The offer , in The Wall Street Journal , is scheduled to expire at the end of November .",
+      "The offer in The Wall Street Journal is expiring at the end of November .",
+      "The offer is scheduled to expire at the end of November ."
+    ],
+    "summary": "Offer expires at the end of November.",
+    "summary_processed": true
+  },
+  {
+    "id": "87",
+    "x": "Sony Corp. completed its tender offer for Columbia Pictures Entertainment Inc. , with Columbia shareholders tendering 99.3 % of all common shares outstanding by the Tuesday deadline .",
+    "x+": "Sony completed its tender offer for Columbia Pictures with their shareholders tendering 99.3 % of common shares outstanding by Tuesday .",
+    "xt": [
+      "Sony completed its offer for Columbia with Columbia shareholders tendering 99.3 % of all outstanding common shares .",
+      "Sony Corp. 's offer for Columbia Pictures Entertainment Inc. has shareholders tendering 99.3 % of all common shares outstanding .",
+      "Sony Corp. completed its tender offer for Columbia Pictures Entertainment Inc. by the Tuesday deadline ."
+    ],
+    "summary": "Company acquisition completed with high shareholder participation.",
+    "summary_processed": true
+  },
+  {
+    "id": "92",
+    "x": "Each year on Aug. 6 , '' I always think of Paul Tibbets and how he handled unbelievable responsibility , '' Karnes said .",
+    "x+": "On Aug. 6 Karnes always thinks of how Paul Tibbets handled great responsibility .",
+    "xt": [
+      "Every Aug. 6 , Karnes says , `` I think of Paul Tibbets and how he handled responsibility . ''",
+      "`` I always think of Paul Tibbets and how he handled responsibility , '' Karnes said .",
+      "Karnes says , `` I always think of Paul Tibbets and how he handled responsibility . ''"
+    ],
+    "summary": "Remembering a person and responsibility.",
+    "summary_processed": true
+  },
+  {
+    "id": "24",
+    "x": "The Finnish government and major creditors of bankrupt shipyard Waertsilae Marine Industries Oy agreed in principle to form a new company to complete most of the troubled shipyard 's backlog of 15 ships .",
+    "x+": "The Finnish government and major creditors of Waertsilae Marine Industries Oy agreed to form a new company to complete most of the 15 ship backlog .",
+    "xt": [
+      "The Finnish government and Waertsilae Marine Industries Oy agreed to a form of new company to complete most of the troubled shipyard backlog .",
+      "The government and creditors of the shipyard agreed a new company should complete the shipyard 's backlog .",
+      "The Finnish government and Waertsilae Marine Industries agreed in principle to form a new company to complete most of the shipyard 's backlog of 15 ships"
+    ],
+    "summary": "Agreement to form a new company to complete shipbuilding orders.",
+    "summary_processed": true
+  },
+  {
+    "id": "72",
+    "x": "Dow Jones , which owns about 64 million of Telerate 's 95 million common shares outstanding , said that about 24,000 shares have been tendered under its offer .",
+    "x+": "Dow Jones , which owns about 64 million shares of Telerate , reports 24,00 shares have been tendered under its offer .",
+    "xt": [
+      "Dow Jones owns 64 million of Telerate 's shares , and said that about 24000 of them have been tendered under its offer .",
+      "Dow Jones said that about 24,000 shares have been tendered under its offer ."
+    ],
+    "summary": "Ownership and shares tendered under an offer.",
+    "summary_processed": true
+  },
+  {
+    "id": "33",
+    "x": "A spokeswoman for Crum & Forster said employees were told early this week that numerous staff functions for the personal insurance lines were going to be centralized as a cost - cutting move .",
+    "x+": "Crum & Foster announced that many staff functions for personal insurance lines were going to be centralized to cut costs .",
+    "xt": [
+      "A spokeswoman for Crum & Forster said employees were told that staff functions for personal insurance lines would be centralized to cut costs .",
+      "A Crum & Forster spokeswoman said employees were told that many functions for personal insurance lines would be centralized to cut costs .",
+      "Crum & Forster employees were told this week of some personal insurance line functions being cut to save costs .",
+      "A spokeswoman said employees were told that numerous staff functions for the personal insurance lines were going to be a cost cutting move ."
+    ],
+    "summary": "Staff functions are being centralized to reduce costs.",
+    "summary_processed": true
+  },
+  {
+    "id": "60",
+    "x": "When there 's a boycott , Lassen said , '' it 's not environmentalists or chefs making the sacrifice , it 's coastal communities . ''",
+    "x+": "According to Lassen , mainly coastal communities suffer due to boycotts",
+    "xt": [
+      "'' it 's not environmentalists or chefs making the sacrifice , it 's coastal communities . ''",
+      "Boycotts often affect the innocent locals more than the intended .",
+      "Lassen said that during boycotts coastal cities are the ones to make sacrifices ."
+    ],
+    "summary": "Sacrifice impacts communities during a boycott.",
+    "summary_processed": true
+  },
+  {
+    "id": "18",
+    "x": "Much of the 800 service will '' migrate to 900 , '' predicts Jack Lawless , general manager of US Sprint 's 900 product .",
+    "x+": "Much of the 800 service will migrate to 900 , says the manager of the 900 product .",
+    "xt": [
+      "`` Much of the 800 services will migrate to 900 , '' predicts Jack Lawless .",
+      "Manager Jack Lawless predicts much of Sprint 's 800 service will `` migrate to 900 . ''",
+      "Much of the 800 service will '' migrate to 900 , '' predicts Jack Lawless .",
+      "Most of the 800 sevrvice will go to 900 , predicts Jack Lawless CEO of US Sprint 's ."
+    ],
+    "summary": "Service will move to a different system.",
+    "summary_processed": true
+  },
+  {
+    "id": "25",
+    "x": "The action followed by one day an Intelogic announcement that it will retain an investment banker to explore alternatives '' to maximize shareholder value , '' including the possible sale of the company .",
+    "x+": "Intelogic made an announcement that it will explore alternatives `` to maximize shareholder value , '' including possible sale of the company .",
+    "xt": [
+      "Itelogic accounced that it will retain an investment banker to explore ways to maximize shareholder value , which may include the sale of the company .",
+      "Intelogic announced that an investment banker will explore ways to maximize shareholder value , including selling the company .",
+      "An Intelogic announcement that it will retain an investment banker to explore alternatives , including the possible sale of the company ."
+    ],
+    "summary": "Exploring options to increase value, potentially including a sale.",
+    "summary_processed": true
+  },
+  {
+    "id": "65",
+    "x": "Iraq has been under economic sanctions since the war ended , which some say have thwarted the country 's ability to recover from the devastation of the bombing campaign .",
+    "x+": "Iraq has been under economic sanctions since the war ended , which some say have thwarted the country 's ability to recover .",
+    "xt": [
+      "Iraq has struggled to recover from the bombing campaign due to the economic sanctions .",
+      "Iraq is having trouble recovering from the bombing campaigns , that has put them in economic sanctions"
+    ],
+    "summary": "Economic hardship hinders recovery after conflict.",
+    "summary_processed": true
+  },
+  {
+    "id": "105",
+    "x": "Between 1991 and 1997 , a U.S. Department of Defense psychopharmacology demonstration project involving two to four years ' training produced 10 military psychologists who can write prescriptions .",
+    "x+": "Between 1991 and 1997 a U.S. Department of Defense psychopharmacology made a project that lasted 2-4 years training 10 military psychologists .",
+    "xt": [
+      "Between 1991-1997 , a U.S. Department of Defense psychopharmacology demonstration project trained 10 military psychologist to write prescriptions .",
+      "In 1991-1997 , a U.S. Department of Defense project involved 2-4 years ' training produced 10 military psychologists who can write prescriptions .",
+      "A 2 to 4 year project between 1991-1997 by the Department of Defense , produced 10 military psychologists that can write prescriptions ."
+    ],
+    "summary": "Training program produces qualified professionals.",
+    "summary_processed": true
+  },
+  {
+    "id": "67",
+    "x": "They are the host restaurant 's executive chef , Laurent Gras ; his counterpart at Masa 's , Ron Siegel , and Masa pastry chef Keith Jeanminette .",
+    "x+": "They are the restaurant 's chef , Laurent Gras ; his counterparts , Ron Siegel , and Keith Jeanminette .",
+    "xt": [
+      "This is Masa 's executive chef , Laurent Gras , his partner Ron Siegel and pastry chef Keith Jeanminette .",
+      "They are the host restaurant 's executive chef , his counterpart at Masa 's , and Masa pastry chef"
+    ],
+    "summary": "Restaurant chefs and pastry chefs.",
+    "summary_processed": true
+  },
+  {
+    "id": "132",
+    "x": "P.S. Please accept the enclosed 2001 calendar and gift tags as a special greeting from our animal friends and Little Shelter .",
+    "x+": "P.s. Please accept the enclosed 2001 calendar and gift tags from Little Shelter .",
+    "xt": [
+      "Please accept this calendar and the gift tags as a greetings from us at Little Shelter .",
+      "Please accept the enclosed calendar and gift tags from our animal friends and Little Shelter .",
+      "P.S. Have this 2001 calendar and gift tags as thanks from our animals and Little Shelter .",
+      "Please take the calender and gift tages enclosed as a gift from Little Shelter ."
+    ],
+    "summary": "greeting from friends.",
+    "summary_processed": true
+  },
+  {
+    "id": "147",
+    "x": "The Center for Marine Conservation can put your membership donation to work right away to protect ocean wildlife , preserve marine habitats and prevent the marine pollution that poisons our watery planet .",
+    "x+": "The Center for Marine Conservation can put you membership donation to work right away to protect ocean wildlife and prevent marine pollution .",
+    "xt": [
+      "The Center for Marine Conservation uses member donations to help protect ocean wildlife , preserve marine habitats , and prevent marine pollution .",
+      "The Center for Marine Conservation can put your membership donation to work to protect ocean wildlife , preserve habitats and prevent the pollution .",
+      "The Center for Marine Conservation uses your donation to protect ocean wildlife from all kinds of danger .",
+      "Marine Conservation center can use membership donatioon to protect ocean wildlife , marine habitats & prevent marine pollution that poisons our planet ."
+    ],
+    "summary": "Protecting wildlife, habitats, and preventing pollution of the ocean.",
+    "summary_processed": true
+  },
+  {
+    "id": "111",
+    "x": "The only fund raising event in the world where you can bring your entire family , other employees , or maybe even your neighbors .",
+    "x+": "The only fundraising event where you can bring your whole family , coworkers and your neighbors .",
+    "xt": [
+      "The only fund raising event in the world where you can bring your family and friends .",
+      "`` The only fund raising event where you can bring your family , employees , or your neighbors . ''",
+      "`` The only fundraising event where you can bring your family , employees , or even your neighbors . ''",
+      "`` It 's the only fundraiser where you can bring your family , other employees , even your neighbors . ''",
+      "The fund raising event for your entire family , other employees and your neighbors .",
+      "Bring your family , neighbors and other employees to this unique fund raising event .",
+      "`` The only fund raising event in the world where you can bring your family or other employees ''"
+    ],
+    "summary": "Family-friendly fundraising event.",
+    "summary_processed": true
+  },
+  {
+    "id": "168",
+    "x": "We 'll also award more small grants through our Species Action Fund to help a wide range of animals , including whooping cranes , giant river otters , and Tibetan antelopes .",
+    "x+": "We 'll award grants through our Species Action Fund to help animals , including cranes , river otters , and Tibetan antelopes .",
+    "xt": [
+      "We 'll also award small grants through our Species Action Fund to help a wide range of animals .",
+      "Small grants will be awarded through the Species Action Fund to help many different animals .",
+      "We 'll also award grants through our Species Action Fund to help a wide range of animals .",
+      "Through Species Action Fund , we will award grants to aid a wide variety of animals such as cranes , otters , and antelopes ."
+    ],
+    "summary": "Funding supports various animal species.",
+    "summary_processed": true
+  },
+  {
+    "id": "188",
+    "x": "The Wall Street Journal states that the plaintiffs ' lawyers hired by Texas to try the case will receive as part of the deal almost $ 2.2 billion in fees .",
+    "x+": "The Wall Street Journal says that the Texas plaintiff 's lawyers will receive almost $ 2.2 billion in fees .",
+    "xt": [
+      "The WSJ said the plaintiffs ' lawyers hired by Texas will receive almost $ 2.2 billion in fees for trying the case .",
+      "The WSJ states the plaintiffs ' lawyers will receive almost $ 2.2 billion in fees .",
+      "Wall Street Journal says the the plaintiff lawyers hired by Texas to try the case will get ~ $ 2.2 billion in fees .",
+      "Wall Street Journal states the plaintiffs lawyers will receive as part of the deal almost $ 2.2 billion in fees ."
+    ],
+    "summary": "Legal fees related to a case are substantial.",
+    "summary_processed": true
+  },
+  {
+    "id": "153_154",
+    "x": "DTV allows you to receive up to 29 channels of HBO , SHOWTIME , CINEMAX , THE MOVIE CHANNEL , STARZ !",
+    "x+": "DTV has HBO , SHOWTIME , CINEMAX , THE MOVIE CHANNEL , STARZ !",
+    "xt": [
+      "You receive up to 29 premium channels with DTV .",
+      "DTV allows you to receive up to 29 channels including HBO SHOWTIME , and more .",
+      "DTV let 's you have up to 29 channels of HBO , SHOWTIME , CINEMAX , and STARZ !",
+      "DTV allows 29 channels of HBO , SHOWTIME etc. ."
+    ],
+    "summary": "Entertainment options are available.",
+    "summary_processed": true
+  },
+  {
+    "id": "110",
+    "x": "With your increased commitment , we can intensify our campaigns to protect species that are in grave peril by both the loss of habitat and the illegal trading in animal parts .",
+    "x+": "With your commitment , we can protect species that are in peril by the loss of habitat and illegal trading .",
+    "xt": [
+      "We can improve campaigns for the protection of species in great danger and illegal trading with your increased commitment .",
+      "We can intensify our campaigns to protect species in danger by both the loss of habitat and the illegal trading in animal parts .",
+      "With your help , we can intensify our drives to protect species in danger of losing habitat , and poaching .",
+      "Campaigns to guard species that are in peril by habitat loss and illegal trading in parts are increased by your increased fidelity ."
+    ],
+    "summary": "Protecting endangered species faces threats from habitat loss and illegal trade, requiring increased effort.",
+    "summary_processed": true
+  },
+  {
+    "id": "151",
+    "x": "They are our gift to you to keep and use on your holiday packages in thanks for considering this important appeal for wildlife .",
+    "x+": "For considering this appeal for wildlife , keep and use our gift for your holiday packages .",
+    "xt": [
+      "They are our gift to you in thanks for considering this important appeal for wildlife .",
+      "They 're our gift to keep and use on your packages in thanks for considering this appeal .",
+      "They 're our gift to you to use on your gifts .",
+      "These holiday package gifts are a thanks to you for your consideration of wildlife appeal ."
+    ],
+    "summary": "Gift for use in thanks.",
+    "summary_processed": true
+  },
+  {
+    "id": "134",
+    "x": "The feeling that you are a real partner in helping us achieve victories for wildlife is probably the biggest benefit of membership there is .",
+    "x+": "The largest benefit for membership is feeling like you 're a real partner in our victories for wildelife .",
+    "xt": [
+      "The biggest benefit of membership is the feeling that you are helping us achieve victories for wildlife .",
+      "Feeling that you truly are helping us achieve victories for wildlife is the biggest perk of membership .",
+      "the feeling of helping achieve victories for wildlife with us is probably the best benefit of membership"
+    ],
+    "summary": "Membership provides significant benefits through collaborative achievement.",
+    "summary_processed": true
+  },
+  {
+    "id": "114",
+    "x": "The only way Alaskans can repeal the new law and reinstate the ban on same - day airborne land - and - shoot wolf killing is with a Citizens ' Referendum .",
+    "x+": "To repeal the new law and reinstate the ban on the same day , Alaskans must pass a Citizens ' Referendum .",
+    "xt": [
+      "Alaskans can only repeal the new law and restore the ban on airborne wolf killing with a Citizens ' Referendum .",
+      "The only way Alaskans can reinstate the ban on same day airborne land and shoot wolf killing , is by a referendum .",
+      "Alaskans can reinstate the ban on same-day airborne land-and-shoot wolf killing only with a Citizen 's Referendum .",
+      "Citizens ' Referendum can repeal Alaska 's new law and reinstate the ban on wolf killings ."
+    ],
+    "summary": "Repealing a law requires a public vote.",
+    "summary_processed": true
+  },
+  {
+    "id": "172",
+    "x": "But while our programs and activities have been successful in reducing animal cruelty , we are constantly faced with new problems of animal suffering which need immediate attention and drain our resources .",
+    "x+": "While our programs and activities have been successful in reducing animal cruelty , new problems of animal suffering drain our resources .",
+    "xt": [
+      "While our programs and activities have been successful in reducing animal cruelty , we still have new problems that need our attention .",
+      "While our programs and activities in reducing animal cruelty have been successful , we 're constantly faced by immediate problems that drain our resources .",
+      "Despite our success in reducing animal cruelty , the never ending problem of animal suffering that require a lot of attention and resources still presist .",
+      "Despite of our successful programs and activities , we are always faced with new problems of animal suffering ."
+    ],
+    "summary": "Animal suffering persists, requiring ongoing resources and attention despite past successes in reducing cruelty.",
+    "summary_processed": true
+  },
+  {
+    "id": "115",
+    "x": "The WSJ reports that , according to an MIT survey , Americans are twice as likely to back a tax increase going toward the search for extraterrestrials than one for gene-cloning research .",
+    "x+": "According to an MIT survey , Americans are twice as likely to back a tax increase for the search for aliens than for gene-cloning research .",
+    "xt": [
+      "An MIT survey reports that Americans are twice as likely to favor a tax increase to fund a search for aliens than for cloning research .",
+      "According an MIT survey , Americans are twice as likely to support tax increases that are spent on extraterrestrials than on gene-cloning .",
+      "WSJ reported that an MIT survey found Americans twice as likely to back tax increases on the search for ET than for gene-cloning research .",
+      "According to an MIT survey , Americans are more likely to back a tax increase for in search of aliens than one for gene-cloning research ."
+    ],
+    "summary": "People support funding for searching for extraterrestrials more than gene-cloning research.",
+    "summary_processed": true
+  },
+  {
+    "id": "171",
+    "x": "And thousands of endangered sea turtles and other creatures continue to die each year unnecessarily due to wasteful fishing and over development , forces that keep these species in a fragile state .",
+    "x+": "And thousands of creatures such as endangered sea turtles die each year , due to their vulnerability to excessive fishing and development .",
+    "xt": [
+      "Endangered sea turtles and other creatures die each year due to wasteful fishing and overdevelopment that keep these species in a fragile state .",
+      "Too many endangered sea turtles and other creatures die each year due to wasteful fishing and over development , keeping them in a fragile state .",
+      "Thousands of endangered sea turtles and other creatures continue to die each year due to wasteful fishing and over development .",
+      "Thousands of species are kept in a fragile state as they continue to die each year from wasteful fishing and over development ."
+    ],
+    "summary": "Vulnerable species are dying due to unsustainable practices, threatening their survival.",
+    "summary_processed": true
+  },
+  {
+    "id": "189",
+    "x": "While I appreciate U.S. News & World Report 's endorsement , the true value of your support is measured by the way Goodwill takes on problems that affect all of us .",
+    "x+": "I appreciate U.S. News & World Report 's endorsement , but true value is measured by the way Goodwill handles problems .",
+    "xt": [
+      "The true value of your support is measured by the way Goodwill takes on problems that affect everyone .",
+      "I appreciate the endorsement , but the true value of your support is the way Goodwill takes on problems that affect us .",
+      "The true value of U.S. News & World Report 's support is measured by Goodwill 's efforts to take on widespread problems .",
+      "I do appreciate US News & world report 's endorsement , but the true value is measured by how goodwill solves our problems"
+    ],
+    "summary": "Support is valuable when addressing widespread problems.",
+    "summary_processed": true
+  },
+  {
+    "id": "180",
+    "x": "By accepting my personal invitation , you 'll provide yourself and every member of your family with a fulfilling sense of proprietorship , and a steady flow of priceless enjoyment .",
+    "x+": "Accepting my invitation means you and your family will have a sense of proprietorship and a steady flow of priceless enjoyment .",
+    "xt": [
+      "By accepting my personal invitation , you 'll provide yourself and your family with a fulfilling sense of proprietorship and enjoyment .",
+      "By accepting my invitation , you 'll provide yourself and your family with a sense of proprietorship , and priceless enjoyment .",
+      "If you accept my invite , your household will be filled with enjoyment and a sense of proprietorship .",
+      "By accepting my persona ; invitation you 'll provide your family with a sense of proprietorship , and a steady flow of enjoyment ."
+    ],
+    "summary": "Enjoyment and a sense of ownership for oneself and family.",
+    "summary_processed": true
+  },
+  {
+    "id": "150",
+    "x": "Cycle Date You can time your statement and payments to coincide with convenient times of the month by choosing your billing cycle date .",
+    "x+": "You can control your statements and payments by conveniently choosing a specific billing cycle date .",
+    "xt": [
+      "You can time your statement and payments by choosing your billing cycle .",
+      "Your statements and payments can be set for a time of the month if you choose a billing cycle date .",
+      "Cycle Date You can time your statement and payments to coincide with convenient times of the month ."
+    ],
+    "summary": "Flexible payment scheduling.",
+    "summary_processed": true
+  },
+  {
+    "id": "158",
+    "x": "Please rush me your generous gift of $ 100 or $ 15 today while these endangered animals are on your mind and in your heart .",
+    "x+": "Please rush me your generous gift of $ 100 or $ 15 while these animals are in your heart .",
+    "xt": [
+      "Please rush your generous gift of $ 100 or $ 15 today for these endangered animals .",
+      "Rush me your gift of $ 100 or $ 15 today while these animals are on your mind and heart .",
+      "Please send your gift of $ 15 or $ 100 while these endangered animals are on your mind .",
+      "Please rush your gift while keeping these endangered animals in mind and heart ."
+    ],
+    "summary": "Urgent request for financial support to help animals.",
+    "summary_processed": true
+  },
+  {
+    "id": "190",
+    "x": "As you read my letter , somewhere -- perhaps not far from you -- someone is inflicting pain on an innocent animal ... an animal like Astro .",
+    "x+": "As you read my letter , perhaps not far from you , someone is inflicting pain on an animal like Astro .",
+    "xt": [
+      "Someone somewhere , perhaps not far from you , is inflicting pain on an innocent animal , like the Astro .",
+      "Someone close to you is inflicting pain on an innocent animal like Astro .",
+      "As you read my letter , someone is inflicting pain on an innocent animal .",
+      "Somewhere , someone is harming an innocent animal like Astro as you read my letter ."
+    ],
+    "summary": "Someone is harming an innocent animal.",
+    "summary_processed": true
+  },
+  {
+    "id": "182",
+    "x": "Then I thought about an enticing way for you to regain your place among America 's most intelligent , concerned and caring citizens who proudly avow membership in the National Audubon Society .",
+    "x+": "I thought about a way for you to regain your place among America 's best citizens who proudly avow membership in the National Audubon Society .",
+    "xt": [
+      "I thought of a way to get you to the top , concerned and caring citizens who proudly avow membership in the National Audubon Society .",
+      "I thought of an enticing way for you to regain your place among America 's intelligent and concerned citizens in the National Audubon Society .",
+      "I thought of a great way for you to regain your place among America 's most stellar citizens who are proud members of the Audubon Society .",
+      "I thought about a way to regain your place on America 's most intelligent , concerned , caring citizens , and National Audubon Society members ."
+    ],
+    "summary": "regaining a respected position among concerned citizens.",
+    "summary_processed": true
+  },
+  {
+    "id": "125",
+    "x": "Wo n't you please take the time now to send your donation to give someone the priceless gift of independence ?",
+    "x+": "Please send your donation to give someone the priceless gift of independence now .",
+    "xt": [
+      "Please send donations to give someone the priceless gift of independence .",
+      "Wo n't you please send your donation to give someone the gift of independence ?",
+      "Wo n't you please send your donation to give someone the gift of independence ?"
+    ],
+    "summary": "Giving a valuable gift to someone.",
+    "summary_processed": true
+  },
+  {
+    "id": "112",
+    "x": "DTV offers more than 200 channels , delivered with a picture as bright and as sharp as you 'd see on a movie screen and crystal clear sound that rivals your favorite CD .",
+    "x+": "DTV offers more than 200 channels as bright and sharp as you 'd see on a movie screen and sound that rivals your favorite CD .",
+    "xt": [
+      "DTV offers over 200 channels with a movie-like picture in sharpness and brightness , as well as CD quality audio .",
+      "DTV offers more than 200 channels , with sharp picture and clear sound .",
+      "DTV offers more than 200 channels , delivered with HD picture and audio .",
+      "DTV has 200 channels with picture as bright and as sharp as a movie screen and sound crystal clear your favorite CD ."
+    ],
+    "summary": "High-quality entertainment with many channels and excellent visuals and sound.",
+    "summary_processed": true
+  },
+  {
+    "id": "144",
+    "x": "They are utterly out of step with their Alaska constituents ... the state agency that manages Alaska wildlife ... and the rest of the American public !",
+    "x+": "They are out of step with Alaska constituents , the agency that manages Alaska wildlife , and the American public !",
+    "xt": [
+      "They are out of step with their Alaska constituents and the rest of the American public .",
+      "They are utterly discordant with their Alaska constituents , the state wildlife agency , and the American public !",
+      "They are out of step with Alaska constituents , the state agency managing wildlife & the rest of the US public !",
+      "They are not in sync with their Alaska constituents , wildlife , and the people ."
+    ],
+    "summary": "Disagreement with constituents and public opinion.",
+    "summary_processed": true
+  },
+  {
+    "id": "177",
+    "x": "These are prime examples of hard fought victories and critical efforts that are working to improve the health of our marine environment .",
+    "x+": "These are examples of victories that are improving the health of our marine environment .",
+    "xt": [
+      "These are indicative of hard fought victories and efforts that improve marine environment health .",
+      "These are examples of the efforts that are working to improve the health of our marine environment .",
+      "Prime examples of fought victories and efforts that are working to improve the marine environment",
+      "Hard fought victories and critical efforts work in improving the health of our marine environment"
+    ],
+    "summary": "Significant effort leads to positive changes in the environment.",
+    "summary_processed": true
+  },
+  {
+    "id": "184",
+    "x": "Before the 1996 ban on same - day land - and - shoot , as many as 400 wolves were killed in Alaska each year because of this barbaric and unethical practice .",
+    "x+": "Before the 1996 ban , as many as 400 wolves were killed in Alaska each year .",
+    "xt": [
+      "Before the 1996 ban , as many as 400 wolves were killed in Alaska each year because of this barbaric practice .",
+      "As many as 400 wolves in Alaska were killed before the 1996 ban on same-day land and shoot .",
+      "Before the 1996 on same - day land - and - shoot , as many as 400 wolves were killed yearly in Alaska .",
+      "In Alaska , at least 400 wolves were killed annually before the 1996 ban on same - day land - and - shoot ."
+    ],
+    "summary": "Killing of animals due to an unethical practice.",
+    "summary_processed": true
+  },
+  {
+    "id": "119",
+    "x": "it 's almost unthinkable that a program this reckless could be implemented -- in view of the tragic impact that poisonous chemicals and pesticides like DDT have had on wildlife and people .",
+    "x+": "It 's unthinkable that a program this reckless could be implemented in view of the impact that poisonous chemicals and pesticides have had .",
+    "xt": [
+      "The tragic impact of poisonous chemicals and pesticides on wildlife and people makes the implementation of the reckless program unthinkable .",
+      "It 's almost unthinkable that a reckless program was implemented since poisonous pesticides like DDT wreaks havoc on wildlife and people .",
+      "It 's unthinkable that a program with poisonous chemicals able to affect wildlife and people could have been implemented .",
+      "it 's unthinkable this program could be implemented -- due to impact that poisonous chemicals and pesticides have on wildlife and people ."
+    ],
+    "summary": "reckless program with tragic impact on wildlife and people.",
+    "summary_processed": true
+  },
+  {
+    "id": "194",
+    "x": "Sometimes I wonder about the extent of my own vocabulary , too , but really , not when I 'm interviewing a client .",
+    "x+": "I sometimes wonder about my vocabulary , but not when interviewing a client .",
+    "xt": [
+      "I wonder about the extent of my own vocabulary , but not when interviewing a client .",
+      "I wonder about my own vocabulary , but not when I 'm interviewing a client .",
+      "I do not wonder about the extent of my own vocabulary when I am with a client ."
+    ],
+    "summary": "Self-doubt about language skills, but not during professional interactions.",
+    "summary_processed": true
+  },
+  {
+    "id": "181",
+    "x": "The Appalachian Mountain Club is looking for men , women , and children who share our love of the outdoors -- and our commitment to preserving our region 's natural beauty for future generations .",
+    "x+": "The Appalachian Mountain Club is looking for people who share our love of the outdoors and our commitment to preserving our region 's beauty .",
+    "xt": [
+      "The Appalachian Mountain Club is looking for people who love the outdoors and are committed to preserving the region 's natural beauty .",
+      "The Appalachian Mountain Club is looking for anyone who shares our love of the outdoors and commitment to preserving natural beauty .",
+      "The Appalachian Mountain Club needs outdoor lovers of all ages who are committed to preserving our area 's natural beauty into the future .",
+      "Appalachian Mt. Club is looking for men , women and children who love the outdoors and are commitment to preserving our regions natural beauty"
+    ],
+    "summary": "People who enjoy nature and want to protect it are needed.",
+    "summary_processed": true
+  },
+  {
+    "id": "131",
+    "x": "Should n't you canoe and hike along the Deerfield , Connecticut , and Androscoggin Rivers -- seeing some of the Northeast region 's most beautiful scenery ?",
+    "x+": "Come traverse the Deerfield , Connecticut , and Androscoggin Rivers -- to see the Northeast region 's lovely scenery ?",
+    "xt": [
+      "Should n't you canoe and hike along the Rivers -- seeing some of the Northeast region 's beautiful scenery ?",
+      "You should visit the beautiful Northeast regions of Deerfield , Connecticut , and Androscoggin Rivers .",
+      "Should n't you see the Northeast 's most beautiful scenery by canoeing and hiking along local rivers ?"
+    ],
+    "summary": "Enjoy outdoor activities and scenic views in a beautiful region.",
+    "summary_processed": true
+  },
+  {
+    "id": "128",
+    "x": "So they applied for the right to spread poison as Dart of a `` scientific experiment '' -- to learn whether lowering the population of blackbirds by poisoning them will reduce sunflower crop loss .",
+    "x+": "They applied to participate in a `` scientific experiment '' -- to learn if lowering the amount of blackbirds via poison will reduce sunflower loss .",
+    "xt": [
+      "They applied to spread poison as an experiment to determine the corrolation between population of blackbirds and population of sun flower crops .",
+      "So they applied for the right to spread poison to learn whether lowering the population of blackbirds will reduce sunflower crop loss .",
+      "They applied for the right to spread poison as Dart to learn whether lowering the blackbird population will reduce sunflower crop loss ."
+    ],
+    "summary": "Experiment to reduce population of one group to protect another.",
+    "summary_processed": true
+  },
+  {
+    "id": "183",
+    "x": "To repeal this unconscionable law , Defenders must help provide our friends in Alaska -- Alaskans For Wildlife -- with the resources necessary to win at the polls in November .",
+    "x+": "Together with Alaskans For Wildlife , we 'll have the resources to repeal this unconscionable law in the November polls .",
+    "xt": [
+      "To repeal this law , Defenders must provide our friends in Alaska with the resources necessary to win the polls in November .",
+      "Defenders in Alaska must provide our friends with the resources necessary to repeal this inconsiderable law .",
+      "To repeal this law , defenders must help provide Alaskans for Wildlife , with the resources to win at the polls",
+      "To oppose the new law , Defendders have to provide the resoucres to Alaskans For Wildlife to win the poll in Novemember ."
+    ],
+    "summary": "Repealing an unfair law requires support for a group to succeed in an election.",
+    "summary_processed": true
+  }
+]

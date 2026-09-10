@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "It is a good thing that the technical staff at Ashton-Tate is not being asked to field questions about its Spelling Checker ; I am not sure I would want to hear the answers.",
+        "v0": "It is a good thing that the technical staff at Ashton-Ton is not being asked to field questions about its Spelling Test  ; I am not sure I would want to hear the answers.",
+        "original_y": "Technical staff facing questions about a product is undesirable.",
+        "u": "Questions assistance should questions. a problem. unclear."
+    },
+    {
+        "original_x": "The Tribune attributes this to the emergency plan, which had police ferrying about 1,200 people without air conditioning or fans to  cooling centers. ''",
+        "v0": "The Tribune attributes this to the emergency plan, which had policeinging 1, 1,200 people without air conditioning or cooling to cooling cooling centers. ''",
+        "original_y": "Emergency plan involves transporting people to cooling centers.",
+        "u": "Someone departments to  of heavy to  systems."
+    },
+    {
+        "original_x": "The move boosts Intelogic Chairman Asher Edelman's stake to 20 % from 16.2 % and may help prevent Martin Ackerman from making a run at the computer - services concern. eos> Mr. Ackerman already is seeking to",
+        "v0": "The move boosts Intelogic Chairman Asher Edelman's stake to 20 % from 16.2 % and may help prevent Martin Ackerman from making a run at the computer - services concern. eos> The. Edelckerman is has seeking to",
+        "original_y": "Stake increase may prevent a takeover.",
+        "u": "Atricholder in lead a takeover attempt"
+    },
+    {
+        "original_x": "The senator's belief '' that such items were of little value or were not gifts to you under the circumstances '' displayed poor judgment and violated Senate gift rules, the panel found.",
+        "v0": "The senator's belief that:' that such items were of little value or were not gifts to you under the circumstances '' violate poor judgment and violated federal judgment rules, the panel found.",
+        "original_y": "Poor judgment regarding items and rules was found.",
+        "u": "Val judgment regarding securities and their. given."
+    },
+    {
+        "original_x": "Recommendation # 5 Research is needed on how demographic and cultural attributes of ED patients, practitioners, and interventionists influence the success of screening and interventions for alcohol problems.",
+        "v0": "Recommendation # 5 Research is needed on how demographic and clinical attributes of ED patients, including, and influenceists influence the development of interventions for interventions for alcohol problems.",
+        "original_y": "Research is needed to understand how factors influence the success of interventions for alcohol problems.",
+        "u": "Research  needed to identify how diseases influence mortality treatment of alcohol. patients.."
+    },
+    {
+        "original_x": "What I am getting at are titles with skew spellings, rogue punctuation, and  weird and wonderful '' names and words that are difficult to relate to anything meaningful.",
+        "v0": "What I am getting at are with with skewss, rogue spellinguation, and other strange words unusual wordsdiction' words that words that are difficult to relate to anything meaningful.",
+        "original_y": "Unconventional titles with unusual features are hard to understand.",
+        "u": "Wordcomfirmal descriptions  unusual language can common to find."
+    },
+    {
+        "original_x": "Yes -LRB- speaking of steely blonde women who make Faustian marital bargains in the name of love, or  love '' -RRB-, I look forward to discussing Hillary and her campaign against Rudy Giuliani -LRB-",
+        "v0": "Yes,LRB- speaking of steely womens who make Faut gold ins in the name of love, I'loyalty,' -RRB-, I look forward to discussing Hillary and his campaign against Giolph Giuliani.RRB- ",
+        "original_y": "complex relationships, political campaigns, and potential conflict.",
+        "u": "Cu accusations and criticism accusations, and significant war over"
+    },
+    {
+        "original_x": " Knowledge is a violent, bright, hot thing, but you would never know that watching Moyers, '' says Laurence Jarvik, author of PBS : Behind the Screen and a Moyers critic. eos>",
+        "v0": " Knowledge is a violent, bright, hot thing, but you would never know that watching Moorare, by'' says Laurence Jarvis, author of TheLC : Modern the Mo and a Mozare critic. eos>",
+        "original_y": "Knowledge can be intense and impactful, but some find a critic's perspective lacking.",
+        "u": "A of lead confusing and  people. with it are ita mistake.s. is."
+    },
+    {
+        "original_x": "The offer, advertised in today's editions of The Wall Street Journal, is scheduled to expire at the end of November.",
+        "v0": "The offer, offered in today's editions of The Wall Street Journal, is scheduled to expire at the end of November.",
+        "original_y": "Offer expires at the end of November.",
+        "u": "Offerses,  end of."
+    },
+    {
+        "original_x": "Chatterbox considered but rejected the idea of awarding Rabinowitz bonus points for having '' eventually convinced '' Broaddrick to grant an interview to the New York Times -LRB- as the Times reports in today's story -RRB-.",
+        "v0": "Chatterbox considered but rejected the idea of awarding Rabinowitz bonus points for having '' eventually convinced '' Broaddrick to grant an interview to the New York Times -LRB- as the Times reports in today's story -RRB-.",
+        "original_y": "Rejection of an idea involving incentives and convincing someone for an interview.",
+        "u": "Considerf of  offer wasquestioned potential and potential others to being interview was"
+    }
+]

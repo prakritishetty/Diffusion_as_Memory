@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "Asked how to respond to a rival company's most recent gambit, the well-dressed man looks out of the window of his lavish New York office and says simply,  Napalm. ''",
+        "v0": "Asked as to respond to a rival 's latest recent rivaltelem rival, the well-dressed man looks out to his lavish from his lavish office York office and says ,  Napalmo. ''",
+        "original_y": "A person responds to a rival's action with a strong, negative statement.",
+        "u": "Someone person feelss positively a negative's behavior as suspiciona smile suspicion welcoming attitude."
+    },
+    {
+        "original_x": "-LRB- NOTE :  Life and Art, '' a new department, will compare movies, books, etc., with the facts on which they ostensibly are based. -RRB-",
+        "v0": "-LRB- NOTE :  Life and Art''' a new department, will compare movies, books, and., with the facts on which they ostensibly are based. -RRB-",
+        "original_y": "Comparison of artistic works with their factual basis.",
+        "u": "Reports news concepts  real authorsual features."
+    },
+    {
+        "original_x": "Youth who are supported and encouraged by both a family and a society that values Them have a much greater likelihood of becoming productive and contributing members of adult society.",
+        "v0": "Youth who are supported and encouraged by both a family and a society that values Them have a much greater likelihood of becoming productive and contributing to of our society.",
+        "original_y": "Supported youth are more likely to become productive members of society.",
+        "u": "Peopleingd youth with encouraged likely to contribute independent and. society."
+    },
+    {
+        "original_x": "I am writing to thank you for your past gifts to the IUPUI University Libraries and to ask you to renew that support. eos> Let me give you an example of why your support is important. eos>",
+        "v0": "I am writing to thank you for your past gifts to the IUPUI University and and to ask you to renew your support. eos> Let me give me an example of why your support is important. eos>",
+        "original_y": "Request for continued support.",
+        "u": "Don for assistance support with"
+    },
+    {
+        "original_x": "There are trails to suit all ages and levels of fitness and experience, from a one-hour hike along a signposted valley path to multi-day expeditions along the John Muir Trail at Yosemite to Mount Whitney.",
+        "v0": "There are trails to suit all levelsages and levels of fitness  , from a one-hour hike along a trailated valley and to multi-day expeditions along the Mount Muir Trail to Mountsemite Trail Mount Yo.",
+        "original_y": "Various trails exist for different fitness levels and durations.",
+        "u": "EnjoyLocated activities exist on people people programs. hikes."
+    },
+    {
+        "original_x": "Here's what Gore said in the debate on January 5, in response to a question from Peter Jennings on whether he would have a  litmus test '' for the post of chairman of the Joint Chiefs :",
+        "v0": "Here's what Gore said in the January on January 5, in response to a question from Peter Jennings who whether he would have a  litter test '' for the post of Chief of the Joint Chiefs :",
+        "original_y": "Discussion about a test for a leadership position.",
+        "u": "Question regarding a proposal and a potential role."
+    },
+    {
+        "original_x": "To repeal this unconscionable law, Defenders must help provide our friends in Alaska -- Alaskans For Wildlife -- with the resources necessary to win at the polls in November.",
+        "v0": "To repeal this unenforceableumable law, wes will help provide our friends in Alaska -- Alaskans For Wildlife -- with the resources necessary to win at the polls in November.",
+        "original_y": "Repealing an unfair law requires support for a group to succeed in an election.",
+        "u": "Volunteeroaling  offer claim requires volunteers. thosea community. serve. action action."
+    },
+    {
+        "original_x": "Still others are less obvious but just as horrible ; dogs fighting to the death for the benefit of blood thirsty gamblers ; baby calves confined and malnourished to provide  milk-fed '' veal for the gourmet ; and the  accidental ''",
+        "v0": "Still less are less obvious than just as horrible ; dogs being for the death of the blood of bloodyy cars ; baby calves andrescued to nourished to provide  theysoaked '' andsted for the gourmet ; and  gourmet ''",
+        "original_y": "Animals suffer for human benefit and entertainment.",
+        "u": "Peoples are from fighting qualities, are."
+    },
+    {
+        "original_x": "Undoubtedly, father and daughter are beneting greatly from their time together at the computer. eos> The warmth, exploration, conversation, and fun involved in this and other joint parent-child activities strengthen emotional bonds and foster both cognitive and social development. ",
+        "v0": "Undoubtedly, father and father are benetly from their time at  the computer. eos> The warmth, exploration, and and, and involvement involved in these emotional other emotional activities bondbuilding development foster both and and foster social social and social development. ",
+        "original_y": "Beneficial interaction between family members.",
+        "u": "Socialal relationship through two and and"
+    },
+    {
+        "original_x": "The IU School of Dentistry greatly values the support of alumni and friends of the School. eos> Your membership in our Century Club has been very important for the School. eos>",
+        "v0": "The IU School of Dentistry greatly supports the support of alumni and friends of the School. eos> Your membership in our Club Club has been very important for the School. eos>",
+        "original_y": "School values support from its community.",
+        "u": "Support supports support  community community."
+    }
+]

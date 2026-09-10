@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "BRADLEY -LSB- Yo Sam, thanks for overplaying your hand, as usual, with rudeness -RSB- : Well enough to answer this question the way I want to answer it.",
+        "v0": "BRADLEY -LSB- Thanksbmy- for for overplaying your hand, but well - to rudeness -RSB- : Well enough to answer the question because way I want to answer it.",
+        "original_y": "rudeness and overstepping boundaries.",
+        "u": "Question application and use questions."
+    },
+    {
+        "original_x": "The spot is aimed at the woman, the secondary consumer of condoms, reminding her that an alternative to  no '' is  wait a minute, '' followed by a quick dip into her nightstand drawer for a rubber. ",
+        "v0": "The spot is aimed at the female, the secondary source of condoms, reminding her that an alternative to  bad painnonsense' condo  missed for, minute before' '' after by a rubber dip into  closetmar for for a condo-cigarette ",
+        "original_y": "Woman considering alternatives to refusal.",
+        "u": "A'  to the to"
+    },
+    {
+        "original_x": "The exposure comes from chemical residue on plants in farm fields and from pesticide drift, such as the incidents lettuce workers described, according to the survey.",
+        "v0": "The exposure comes from chemical residues plants and farm fields and pest chemicalicide residues, such as the incidents described workers said.  to the survey.",
+        "original_y": "Chemical residue and pesticide drift affect plants and workers.",
+        "u": "Pest emissionss exposureicide exposure from workers. livestock."
+    },
+    {
+        "original_x": "2 -RRB- My piece specifically mentions the letter written by Eric Holder of the Justice Department, in which he called for a Justice Department investigation of Mann's charges.",
+        "v0": "2 -RRB- My quote writes describess the letter written by Eric Holder  the Justice Department, in which he called for a Justice Department investigation of Mann's case.",
+        "original_y": "Investigation of charges.",
+        "u": "Law   and"
+    },
+    {
+        "original_x": " His sense of good fortune helped him to be the most beloved dean ever to serve at our law school. eos> His work as Dean for Student Affairs is legendary. eos>",
+        "v0": " His sense of humorwill helped him be be the most beloved godan to to be our our law school. eos> His work as Dean of Law Affairs is incredible. eos>",
+        "original_y": "Positive sentiment towards a respected leader.",
+        "u": "A person about peoplephil nation institution."
+    },
+    {
+        "original_x": "For the year ended Sept. 30, Ralston earned $ 422.5 million, or $ 6.44 a share, up 8.9 % from $ 387.8 million, or $ 5.63 a share. eos> This year's results",
+        "v0": "For the year ended Sept. 30, Ralston earned $ 422.5 million, or $ 6.44 a share, up 8.9 % from $ 387.8 million, or $ 5.63 a share. eos> This year's performance are",
+        "original_y": "Company reported increased earnings and profit per share.",
+        "u": "Company earned significant profit . case."
+    },
+    {
+        "original_x": "To repeal this unconscionable law, Defenders must help provide our friends in Alaska -- Alaskans For Wildlife -- with the resources necessary to win at the polls in November.",
+        "v0": "To repeal this unforcionable law, Defenders must help our our friends in Alaska -- withns for Wildlife -- with the resources to to win at the polls in November.",
+        "original_y": "Repealing an unfair law requires support for a group to succeed in an election.",
+        "u": "Donealing rights illegal campaign allows both. thea nation. protect. poverty ocean."
+    },
+    {
+        "original_x": "And in Bosnia, the mere discussion of elections has exacerbated ethnic tensions, allowing the most virulent nationalists to gain support, and led to predictions that this democratic procedure could finish the country.",
+        "v0": "And in Chile, the  suppression of ethnic has eroded tension tensions, allowing the most sparinvasiveulent politicalists to  support, and led to the that the country process could be  country.",
+        "original_y": "Discussion of elections heightened tensions and threatened stability.",
+        "u": "Political about  resultsinvolving security,, forced security."
+    },
+    {
+        "original_x": "Facilities will also need to modify their Title V operating permit to incorporate the added control devices and the associated reduced emission limits. eos> In some states, an interim air-operating permit may need to be obtained until the Title V permit is modified. eos>",
+        "v0": "Facilities will also need to modify their Home V operating instrument to incorporate the associated air- and the associated low emission potential. eos> In some cases, an additional resident permitpoweredting permit may be to be obtained when the specified V permit is expired. eos>",
+        "original_y": "Modifications to permits and emission limits are required.",
+        "u": "Reifications to  auto permits requirements are needed."
+    },
+    {
+        "original_x": "So they applied for the right to spread poison as Dart of a  scientific experiment '' -- to learn whether lowering the population of blackbirds by poisoning them will reduce sunflower crop loss.",
+        "v0": "So they applied for the right to spread poison as t of a  experiment experiment '' -- to learn how thereducing the population of blackbirds by croping them by reduce crop seedsping.",
+        "original_y": "Experiment to reduce population of one group to protect another.",
+        "u": "Limitcesment with support pollution share creatures'. help endangered."
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "The company said it is in the process of phasing out John Deere, its current source of production for midsized motor home chassis.",
+        "v0": "The company said it is in the process of phasing up De Deer , its current source for production for mid- motorhomemakers.",
+        "original_y": "A company is ending a production relationship.",
+        "u": "Company company is starting productiona process process with"
+    },
+    {
+        "original_x": "When Jackson retreated to his chambers on Thursday, Dec. 18, he sat at his computer -- what he described as a machine running Windows 95 -- and in all likelihood, this is what he did.",
+        "v0": "When Jackson retreated to his chambers on Sept, Oct. 18, he sat down  computer machine  he described as a computer operating Windows 95 -- and in all probability, that is what he did.",
+        "original_y": "Someone used a computer to do something.",
+        "u": "A attempted a computer to investigate something."
+    },
+    {
+        "original_x": "At rush hour, Umeda's teeming subway platforms rival the crowd scenes for which Tokyo's subway is so notorious. eos> Equally impressive crowd scenes occur below Umeda in a mammoth network of shops,",
+        "v0": "At rush hour, U.a's eetraming subway platforms rival the crowds for which Tokyo's subway is so famous. eos> Furtherly impressive sceness occur in Umeda in a mammographyth network of shops,",
+        "original_y": "Crowded transportation hub experiences high volume.",
+        "u": "Add host ofs. demand."
+    },
+    {
+        "original_x": "The  abstract justice '' mentioned by the dissenting Justice Field derives from the weight of history. eos> In the early stages of capitalism, independent entrepreneurs found themselves embedded in a feudal system of overlords and toll collectors ",
+        "v0": "The  abstract justice '' of by the dissenting Justice Field inives from the weight of history. eos> In the 1960 stages of development, independent historian emerged themselves in in a feudal system of overllds and collectorll collectors ",
+        "original_y": "historical legal concept.",
+        "u": "Historical structure distinction "
+    },
+    {
+        "original_x": "He praised IBM for being '' a critical partner in our economic development efforts '' in New York state.",
+        "v0": "He praised IBM for being '' a critical partner in our economic development efforts in'' in New York state.",
+        "original_y": "Positive partnership supporting economic development.",
+        "u": "Pro progress between  development."
+    },
+    {
+        "original_x": "Restaurant entertaining is becoming fashionable, however, and Prudie would recommend that for you if that choice would not come from shame, and if you would have a better evening yourselves.",
+        "v0": "Restaurant becoming is becoming fashionable, but, and Prudie recommend recommend that  you thatif that choice would not come from , and youif you would have a better evening afterwards.",
+        "original_y": "Entertaining at restaurants is becoming popular and could be a good option if it doesn't cause embarrassment and leads to a",
+        "u": "Diverertaining and times can  more and requires lead beneficialrewarded habit habit.if you is't become arrassment. influence to negativea negative"
+    },
+    {
+        "original_x": "Most of us already speak a fair amount of Yiddish -LRB- Yinglish -RRB- without fully realizing it.",
+        "v0": "Most of us already speak a fair amount of Yiddish -LRB- Yinglish -RRB- without fully realizing it.",
+        "original_y": "Many people use Yiddish without realizing it.",
+        "u": "Many people use Yiddish words knowing- it."
+    },
+    {
+        "original_x": "All of our Six summer camping sessions are booked to capacity -LRB- and, truth be told, with maybe one our two extra returning campers squeezed in -RRB- and we have a waiting list of 60 children who are hoping to come if a spot should open",
+        "v0": "All of our Six Summer camps sessions are booked to capacity -LRB- and with, withfully told, with some two more two extra camp campers returningd into -RRB-  we have a waiting list of children children who hope hoping to open openif a spot could be",
+        "original_y": "Summer camp is full with a waiting list.",
+        "u": "Negtime with planned of activitiesa few and "
+    },
+    {
+        "original_x": "This software consists of two disks, one labeled Installation and Program, the other Synonym Linguibase, and a manual.",
+        "v0": "This software consists of two disks, one labeled Installation and Installation Manual, the other Synonym Lingus, and a manual.",
+        "original_y": "Software includes disks with installation, program, and reference materials.",
+        "u": "Software installation s, different and software instructions and information code."
+    },
+    {
+        "original_x": "We are so grateful for your generous contribution to last year's auction.",
+        "v0": "We are so grateful for your generous contribution to last year's auction.",
+        "original_y": "Gratitude for a contribution.",
+        "u": "Gratitude for a contribution."
+    }
+]

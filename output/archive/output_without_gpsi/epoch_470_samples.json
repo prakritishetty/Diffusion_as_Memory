@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "The final rule was determined to be an  economically significant '' regulatory action under the Order. eos> It was reviewed by the Office of Management and Budget and was approved as complying with the requirements of the Order on December 17, 1997. eos",
+        "v0": "The final rule was determined to be an  economically significant '' regulatory action under the Order of. eos> It was reviewed by the Office of Management and Budget and was approved as complianceing with the requirements of the Order on December 17, 1997. eos",
+        "original_y": "economically significant regulation.",
+        "u": "significant significant regulatory."
+    },
+    {
+        "original_x": "The law school has more than 5,700 alumni, approximately 80 % of whom reside in Indiana. eos> The balance practice law throughout the country and live in 48 different states. eos>",
+        "v0": "The law school has more than 3,700 alumni, approximately 80 % of whom reside in Indiana. eos> The balance law throughout throughout the country and live in 48 different states. eos>",
+        "original_y": "Large group of people associated with an institution primarily located in one place.",
+        "u": "A population of people studying with  education.. depends in California county."
+    },
+    {
+        "original_x": "The predicted demise of John Kennedy's George and the launch of Tina Brown's Talk raise the question : What are a new magazine's chances for survival?",
+        "v0": "The predicted demise of John A's George Brown the launch of Tina Brown's talk raise the question : What is a new magazine's chances for survival?",
+        "original_y": "New magazines face challenges for survival.",
+        "u": "Question book .."
+    },
+    {
+        "original_x": "The smirk resurfaced at last week's New Hampshire debate, according to The New Yorker's Joe Klein, who in the Dec. 13 issue writes that Bush",
+        "v0": "The smirk ssd at last week's New York debate, according to The New York Times,s Joe Klein, who in the Dec. 13 issue states that the ",
+        "original_y": "Bush smirked during a debate.",
+        "u": "A administrationquestionedlt  a public."
+    },
+    {
+        "original_x": "My absolute favorite of these semantic mistakes, however, does not come from the problem of sound. eos> Japanese has a verb inflection which expresses causation or permission -- in English, to make someone or to let someone do something. ",
+        "v0": "My absolute favorite of these absolute mistakes, however, does not come from the sound of sound. eos> Japan has ina verbal whichring that expresses --usation -- permission from to order, or help someone else something do someone else something. ",
+        "original_y": "favorite mistakes.",
+        "u": "D organization are"
+    },
+    {
+        "original_x": "Enclosed is a pledge card and reply envelope which you may complete and return to me by Friday, October 30. eos> Please show your support and make a gift. eos>",
+        "v0": "Enclosed is a pledge card and pledge card which you may return and return to me by Friday, November 30. eos> Please show your support and make a gift. eos>",
+        "original_y": "Request to return a completed form by a deadline.",
+        "u": "Request for complete toa penny form and maila deadline."
+    },
+    {
+        "original_x": "Readers should be familiar with Robert Claiborne's earlier books, especially Our Marvelous Native Tongue : The Life and Times of the English Language. eos> One might say that subtitling the present book A Book of Lost Metaphors is an example",
+        "v0": "Readers should be familiar with Robert Claiborne's earlier books, The The Englishous Language Tongue. The First and Language of the English Language. eos> However might argue that subtitling the present book A Book of Lost Metaphors is an example of",
+        "original_y": "Readers should be familiar with prior works on the English language.",
+        "u": "Readers should be familiar with prior works on the English language."
+    },
+    {
+        "original_x": "We are asking you to consider sponsoring one of our families for this holiday season.",
+        "v0": "We are asking you to consider sponsoring one of our families for this holiday season.",
+        "original_y": "Request for support of families during a holiday.",
+        "u": "Request for participation with. a special."
+    },
+    {
+        "original_x": "The charges were offset in part by a gain from the sale of the company's construction division.",
+        "v0": "The charges were offset in part by a gain from the sale of the company's construction division.",
+        "original_y": "Financial transactions resulted in gains.",
+        "u": "Acquisition gain resulted in."
+    },
+    {
+        "original_x": " It is terrible that something so frightening should be given the name of something so pure and beautiful, '' says Luz Marlene Sierra Mayorga, a Bogot\u00e1 engineer, referring to  miraculous fishing '' -- which is what? e",
+        "v0": " It is so that nothing so frightening should be given to name of something so beautiful and beautiful, '' says Luis Margas   a, referring Lugota engineer, referring to what what fishing,' -- which is what happens? '",
+        "original_y": "Something frightening is being associated with something pure and beautiful.",
+        "u": "Important is and related considered with  that and visually."
+    }
+]

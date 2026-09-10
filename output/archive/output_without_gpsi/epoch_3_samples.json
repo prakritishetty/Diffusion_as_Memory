@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "You and I know that solutions to difficult problems don't just happen. eos> At Goodwill, it is the hard work of staff and those who benefit from our services that produces the kind of inspiring results I see every day : eos>",
+        "v0": " can your are that we are these problems are not.'t always need. eos> We thewill, we is important best work of our and the who are from the efforts  are quality best of quality and  need  day. eos>",
+        "original_y": "Solutions to problems require effort.",
+        "u": "Support for  are."
+    },
+    {
+        "original_x": "Applicants for permanent residence status as a rule are more restricted in their travel outside of the United States and must seek permission from the INS to travel or risk abandoning their application.",
+        "v0": "The must the employments are a member of not likely to the jurisdictions the the United States  the be asylum from the StateembassyUR be to apply ment the license ",
+        "original_y": "Applicants face restrictions when traveling outside the US and must obtain permission to avoid jeopardizing their application.",
+        "u": "Obtain are.. of country. abroad be. provide opardizing  spouse."
+    },
+    {
+        "original_x": "Stripped of clutter and confusion, the gist of Gerth's Pulitzer Prize series was that President Clinton had helped a campaign contributor to leak important military secrets to China.",
+        "v0": "The. by theing ,  sists thery Bush's itzer      Trump   a number   thes    the.",
+        "original_y": "A leader assisted someone in sharing sensitive information with a foreign country.",
+        "u": "A person is  with   information. a friend organization."
+    },
+    {
+        "original_x": "Dental students are incurring more and more debt as they progress through school. eos> The School of Dentistry has limited ability to provide scholarship money to deserving students who otherwise might choose another career option because of educational expense. eos>",
+        "v0": "The students are ring  than more opportunities than well are  the. eos> The students of Nursing is  opportunities to provide  opportunities to studentslegateing students  are have be to school   they their opportunities. eos>",
+        "original_y": "Students accumulating debt during education.",
+        "u": " arebenefitedating  and."
+    },
+    {
+        "original_x": "NEADS first received a call about United 93 from the military liaison at Cleveland Center at 10:07. eos> Unaware that the aircraft had already crashed, Cleveland passed to NEADS the aircraft's last known latitude and longitude. ",
+        "v0": ".    thea call from the States'  the United station  the   the 30. eos> Theknownsly the  had been , said said the the.   same.s   t   .",
+        "original_y": "Alert received regarding a flight.",
+        "u": "As from a meeting."
+    },
+    {
+        "original_x": "When the former Bin Ladin unit chief found out about Clarke's call, he questioned CIA officials, who denied having given such a clearance.",
+        "v0": "    Ladend     that the ,s  to, he said' thea officials. who  the  him a statement to.",
+        "original_y": "Someone questioned a denial regarding clearance.",
+        "u": "Someone isquestioned whethera personnial about."
+    },
+    {
+        "original_x": "The interior of the island is a wonderful mixture of mountainous dark pine forest and farmland. eos> There are fewer beaches than on other islands in the Sporades, but yachts moor in the numerous rocky inlets around the coastline where there is excellent",
+        "v0": "The s the  is a beautiful area of   and greens and  and.eos> The are manya  and the the islands  the areats, and thes are,e the area inland hills the  the area  the are  fishing",
+        "original_y": "A place combines forest and farmland.",
+        "u": "A place ispossesses  and wildlife featuresand."
+    },
+    {
+        "original_x": "Community needs are everyone's business. eos> How a community pulls together to help those in need defines that community as a good place to live, a good place to raise a family, and a good place to do business. ",
+        "v0": "  to  who,s , eos> We cana person cans up  help people who need  their   a community way to work. anda good place to live moneya family. and a good place to work so. e",
+        "original_y": "Community responsibility.",
+        "u": "A needs is"
+    },
+    {
+        "original_x": "The $ 175,000 requested would have allowed the legal aid groups to maintain a skeleton staff to continue providing help beyond emergency protective orders for victims, completing existing cases and offering services in limited cases.",
+        "v0": "The   million grant to be been the  assistance to to be thea 'wing   provide the assistance to the services measures  the. anda the duties   assistance  the areas.",
+        "original_y": "Legal aid groups need funds to support victims and continue services.",
+        "u": "Assistance assistance is need assistance to provide. provide to."
+    },
+    {
+        "original_x": "For patrons, artists, students and actors, Civic provides the best in professionally produced amateur productions in our community, and one of the best in the nation. eos> And we've been doing it for more than 85 years. eo",
+        "v0": " thes of, we and, and  musicians, ands  opportunity opportunities the  and music   the community. and  of the best in the world.eos>  are're been   for years than  years. eos",
+        "original_y": "Civic provides high-quality productions for community members.",
+        "u": "As  qualityquality services and. families.."
+    }
+]

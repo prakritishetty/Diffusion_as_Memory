@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "Not all entries contain misleading, dull, or incorrect information, but those that do not are marked by a lack of originality.",
+        "v0": "Not all entries contain misleading, misleading, or incorrect information, but those that are not show marked with a lack of originality.",
+        "original_y": "Some entries lack originality.",
+        "u": "Lack items lack clear information."
+    },
+    {
+        "original_x": " Knowledge is a violent, bright, hot thing, but you would never know that watching Moyers, '' says Laurence Jarvik, author of PBS : Behind the Screen and a Moyers critic. eos>",
+        "v0": " Knowledge is a violent, bright, hot thing, but you  never know that watching Moorers, '' says Laurence Jarvis, editor of BehindLC, Behind the Screen  a Moorers critic. eos>",
+        "original_y": "Knowledge can be intense and impactful, but some find a critic's perspective lacking.",
+        "u": "A of be difficult and impactful. with it are ita positive iss side negatively."
+    },
+    {
+        "original_x": "In a recent interview, Chief Judge Kaye noted efforts by the City Bar and by emergency consortia of large Manhattan firms to address this concern.",
+        "v0": "In a recent interview, Chief Kay Kaye noted the by the City Councile by small effortssortsas major corporations corporations to address this concern.",
+        "original_y": "Organizations are addressing a concern.",
+        "u": "Significants faced consideringcontacting legala significant regarding"
+    },
+    {
+        "original_x": "The loss of a federal grant has stymied plans for the Senior Legal Hotline to expand its free legal services statewide.",
+        "v0": "The loss of a federal grant has stifmied plans for the Senior Legal Hotline to expand its legal legal services.tatewide.",
+        "original_y": "Loss of funding hinders expansion of free services.",
+        "u": "Funds of funds dues legal of services agency."
+    },
+    {
+        "original_x": "The 1993 documentary The War Room captures some of his efforts on tape.",
+        "v0": "The 1993 documentary The War Room captures some of his efforts on tape.",
+        "original_y": "efforts captured.",
+        "u": "Correction to."
+    },
+    {
+        "original_x": " As outlined during recent meetings of the Board of Visitors and Alumni Association Directors, these will include an Indianapolis law student/alumni telephone campaign and increased emphasis on giving at the Maennerchor Society level. ''",
+        "v0": " As outlined during  meetings of the Board of Directors and Alumni Association meetings, these will include an Indianapolis law school'lumlumnaa program and increased emphasis on giving up the Maennerchor Society level. ''",
+        "original_y": "Fundraising campaign involving students and alumni.",
+        "u": "Meetinging led ledaims speakers and community."
+    },
+    {
+        "original_x": "Figure. a shows an arbitrary deterministic state space among the eight states of three genes, A, B, C. eos> For each state, I have chosen its successor state at random.",
+        "v0": "Figure. Fig   arbitrary deterministic state among among the three genes of three genes, C., C, C  Aeos> For each state, I have chosen my successor at at random.",
+        "original_y": "states of genes.",
+        "u": " and  and"
+    },
+    {
+        "original_x": "Yet overindulgence of the young was firmly checked by the reminder that It's late time to sift when da sids -LSB- chaff -RSB- is ida bread,'meaning discipline is only effective when started",
+        "v0": "Yet overindulgence of the young man firmly reminde by the reminder that it's time to to stt when daich  chLSB- chafft-RSB-  disciplineirlingh, meaningif meaning discipline is effective effective when discipline",
+        "original_y": "Discipline is most effective when applied early.",
+        "u": "Slowaline  often common and applied to."
+    },
+    {
+        "original_x": "Asked how to respond to a rival company's most recent gambit, the well-dressed man looks out of the window of his lavish New York office and says simply,  Napalm. ''",
+        "v0": "Asked to to respond to a company 's recent recent rivalsm rival, the well-dressed man looks out of the window of his lavish lavish York office and says ,  Napalmo. ''",
+        "original_y": "A person responds to a rival's action with a strong, negative statement.",
+        "u": "Someone person's positively a complaint's behavior regarding suspiciona complaint argument open attitude."
+    },
+    {
+        "original_x": "She will have reunions of sorts with her famous kitchen in the next few weeks. eos> One of its Peg - Board walls was dismantled and reinstalled at COPIA ; the rest went to Washington, D.C.,",
+        "v0": "She will have reunions of sorts with her famous kitchen in the next few years. eos> On of the wallsg - Board walls was dismantled and reinstalled in theUPA, the rest went to Washington, D.C., where",
+        "original_y": "reunions with a familiar place.",
+        "u": "Peoples occurred a friend place."
+    }
+]

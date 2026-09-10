@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "The truck maker said the significant drop in net income will result in lower earnings for the fiscal year. eos> In fiscal 1988, the company earned $ 17.3 million, or $ 1.92 a share, on revenue of $ 352.9 million. eo",
+        "v0": "The truck maker said the significant drop in net income will result in lower earnings for the fiscal year. eos> In 1989 year, the company earned $ 13.92 million, or $ 1.92 a share, on $ of $ 1. million million. eo",
+        "original_y": "Company reports lower earnings.",
+        "u": "Financial financial significant earnings and"
+    },
+    {
+        "original_x": "Back at the airport, cross the bridge and turn left to get to Ferry Point, an important strategic area of land at the western tip of St. George's Island. eos> There are no less than three separate fortifications here protecting the entrance to St",
+        "v0": "At at the airport, you the bridge and turn left to get left any Point, an important land area for St at St western tip of St. George.s Island. eos> There are no more than three separate entrancetss here than the western to.",
+        "original_y": "Important location at the tip of an island.",
+        "u": "Important location near sea sea of  island."
+    },
+    {
+        "original_x": "Figure. a shows an arbitrary deterministic state space among the eight states of three genes, A, B, C. eos> For each state, I have chosen its successor state at random.",
+        "v0": "Figure a    e distributiondeterministic space among among the eight states of three genes, , B, C ,eos> For each state, I have chosen its chosen at at random. ",
+        "original_y": "states of genes.",
+        "u": " and origin and"
+    },
+    {
+        "original_x": "The royal Bildergalerie -LRB- Picture Gallery -RRB- was designed to house Frederick the Great's extensive collection of paintings by masters such as Caravaggio, and Rubens.",
+        "v0": "The Royal gallerygalerie -LRB- Galerie Gallery -RRB- was designed to house Frederick the Great CollectionDames collection collection of paintings by masters such as Caravaggio, and Rubens.",
+        "original_y": "A collection of paintings by renowned artists was created for a royal gallery.",
+        "u": "Gallery museum of art and artistsa architect is  for a museum palace."
+    },
+    {
+        "original_x": "A NYT inside story reports that Great Britain has decided to abandon its proscription of homosexuals in the service in favor of a policy that will ban all on-duty sex but not care about sexual orientation.",
+        "v0": "A NYT storys reports that Russia Britain has decided to abandon its servicetracted of homosexuals in the service that order of a policy that will not all gay gayroad homosexualsex but not caring about sexual orientation.",
+        "original_y": "Policy change regarding inclusivity and behavior.",
+        "u": "A coordination related domesticity. public."
+    },
+    {
+        "original_x": "I was, and still am, captivated by Babies cry for liquor an'the birds sing bass, and in the arrogance of my youth, I was certain that nobody else on the airfield either knew or cared who Bessie Smith was, nor would",
+        "v0": "I was, and I , captivated by liquore singinging an o'' birds sing,, nor I the airsant of my childhood, that was certain that nobody knew knew the receiving was knew knew or wasd who wasssie was was. was I",
+        "original_y": "youthful arrogance led to theft due to a belief in unique perspective and disregard for others' opinions.",
+        "u": "Someone womansonant and to emotional and to lacka condition system medicine circumstances. financial. specific. intentions."
+    },
+    {
+        "original_x": "... photographs of the very, very, young girls with which Peter Altenberg, poet in prose, lined the walls of his room at the Graben Hotel.",
+        "v0": "... photos of the very crowded very youngprivileged young girls with whom Peter Alta, poet and prose, lined up walls of his room at the Graberhaus.",
+        "original_y": "Young girls and a poet displayed photographs in a room.",
+        "u": "A person involved theira young studied their in theira building."
+    },
+    {
+        "original_x": "As discussed above, the location of the NYPD ESU command post was crucial in making possible an urgent evacuation order explaining the South Tower's full collapse. eos> Firefighters most certainly would have benefited from that information. eos>",
+        "v0": "As discussed above, the location of the NYPD EMP command line was in in making an an evacuation evacuation order for the full Bend's lack evacuation. eos> Firefighters most likely would have benefited from this information. eos>",
+        "original_y": "Location was crucial for enabling an urgent evacuation order and collapse.",
+        "u": "An of evacuate for ana evacuation evacuation evacuation..."
+    },
+    {
+        "original_x": "If you're suffering such qualms, you're probably the sort of person who doesn't appreciate the ample benefits telephone and airline deregulation have brought.",
+        "v0": "If you're suffering from ams, you're probably the kind of person who doesn't appreciate the ample benefits and and airline regulationregulation  brought.",
+        "original_y": "Benefits outweigh concerns.",
+        "u": "Peoples for ofighs due"
+    },
+    {
+        "original_x": "This concept was picked up in the Clean Air Act : Polluters who reduce their toxic output beyond requirements can sell the right to molest the environment to others less willing or less able to control emissions.",
+        "v0": "This concept was picked up in the Clean Air Act in: Cleanuters who reduce their environmental emissionss emissions can sell the clean to othersaasse chemicals environment without less less than to less able to control emissions.",
+        "original_y": "Polluters can trade environmental impact rights.",
+        "u": "Peopleus can lead emissions productsing."
+    }
+]

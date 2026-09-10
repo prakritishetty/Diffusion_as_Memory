@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "The next morning, and every day for the next two weeks, he was in the corner behind-the aviary waiting for Harry. eos> Now he comes running out from there whenever he sees Harry. eos>",
+        "v0": "The next morning, and for day for the next two weeks, washe was in the corner- thethe-awaitingary waiting for him. eos> Now he comes out out there there whenever he sees Harry. eos>",
+        "original_y": "waiting for someone.",
+        "u": "Someone and an to"
+    },
+    {
+        "original_x": "Reviewers have noted some possible sources of upward bias in the long-term studies. eos> Some have noted that the less robust estimates based on the Six-Cities Study are significantly higher than those based on the more broadly distributed ACS data sets. eo",
+        "v0": "Reviewers have noted some negative sources of upward- in the long-term studies. eos> However have noted that the less robust studies forcompared on the Six-Cities study are significantly higher than those based on the more   dataACS data . eo",
+        "original_y": "Potential bias in studies.",
+        "u": "consensus benefits in public."
+    },
+    {
+        "original_x": "There are two small squares of land that rise up out of the lake : Sonalank, Akbar's Golden Island to the north, and Ruplank, Silver Island, to the south.",
+        "v0": "There are two small squares of land that rise up on of land sea : Akalank'Akalak's north Sea to the north, Ru Rusi, Silver Island, to the south.",
+        "original_y": "Two small islands rise from a lake.",
+        "u": "Two buildings lakes are over thea total."
+    },
+    {
+        "original_x": "Use Training to Change the \u2022 Nonfinancial managers are educated about the financial implications of business Organizational Culture and decisions.",
+        "v0": "Use Change to Change the Non Nonfinancial managers are educated about the financial implications of business cultureal decisions and conclusions.",
+        "original_y": "Training impacts business decisions.",
+        "u": "Financial in financialpeople and"
+    },
+    {
+        "original_x": "These objectives and guarantees are insufficient in themselves to create a constitution, a framework of government. eos> One needs, in addition, a definition of legislative empowerment that would enable the federal government to realize its commitments. eos>",
+        "v0": "These objectives and objectives are insufficient in order to create a framework, a framework of government. eos> One needs, in addition, a definition of legislative empowerment that enable enable the government government to realize its commitments. eos>",
+        "original_y": "Objectives and frameworks are needed.",
+        "u": "s and limitationss are being to"
+    },
+    {
+        "original_x": "A spokesman for the Stamford, Conn. based company said operations had a loss of $ 5.5 million for the quarter ; in addition, the loss was magnified by nonrecurring charges totaling $ 23.5 million and $ 8.2 million in asset - valuation adjustments",
+        "v0": "A spokesman for the St.fordshire& Incn., company said the had beenincurredmounted of $ 4.9 million for the quarter ; the addition, the loss was magnified by non- fees totaling $ 295.2 million and $ 8 million in asset valuation- adjustment adjustments ",
+        "original_y": "Company experienced financial loss due to charges and adjustments.",
+        "u": "Company reports significant loss due to market. expenses."
+    },
+    {
+        "original_x": "The eukaryotic cell, then, is a well-behaved society of autonomous agents that are now symbiotic, hence, the eukaryotic cell is a higher-order autonomous agent, comprised of lower-order autonomous agents ",
+        "v0": "The eoaryotic cell, then a is a well-behaved society of autonomous agents who are now synbiotic, hence,  eukaryotic cell is a higher-order agent agent, comprised of highly-order agents agents.",
+        "original_y": "a complex system of interdependent components.",
+        "u": "AutoAgricultural system system with organismsper entities."
+    },
+    {
+        "original_x": "All of these treks can be undertaken alone by experienced walkers or under the watchful eye of local guides. eos> See  Guides and Tours '' on page 111 for information on local outfitters that organize guided walks. eos>",
+        "v0": "All these these treks can be undertaken by by experienced walkers or under the watchful eye of local guides. eos> See  Guides and Tours '' on page 111 on information on local guidess who organize guided walks. eos>",
+        "original_y": "Experienced individuals can do activities independently or with guidance.",
+        "u": "Appd professionals can enjoy things on. in caution."
+    },
+    {
+        "original_x": "What is missing, for example, at square the circle, is the information that because the area of a circle is mathematically calculated using pi, which is irrational, there is no mathematical way of calculating the dimensions of a square with the same area as that",
+        "v0": "What is missing, for example, at square the circle, is the information that because the area of a circle is mathematically calculated using pi, which is irrational, there is no mathematical way of calculating the dimensions of a square with the same area as that",
+        "original_y": "Mathematical calculation of area involves irrational numbers, making it impossible to equate a circle's area with a square",
+        "u": "Mathematical calculation 'irrational numbers and   difficult to findassemble betweena word betweens number with numberi word number"
+    },
+    {
+        "original_x": "The patient was diagnosed with diabetes on October 10, 2023, and prescribed insulin therapy.",
+        "v0": "The patient was diagnosed with diabetes on October 11, 20,23, and prescribed insulin therapy.",
+        "original_y": "Success of activism allows microeconomics to survive.",
+        "u": "Diabetes in  and for-s to develop."
+    }
+]

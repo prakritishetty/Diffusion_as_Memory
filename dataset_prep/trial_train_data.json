@@ -1,0 +1,100 @@
+[ 
+ {
+    "id": "106",
+    "x": "'' Except for this small vocal minority , we have just not gotten a lot of groundswell against this from members , '' says APA president Philip G. Zimbardo of Stanford University .",
+    "x+": "`` Except for this small vocal minority , we have not gotten a lot of groundswell against this , '' says APA president Zimbardo .",
+    "xt": [
+      "`` Except for a vocal minority , we have n't gotten much groundswell from members , '' says Philip G. Zimbardo of Stanford University .",
+      "APA president of Stanford has stated that except for a vocal minority they have not gotten a lot of pushback from members .",
+      "APA president Philip G. Zimbardo of Stanford says they have not had much opposition against this ."
+    ],
+    "summary": "minor opposition against something from a group.",
+    "summary_processed": true
+  },
+  {
+    "id": "46",
+    "x": "Date with destiny : After Vanderbilt opens with Georgia Tech , the Commodores will play host to Furman , which is Johnson 's former team and a Division I-AA powerhouse .",
+    "x+": "After Vanderbilt opens with Georgia Tech , the Commodores will host Furman , Johnson 's former Division I-AA team .",
+    "xt": [
+      "After Vanderbilt opens with Georgia Tech , the Commodores play Furman , Johnson 's former team and a Division I-AA powerhouse .",
+      "After Vanderbilt opens with Georgia Tech , the Commodores will play host to Furman , which is Johnson 's former team .",
+      "After Vandervilt vs. Georgia Tech , the Commodores will play Furman , Johnson 's former team .",
+      "Date with destiny : The Commodores will play host to Furman , which is Johnson 's former team ."
+    ],
+    "summary": "A team will play a game against a former team that is a strong competitor.",
+    "summary_processed": true
+  },
+  {
+    "id": "76",
+    "x": "The court upheld the sentence of another death row inmate , Robert O. Marshall , convicted of arranging the murder of his wife at a picnic area on the Garden State Parkway .",
+    "x+": "The court upheld the death sentence of Robert O. Marshal , convicted of arranging the murder of his wife .",
+    "xt": [
+      "The court upheld the sentence of death row inmate , Robert O. Marshall , convicted of arranging the murder of his wife .",
+      "Convicted of arranging the murder of his wife , the court upheld the sentence of another death row inmate , Robert O. Marshall .",
+      "the court upheld the death sentence of Robert O. Marshall , convicted of arranging his wife 's murder .",
+      "Robert O. Marshalls sentence has been upheld by the court after being convicted of arranging his wifes murder ."
+    ],
+    "summary": "A person was convicted for arranging the death of their spouse.",
+    "summary_processed": true
+  },
+  {
+    "id": "53",
+    "x": "He said companies engaged in e-commerce would be able to set up offices , employ staff and own equipment in the open zone , including fully-owned foreign companies .",
+    "x+": "Companies in e-commerce will be able to set up offices , employ staff , and own equipment in the open zone .",
+    "xt": [
+      "Companies engaged in e-commerce would be able to set up offices , employ staff and own equipment in the open zone .",
+      "`` Companies involved in e-commerce can set up offices , employ staff and own equipment in the open zone , '' he said .",
+      "E-commerce foreign companies are able to set up offices , employ staff and own equipment in this open zone ."
+    ],
+    "summary": "Companies can establish operations, hire employees, and possess resources in a designated area, including foreign entities.",
+    "summary_processed": true
+  },
+  {
+    "id": "38",
+    "x": "Sheikh Mohamed , who is also the Defense Minister of the United Arab Emirates , announced at the inauguration ceremony that '' we want to make Dubai a new trading center . ''",
+    "x+": "Sheikh Mohamed , the Defense Minister of the United Arab Emirates , announced that `` we want to make Dubai a new trading center . ''",
+    "xt": [
+      "Sheikh Mohamed announced at the inauguration ceremony that `` we want to make Dubai a new trading center . ''",
+      "Sheikh Mohamed , announced at the inauguration ceremony that '' we want to make Dubai a new trading center . ''"
+    ],
+    "summary": "A leader announced a desire to establish a trading center.",
+    "summary_processed": true
+  },
+  {
+    "id": "35",
+    "x": "Taking a cue from California , more politicians will launch their campaigns by backing initiatives , says David Magleby of Brigham Young University .",
+    "x+": "David Magleby said that more politicians will launch their campaigns by backing initiatives .",
+    "xt": [
+      "More politicians will launch their campaigns by backing initiatives , says David Magleby .",
+      "David Magleby of Brigham Young University says that politicians will launch campaigns by backing initiatives .",
+      "David Magleby says that more politicians will launch campaigns by backing initiatives ."
+    ],
+    "summary": "Politicians will begin campaigns by supporting initiatives.",
+    "summary_processed": true
+  },
+  {
+    "id": "93",
+    "x": "The APA has scheduled 30 minutes at its meeting in August for an RxP debate , but its leadership believes it already has an accurate sense of support for its RxP policy .",
+    "x+": "The APA scheduled 30 minutes at its meeting for an RxP debate , but believes it has a good sense of support for its policy .",
+    "xt": [
+      "The APA will meet for 30 minutes in August for an RxP debate , but leadership believes it already has support for its policy .",
+      "The APA has a 30 minute meeting in August for Rxp policy , they believe it already has support .",
+      "The APA has schedules a slot for the RxP debate in August , but believes is already has a sense of support for the issue ."
+    ],
+    "summary": "Leadership believes they have a good understanding of support for a policy.",
+    "summary_processed": true
+  },
+  {
+    "id": "16",
+    "x": "The thrift said that '' after these charges and assuming no dramatic fluctuation in interest rates , the association expects to achieve near record earnings in 1990 . ''",
+    "x+": "The thrift said the association expects near record earnings in 1990 , after these charges and with stable interest rates .",
+    "xt": [
+      "The thrift association expects near record earnings for 1990 assuming little changes in interest rates .",
+      "`` The association expects to achieve near record earnings in 1990 after the changes with no fluctuation in interest rates . ''",
+      "The thrift said : '' with no large change in interest rates , the association expects near record earnings in 1990 . ''",
+      "`` The association expects to achieve near record earnings in 1990 . ''"
+    ],
+    "summary": "Expects high earnings assuming stable interest rates.",
+    "summary_processed": true
+  }
+]

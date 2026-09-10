@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "They bombed the Bogota offices last month, destroying its computer and causing $ 2.5 million in damage.",
+        "v0": "Bomb bombed the Bogota office last month, destroying its computer infrastructure causing $ 2.5 million in damage.",
+        "original_y": "Damage and destruction occurred.",
+        "u": "Organization to destruction occurred repeatedly"
+    },
+    {
+        "original_x": "You have been a loyal friend by contributing $ 1,000 annually to the law school, and we are grateful for your past support. eos> All alumni are being asked to increase their annual level of support. eos>",
+        "v0": "You have been a loyal friend by your $ 1,000 annually to the law school, and we are all for your generous support. eos> All alumni are being asked to increase their annual level of support. eos>",
+        "original_y": "Valued support provided over time.",
+        "u": "Financials support for for time."
+    },
+    {
+        "original_x": "After visiting the fort continue west along Boulevard del Valle, which becomes Calle Norzagaray. eos> Here you 'll be tempted by fine views of the sea ; you may even catch sight of a cruise ship sailing gracefully into port ",
+        "v0": "After visiting the seae continue along of Boulevard Te L Nore, which becomes Calle der\u00e8le . eos> You you 'll be tempted by fine views of the sea, you  also find glimpse of a yacht ship sailing fastly into Port city",
+        "original_y": "Travel west along a road.",
+        "u": "A to of a coast."
+    },
+    {
+        "original_x": "The vast majority of boating and other water sports is concentrated in the Mazurian Lakes district in northeastern Poland and the towns along the Bay of Gdansk, on the Baltic Sea.",
+        "v0": "The majority majority of boating and recreational recreationalsport is concentrated in northeast Mazenian lakes district and in northeastern Finland  the towns of the Baltic of Glorsk, the the Baltic Sea.",
+        "original_y": "Water sports and boating are popular in a specific region of Poland.",
+        "u": "A sports are tourisming are popular in variousa rural area. the."
+    },
+    {
+        "original_x": "3. I'm doing something  more intimate, more personal '' ; I've  stripped away the theater '' ; and  if the public could see it, they would demand that we do it more, not less.",
+        "v0": "3. 'm doing something morea more intimate,  intimate,', 'm gotn stripped away  theater,', and if if the public  not it we, we do do that we do it more. expensive.",
+        "original_y": "personal action, public demand for more.",
+        "u": "Some preference  not preference,  time"
+    },
+    {
+        "original_x": "Martial music and an outrider-flagged motorcade herald Pat Buchanan's return to Crossfire, the show that gave him enough currency in households across the United States to take not one, but two stabs at the presidency.",
+        "v0": "Markov dance and an overragee-flygged  book standod Patkaan 's show to householdsroad, that show that gave him enough money to households across the United States to hold two two, but two.s at the end.",
+        "original_y": "Return of a person to a show, leading to political attempts.",
+        "u": "Financialing moneya line to a military  potentially to financial activity."
+    },
+    {
+        "original_x": "Russia's attempt to resolve the Iraq crisis via diplomacy leads at the Washington Post, Los Angeles Times, and USA Today. eos> A big bank merger leads at the New York Times.",
+        "v0": "Russia's resolve to resolve the Iraq Post through diplomacy through at the Washington Post, Los Angeles Times, and New Today leads. eos> A big bank merger leads at the Washington York Times. ",
+        "original_y": "Diplomatic efforts to resolve a crisis.",
+        "u": "Financialtic conflict have improve globala conflict with"
+    },
+    {
+        "original_x": "In streamlining their employee travel systems, several agencies designed automated systems containing electronic travel vouchers and requested our assistance in interpreting Title 7 requirements and assessing their designed internal controls.",
+        "v0": "Inlininglining their internal systems systems, several electronic automated electronic electronic containing electronic mail vouchers and requested their assistance in interpreting electronic 7 requirements  interpreting their internal internal controls.",
+        "original_y": "Agencies streamlined travel systems using automated processes and sought assistance with regulations and controls.",
+        "u": "Systeming reviewedfacilitated and processes and automated registration. control-.. planning."
+    },
+    {
+        "original_x": "For example, it is assumed that the ratio of rural carrier in-office cost to total rural carrier cost is the same as the ratio of city carrier in-office cost to total city carrier cost.",
+        "v0": "For example, it is assumed that the ratio of rural carrier carrier carrier carrier cost to total city carrier is is the same as in ratio of city carrier cost-office cost to total carrier carrier cost.",
+        "original_y": "Ratios of costs are assumed to be equivalent between rural and city carriers.",
+        "u": "Costios can cost apply associated to be equivalent to two and rural models."
+    },
+    {
+        "original_x": "Smith does not necessarily refer to a blacksmith but to a worker, possibly in metal -LRB- smite, as in beating with a hammer or such? -RRB-.",
+        "v0": "Smith does not necessarily refer to a blacksmith but to a , possibly in black sLRB- shamter, as in beating with a hammer  with - -RRB-.",
+        "original_y": "Worker potentially using tools to shape metal.",
+        "u": " involves may remove  or create."
+    }
+]

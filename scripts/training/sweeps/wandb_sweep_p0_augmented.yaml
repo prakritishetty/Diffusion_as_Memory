@@ -1,0 +1,39 @@
+# Sweep for scripts/training/train_p0_sweep.py
+# Usage:
+#   wandb sweep --project diffusion-as-memory scripts/training/sweeps/wandb_sweep_p0_augmented.yaml
+#   wandb agent <entity>/<project>/<sweep_id>
+
+program: scripts/training/train_p0_sweep.py
+method: bayes
+metric:
+  name: best_val_loss
+  goal: minimize
+
+parameters:
+  num_slots:
+    values: [8, 12, 16, 20]
+  u_dim:
+    values: [128, 256, 512]
+  learning_rate:
+    distribution: log_uniform_values
+    min: 1e-5
+    max: 5e-4
+  epochs:
+    values: [120, 200, 300]
+  batch_size:
+    values: [8, 10, 12]
+  val_interval:
+    value: 10
+
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - --data-dir
+  - ./data/final
+  - --checkpoint-dir
+  - ./checkpoints/p0/sweeps
+  - --output-dir
+  - ./output/p0/sweeps
+  - --wandb-project
+  - diffusion-as-memory

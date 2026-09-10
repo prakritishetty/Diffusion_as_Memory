@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": " Participants are invited to submit similar examples -- from newspapers, magazines, or broadcast news -- of what The New Yorker used to call ''  letters we never finished reading '' '' -LRB- or something like that -RRB-. ",
+        "v0": " Participants are invited to submit similar examples  similar similar --, newspapers, or others -- from what the New York Times used to call '' never' never we never read  '' -' or-LRB- or something like that 'RRB-.'",
+        "original_y": "Examples of unfinished content are encouraged.",
+        "u": "Dis of sati works are available."
+    },
+    {
+        "original_x": "It is wonderful to be able to write this letter to you as a special friend of the Leukemia Society of America. eos> As you know, my husband Layton and I have been active in the Leukemia Society since our son Nick was diagnosed with leuk",
+        "v0": "It is wonderful to be able to write this letter to you as a friend friend of the Leytone Society of America. eos> We  know, I daughter andyton and I have been active in the Leytonemia club since our son was was born with cancerukemia",
+        "original_y": "Friendship and support for a cause.",
+        "u": "Ahip of honor are a charity."
+    },
+    {
+        "original_x": "Dentistry has been a part of my life for as long as I can remember. eos> My sister is a practicing hygienist, my brother a certified dental technician and my father has been both a general practitioner and dental educator. e",
+        "v0": "Dentistry has been a part of my life as  long as I have . eos> My brother  a certified hygienist,  certified, certified dental practitioner and  professional is been  a dental practitioner and  practitioner. eo",
+        "original_y": "Long-term involvement with a profession.",
+        "u": "A-standing care in a professional."
+    },
+    {
+        "original_x": "Mr. Reupke was one of three executives on Reuters's eight - person executive committee who didn't also serve on the company's board of directors.",
+        "v0": "Mr. Reupke was one of three executives on Reuters'eight eight executive- executive executive committee  did notn't serve serve on the board's board of directors.",
+        "original_y": "Executives not serving on the board.",
+        "u": "Executives were taking on board board."
+    },
+    {
+        "original_x": "If you are a fan of old-fashioned jazz -- what is now known as traditional or trad jazz -- you are familiar with one of the standard jump tunes of the genre -- a tune most commonly called Muskrat Ramble. eos> Even if you are not",
+        "v0": "If you are a fan of old-fashioned jazz -- now is now known as traditional jazz jazztd jazz -- you are familiar with the of the standard jazz tunes -- the genre -- thea tune most commonly called Muskrat Ramble. eos> thoughif you are not familiar",
+        "original_y": "Fans of traditional jazz are familiar with a standard tune.",
+        "u": "A of  tune are familiar with thea standard tune."
+    },
+    {
+        "original_x": "The vast majority of boating and other water sports is concentrated in the Mazurian Lakes district in northeastern Poland and the towns along the Bay of Gdansk, on the Baltic Sea.",
+        "v0": "The vast majority of boating and boat recreational sports are concentrated in the Mazuran region area in and northeastern Maz and the towns along the coast of Balticozodanan. the the Baltic Sea.",
+        "original_y": "Water sports and boating are popular in a specific region of Poland.",
+        "u": " sports are fishing activities are popular in thea large area. the."
+    },
+    {
+        "original_x": "Nelson, 44, had been the only woman of 14 people on New Jersey's death row.",
+        "v0": "Nelson, 44, was been the only woman on 14 people on the Jersey's death row.",
+        "original_y": "A person was unique within a group.",
+        "u": "A person was arrested and a significant."
+    },
+    {
+        "original_x": "Jameson points the way for children who need that extra hand and I hope you 'll continue your support this year.",
+        "v0": "Jameson points out way for children who need extra extra extra and I hope you 'll continue your support this year.",
+        "original_y": "Support is needed for children.",
+        "u": "Support needed needed for those."
+    },
+    {
+        "original_x": "George W. Bush will disclose all campaign contributions on his Web site ; he will not let major contributors post saucy photographs of themselves on a page called the  Bare-Ass Eagle Club. '' eos>",
+        "v0": "George W. Bush will disclose all his contributions on his site site. howeverif will not let sau saus let theircy photographs of their on a web on the Bar BaresAwsa Club''' eos>",
+        "original_y": "Disclosure of campaign contributions; restrictions on inappropriate content.",
+        "u": "Support of comments contributions.  on donations behavior."
+    },
+    {
+        "original_x": "Youth who are supported and encouraged by both a family and a society that values Them have a much greater likelihood of becoming productive and contributing members of adult society.",
+        "v0": "Youth who are supported by supported by both a family and a society that values them have a greater greater likelihood of becoming  members contributing members of the society.",
+        "original_y": "Supported youth are more likely to become productive members of society.",
+        "u": "Peopleingd youth through valued than than contribute independent and. society."
+    }
+]

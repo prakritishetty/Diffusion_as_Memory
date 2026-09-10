@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "By the way, an administration official tells the NYT that he's happy if the proposal helps Clinton on the impeachment front, but that's not the rationale for it.",
+        "v0": "By the way, an official official tells the NYT that he's happy thatif the proposal helps Clinton  the impeachment front, but it's not the rationale for it.",
+        "original_y": "Proposal intended to benefit someone in a legal situation.",
+        "u": "Beneficiposal to to support,effectivea difficult situation."
+    },
+    {
+        "original_x": " When I get too jaded by living in the city, I always find it refreshing to visit John Deere, where I realize I can't identify half the implements featured on the page. ''",
+        "v0": " When I get too frustratedhungaded to the in the city, I realize visit myself rewarding to visit John Deer , where I realize I amn't featured the of itemss featured in the page. ''",
+        "original_y": "Feeling refreshed by visiting a place with unfamiliar items.",
+        "u": "Manying of is someone a place. manyity."
+    },
+    {
+        "original_x": "John Solomon, who provides these last data in an article in the October 1996 Washington Monthly, offers a less credulous explanation : Disaster relief is  a unique example of political pork that everyone accepts as kosher. ''",
+        "v0": "John Solomon, who provides this last data in an October in the October Monthly Economic Monthly article, is a unique accurateiblyary example of:  is is a ana political political of political action that everyone accepts as kosmos. ''",
+        "original_y": "Disaster relief is accepted as beneficial.",
+        "u": " assistance provides    for"
+    },
+    {
+        "original_x": " On the chance that my guess is right, I am writing to you today to invite you to become a member of LOGOS-the League Of Greek Orthodox Stewards. ''",
+        "v0": " On the chance that my friend is right, I am writing to you today to invite you to become a member of GreekNATOS Orthoorthodox Conservative of Greek Orthodox Orthowards. ''",
+        "original_y": "invitation to join a group.",
+        "u": "Agreement to form a group."
+    },
+    {
+        "original_x": "The law school has more than 5,700 alumni, approximately 80 % of whom reside in Indiana. eos> The balance practice law throughout the country and live in 48 different states. eos>",
+        "v0": "The law school has more than 700 students, each 80 % of whom are in Indiana. eos> The law law throughoutfully the country and live in 48 different states. eos>",
+        "original_y": "Large group of people associated with an institution primarily located in one place.",
+        "u": "Many band of people studying with  organization.grew depends in the area."
+    },
+    {
+        "original_x": "Judge Thornton's office said judicial rules barred her from commenting on the cases. eos> But her two rulings made clear that she expected the original orders against all contact to apply equally to the person suspected of abuse and the abused. eo",
+        "v0": "Judge Thornton's office said courtjudicial barre barred her from commenting on the cases. eos> But her two rulings had clear that the could to orders orders to all contact applicants apply to to the affected and of applying  to abused. eo",
+        "original_y": "Rules prevent discussion of legal matters.",
+        "u": "Legal were applicants of  action."
+    },
+    {
+        "original_x": "The Miller imbroglio and the assault on Bin Laden would appear to have nothing in common, but they both illustrate a peculiar development in American foreign policy : James Bondification.",
+        "v0": "The Miller undmoralglit and the assault on American Laden appear have to have nothing in common, but they both illustrate a remarkable development in American policy policy : James Bond .",
+        "original_y": "A situation with conflict and an attack reveals a trend in American foreign policy.",
+        "u": "Im foreign requires an exists  attempt.involving a compelling. America politics affairs."
+    },
+    {
+        "original_x": "From Oh What a Paradise it Seems, by John Cheever : The size of Chisholm's teeth, the thickness of his glasses, his stoop and the spring with which he walked all marked him, Sears",
+        "v0": "From Oh What a Paradise it Seems, by John Cheever : The size of Chisholm's teeth, the thickness of his glasses, his stoop and the spring with which he walked all marked him, Sears",
+        "original_y": "A person is identified by physical characteristics and perceived as a dedicated reformer.",
+        "u": "A person' highly for traits traits and  as havinga tool person.."
+    },
+    {
+        "original_x": "In the chaotic regime, the same movie shows that the majority of the genes remain green, twinkling on and o -LRB- Figure. c -RRB-. eos> So a vast, twinkling green sea spans",
+        "v0": "In the same movie, the majority group shows that the majority of the genes remain green, greenkling green green green- -LRB- .  -RRB- So eos> So, vast green, greenkling sea seass",
+        "original_y": "Genes remain active.",
+        "u": "Alls are in in"
+    },
+    {
+        "original_x": "Lawyers for Oviedo, once the army strongman behind Paraguay's disgraced President Ral Cubas, said that Oviedo's plastic surgeon doesn't want the general's scalp exposed to sun or wind for",
+        "v0": "Lawyers for Paraviedo, once the general leaderhold behind Paraguayan's Generalmanraced President Oo Castro , said O Oviedo's general surgeon doesn't want the general publicss body to to sun or wind at months",
+        "original_y": "Legal representatives are protecting someone's appearance after a procedure.",
+        "u": "A professional discussed expected their froms privacy. a difficult."
+    }
+]

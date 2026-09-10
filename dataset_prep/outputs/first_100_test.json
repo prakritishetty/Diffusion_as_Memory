@@ -1,0 +1,1259 @@
+[
+  {
+    "id": "137",
+    "x": "AMC 's Quiet Water Canoe Guide : Maine offers a chance to experience unspoiled quiet places , to observe wildlife in their natural habitat , to paddle and completely unwind .",
+    "x+": "AMC 's Quiet Water Canoe Guide : Maine offers unspoiled quiet places to observe wildlife , to paddle and completely unwind .",
+    "xt": [
+      "AMC 's Quiet Water Canoe Guide : Maine offers a chance to observe wildlife in their natural habitat .",
+      "Maine offers quiet places to observe wildlife in their natural habitat , to paddle and completely unwind .",
+      "AMC in Maine offers a chance to observe undisturbed wildlife while paddling ina canoe .",
+      "AMC 's Quiet Water Canoe Guide : Go to Maine to paddle and unwind in natural habitat -- filled with wildlife , tranquil , and pure ."
+    ],
+    "summary": "opportunity to experience nature, relax, and observe wildlife.",
+    "summary_processed": true
+  },
+  {
+    "id": "163",
+    "x": "The enclosed copy of Wildlife Watch highlights what is involved in the major campaigns we 're currently conducting for wildlife ... and the challenges that lie ahead .",
+    "x+": "The copy of Wildlife Watch highlights what is involved in our campaigns for wildlife and the challenges ahead .",
+    "xt": [
+      "The enclosed copy of Wildlife Watch highlights our current campaigns for wildlife ... and the future challenges .",
+      "Wildlife Watch highlights what is involved and future challenges of currently conducted major wildlife campaigns .",
+      "The enclosed copy of Wildlife Watch highlights what is involved in the campaigns we 're currently conducting and challenges .",
+      "The enclosed copy of Wildlife Watch highlights what is involved in the campaigns we 're conducting for wildlife ."
+    ],
+    "summary": "Ongoing campaigns face challenges.",
+    "summary_processed": true
+  },
+  {
+    "id": "160",
+    "x": "I would think that the words grand and stretch would be known to more people than two of the words the author gives as being familiar -LRB- chippy and hootch -RRB- .",
+    "x+": "I think the words grand and stretch would be more known than the words the author gives -LRB- chippy and hootch -RRB- .",
+    "xt": [
+      "I believe `` grand '' and `` stretch '' are more familiar words to people than `` chippy '' and `` hootch , '' as the author thought .",
+      "Grand and stretch should be more well known terms than chippy and hootch , which the author gives as being familiar .",
+      "I would think that the words grand and stretch would be known to more people than chippy and hootch .",
+      "I would think that words grand and stretch would be more common than chippy and hootch , the words the author gives us"
+    ],
+    "summary": "Unfamiliar words can surprise people.",
+    "summary_processed": true
+  },
+  {
+    "id": "129",
+    "x": "Although I greatly enjoyed Richard Lederer 's article , I fear that one of his paragraphs is a load of brass monkey balls .",
+    "x+": "I enjoyed Mr. Lederer 's article , but one of his paragraphs is complete nonsense .",
+    "xt": [
+      "While I did enjoy Richard Lederer 's article , I fear one of his paragraphs is a dishonest .",
+      "I enjoyed Richard Lederer 's article but fear his paragraph is full of brass monkey balls",
+      "I enjoyed Richard Lederer 's article , but I strongly disagreed with one of his paragraphs ."
+    ],
+    "summary": "Disagreement regarding content.",
+    "summary_processed": true
+  },
+  {
+    "id": "138",
+    "x": "Because the USDA 's slow-acting pesticide takes three days to kill , its victims will likely fly many miles from the poisoned fields , before falling to the ground .",
+    "x+": "Because the USDA 's slow-acting pesticide takes three days to kill , its victims will fly many miles before falling .",
+    "xt": [
+      "Because the USDA 's pesticide takes three days to kill , its victims will fly far from the poisoned fields before dying .",
+      "The USDA 's pesticide takes three days to kill , meaning victims are far from poisoned fields before they fall .",
+      "The pesticide is slow-acting resulting in many insects flying many miles before falling to the ground .",
+      "Victims of the USDA 's pesticide will likely fly miles away before dying , due to it being slow acting ."
+    ],
+    "summary": "Pesticide takes time to work, causing affected creatures to move before dying.",
+    "summary_processed": true
+  },
+  {
+    "id": "135_136",
+    "x": "RS .",
+    "x+": "For more information about the Guide Dog Foundation or to volunteer , visit our website at www.guidedog.org .",
+    "xt": [
+      "To find out more about Guide Dog Foundation or to become a volunteer , visit www.guidedog.org .",
+      "For information about the Guide Dog Foundation , or to become a volunteer , visit www.guidedog.org .",
+      "Visit www.guidedog.org for more info on Volunteering or the Guide Dog Foundation",
+      "Visit www.guidegod.org ."
+    ],
+    "summary": "RS.",
+    "summary_processed": true
+  },
+  {
+    "id": "178",
+    "x": "For the purposes of this survey , the Wall Street Journal will be counted as a separate and distinct publication from the Journal 's editorial page , because , in essence , it is .",
+    "x+": "For this survey , the Wall Street Journal will be counted as a separate publication from the Journal 's editorial page .",
+    "xt": [
+      "Because the Wall Street Journal is a separate publication from its editorial page , it will be counted as such in this survey .",
+      "For this survey , the Wall Street Journal will be a separate and distinct publication from the Journal 's editorial page .",
+      "For the purposes of this survey , the Wall Street Journal is treated as a separate publication from the Journal 's editorial page .",
+      "Wall Street Journal survey will be counted as separate and distinct publication from the Journal 's page , because in essence , it is"
+    ],
+    "summary": "Distinct publications exist.",
+    "summary_processed": true
+  },
+  {
+    "id": "187",
+    "x": "It 's a difficult problem , because we have to fight the well-financed and powerful agri-business and research industries , but we do our best to protect the animals .",
+    "x+": "It 's difficult because we fight the agri-business and research industries , but we do our best to protect the animals .",
+    "xt": [
+      "We do our best to protect the animals , given the problem of fighting powerful agri-business and research industries .",
+      "It 's difficult to fight the well financed and powerful agri-business and research industries , but we do our best .",
+      "Due to fighting well-financed and powerful agri-business and research industries , protecting the animals is difficult .",
+      "We would do our best to protect the animals against well-financed & powerful agri-business & research industries ."
+    ],
+    "summary": "Protecting animals from powerful industries is challenging.",
+    "summary_processed": true
+  },
+  {
+    "id": "175",
+    "x": "What has your support of our campers meant to them and what have they been able to accomplish because you care ?",
+    "x+": "Due to your care and support , what have our campers been able to accomplish ?",
+    "xt": [
+      "What have our campers been able to accomplish because you support & care for them ?",
+      "What has your support of our campers meant to them and what have they accomplished ?",
+      "What has your support of our campers meant and what have they accomplished ?",
+      "What has your support of our campers meant and what have they accomplished ?",
+      "What has your support meant to them and what has this helped them accomplish ?",
+      "What were the campers able to accomplish based on the support you gave them ?",
+      "What has your care meant to campers and their accomplishments from your support ?"
+    ],
+    "summary": "Support enables accomplishments.",
+    "summary_processed": true
+  },
+  {
+    "id": "149",
+    "x": "P.P.S. Check out our website at www.outdoors.org for up-to-date information and hot tips on where to go , what to do , and what to take !",
+    "x+": "Check www.outdoors.org for information on where to go , what to do , and what to take !",
+    "xt": [
+      "Check our website at www.outdoor.org for information on where to go , what to do , and what to take !",
+      "P.P.S. Check us out at www.outdoors.org for info and tips on where and what to do !",
+      "P.P.S. Visit our site at www.outdoors.org for updates and tips on all activities !",
+      "Our website outdoors.org has up-to-date tips on where to go , what to do , and what to take !"
+    ],
+    "summary": "Information and suggestions for outdoor activities.",
+    "summary_processed": true
+  },
+  {
+    "id": "139",
+    "x": "And your support will help sustain our innovative Audubon Refuge Keepers program , and maintain our own network of more than 100 wildlife centers and sanctuaries .",
+    "x+": "Your support will help the Audubon Refuge Keepers program , and maintain our network of wildlife centers and sanctuaries .",
+    "xt": [
+      "Your support helps sustain our Audubon Refuge Keepers program and our network of 100 wildlife centers and sanctuaries .",
+      "And your support helps our innovative Audubon Refuge Keepers program as well as our 100 + wildlife centers and oases .",
+      "Your support will help sustain our Audubon Refuge Keepers program , and maintain our wildlife centers and sanctuaries .",
+      "With your support , we can keep up our A.R.K. program and maintain a network with many wildlife centers ."
+    ],
+    "summary": "Support helps maintain a network of wildlife centers and sanctuaries.",
+    "summary_processed": true
+  },
+  {
+    "id": "120",
+    "x": "Here is a game just made to while away the hours on a commuter train with your favorite author , a perfect place to hunt for Puzzling Pronouns .",
+    "x+": "Pass the time on the train with your favorite author hunting for Puzzling Pronouns .",
+    "xt": [
+      "This is a game to spend hours with your favorite author , a perfect place to hunt for Puzzling Pronouns .",
+      "Here is a game to While away the hours with your favorite author , a place for Puzzling Pronouns .",
+      "Here 's a game to pass time on a commuter train with your favorite author , find Puzzling Pronouns .",
+      "this game passes the time on a commuter train with your favorite author , hunting for Puzzling Pronouns ."
+    ],
+    "summary": "A game designed for passing time with an author.",
+    "summary_processed": true
+  },
+  {
+    "id": "165",
+    "x": "At Goodwill , Michael 's counselors felt that his personable demeanor could be a major attribute and identified for him a possible job-match where his people skills could shine .",
+    "x+": "`` At Goodwill , Michael 's counselors felt that his demeanor could be an attribute for a likely job-match where his skills could shine . ''",
+    "xt": [
+      "Counselors felt that Michael 's personable demeanor could be an asset and his people skills could shine at Goodwill .",
+      "`` At Goodwill , Michael 's counselors felt that his demeanor could be a major attribute where his people skills could shine . ''",
+      "Michael 's demeanor could be a major attribute and his counselors identified him for a job-match where his people skills could shine .",
+      "Michael 's counselors felt that his demeanor could be an attribute and identified for him a job-match where he could shine .",
+      "Counselors at Goodwill feel that Michael is a great asset with his people skills .",
+      "Michaels 's counselors felt his personal demeanor could attribute and identify him a job-match where his people skills could shine .",
+      "`` At Goodwill , Michael 's counselors felt that his ... demeanor could be a major attribute and identified for him...a...job-match ... ''",
+      "Michael 's counselors feel his personal demeanor will be a major attribute identifying him as a possible job-match"
+    ],
+    "summary": "Positive attributes and skills can lead to job opportunities.",
+    "summary_processed": true
+  },
+  {
+    "id": "164",
+    "x": "We 'll tell you where to go for outdoor fun and keep you informed of the crucial issues affecting our mountain environment .",
+    "x+": "We 'll inform you of fun outdoor spots and of the issues affecting our mountain environment .",
+    "xt": [
+      "We 'll tell you where to go and keep you informed of the issues affecting our environment .",
+      "We 'll inform you about outdoor fun and the issues affecting our mountain environment .",
+      "We 'll tell you where to find outdoor fun , and keep you informed of environmental issues .",
+      "We 'll tell you where to go for outdoor fun and keep you informed on crucial issues ."
+    ],
+    "summary": "Outdoor activities and environmental concerns.",
+    "summary_processed": true
+  },
+  {
+    "id": "130",
+    "x": "As a member of World Wildlife Fund , you know that our efforts are essential to preserving the astonishing , yet desperately threatened diversity of life here on Earth .",
+    "x+": "As a member of World Wildlife Fund , our efforts are vital to preserve the diversity of life here on Earth .",
+    "xt": [
+      "Members of World Wildlife Fund are aware that our efforts are needed to preserve the threatened diversity of life on Earth .",
+      "As a member of World Wildlife Fund , you know that our efforts are essential to preserving diversity of life on Earth .",
+      "As a member of World Wildlife Fund , you know our efforts are essential preserving the diversity of life here on Earth .",
+      "As any member of World Wildlife Fund knows , our work is crucial to preserving the diverse , yet threatened life here on Earth ."
+    ],
+    "summary": "Preserving Earth's diverse life is essential.",
+    "summary_processed": true
+  },
+  {
+    "id": "193",
+    "x": "A tax-deductible gift from you now of less than a nickel a day can bring you into the ranks of the most influential and effective marine conservation organization operating today .",
+    "x+": "A gift of less than a nickel a day can bring you into the most influential and effective marine conservation organization .",
+    "xt": [
+      "A tax-deductible gift from you can bring you into the ranks of the most effective marine conservation organization .",
+      "You can join an influential and effective marine conservation organization for a tax-deductible gift of less than a nickel a day .",
+      "A gift of less than a nickel a day can bring you into the ranks of one of the best marine conservation organizations operating today .",
+      "Tax deductible gifts less than a nickel a day can give ranks of the most effective influential marine conservation operating today"
+    ],
+    "summary": "Small contributions can support impactful conservation efforts.",
+    "summary_processed": true
+  },
+  {
+    "id": "159",
+    "x": "Regional chapters from Maine to Washington , D.C. , play a key role in introducing you to the activities and opportunities of AMC membership .",
+    "x+": "Regional chapters across the east play a role in introducing you to activities and opportunities of AMC .",
+    "xt": [
+      "Regional chapters play a key role in introducing the activities and opportunities of AMC membership .",
+      "Chapters across the East coast help introduce you to the activities and opportunities of AMC membership .",
+      "Locations such from Maine to Washington , D.C. play a vital role in introducing you to the wonders of AMC",
+      "Chapters from Maine to Washington D.C. play a role in the activities and opportunities of AMC membership"
+    ],
+    "summary": "Regional groups offer activities and opportunities.",
+    "summary_processed": true
+  },
+  {
+    "id": "117",
+    "x": "This book appears to have been diligently researched and has much to recommend it as an adjunct to most libraries , public and private , large and small , general and specialized .",
+    "x+": "This book has been diligently researched and has much to recommend it as an adjunct to most libraries .",
+    "xt": [
+      "This book seems to be researched thoroughly and has good reason to be added to libraries of any sort .",
+      "This diligently researched book has much to be recommended as an adjunct to all libraries .",
+      "This book has been thourghly reviewed and is a great asset to all kinds of libraries .",
+      "The book has been thoroughly researched and is highly recommended in a variety of libraries ."
+    ],
+    "summary": "well-researched and recommended for libraries.",
+    "summary_processed": true
+  },
+  {
+    "id": "157",
+    "x": "So if we do n't act right now , Alaska 's snowy tundras will once again become bloody killing fields for wolves in America 's `` Last Frontier . ''",
+    "x+": "If we do n't act , Alaska 's tundra will become death fields for wolves in America 's `` Last Frontier . ''",
+    "xt": [
+      "If we do n't act now , Alaska 's tundras will be killing fields for wolves in USA 's `` Last Frontier '' again .",
+      "Alaska 's snowy tundras will become killing fields for wolves if we do n't act right now .",
+      "If we do n't act , Alaska 's tundras will become bloody killing fields for wolves .",
+      "If we do n't act , Alaska 's will become killing fields for wolves in America 's `` Last Frontier . ''"
+    ],
+    "summary": "Action needed to prevent harm to wolves in a cold, remote region.",
+    "summary_processed": true
+  },
+  {
+    "id": "133",
+    "x": "Should n't you watch hawks and ravens soar below you at AMC 's Lakes of the Clouds mountain hut perched 5,000 ft. high on Mt. Washington 's slope ?",
+    "x+": "Should n't you watch hawks and ravens fly at AMC 's Lakes of the Clouds retreat on Mt. Washington 's slope ?",
+    "xt": [
+      "Watch hawks and ravens soar at AMC 's Lakes of the Clouds mountain hut perched high on Mt. Washington .",
+      "Should n't you watch hawks and ravens at AMC 's Lakes of the Clouds from 5,000 ft. on Mt. Washington 's slope ?",
+      "Should n't you watch hawks and ravens soar below you at AMC 's Lake of the Clouds mountain hut .",
+      "Watch soaring hawks and ravens below you at AMC 's Lakes of the Clouds mountains ."
+    ],
+    "summary": "Enjoy nature from a high mountain location.",
+    "summary_processed": true
+  },
+  {
+    "id": "191",
+    "x": "The only way we can continue to provide guide dogs , at no cost , to someone who is blind or visually impaired , is through your support .",
+    "x+": "The only way we can give guide dogs to those who are visually impaired is through your support .",
+    "xt": [
+      "The only way to provide no cost guide dogs to blind people is through your support .",
+      "The only way we can continue to provide free guide dogs to the blind is through your support .",
+      "We need your support to provide guide dogs at no cost to someone who is blind or visually impaired",
+      "We continue to provide guide dogs , at no cost , to someone who is blind , through your support"
+    ],
+    "summary": "Support is needed to provide assistance to visually impaired individuals.",
+    "summary_processed": true
+  },
+  {
+    "id": "118",
+    "x": "won a major court victory that closed thousands of square miles to U.S. longline fishing because of its threat to the survival of Pacific leatherback sea turtles .",
+    "x+": "Won a court victory that closed thousands of miles to U.S. fishing because of its threat to the survival of sea turtles .",
+    "xt": [
+      "Won a court case that closed thousands of square miles of fishing because of the endangerment of leatherback sea turtle .",
+      "won a major court case that closed miles to U.S. longline fishing because the threat to Pacific leatherback sea turtles .",
+      "Won a major court victory that closed thousands of miles of U.S. fishing because of the threat to leatherback sea turtles .",
+      "Won a court victory that closed thousands of miles of fishing in the U.s because it was a threat to turtles in the pacific"
+    ],
+    "summary": "Threat to survival of a species leads to restrictions on fishing.",
+    "summary_processed": true
+  },
+  {
+    "id": "186",
+    "x": "In this trousers category , Thompson must share the limelight with Coleridge by virtue of the line in Kubla Khan : As if this earth in fast thick pants were breathing .",
+    "x+": "In this trousers category , Thompson must share the limelight with Coleridge by virtue of the line in Kubla Khan .",
+    "xt": [
+      "Thompson must share the limelight with Coleridge by Kubla Khan : As if this earth in fast thick pants were breathing .",
+      "Thompson shares the limelight with Coleridge 's line from Kubla Khan : As if this earth in fast thick pants were breathing .",
+      "Trousers area , Thompson must share glory with Coleridge by decree in Kubla Khan : Like the Earth in fast big pants was alive .",
+      "Thompson share with Coleridge by virtue of the line in Kubla Khan : As if this earth in fast thick pants were breathing"
+    ],
+    "summary": "Clothing and poetry are related.",
+    "summary_processed": true
+  },
+  {
+    "id": "116",
+    "x": "Join in this wonderful event and help Jameson Camp continue to provide the year-round support that gives kids a chance to create dreams .",
+    "x+": "Join this event and help Jameson Camp provide year-round support which allows kids to create dreams .",
+    "xt": [
+      "Join and help Jameson Camp continue to provide the support that gives kids a chance to create dreams .",
+      "Join this great Jameson Camp event to continue providing support for kids to create dreams .",
+      "Join us in this event and help Jameson Camp in providing year-round support fulfilling kids dreams .",
+      "Join in this event and help Jameson Camp continue to provide kids a chance to create dreams .",
+      "Help Jameson Camp continue to provide the support that gives kids a chance to create dreams .",
+      "Join us to help jameson Camp continue to provide year-round support for kids to create theie dreams ."
+    ],
+    "summary": "Support for children to achieve goals.",
+    "summary_processed": true
+  },
+  {
+    "id": "179",
+    "x": "In all , nine birds on the Federal threatened or endangered lists and 11 birds on Audubon 's WatchList of imperiled species could be found in these killing fields .",
+    "x+": "Nine birds on the Federal lists and 11 birds on Audubon 's WatchList could be found in these killing fields .",
+    "xt": [
+      "In all , these killing fields include nine birds on the Federal endangered lists and 11 on Audubon 's WatchList .",
+      "The killing fields hold all birds on the Federal threatened or endangered list and 11 on the Audubon 's WatchList .",
+      "Nine birds on the Federal threatened or endangered lists could be found in these killing fields .",
+      "In these killing fields can found 9 birds on the Federal threatened or endangered lists and 11 birds on Audubon own list ."
+    ],
+    "summary": "Several threatened or imperiled bird species inhabit these areas.",
+    "summary_processed": true
+  },
+  {
+    "id": "161",
+    "x": "I hope , too , that they remind you just how much danger these beautiful marine species and their ocean habitats are in right now !",
+    "x+": "I hope they remind you of the danger these marine species and ocean habitats are in !",
+    "xt": [
+      "I hope they remind you of the grave danger these marine species and their habitats are facing !",
+      "I hope they remind you how much danger these marine species and ocean habitats are in now !",
+      "Hopefully they remind you how much danger these marine species and their ocean habitats are in !",
+      "I hope that they these marine species and their habitats are in danger ."
+    ],
+    "summary": "Marine species and their habitats are in danger.",
+    "summary_processed": true
+  },
+  {
+    "id": "126",
+    "x": "But I also hope you will help us keep alive the promise behind these labels and become the newest member of National Wildlife Federation today .",
+    "x+": "I also hope you will help preserve the promise behind the labels and join the National Wildlife Federation .",
+    "xt": [
+      "I hope you will keep the promise and become a member of National Wildlife Federation .",
+      "Pease help us keep alive the promise behind these labels and join National Wildlife Federation today .",
+      "Join the National Wildlife Federation today and help keep the promise behind these labels alive .",
+      "hoping you will keep the promise alive and become the newest member of national wildlife federation"
+    ],
+    "summary": "Joining an organization to uphold a promise.",
+    "summary_processed": true
+  },
+  {
+    "id": "192",
+    "x": "Or , more slap-stickish , E.F. Benson 's action picture in Lucia in London -LRB- Chapter 8 -RRB- : Georgie stepped on a beautiful pansy .",
+    "x+": "Or , more comic , E.F. Benson 's Lucia in London 's action shot : Georgie steps on a lovely pansy .",
+    "xt": [
+      "E.F. Benson 's action picture in Lucia in London , Georgie stepped on a beautiful pansy .",
+      "Or , humorously , E.F. Benson 's scene in Lucia in London -LRB- Chapter 8 -RRB- : Georgie stepped on a pansy .",
+      "E.F. Benson 's action picture in Lucia in London , `` Georgie Stepped on a beautiful pansy .",
+      "More slap-stickish E.F. Benson 's action picture in Lucia , Georgie stepped on a pansy ."
+    ],
+    "summary": "A character experiences a mishap.",
+    "summary_processed": true
+  },
+  {
+    "id": "140",
+    "x": "So let me urge you to do your part by supporting a group that the San Francisco Chronicle calls `` one of America 's most respected and influential conservation organizations .",
+    "x+": "So I urge you to support a conservation group that the San Francisco Chronicle calls `` most respected and influential . ''",
+    "xt": [
+      "Support a group that the San Francisco Chronicle calls one of America 's most respected and influential conservation organizations .",
+      "I urge you to support the group the SF Chronicle calls `` one of America 's most respected & influential conservation organizations . ''",
+      "Support what San Francisco Chronicle calls `` one of America 's most respected and influential conservation organizations '' .",
+      "I urge you to support a group that the San Francisco Chronicle calls `` one of America 's most respected conservative organizations . ''"
+    ],
+    "summary": "support a respected conservation organization.",
+    "summary_processed": true
+  },
+  {
+    "id": "145",
+    "x": "When you do , you 'll extend your commitment as an esteemed partner with WWF -- the largest and most effective international conservation group in existence .",
+    "x+": "When you do , you 'll extend your commitment as a partner with WWF -- the largest international conservation group .",
+    "xt": [
+      "When you do , you 'll extend your commitment as a partner with WWF -- The largest international conservation group .",
+      "When you do , you 'll extend your commitment as a partner with WWF -- an international leader in conservation .",
+      "With this you 'll become an esteemed partner with WWF -- the largest , most effective global conservation group ever .",
+      "You 'll extend your pledge as a partner with WWF -- the most effective international conservation group in existence ."
+    ],
+    "summary": "Partnership extends commitment to a large conservation group.",
+    "summary_processed": true
+  },
+  {
+    "id": "146",
+    "x": "And Audubon will draw upon its century-long track record of highly effective conservation work to make a real difference in other key areas :",
+    "x+": "And Audubon will draw upon its highly effective conversation work to make a difference in key areas .",
+    "xt": [
+      "Audubon draws on its long track record of strong conservation work to make a change in other key areas :",
+      "Audubon will draw upon its track record of effective conservation work to make a difference in key areas :",
+      "Audubon will make a real difference in other key areas of conservation work .",
+      "Audobon will use other key areas with there track record of highly effective conservation work"
+    ],
+    "summary": "long-standing organization using experience to achieve impactful results.",
+    "summary_processed": true
+  },
+  {
+    "id": "142",
+    "x": "Please sign your Citizens ' Advisory Ballot to demonstrate to our Alaska allies that you 're behind them ; and send an urgent donation today to help them win this effort .",
+    "x+": "Please sign your Citizens ' Advisory Ballot to demonstrate to our allies you 're behind them , and send an urgent donation .",
+    "xt": [
+      "Please sign your Citizens ' Advisory Ballot to show our Alaska kin your support ; send a donation now to help win the effort .",
+      "Sign your Citizens ' Advisory Ballot to show allegiance to our Alaska allies .",
+      "Please sign your Citizens ' Advisory Ballot to show support for Alaska allies ; and send dire donations to help them triumph .",
+      "Please sign your Citizens ' Advisory Ballot to support our Alaska allies and send donation today to help them win this effort ."
+    ],
+    "summary": "Support allies in an effort through action and donation.",
+    "summary_processed": true
+  },
+  {
+    "id": "1426",
+    "x": "Also in Newsweek , an article about David Helfgott , subject of the movie Shine : It says he is a wretched pianist .",
+    "x+": "Also in Newsweek , an article about David Helfgott : It says he is a wretched pianist .",
+    "xt": [
+      "According to an article in Newsweek , David Helfgott is `` A wretched pianist '' .",
+      "An article about David Helfgott : It says he 's a wretched pianist .",
+      "Newsweek has an article about David Helfgott , a wretched pianist in the movie Shine .",
+      "Article about David Helfgott in Newsweek , subject of movie Shine : He is a bad pianist"
+    ],
+    "summary": "A person is described negatively regarding a skill.",
+    "summary_processed": true
+  },
+  {
+    "id": "1222",
+    "x": "Cohen points out that movie theaters ' seemingly perverse pricing mechanism is also used in a few other branches of the entertainment business :",
+    "x+": "Cohen points out that movie theaters ' crazy pricing is also used in other entertainment business ' .",
+    "xt": [
+      "Cohen points out that the picing mechanism used in movie theatres ' , are in the entertainment business too .",
+      "Cohen points out theaters ' seemingly pricing mechanism is also used in other branches of the business :",
+      "Cohen points out that movie theaters ' pricing mechanism is also used in a few other branches .",
+      "Cohen points out : movie theaters ' pricing mechanism is used other branches of the entertainment business"
+    ],
+    "summary": "Pricing strategies are unusual in entertainment.",
+    "summary_processed": true
+  },
+  {
+    "id": "1316",
+    "x": "Also in Newsweek , a piece pegged to the movie Volcano says that volcanoes threaten 500 million people worldwide , but not the citizens of Los Angeles .",
+    "x+": "In Newsweek , a piece says the film Volcano says volcanoes threaten 500,000,000 worldwide , but not LA citizens .",
+    "xt": [
+      "A piece pegged to the movie Volcano says that volcanoes threaten millions worldwide , but not Los Angeles .",
+      "The movie Volcano says that volcanoes threaten people worldwide , but not those in Los Angeles .",
+      "Newsweek wrote that volcanoes threaten 500 million people worldwide , but not the citizens of Los Angeles .",
+      "a piece pegged to the movie Volcano says that volcanoes threaten 500 million people worldwide"
+    ],
+    "summary": "Volcanoes pose a global threat to a large population, excluding Los Angeles.",
+    "summary_processed": true
+  },
+  {
+    "id": "1709",
+    "x": "Time explains why the anti-sweatshop movement is growing on college campuses : The AFL-CIO has jump-started the protests by lavishing student activists with internships and trips to countries with poor working conditions .",
+    "x+": "The AFL-CIO sends students to poor countries for internships , and this has helped the anti-sweatshop movement grow on college campuses .",
+    "xt": [
+      "The AFL-CIO has jump-started the protests by lavishing student activists with internships and trips .",
+      "The AFL-CIO has jump-started anti-sweatshop protests by lavishing student activists with internships and trips to countries with poor working conditions .",
+      "Time explains why the anti-sweatshop movement is growing : The AFL-CIO has jump-started the protests by giving students with internships and trips to countries ."
+    ],
+    "summary": "A movement is growing due to support and exposure to concerning conditions.",
+    "summary_processed": true
+  },
+  {
+    "id": "1548",
+    "x": "The Southern Poverty Law Center says the CCC is `` the reincarnation of the racist white Citizens Councils '' that battled integration in the 1950s .",
+    "x+": "The Southern Law Center says the CCC is `` the reincarnation of the racist white Citizens Councils '' .",
+    "xt": [
+      "The Southern Poverty Law Center says the CCC is `` the reincarnation of the racist white Citizens Councils '' .",
+      "Southern Poverty Law Center says the CCC is like `` the 1950 's racist white Citizens Councils . ''",
+      "The Southern Poverty Law Center says the CCC is `` the reincarnation of the councils '' that fought integration .",
+      "Southern Poverty Law Center says CCC is `` the reincarnation of the racist white Citizens Councils ''"
+    ],
+    "summary": "Group associated with racism and historical opposition to integration.",
+    "summary_processed": true
+  },
+  {
+    "id": "1776",
+    "x": "For the second time in a week , a NYT front-pager about Congress ' performance this year is brutally frank , appearing under the headline `` HEALTH INDUSTRY SEES WISH LIST MADE INTO LAW . ''",
+    "x+": "Yet again , NYT speaks out on Congress ' performance with a front page story : `` HEALTH INDUSTRY SEES WISH LIST MADE INTO LAW . ''",
+    "xt": [
+      "A NYT front-pager about Congress ' performance is frank , appearing under the headline `` HEALTH INDUSTRY SEES WISH LIST MADE INTO LAW . ''",
+      "NYT front-pager about Congress ' performance this year is frank , under the headline `` HEALTH INDUSTRY SEES WISH LIST MADE INTO LAW .",
+      "For the second time in a week , Congress ' performance appears in a NYT paper as `` HEALTH INDUSTRY SEES WISH LIST MADE INTO LAW ''"
+    ],
+    "summary": "Industry sees wishes become law.",
+    "summary_processed": true
+  },
+  {
+    "id": "1689",
+    "x": "Miss Norman said the remark , which she insists she never made , held her up to ridicule , mockery , and contempt , and conformed to a `` degrading racist stereotype of a person of African-American heritage . ''",
+    "x+": "Miss Norman said the remark held her to ridicule , mockery , contempt , and to a `` degrading racist stereotype of a person of African-American heritage . ''",
+    "xt": [
+      "Miss Norman said the remark held her up to derision , and conformed to a `` degrading racist stereotype of a person of African-American heritage . ''",
+      "Norman said the remark , conformed to a `` degrading racist stereotype of a person of African-American heritage ''",
+      "Miss Norman said the remark made her a subject of ridicule , and mockery , and contempt .",
+      "Norman said , the remark held her up to ridicule , mockery and contempt and conformed to defrading racist sterotype person of African-American heritage ."
+    ],
+    "summary": "A statement caused ridicule and aligns with a negative stereotype.",
+    "summary_processed": true
+  },
+  {
+    "id": "1241",
+    "x": "I am prepared to go Lincoln one better and to assert that you could not prove Euclid 's proposition to be false even by calling him a Microsoft employee .",
+    "x+": "I am prepared to assert that you could not disprove Euclid 's proposition even by calling him a Microsoft employee .",
+    "xt": [
+      "I will outdo Lincoln and say that you could n't prove Euclid 's theory false even by saying he 's Microsoft staff .",
+      "I am prepared to go one better and say that you could not prove Euclid 's proposition to be false .",
+      "You could not prove Euclid 's proposition false , even by calling him a Microsoft employee .",
+      "I am prepared to go Lincoln one better and to assert that you could not prove Euclid 's proposition to be false ."
+    ],
+    "summary": "Demonstrating something's truth is not dependent on the identity of the person presenting it.",
+    "summary_processed": true
+  },
+  {
+    "id": "1313",
+    "x": "`` Let 's go over there and get Tiger 's divot , '' I heard a fan say one day , referring to the tiny chunk of grass and dirt that Woods had scraped from the fairway on one of his shots .",
+    "x+": "`` Let 's go over there and get Tiger 's divot , '' I heard a fan say , referring to the grass and dirt that Woods scraped from the fairway .",
+    "xt": [
+      "`` Let 's go over there and get Tiger 's divot , '' a fan said , referring to the bit of grass that Woods had scraped from the fairway .",
+      "`` let 's go over there and get Tiger 's divot , '' a fan said about the chunk of grass that Woods had scraped from the ground with a shot .",
+      "`` Let 's go and get Tiger 's divot , '' I heard a fan say , referring to the Chunk of grass that Woods had scraped from the fairway .",
+      "Let 's go over there and get Tiger 's divot , '' I heard referring to the grass and dirt that Woods scraped from the fairway"
+    ],
+    "summary": "Someone requested a small piece of turf.",
+    "summary_processed": true
+  },
+  {
+    "id": "1489",
+    "x": "The WP front reports that high tech companies appear to have prevailed in the long-simmering debate about whether or not national security concerns should prevent them from exporting software that encrypts electronic communications .",
+    "x+": "The WP front reports that high tech companies have prevailed in the long-simmering debate about national security concerns .",
+    "xt": [
+      "The WP reports that high tech companies have won the debate about national security concerns preventing exportation of software that encrypts electronic communications .",
+      "The WP front reports that high tech companies seem to have won the debate on whether security concerns should keep them from exporting software that encrypts communications .",
+      "Companies seem to have prevailed in the debate about whether national security concerns should prevent them from exporting software that encrypts communications ."
+    ],
+    "summary": "Tech companies won a debate about exporting encryption software despite national security concerns.",
+    "summary_processed": true
+  },
+  {
+    "id": "2056",
+    "x": "Prudie is n't sure how to square your complaints with all the news stories about grade inflation and college-level courses such as `` The Structure of the Soap Opera '' and `` The History of Beads . ''",
+    "x+": "Prudie is unsure how to resolve issues with stories about grade inflation & courses like `` Structure of the Soap Opera '' & `` History of Beads . ''",
+    "xt": [
+      "Prudie is n't sure how to square your complaints with the stories about grade inflation and college courses such as `` The History of Beads . ''",
+      "Prudie is n't sure how to square your complaints with all the news stories about grade inflation and college-level courses .",
+      "Prudie is n't sure how to square your complaints with all the news stories about grade inflation and college-level courses .",
+      "Prudie ca n't square complaints with news about grade inflation and courses like `` The Structure of the Soap Opera '' and `` The History of Beads . ''"
+    ],
+    "summary": "Concerns exist regarding grading practices and unusual course topics.",
+    "summary_processed": true
+  },
+  {
+    "id": "1092",
+    "x": "Yes , the story in Lemann is well researched , indeed impressively so , but the issues are left hanging without sustained analysis , which would have been possible .",
+    "x+": "Yes , the Lemann story is well researched , but the issues are cited without sustained analysis , which was a possibility .",
+    "xt": [
+      "The story in Lemann is well researched , but the issues are left hanging without sustained analysis .",
+      "The story in Lemann is well researched , but the issues are left hanging without analysis , which is possible .",
+      "Yes , the story in Lemann is well done , but the issues are left without sustained analysis , which would be possible .",
+      "the story is well researched , indeed impressively so , but the issues are left hanging without sustained analysise ."
+    ],
+    "summary": "Well-researched story lacks sustained analysis.",
+    "summary_processed": true
+  },
+  {
+    "id": "1378",
+    "x": "3 . '' ` More than anything else , Silicon Valley is on the 50-yard-line of the political spectrum , ' Mr. Randlett of Technet said . ''",
+    "x+": "Silicon Valley is on the 50-yard-line of the political spectrum , Mr. Randlett of Technet said .",
+    "xt": [
+      "'' ` Silicon Valley is on the 50-yard-line of the political spectrum , ' '' Randlett of Technet said .",
+      "` Silicon Valley is on the 50-yard-line of the political spectrum , ' Technet 's Mr. Randlett said .",
+      "Silicon Valley is on the halfway line of the political spectrum more than anything else .",
+      "'' ` More than anything , Silicon Valley is in the middle of the spectrum , ' Mr. Randlett said . ''"
+    ],
+    "summary": "Silicon Valley is politically moderate.",
+    "summary_processed": true
+  },
+  {
+    "id": "1101",
+    "x": "A study conducted at Oregon State University -LRB- where the maraschino cherry was invented -RRB- about 25 years ago found that blue was almost universally disliked as a food color .",
+    "x+": "A study at Oregon State University found that blue was almost universally disliked as a food color .",
+    "xt": [
+      "An OSU study -LRB- home of the maraschino cherry -RRB- from about 25 years ago found blue was almost universally disliked as a food color .",
+      "A study conducted at Oregon State University about 25 years ago found that blue was almost universally disliked as a food color ."
+    ],
+    "summary": "Dislike of a color related to food is widespread.",
+    "summary_processed": true
+  },
+  {
+    "id": "1892",
+    "x": "Forget about saving the whales : Time reports that the overfishing of sharks for fins -LRB- an Asian delicacy -RRB- and cartilage -LRB- mistakenly thought to prevent cancer -RRB- has brought several species to low population levels .",
+    "x+": "Time reports that the overfishing of sharks for fins and cartilage has brought several species to low population levels .",
+    "xt": [
+      "Time reports that the overfishing of sharks for fins and cartilage has brought several species to low population levels ."
+    ],
+    "summary": "Overfishing threatens species due to demand for body parts with perceived health benefits.",
+    "summary_processed": true
+  },
+  {
+    "id": "1157",
+    "x": "Participants were invited to devise a sequentially trumping topical triad -- rock , paper , scissors -- along these lines : NATO , Milosevic , Albanian refugees -LRB- NATO planes crush Milosevic , Milosevic drives out refugees , refugees give NATO fits -RRB- .",
+    "x+": "Participants were invited to devise a sequentially trumping topical triad : -LRB- NATO planes crush Milosevic , Milosevic drives out refugees , refugees give NATO fits -RRB- .",
+    "xt": [
+      "Participants were invited to devise a rock , paper , scissors along lines of : -LRB- NATO planes crush Milosevic , Milosevic drives out refugees , refugees give NATO fits -RRB- .",
+      "Participants were asked to plan a trumping triad -LRB- rock , paper , scissors -RRB- , such as : NATO , Milosevic , refugees-NATO bombs Milosevic , Milosevic rejects refugees , refugees bug NATO ."
+    ],
+    "summary": "Conflict and strategic maneuvering between groups involving military action and displacement.",
+    "summary_processed": true
+  },
+  {
+    "id": "1113",
+    "x": "A Palestinian girl suffering from cancer says she was cured after Mother Teresa appeared in her dreams and said , `` Child , you are cured . ''",
+    "x+": "A Palestinian girl with cancer says she was cured after Mother Teresa appeared in her dreams .",
+    "xt": [
+      "A Palestinian girl with cancer was cured after Mother Teresa told her she was cured in her dreams .",
+      "A Palestinian girl says she was cured after Mother Teresa appeared and said , `` Child , you are cured . ''",
+      "A Palestinian girl was cured of cancer after seeing Mother Teresa in her dreams .",
+      "A girl 's cancer was cured when Mother Teresa was her dream and said , `` Child , you are cured . ''"
+    ],
+    "summary": "A sick girl reports a miraculous recovery after a spiritual encounter.",
+    "summary_processed": true
+  },
+  {
+    "id": "1626",
+    "x": "-LRB- Frosh , by the way , seems to have come from the German for `` frog '' -- it was a 19 th - century nickname for members of an entering class of German university students . -RRB-",
+    "x+": "Frosh -LRB- German for frog -RRB- was the 19th century nickname for members of an entering class of German university students .",
+    "xt": [
+      "Frosh was a 19th century nickname for members of an entering class of German university students .",
+      "Frosh seems to have come from the German for `` frog '' , members of an entering class of German university students .",
+      "Frosh , from the German for `` frog , was a 19th century nickname for members of an entering class of German university students ."
+    ],
+    "summary": "nickname for new university students.",
+    "summary_processed": true
+  },
+  {
+    "id": "1218",
+    "x": "No visible wedding ring could imply availability for dating or recklessness at the poker table or that it 's time to break down and buy a decent television .",
+    "x+": "No visible wedding ring implies being single , recklessness at the poker table , or that it 's time to buy a new TV .",
+    "xt": [
+      "No wedding ring could imply availability or recklessness or it 's time to break down and buy a decent television .",
+      "No wedding ring implies availability for dating , recklessness at the poker table or the need to buy a decent TV .",
+      "No wedding ring could imply availability for dating at the poker table or that it 's time to buy a TV .",
+      "No wedding ring could imply availability for dating at the poker table or that it 's time to buy a television ."
+    ],
+    "summary": "Lack of a wedding ring might suggest certain behaviors or desires.",
+    "summary_processed": true
+  },
+  {
+    "id": "2030",
+    "x": "The Wall Street Journal 's `` Washington Wire '' reports that some twenty lawmakers who voted this week to restrict satellite exports to China had previously urged Clinton to export satellites there .",
+    "x+": "The `` Washington Wire '' reports that some 20 lawmakers who voted to curb satellite exports to China had urged Clinton to export them there .",
+    "xt": [
+      "`` Washington Wire '' reports that twenty lawmakers who voted this week to restrict satellite exports had urged Clinton to export satellites there .",
+      "Washington Wire reports that 20 lawmakers who voted to restrict satellite exports to China had urged Clinton to export satellites there before .",
+      "The Wall Street Journal reports that twenty lawmakers who voted this week to restrict satellite exports to China had previously urged exports .",
+      "The Wall Street Journal reports that some lawmakers who voted this week to restrict satellite exports to China had previously argued for exports ."
+    ],
+    "summary": "Lawmakers previously supported actions that contradict current restrictions.",
+    "summary_processed": true
+  },
+  {
+    "id": "1472",
+    "x": "A nice ambiguous remark that participants would do well with , but it refers to too trivial a story , children of former officials -- Bush/Dodd/Kennedy -- going into the family business .",
+    "x+": "A nice ambiguous remark , but it refers to too trivial a story , children of former officials going into the family business .",
+    "xt": [
+      "A nice remark that participants would do well with , but it refers to children of former officials going into the family business .",
+      "A nice remark that participants do well with , but too trivial a story .",
+      "A nice remark that participants would do well with , children of former officials -- Bush/Dodd/Kennedy -- going into the family business .",
+      "A nice ambiguous remark that participants would do well with children of former officials ."
+    ],
+    "summary": "Family members following in the footsteps of previous officials.",
+    "summary_processed": true
+  },
+  {
+    "id": "1304",
+    "x": "Later in the program , Russert interviews evangelical minister and former football star Reggie White , author of the conservative-values book Fighting the Good Fight -LRB- buy it here -RRB- :",
+    "x+": "Russert interviews evangelical minister and former football star Reggie White , author of the book `` Fighting the Good Fight '' .",
+    "xt": [
+      "Later in the program , Russert interviews Reggie White , author of the conservative-values book Fighting the Good Fight .",
+      "Russert interviews evangelist , former football star Reggie White , author of Fighting the Good Fight -LRB- buy it here -RRB- :",
+      "Russert interviews evangelical minister and former football star Reggie White , author of Fighting the Good Fight .",
+      "Russert interviews minister and football star Reggie White , author of the conservative-values book Fighting the Good Fight"
+    ],
+    "summary": "Conservative values and a book about them.",
+    "summary_processed": true
+  },
+  {
+    "id": "1607",
+    "x": "The Shopping Avenger will undoubtedly return to the sorry state of affairs at U-Haul in the next episode , but now on to this month 's airline debacle .",
+    "x+": "The Shopping Avenger will return to the state of affairs at U-Haul , but now on to this month 's airline debacle .",
+    "xt": [
+      "The Shopping Avenger will return to the sorry state at U-Haul , but now on to this month 's airline debacle .",
+      "Shopping Avenger will return to the affairs at U-Haul in the next episode ."
+    ],
+    "summary": "Problems with services and a return to a recurring issue.",
+    "summary_processed": true
+  },
+  {
+    "id": "1088",
+    "x": "`` You may be interested to know , Harold , that a few Republicans , who are well situated , think McCarthy has gone far enough . ''",
+    "x+": "`` You may be interested to know that a few Republicans , think McCarthy has gone far enough . ''",
+    "xt": [
+      "`` You may like to know , Harold , a few Republicans think McCarthy has gone far enough .",
+      "`` For your information , Harold , a few Republicans think McCarthy has gone far enough . ''",
+      "`` You may be interested to know that a few Republicans think McCarthy has gone far enough . ''"
+    ],
+    "summary": "Some people believe someone has exceeded a limit.",
+    "summary_processed": true
+  },
+  {
+    "id": "1869",
+    "x": "Participants are invited to provide a postelection headline that , in a just universe , would run Wednesday in the media outlet of their choice .",
+    "x+": "Participants are asked to provide a postelection headline to show on the media outlet of their choice .",
+    "xt": [
+      "Participants are invited to provide a headline that would run the media outlet of their choice .",
+      "Participants are invited to provide post election headlines of their choice in Wednesday 's media outlet ."
+    ],
+    "summary": "Ideal outcome after an election.",
+    "summary_processed": true
+  },
+  {
+    "id": "1318",
+    "x": "The Wall Street Journal reports that when President Clinton recently visited players before a Washington-Seattle NBA game , Supersonic Greg Anthony drew cheers from teammates by asking when the capital gains tax cut takes effect .",
+    "x+": "The WSJ reports that when President Clinton visited players before an NBA game , Supersonic Greg Anthony drew cheers by asking when the capital gains tax cut takes effect .",
+    "xt": [
+      "Supersonic Greg Anthony drew cheers from teammates by asking when the capital gains tax cut takes effect when president Clinton visited players on Washington-seattle game .",
+      "When Clinton recently visited players , Supersonic Anthony drew cheers from teammates by asking when the capital gains tax cut takes effect .",
+      "The WSJ reports that President Clinton recently visited players before a Washington-Seattle NBA game"
+    ],
+    "summary": "A leader visited a sports team, and a player inquired about a tax policy.",
+    "summary_processed": true
+  },
+  {
+    "id": "1902",
+    "x": "C. Apologetic tennis great Martina Hingis seems to resent her absent mother , although I 've not actually seen her in a clinical setting .",
+    "x+": "Martina Hingis seems to resent her absent mother , although I 've not seen her in a clinical setting .",
+    "xt": [
+      "Apologetic tennis great Martina Hingis seems to resent her absent mother .",
+      "Apologetic Martina Hingis resents her absent mother , though I have n't seen her clinically .",
+      "Apologetic tennis great Martina Hingis seems to hate her mother , while I have n't had her as a client ."
+    ],
+    "summary": "A person feels resentment towards a missing parental figure.",
+    "summary_processed": true
+  },
+  {
+    "id": "1446",
+    "x": "Restaurant entertaining is becoming fashionable , however , and Prudie would recommend that for you if that choice would not come from shame , and if you would have a better evening yourselves .",
+    "x+": "Restaurant entertaining is becoming fashionable , and Prudie recommends that if that choice is n't from shame , you would have a better evening .",
+    "xt": [
+      "Restaurant entertaining is becoming fashionable , however , Prudie would recommend that for you if you would have a better evening yourselves .",
+      "Restaurant entertaining is becoming fashionable .",
+      "Restaurant entertaining is becoming fashionable , and Prudie would recommend if that choice would not come from shame ."
+    ],
+    "summary": "Entertaining at restaurants is becoming popular and could be a good option if it doesn't cause embarrassment and leads to a pleasant experience.",
+    "summary_processed": true
+  },
+  {
+    "id": "1873",
+    "x": "In other 80-year-old-recluse news , Simon & Schuster announced the impending publication of The Dream Catcher , the memoirs of Salinger 's 43-year-old daughter , Margaret .",
+    "x+": "Simon & Schuster announced the impending publication of The Dream Catcher , the memoirs of Salinger 's daughter , Margaret .",
+    "xt": [
+      "Simon & Schuster announced they would publish The Dream Catcher , the memoirs of Salinger 's 43-year-old daughter , Margaret .",
+      "Simon & Schuster announced the publication of The Dream Catcher , the memoirs of Salinger 's daughter , Margaret .",
+      "In older news , Simon & Schuster announced the impending publication of the Dream Catcher , a memoir of Salinger 's daughter ."
+    ],
+    "summary": "publication of memoirs by a daughter.",
+    "summary_processed": true
+  },
+  {
+    "id": "1181",
+    "x": "Although all the coverage describes the last-minute legal maneuvering , no one explains how it was that this open-and-shut case took fifteen years to resolve .",
+    "x+": "Although the coverage describes the legal maneuvering , none explain how this open-and-shut case took years to resolve .",
+    "xt": [
+      "All the media coverage describes legal maneuvering , it 's not explained that this case took fifteen years to resolve .",
+      "No one explains how this open-and-shut case took fifteen years to resolve even with the last-minute legal moves .",
+      "None of the coverage on last-minute legal maneuvers explain how this is a fifteen year open-and-shut case .",
+      "Although coverage describes the last-minute legal maneuvering , no one explains how it was an open-and-shut case ."
+    ],
+    "summary": "Legal process took a long time to resolve a clear case.",
+    "summary_processed": true
+  },
+  {
+    "id": "1093",
+    "x": "3 Unbeknownst to the credulous public , the DSM is not truly a scientific document but the product of crude politicking and cynical compromises .",
+    "x+": "3 . The DSM is not truly a scientific document but the product of crude politicking and cynical compromises .",
+    "xt": [
+      "The DSM is not a scientific document , but the product of crude politicking and cynical compromises .",
+      "The DSM is not truly a scientific document but the product of crude politicking and cynical compromises .",
+      "3 Unknown to public , the DSM is not a scientific document but a product of politicking and compromises ."
+    ],
+    "summary": "A document is not scientific, but the result of political maneuvering.",
+    "summary_processed": true
+  },
+  {
+    "id": "1177",
+    "x": "But before we get to the science , let me introduce a pet theory of mine : that there was an ancient link between the Northwest Indians and the Norsemen .",
+    "x+": "Let me introduce a theory of mine : there was an ancient link between Northwest Indians and Norsemen .",
+    "xt": [
+      "I want to put forth my theory about a link between the NW Indians and the Norsemen before getting to the science .",
+      "A theory of mine is that there was an ancient link between the Northwest Indians and the Norsemen .",
+      "Before we get to science , I 'll raise a pet theory : there was a link amid the Northwest Indians and the Norsemen .",
+      "Before we get to the science , a theory is : there was a link between the Northwest Indians and Norsemen ."
+    ],
+    "summary": "ancient connection between groups of people.",
+    "summary_processed": true
+  },
+  {
+    "id": "2087",
+    "x": "The Washington Post goes local with a report that neither Democrat nor Republican candidates have come up with a workable solution to northern Virginia 's traffic problems , a key issue in the state 's upcoming legislative elections .",
+    "x+": "Washington Post reports that neither Democrat nor Republican candidates have solved northern Virginia 's traffic problems .",
+    "xt": [
+      "The WP reports that neither Democrat nor Republican candidates have come up with a solution to northern Virginia 's traffic issues , a key issue in the state 's elections .",
+      "The Washington Post goes local with a report that neither Democrat or Republican candidates have come up with a solution to northern Virginia 's traffic problems .",
+      "Washing Post reports that neither Democrat nor Republican candidates came up with a workable solution to northern Virginia 's traffic problems .",
+      "The Washington Post goes local with a report that candidates have no solution of northern Virginia 's traffic problems which is a key issue in upcoming elections ."
+    ],
+    "summary": "Lack of solutions to traffic problems is a key issue in upcoming elections.",
+    "summary_processed": true
+  },
+  {
+    "id": "1756",
+    "x": "Liberal Al Hunt -LRB- Capital Gang -RRB- frames the weekend 's dull center , imploring Janet Reno to get to the bottom of Chinagate by appointing an independent counsel to investigate campaign-finance violations .",
+    "x+": "Liberal Al Hunt asks Janet Reno to get to the bottom of Chinagate by appointing an independent counsel to investigate violations .",
+    "xt": [
+      "Al Hunt frames the weekend as a move to get Janet Reno to appoint an independent counsel to investigate campaign finance violations in Chinagate .",
+      "Liberal Al Hunt frames the weekend 's dull center , sending Janet Reno by appointing a counsel to investigate campaign-finance violations .",
+      "Liberal Al Hunt -LRB- Capital Gang -RRB- frames the weekend 's dull center , imploring Janet Reno to get to the bottom of Chinagate"
+    ],
+    "summary": "investigation of financial misconduct.",
+    "summary_processed": true
+  },
+  {
+    "id": "1939",
+    "x": "Participants are invited to find a sentence in an actual publication that embodies conspicuous consumption and fatuousness better than the following , from last week 's New York Times `` Home '' section :",
+    "x+": "Participants are invited to find a sentence that embodies conspicuous consumption and fatuousness better than the following , from last week 's Times .",
+    "xt": [
+      "Participants are invited to find a sentence in a publication that embodies conspicuous consumption better than the New York Times `` Home '' section .",
+      "People are invited to try to find a published sentence that embodies conspicuous consumption better than last week 's New York Times .",
+      "Participants look for a sentence in actual publications that embody consumption and fatuousness better than last week 's NY Times 's `` Home '' section :",
+      "Participants are to find sentence in a publication that embodies consumption and fatuousness better than the following"
+    ],
+    "summary": "Seeking an example of excessive consumption and foolishness.",
+    "summary_processed": true
+  },
+  {
+    "id": "1817",
+    "x": "I wore a black knit hatso I could be undistinguished in the warand carried a small bagso I could be mistaken for a doctor ,",
+    "x+": "I wore a black hat so I could blend in in the war and had a small bag to look like a doctor .",
+    "xt": [
+      "I wore a black hat and carried a bag so I could be mistaken for a doctor in the war .",
+      "To be undetected in the war , I wore a black hat and carried a bag to look like a doctor .",
+      "I wore a black knit hat so I could be undistinguished in the war ."
+    ],
+    "summary": "Seeking anonymity and assuming a false identity for a purpose.",
+    "summary_processed": true
+  },
+  {
+    "id": "1614",
+    "x": "While Lindbergh 's crossing certainly captured the public imagination -LRB- as some of today 's balloonists have also -RRB- , it did little to advance the technology of aviation .",
+    "x+": "Lindbergh 's crossing captured the public 's imagination , but it did little to advance aviation technology .",
+    "xt": [
+      "While Lindbergh 's crossing certainly captured the public imagination , it did little to advance the technology of aviation .",
+      "While Lindbergh 's crossing captured the public imagination , it did little to advance the technology of aviation .",
+      "While Lindbergh 's crossing capture public imagination , it did little to advance the technology of aviation ."
+    ],
+    "summary": "A significant event captivated people, but progress was limited.",
+    "summary_processed": true
+  },
+  {
+    "id": "2008",
+    "x": "WWW : Some guy on Fox TV that nobody ever heard of calls it `` the hippest , funniest action movie of the summer . ''",
+    "x+": "Some guy on Fox TV calls it `` the hippest , funniest action movie of the summer . ''",
+    "xt": [
+      "Fox TV calls it `` the hippest , funniest action movie of the summer . ''",
+      "Some guy on Fox TV calls it `` the hippest , funniest action movie of the summer . ''",
+      "WWW : Fox TV calls it `` the hippest , funniest action movie of the summer . ''",
+      "Some guy on Fox TV that nobody ever heard of calls it `` the ... funniest action movie ''"
+    ],
+    "summary": "unrecognized person praises an action movie.",
+    "summary_processed": true
+  },
+  {
+    "id": "1813_1814",
+    "x": "You do not say suspected by whom .",
+    "x+": "If the transgressor is accused by his wife , the Bible 's admonition is the one to follow .",
+    "xt": [
+      "If the transgressor is called upon by his wife , follow the Bible , do not say whom you suspect .",
+      "If the transgressor is called on the carpet by his wife , the Bible 's admonition is the one to follow .",
+      "If the transgressor is called on the carpet by his wife , Bible 's admonition is the one to follow ."
+    ],
+    "summary": "Suspicion exists.",
+    "summary_processed": true
+  },
+  {
+    "id": "2027",
+    "x": "One could argue that a passenger might have `` personal '' feelings about an airline after said airline messed with his head while he was traveling to his mother 's funeral .",
+    "x+": "A passenger may have bad feelings about an airline that messed with his head while he was traveling to his mother 's funeral .",
+    "xt": [
+      "The passenger might have feelings about an airline after it confused him while traveling to his mom 's funeral .",
+      "A passenger might have bad feelings about an airline after it messed with his head while traveling to his mother 's funeral .",
+      "A passenger might have `` personal '' feelings about an airline they messed with his head while he traveled to his mom 's funeral .",
+      "One could argue that a passenger might have `` personal '' feelings about an airline ."
+    ],
+    "summary": "Negative feelings related to a travel experience involving loss.",
+    "summary_processed": true
+  },
+  {
+    "id": "1095",
+    "x": "Near where I used to live in Australia , there is a road along the bottom of a cliff where a series of signs says :",
+    "x+": "Near my old home in Australia is a road at the bottom of a cliff where a sign says :",
+    "xt": [
+      "In Australia , there 's a road at the bottom of a cliff where a series of signs says :",
+      "There are signs along a road at the bottom of a cliff in Australia that say :",
+      "In Australia , there is a road along the bottom of a cliff where signs say :",
+      "Near where I lived in Australia , the road along the bottom of the cliff signs ' say :"
+    ],
+    "summary": "road near a cliff with signs.",
+    "summary_processed": true
+  },
+  {
+    "id": "1549",
+    "x": "The notion that millions of union members are being forced against their will to help finance this union campaign is simply a Republican fantasy .",
+    "x+": "The idea that union members are being forced to help finance this union campaign is a Republican fantasy .",
+    "xt": [
+      "The idea that millions of union members are forced to help finance this campaign is a Republican fantasy .",
+      "The notion that union members are forced to help finance this union campaign is a Republican fantasy .",
+      "The notion that union members are being forced to help finance this campaign is a Republican fantasy ."
+    ],
+    "summary": "A claim of forced financing is a fantasy.",
+    "summary_processed": true
+  },
+  {
+    "id": "1319",
+    "x": "There are many options for attacking the logic of this cosmological argument , and contemporary opponents of theism have tried them all .",
+    "x+": "Contemporary opponents of theism have used all options for attacking the logic of this argument .",
+    "xt": [
+      "Many attack this cosmological argument , and contemporary opponents of theism have tried them all .",
+      "There are ways for attacking the logic of this argument , and opponents of theism have tried them .",
+      "There are options for attacking this argument , and contemporary opponents of theism have tried"
+    ],
+    "summary": "There are multiple ways to challenge the logic of an argument, and people who disagree have explored those methods.",
+    "summary_processed": true
+  },
+  {
+    "id": "1856",
+    "x": "In a story that 's sure to develop in the days ahead , the WP off-lead reports that U.N. investigators have evidence that before the Gulf War , Iraq put nerve gas into missile warheads .",
+    "x+": "The WP reports that U.N. investigators have evidence that before the Gulf War , Iraq put nerve gas into missile warheads .",
+    "xt": [
+      "The WP off-lead reports that U.N. investigators have evidence that before the Gulf War , Iraq put nerve gas into missile warheads .",
+      "In a developing story , the WP off-lead reports that U.N. investigators have evidence that Iraq put nerve gas into missile warheads .",
+      "WP off-lead reports that U.N. investigators have evidence that before the Gulf war , Iraq put nerve has into missile warheads ."
+    ],
+    "summary": "Evidence suggests a country prepared weapons before a war.",
+    "summary_processed": true
+  },
+  {
+    "id": "1492",
+    "x": "I quote from The Church Visible : The Ceremonial Life and Protocol of the Roman Catholic Church , by James-Charles Noonan Jr. , Page 395 :",
+    "x+": "From The Church Visible : The Ceremonial Life and Protocol of the Roman Catholic Church , by Noonan :",
+    "xt": [
+      "I quote from `` The Church Visible , '' by James-Charles Noonan Jr. , Page 395 :",
+      "I quote from The Church Visible , the Ceremonial Life and Protocol of the Roman Catholic Church :",
+      "I quote from The Church Visible : The Ceremonial Life and Protocol of the Roman Catholic Church :",
+      "Quoted from The Church Visible by Noonan Jr. , Page 395 :"
+    ],
+    "summary": "Ceremonial practices and protocol within a religious organization.",
+    "summary_processed": true
+  },
+  {
+    "id": "1407",
+    "x": "4 . `` Malaysia finally lifted the capital controls it imposed in the wake of the drastic devaluation of its currency and the collapse of its economy last summer .",
+    "x+": "Malaysia lifted the capital controls it imposed in the wake of the devaluation of its currency and economy collapse .",
+    "xt": [
+      "Malaysia finally lifted the capital controls it imposed in the devaluation of its currency and economy collapse .",
+      "4 . Malaysia lifted the capital controls in the wake of the devaluation of its currency and the collapse of its economy .",
+      "Malaysia lifted the controls it imposed in the wake of the devaluation of its currency and the collapse of its economy"
+    ],
+    "summary": "Country removed financial restrictions after economic decline.",
+    "summary_processed": true
+  },
+  {
+    "id": "1465",
+    "x": "A line drawn in rainand clay and the roots of wild broom -- behind it the makings of a city , beyond it rumours of a nation -- by Dalkey and Kilternan and Balallythrough two ways of saying their names .",
+    "x+": "A line drawn in rain and clay and the roots of wild broom -- behind it the makings of a city , beyond it rumors of a nation .",
+    "xt": [
+      "A line drawn in rain and clay -- behind it the makings of a city , beyond it rumours of a nation -- by Dalkey and Kilternan and Balally .",
+      "A line drawn in rain and roots -- behind it the makings of a city , beyond it rumours of a nation -- by Dalkey and Kilternan and Balallythrough .",
+      "A line drawn in rain and clay and the roots of wild broom - by Dalkey and Kilternan and Balallay .",
+      "A line drawn in rain and clay and the roots of wild broom -- behind it a city , then rumours of a nation -- by Dalkey and Kilternan and Balallythrough ."
+    ],
+    "summary": "A boundary separates a developing city from rumors of a nation, traversing landscapes and locations.",
+    "summary_processed": true
+  },
+  {
+    "id": "1148",
+    "x": "How 'd you like to be in the powder room with them when she and Linda Tripp bump into each other next time ?",
+    "x+": "How 'd you like to be in there when she and Linda Tripp bump into each other ?",
+    "xt": [
+      "How 'd you like to be in the powder room when she and Linda Tripp meet ?",
+      "Interested in being in that room when she and Tripp bump into each other again ?",
+      "How 'd you like to be in the powder room when they bump into each other ?"
+    ],
+    "summary": "Social encounter involving multiple people.",
+    "summary_processed": true
+  },
+  {
+    "id": "2022",
+    "x": "Prudie hopes , by the way , that the recipient of the bagels and cream cheese is not also a friend of Sue 's , because the cream cheese in the closet would be a disaster .",
+    "x+": "Prudie hopes that Sue 's friend wont recieve the bagels and cream cheese , because the cheese in the closet would be a disaster",
+    "xt": [
+      "Prudie hopes that the recipient of the cream cheese is not a friend of Sue 's ; the cream cheese in the closet is bad .",
+      "Prudie hopes that the recipient is not also a friend of Sue 's , because the cream cheese in the closet would be a disaster .",
+      "Prudie hopes the recipient of the bagels & cream cheese is not a friend of Sue 's ; cream cheese in the closet would be bad ."
+    ],
+    "summary": "Potential disaster due to food storage issues involving a friend.",
+    "summary_processed": true
+  },
+  {
+    "id": "1429",
+    "x": "I love the story you told about Doug Flutie 's daughter Alexa looking at Michael Jordan and Mia Hamm in that `` Anything You Can Do , I Can Do Better '' commercial and saying , `` Who 's the guy with Mia ? ''",
+    "x+": "I love your story about Doug Flutie 's daughter looking at Michael Jordan and Mia Hamm in that commercial and saying , `` Who 's the guy with Mia ? ''",
+    "xt": [
+      "I love the story about Doug Flutie 's daughter Alexa looking at Michael Jordan and Mia Hamm in the commercial and saying , `` Who 's the guy with Mia ? ''",
+      "I love your story about Alexa looking at Michael and Mia in the `` Anything You Can Do I Can Do Better '' ad and saying , `` Who 's that guy with Mia ? ''",
+      "I love when Doug Flutie 's daughter Alexa watched Jordan & Hamm in the `` Anything You Can Do I Can Do Better '' commercial & saying , `` Who 's with Mia ? ''",
+      "I love the story about Doug Flutie 's daughter looking at Michael Jordan and Mia Hamm in that `` Anything You Can Do , I Can Do Better '' commercial . ''"
+    ],
+    "summary": "A child admires famous athletes in a playful comparison.",
+    "summary_processed": true
+  },
+  {
+    "id": "1483",
+    "x": "2 -RRB- Many of the poorer rural communities that have applied for the subsidy lack the high speed phone lines that make the Internet worthwhile , keeping them Internet have-nots .",
+    "x+": "Poorer rural communities that have applied for the subsidy lack the proper phone lines that make Internet worthwhile .",
+    "xt": [
+      "The poorer rural communities that have applied for the subsidy lack the high speed phone lines that make the Internet worthwhile .",
+      "Many poorer rural communities applied for the subsidy lack the high speed phone lines to make the Internet worthwhile .",
+      "Many of the poorer rural communities lack high speed phone lines so it continues to keep them without the internet .",
+      "Many poor rural communities have applied for high speed phone lines that make the internet worthwhile ."
+    ],
+    "summary": "Rural communities struggle with access to essential infrastructure.",
+    "summary_processed": true
+  },
+  {
+    "id": "1383",
+    "x": "Which of these is a Macy 's Thanksgiving Day Parade float from a proud corporate sponsor kids love , and which is one of the New York Public Interest Research Group 's 20 Most Dangerous Toys ?",
+    "x+": "Which is a Macy 's Thanksgiving Day Parade float from a corporate sponsor kids love , and which is of the NYPIRG 's 20 Most Dangerous Toys ?",
+    "xt": [
+      "Which is a Macy 's Thanksgiving Day Parade float , and which is of the New York Public Interest Research Group 's 20 Most Dangerous Toys ?",
+      "Which of these is a Macy 's Thanksgiving Day Parade float from a sponsor , and which is the one of the 20 Most Dangerous Toys ?",
+      "Here is a Macy 's Thanksgiving Day Parade float , and here is one of NYPIRG 's most dangerous toys : which is which ?"
+    ],
+    "summary": "Identifying items based on popularity and safety.",
+    "summary_processed": true
+  },
+  {
+    "id": "1453",
+    "x": "Starting at the Friedrich Hayek Scholar 's Page , click Research resources -- archives , societies , funding , web resources , etc. , which will lead you ...",
+    "x+": "At the Friedrich Hayek Scholar 's Page , click Research resources which will lead you ...",
+    "xt": [
+      "At the Hayek Scholar 's Page , click Research resources , archives , societies , funding , web resources , etc. .",
+      "Click Research resources if you 're starting at the Friedrich Hayek Scholar 's Page .",
+      "At the Friedrich Hayek Scholar 's Page , click Resouces - archives , societies , funding , etc. - which will lead you"
+    ],
+    "summary": "resources for research.",
+    "summary_processed": true
+  },
+  {
+    "id": "1855",
+    "x": "Time 's profile of Trent Lott reaches the same conclusion as numerous earlier profiles of the Senate majority leader : Like Clinton , Lott is a compromiser .",
+    "x+": "Time 's profile of Trent Lott reaches the same conclusion : Like Clinton , Lott is a compromiser .",
+    "xt": [
+      "Time 's profile of Trent Lott reaches the conclusion of the Senate majority leader : Lott is a compromiser .",
+      "Time 's profile of Trent Lott reaches a similar conclusion : like Clinton , Lott is a compromiser .",
+      "Time 's profile of Trent Lott reaches the same conclusion as earlier profiles of the leader : Lott is a compromiser .",
+      "Time 's profile of Trent Lott reaches the same conclusion as earlier profiles of the Senate majority leader ."
+    ],
+    "summary": "A leader is portrayed as someone who compromises.",
+    "summary_processed": true
+  },
+  {
+    "id": "1637",
+    "x": "I 'm reminded of Dilbert 's boss , who was outraged to find that 40 percent of company sick days were being taken on Mondays or Fridays .",
+    "x+": "Dilbert 's boss was outraged to find that 40 % of sick days were being taken on Mondays or Fridays .",
+    "xt": [
+      "I 'm reminded of Dibert 's boss , who was upset that 40 % of sick days were taken on Monday or Friday .",
+      "I 'm reminded of Dilbert 's boss , who found that 40 % of sick days were taken on Mondays or Fridays",
+      "Dilbert 's boss was outraged to find that 40 percent of sick days were taken on Mondays or Fridays .",
+      "Reminded of Dilbert 's boss , outraged to find 40 % of company sick days taken on Mondays or Fridays ."
+    ],
+    "summary": "Someone was upset about time off patterns.",
+    "summary_processed": true
+  },
+  {
+    "id": "1302",
+    "x": "In the '60s it happened to 95 percent of American boys ; today it 's down to 60 percent , and a policy just announced by the American Academy of Pediatrics is meant to make it happen even less .",
+    "x+": "In the 60s , it happened to 95 % American boys ; today it 's down to 60 % and a policy by the American Academy of Pediatrics makes it happen less .",
+    "xt": [
+      "In the '60s , it happened to 95 % of American boys , and now only 60 % , but a new policy by the American Academy of pediatrics will help even more .",
+      "In the '60s it happened to 95 % of American boys , today it 's at 60 % , and recent developments by the AAP mean it will happen even less in future .",
+      "In the '60s it happened to 95 percent of American boys ; today it 's down to 60 percent .",
+      "The policy of American Academy of Pediatrics made it happen to 60 % of boys today compared to 95 % n the 60s ."
+    ],
+    "summary": "Decrease in a common occurrence, with a policy aimed at further reduction.",
+    "summary_processed": true
+  },
+  {
+    "id": "1668",
+    "x": "The facts fit the Panglossian economist 's vision quite nicely : Emerging economies do typically run trade deficits , wages do rise with productivity , and actual experience offers no support at all for grimmer visions .",
+    "x+": "The facts fit the economist 's vision : Emerging economies run trade deficits , wages rise with productivity , and experience offers no support for grimmer visions .",
+    "xt": [
+      "The facts fit the Panglossian economist 's vision : Emerging economies run trade deficits , wages rise with productivity , and experience offers no support .",
+      "Panglossion economists visions say that emerging economies run trade deficits , wages rise with productivity , and experience offers no support for grim visions .",
+      "Panglossian economist 's vision : Emerging economies do run trade deficits , wages do rise and experience offers no support for grimmer visions ."
+    ],
+    "summary": "Economies often have deficits, wages increase with productivity, and experience doesn't support pessimistic views.",
+    "summary_processed": true
+  },
+  {
+    "id": "1918",
+    "x": "`` I have a very clear memory of the meeting , '' declares one central figure -LRB- Bill Clinton -RRB- in Washington 's ongoing sexual and legal battles , `` and I told the truth . ''",
+    "x+": "`` I -LSB- remember -RSB- the meeting , '' says Bill Clinton in Washington 's ongoing sexual and legal battles , `` and I told the truth . ''",
+    "xt": [
+      "`` I have a clear memory of the meeting , '' said Bill Clinton in the ongoing legal battles , `` and I told the truth . ''",
+      "`` I have a clear memory of the meeting , '' says Bill Clinton in his ongoing sexual/legal battles , '' & I told the truth . ''",
+      "`` I have a clear memory of the meeting , '' Bill Clinton in Washington 's ongoing sexual and legal battles , `` I told truth . ''"
+    ],
+    "summary": "A person maintains truthfulness during legal battles.",
+    "summary_processed": true
+  },
+  {
+    "id": "1512",
+    "x": "Everybody fronts an illustration of Charlie Brown , in honor of yesterday 's announcement that cartoonist Charles Schulz , aged 77 and ailing with cancer , will retire right after the first of the year .",
+    "x+": "Everybody fronts an illustration of Charlie Brown , in honor of yesterday 's announcement that Charles Schulz , 77 , ailing with cancer , will retire .",
+    "xt": [
+      "Everybody ran a drawing of Charlie Brown in honor of the news that cartoonist Charles Schulz , 77 , has cancer and will retire early in the new year .",
+      "In honor of yesterday 's announcement that Charles Schulz will retire after the first of the year , everybody fronts an illustration of Charlie Brown .",
+      "Everybody fronts an illustration of Charlie Brown , in honor of yesterday 's announcement that Charles Shulz will retire after the 1st of January ."
+    ],
+    "summary": "A respected figure is retiring after a long career, prompting recognition and remembrance.",
+    "summary_processed": true
+  },
+  {
+    "id": "1951",
+    "x": "And what fun if a youngster misunderstands the custom just a little and imagines she will grow up to marry Winnie the Pooh .",
+    "x+": "What fun when a youngster misunderstands and imagines she will marry Winnie The Pooh .",
+    "xt": [
+      "And what fun if a child misunderstood , imagining she will grow up to marry Winnie the Pooh .",
+      "Misunderstanding the custom , some kids may imagine she will grow up to marry Winnie the Pooh",
+      "What fun if a youngster misunderstands and imagines she will grow up to marry Pooh .",
+      "And what fun if a youngster misunderstands the custom just a little ."
+    ],
+    "summary": "childlike imagination of a playful relationship.",
+    "summary_processed": true
+  },
+  {
+    "id": "1246",
+    "x": "-LSB- Chatterbox did n't have the heart to add that he thought There 's Something About Mary was pretty funny , especially the joke about `` the franks or the beans . ''",
+    "x+": "Chatterbox did n't add that he thought There 's Something About Mary was pretty funny .",
+    "xt": [
+      "Chatterbox did n't add that he thought There 's Something About Mary was funny , like the joke about franks or the beans .",
+      "-LSB- Chatterbox did n't add that he thought There 's Something About Mary was pretty funny .",
+      "Chattterbox did n't have the heart to tell that he thought There 's Something About Mary was pretty funny .",
+      "There 's Something About Mary was pretty funny , especially the joke about `` the franks or the beans ."
+    ],
+    "summary": "Someone found a movie humorous.",
+    "summary_processed": true
+  },
+  {
+    "id": "1582",
+    "x": "According to the USAT `` Snapshot , '' California , the top state for PC use , expects to have half of its home phone traffic be PC rather than voice by 2001 .",
+    "x+": "California expects to have half of its home phone traffic be PC rather than voice by 2001 .",
+    "xt": [
+      "The USAT `` Snapshot '' reports California expects 50 % of its home phone usage to be PC rather than voice by 2001 .",
+      "According to the USAT `` Snapshot , '' California expects PC to be half of its home phone traffic by 2001 .",
+      "By 2001 , USAT `` Snapshot '' predicts that California expects half of home phone traffic to be PC rather than voice",
+      "According to the USAT `` Snapshot , '' California expects half of its home phone traffic be PC not voice by 2001 ."
+    ],
+    "summary": "A state anticipates a shift towards technology use.",
+    "summary_processed": true
+  },
+  {
+    "id": "1094",
+    "x": "Letting slower white American runners into races just because they 're white Americans is precisely analogous to letting blacks and Latinos with poor SATs and low grades into colleges just because they 're blacks or Latinos .",
+    "x+": "Letting slower white Americans into races just because they 're white is like letting blacks and Latinos with low SATs into colleges just because of their race .",
+    "xt": [
+      "Letting slower white American runners into races is precisely analogous to letting blacks and Latinos with poor SATs and low grades into colleges .",
+      "Letting slow white American runners into races is precisely analogous to letting blacks and Latinos with poor SATs and low grades into colleges .",
+      "Letting slower white American runners into races because of their race is akin to letting minorities with poor SATs and low grades into colleges because of race ."
+    ],
+    "summary": "Discrimination based on group identity is unfair.",
+    "summary_processed": true
+  },
+  {
+    "id": "1571",
+    "x": "c -RRB- Clinton assumed they would find Willey and Lewinsky but also assumed Willey and Lewinsky would stay silent , because his women usually do .",
+    "x+": "Clinton assumed they 'd find Willey & Lewinsky but assumed they would stay silent because they usually do .",
+    "xt": [
+      "c -RRB- Clinton knew they would find Willey and Lewinsky but that they would stay silent .",
+      "Clinton assumed they would find Willey and Lewinsky but also assumed the two would stay silent .",
+      "c -RRB- Clint assumed Wiley and Lewinsky would stay silent , and be found , because his women usually do ."
+    ],
+    "summary": "Someone expected people to remain silent due to past behavior.",
+    "summary_processed": true
+  },
+  {
+    "id": "1934",
+    "x": "All the papers lead with weaker-than-expected Hurricane Bret , while continuing to front updates on relief efforts in the Turkish earthquake zone .",
+    "x+": "Papers lead with weaker Hurricane Bret , while continuing to front updates on relief efforts in Turkey .",
+    "xt": [
+      "All the papers lead with Hurricane Bret , while continuing to update on earthquake relief efforts in Turkey .",
+      "Headlines reference pitiful Hurricane Bret , while ignoring updates on Turkish earthquake relief .",
+      "Papers lead with Hurricane Bret , while offering updates on relief efforts in the Turkish earthquake zone .",
+      "All the papers lead with weak Hurricane Bret , while continuing to give updates on relief efforts in Turkey ."
+    ],
+    "summary": "Natural disaster updates; relief efforts ongoing.",
+    "summary_processed": true
+  },
+  {
+    "id": "1619",
+    "x": "The slickness and pervasiveness of the campaign conceals one flaw : The message -- that all drug use leads to disaster -- is a baldfaced lie .",
+    "x+": "The the campaign conceals one flaw : The message -- that all drug use leads to disaster -- is a lie .",
+    "xt": [
+      "The slick and pervasive campaign 's message , that all drug use leads to disaster , is a baldfaced lie .",
+      "The campaign conceals one flaw : The message -- that all drug use leads to disaster -- is a baldfaced lie .",
+      "The slickness of the campaign hides one flaw : `` All drug use leads to disaster '' is a boldfaced lie .",
+      "The slick , pervasive campaign has one flaw : The idea that all drug use leads to disaster is lie ."
+    ],
+    "summary": "Deceptive messaging promotes a false claim about drug use.",
+    "summary_processed": true
+  },
+  {
+    "id": "1264",
+    "x": "Pace Hillary Clinton , the NYT points out that this legal conflict between the Starr and Jones camps shows that there 's not a united anti-Clinton front .",
+    "x+": "The NYT points out the conflict between the Starr & Jones camps shows there 's not a united anti-Clinton front .",
+    "xt": [
+      "Starr and Jones ' legal conflict proves no anti-Clinton front exists says NYT .",
+      "NYT points out Starr and Jones camps are not united anti-Clinton front .",
+      "Hillary Clinton , the NYT points that this legal conflict shows there is not a Anti-Clinton front .",
+      "The NYT points out that this conflict shows that there 's not a united anti-Clinton front ."
+    ],
+    "summary": "Conflict exists between opposing groups.",
+    "summary_processed": true
+  }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "Prudie isn't sure how to square your complaints with all the news stories about grade inflation and college-level courses such as  The Structure of the Soap Opera '' and  The History of Beads. ''",
+        "v0": "                           a        ' '      '''",
+        "original_y": "Concerns exist regarding grading practices and unusual course topics.",
+        "u": "ing and over theaing.  challenges.."
+    },
+    {
+        "original_x": "In other 80-year-old-recluse news, Simon & Schuster announced the impending publication of The Dream Catcher, the memoirs of Salinger's 43-year-old daughter, Margaret.",
+        "v0": "           . .            .      .       . . ",
+        "original_y": "publication of memoirs by a daughter.",
+        "u": "I  s about a family with"
+    },
+    {
+        "original_x": "Also in Newsweek, an article about David Helfgott, subject of the movie Shine : It says he is a wretched pianist.",
+        "v0": "  .        .      .  .      . ",
+        "original_y": "A person is described negatively regarding a skill.",
+        "u": "person is involved as or thea person."
+    },
+    {
+        "original_x": " Let's go over there and get Tiger's divot, '' I heard a fan say one day, referring to the tiny chunk of grass and dirt that Woods had scraped from the fairway on one of his shots.",
+        "v0": "'  ''       ''' '''' '   ''                         ''",
+        "original_y": "Someone requested a small piece of turf.",
+        "u": " who a change item of furniture."
+    },
+    {
+        "original_x": "In the '60s it happened to 95 percent of American boys ; today it's down to 60 percent, and a policy just announced by the American Academy of Pediatrics is meant to make it happen even less.",
+        "v0": " a'          a   a'     a  a                   a ",
+        "original_y": "Decrease in a common occurrence, with a policy aimed at further reduction.",
+        "u": "Letd a placea in  a potential involving to   in"
+    },
+    {
+        "original_x": "A line drawn in rainand clay and the roots of wild broom -- behind it the makings of a city, beyond it rumours of a nation -- by Dalkey and Kilternan and Balallythrough two ways of saying their names.",
+        "v0": "          .        . .  .   '                  . ",
+        "original_y": "A boundary separates a developing city from rumors of a nation, traversing landscapes and locations.",
+        "u": " leader iss a person community. a. a common. e s.."
+    },
+    {
+        "original_x": "The slickness and pervasiveness of the campaign conceals one flaw : The message -- that all drug use leads to disaster -- is a baldfaced lie.",
+        "v0": "a               '            a'  . ",
+        "original_y": "Deceptive messaging promotes a false claim about drug use.",
+        "u": "live individuals iss a commitment commitment.  abuse."
+    },
+    {
+        "original_x": "In a story that's sure to develop in the days ahead, the WP off-lead reports that U.N. investigators have evidence that before the Gulf War, Iraq put nerve gas into missile warheads.",
+        "v0": ".   '.       .                       .         . ",
+        "original_y": "Evidence suggests a country prepared weapons before a war.",
+        "u": " for a serious is for for a new."
+    },
+    {
+        "original_x": "Although all the coverage describes the last-minute legal maneuvering, no one explains how it was that this open-and-shut case took fifteen years to resolve.",
+        "v0": "          .  .                 . ",
+        "original_y": "Legal process took a long time to resolve a clear case.",
+        "u": " complications is a long time. build a conflict conflict."
+    },
+    {
+        "original_x": "So let me urge you to do your part by supporting a group that the San Francisco Chronicle calls  one of America's most respected and influential conservation organizations.",
+        "v0": "         .       '   '.      . ",
+        "original_y": "support a respected conservation organization.",
+        "u": "I witha career organization organization."
+    }
+]

@@ -1,0 +1,11 @@
+No conda package cache directories found outside your home directory. To
+prevent conda from filling up your home directory, you can create a new
+directory at `/work/pi_<your_pi_name>/$USER/.conda/pkgs` and reload the module. 
+No conda environment directories found outside your home directory. To prevent
+conda from filling up your home directory, you can create a new directory at
+`/work/pi_<your_pi_name>/$USER/.conda/envs` and reload the module. 
+Loading conda version miniforge3-24.7.1
+
+EnvironmentLocationNotFound: Not a conda environment: /work/pi_dagarwal_umass_edu/project_3/bdevarangadi/.conda/envs/diffusion
+
+python3: can't open file '/work/pi_dagarwal_umass_edu/project_3/bdevarangadi/Diffusion_as_Memory/scripts/training/training_dl_augmented.py': [Errno 13] Permission denied

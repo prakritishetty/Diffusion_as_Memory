@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "Yeah, in a parking lot he's dead, bent over the trunk of a Trans Am, face smeared against the rear window.",
+        "v0": "Yeah, in a parking lot he's dead, bent over the trunk of a Trans Am, face swared against the rear window.",
+        "original_y": "Death occurred in a vehicle-related setting.",
+        "u": "Someone due through a position withlike situation."
+    },
+    {
+        "original_x": "The LAT coffee tapes story has the same basics as everybody else, although unaccountably reporting the non-news that at one coffee President Clinton says hi to George Steinbrenner before getting to the potentially explosive Fowler story. eos>",
+        "v0": "The LAT coffee tables have has the same basic as everyone else, but itabcountably reporting that fact-profitletter one one point point George recently hi to George Wbrenner before getting to the potentially explosive Fooler story. eos>",
+        "original_y": "Reporting on a story involving a president, a notable figure, and a potentially significant issue.",
+        "u": "Peoples on alternativesa subject.involving someonea human. potentiallydespites person. and a difficult confusing person."
+    },
+    {
+        "original_x": "The family of Neville Chamberlain, the British Prime Minister who attempted to negotiate with Hitler before World War II, created a sisal farm on the island, but the attempt failed miserably.",
+        "v0": "The family of Neigh Chamberlain, the British Prime Minister who attempted to negotiate with Hitler before World War II, created a similimal farm on the island, but the attempt failed unsuccessfulguideably.",
+        "original_y": "A negotiation attempt failed, leading to a failed venture.",
+        "u": "A leader led destroyed with  to a collapse attempt."
+    },
+    {
+        "original_x": "We agree that climate change is a serious issue we need to address. eos> However, CO2 has never been regulated as a pollutant under the Clean Air Act and does not pose any direct threat to human health unlike NOx, SO2 and mercury ",
+        "v0": "We agree that climate change is a serious issue we need to address. eos> However, CO2 has never been regulated as a Cleanuant under the Clean Air Act and does not pose any direct threat to human health like NOx, mercury2  mercury.",
+        "original_y": "Serious issue needing attention.",
+        "u": "Aious environmental related addressed control."
+    },
+    {
+        "original_x": "A close look at the research reveals that children who fared well experienced eective interaction over an extended period. eos> In studies following children from infancy into childhood and adolescence, early brief episodes of parental stimulation and sensitivity did not",
+        "v0": "A close look at the research showsreveals that children far fared well  eaology interaction over an extended period. eos> In studies  childhood  earlyfancy and early  a historyolescence, early childhood episodes of parental  and minimalsensitivity did not affect",
+        "original_y": "Positive interaction leads to good outcomes.",
+        "u": "Childhood development between to  behavior."
+    },
+    {
+        "original_x": "President Bush told us that before 9/11 there was an appetite in the government for killing Bin Ladin, not for war. eos> Looking back in 2004, he equated the presidential directive with a readiness to invade Afghanistan. eos>",
+        "v0": "President Bush told us today there 9/11 there was an appetite for the Pentagon for killing Bin Ladin, not for war. eos> Looking back in 2000, he equated the presidential directive with a readiness to invade Afghanistan. eos>",
+        "original_y": "Desire existed to eliminate a person, not initiate conflict.",
+        "u": "Are to for prevent terrorista potential from leading de."
+    },
+    {
+        "original_x": "As a GPRA pilot program, ARL developed a strategic plan that included a mission statement and long-range goals. eos> In addition, it has produced two yearly products : a performance plan with key measures and a report detailing its progress",
+        "v0": "As a pilotGPFA pilot program, ACL developed a strategic plan that included a two that and long-range goals. eos> In addition, the also produced  exe plans : a performance plan with  indicators and a report detailing its progress",
+        "original_y": "Strategic planning with goals.",
+        "u": "Pro plan and tailored and"
+    },
+    {
+        "original_x": " Your help today will enable us to strengthen further America's philanthropic heritage by expanding the Center's crucial educational, leadership and outreach programs. ''",
+        "v0": " Your help today will help us to strengthen further our's philanthropic legacy by expanding its Center's crucial educational, leadership and outreach programs. ''",
+        "original_y": "Help strengthens philanthropic heritage through education and outreach.",
+        "u": "Supporting cultural institutionsphilanthrop legacy through innovation. support."
+    },
+    {
+        "original_x": "The Pont Alexandre III is undoubtedly the most romantic with its Belle Epoque lanterns and melodramatic statues of Fame and Pegasus.",
+        "v0": "The Ponteo is is perhapsdoubtedly the most romantic with its Belle Epoque statues and melodramatic statues of Fame and Pegasus.",
+        "original_y": "romantic structure with decorative elements.",
+        "u": "Beautiful center with  elements."
+    },
+    {
+        "original_x": "RxP opponents charge the APA with pushing its prescription - privileges agenda without adequately assessing support for it in the field.",
+        "v0": "RxP opponents charge the APA with pushing its prescription - privileges agenda without adequately assessing support for it in the field.",
+        "original_y": "opposition to an agenda without adequate assessment of support.",
+        "u": "opposition to  offer,  support. support."
+    }
+]

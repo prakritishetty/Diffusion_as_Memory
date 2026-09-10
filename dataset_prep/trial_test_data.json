@@ -1,0 +1,26 @@
+[
+    {
+    "id": "52",
+    "x": "But a senior State Department official also acknowledged that some in the administration and Congress are pushing for more direct military cooperation , which would require congressional approval .",
+    "x+": "A State Department official acknowledged that the administration and Congress are pushing for more direct military cooperation .",
+    "xt": [
+      "But a State Department official acknowledged some are pushing for more direct military cooperation , which would require congressional approval .",
+      "An official acknowledged that for more military cooperation , congressional approval would be necessary .",
+      "But a senior State Department official also acknowledged that some are pushing for more direct military cooperation ."
+    ],
+    "summary": "Some officials want increased military cooperation requiring approval.",
+    "summary_processed": true
+  },
+  {
+    "id": "48",
+    "x": "Following the suggestion of President Theodore Roosevelt , the sculptor Augustus Saint - Gaudens redesigned the coin in 1907 in high relief , forever after giving the coins the designation '' saints . ''",
+    "x+": "At President Theodore Roosevelt 's suggestion , sculptor Saint - Gaudens redesigned the coin in 1907 in high relief .",
+    "xt": [
+      "As per suggestion of President Roosevelt , sculptor Augustus Saint-Gaudens redesigned the coin in 1907 , henceforth designating the coins `` saints . ''",
+      "Augustus Saint-Gaudens redesigned the coin in 1907 per the suggestion of Theodore Roosevelt .",
+      "Following the suggestion of President Theodore Roosevelt , the sculptor Augustus Saint - Gaudens redesigned the coin in 1907 in high relief ."
+    ],
+    "summary": "Redesign of a coin led to a lasting designation.",
+    "summary_processed": true
+  }
+]

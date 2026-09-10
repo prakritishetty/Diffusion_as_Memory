@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "In a telephone interview, Mr. Reupke said his departure was for '' personal reasons, '' which he declined to specify. '' eos> There is no business reason for my departure, '' nor any disagreement over policy ",
+        "v0": "In a telephone interview, Mr. Reupke said his departure was for '' personal reasons, '' which he declined to specify.'eos> No is no reason reason for my departure, nor'' nor any disagreement over policy.",
+        "original_y": "Departure due to private matters.",
+        "u": "departurenialation departure to personal reasons."
+    },
+    {
+        "original_x": "2 -RRB- My piece specifically mentions the letter written by Eric Holder of the Justice Department, in which he called for a Justice Department investigation of Mann's charges.",
+        "v0": "2 -RRB- My piece specifically mentions the letter written by Eric Holder of the Justice Department, in which he called for a Justice Department investigation into Mann's charges.",
+        "original_y": "Investigation of charges.",
+        "u": "A   against"
+    },
+    {
+        "original_x": "Finally, we may notice that the double form dea, dia, will suit either the old or the modern pronunciation of the English dear, so that phonetic requirements are fulfilled either way.",
+        "v0": "Finally, we may notice that the double   did, eithera, will suit either the suit or old old pronunciation of the English old, so that sotic requirements can fulfilled perfectly way.",
+        "original_y": "Phonetic requirements are fulfilled either way.",
+        "u": "Olds changes are similar, traditional."
+    },
+    {
+        "original_x": "She said the move would result in a after - tax charge of less than $ 4 million to be spread over the next three quarters.",
+        "v0": "She said the move would result in a after - tax charge of less than $ 4 million to be spread over the next three quarters.",
+        "original_y": "Financial impact expected, costs to be distributed over time.",
+        "u": "Financial burden, by potentially increase be  to time."
+    },
+    {
+        "original_x": "A short distance away from the road on the way to Pointe des Ch\u00e2teaux, the long Tarare beach is another favorite with nudists.",
+        "v0": "A short distance away from the road on the way to the de de Garx, the long Tarax is another favorite beach nudists.",
+        "original_y": "a popular beach for nudists.",
+        "u": "AInterestingly popular destination. touristskesos."
+    },
+    {
+        "original_x": "According to Miyares, the DBA is the first organization to target the role of disabled persons in business. eos> Current DBA data shows 32 percent of all persons assisted by DBA are veterans ; 10 per cent are service connected disabled veterans ; and 22 per",
+        "v0": "According to Miyares, the organizationBA is the first organization to target disabled disabled of disabled persons in disabled. eos> Current DBA data shows 32 percent of the persons in by disabledBA  identified of; 10 percent cent are disabledd by persons ; and 22 are cent",
+        "original_y": "Organization targets disabled persons in business.",
+        "u": "Peoples disabled veterans.."
+    },
+    {
+        "original_x": "The time of our 50th reunion is rapidly approaching - we 'll be celebrating that event in Bloomington September 16 - 18. eos> By now, you should have received registration materials for the Fall Alumni Dental Conference. eos>",
+        "v0": "The time of our 50th anniversary is approaching approaching - we 'll be celebrating that event in Bloomington October 16-18- October. eos> By now, you should have received registration materials for the Alumni Alumni Conference Conference. eos>",
+        "original_y": "celebrating an event in Bloomington.",
+        "u": "Celebration anniversary anniversary..."
+    },
+    {
+        "original_x": "The exposure comes from chemical residue on plants in farm fields and from pesticide drift, such as the incidents lettuce workers described, according to the survey.",
+        "v0": "The exposure comes from chemical residue on residue on agricultural fields and from pesticide residues, such as the incidents incidents workers reported, according to the survey.",
+        "original_y": "Chemical residue and pesticide drift affect plants and workers.",
+        "u": "Pest removals exposureicide removal. wildlife. livestock."
+    },
+    {
+        "original_x": "Judge Thornton's office said judicial rules barred her from commenting on the cases. eos> But her two rulings made clear that she expected the original orders against all contact to apply equally to the person suspected of abuse and the abused. eo",
+        "v0": "Judge Rodnton's office said barrejudicial barre barred barre from commenting on all cases. eos> But her two previouss made clear that the expected the first orders to all cases cases apply immediately to the victim and of abuse and the victimabused. eo",
+        "original_y": "Rules prevent discussion of legal matters.",
+        "u": "Dis were repeated of  action."
+    },
+    {
+        "original_x": "Girl Scouting benefits volunteers by developing their leadership skills and self-confidence. eos> The study concludes,  In 1912, Juliette Gordon Low had a vision. eos>",
+        "v0": "Girl Scouting helps volunteers by volunteering their self and and self-confidence. eos> Then concludes, in 19 1912, Juliette Low hade a vision. 'eos>",
+        "original_y": "Volunteers benefit from developing skills and confidence.",
+        "u": "Leaderships benefit from leadership skills. learning."
+    }
+]

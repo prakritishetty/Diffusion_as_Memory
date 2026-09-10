@@ -1,0 +1,62 @@
+[
+    {
+        "original_x": "Your child was a recent participant in a Social Health program at his or her school. eos> We hope that you will consider a personal gift to help us reach as many of our young people as possible. eos>",
+        "v0": "Your child was a recent participant in a Social Health program at his or her school. eos> We hope that you will consider a personal gift to help us reach as many of our young people  possible. eos>",
+        "original_y": "Child participated in a health program.",
+        "u": "Child participated in a program program."
+    },
+    {
+        "original_x": "... photographs of the very, very, young girls with which Peter Altenberg, poet in prose, lined the walls of his room at the Graben Hotel.",
+        "v0": " photos of the very youngprivileged very youngprivileged young girls with whom Peter Altenberg, poet and prose, lined the walls of the hotel at the Grabenberg Hotel in.",
+        "original_y": "Young girls and a poet displayed photographs in a room.",
+        "u": "Impress people from theiraspiring young were artistic of a palace."
+    },
+    {
+        "original_x": "The predicted demise of John Kennedy's George and the launch of Tina Brown's Talk raise the question : What are a new magazine's chances for survival?",
+        "v0": "The predicted demise of John Brown's new Brown John launch of a Brown's book raise the question of: What  a new magazine's chances for survival?",
+        "original_y": "New magazines face challenges for survival.",
+        "u": "Public book explore.."
+    },
+    {
+        "original_x": "Even after the summer sessions come to a close, Jameson campers will take part in year-round programs designed to keep that positive contact with peers and role models alive and important.",
+        "v0": "Even though the summer camp begin close a close, campon campers will take part in programs-round programs designed to keep contacts summer relationship with peers and role models important  important.",
+        "original_y": "Year-round programs maintain positive connections with peers and mentors.",
+        "u": "Senior-round communications support relationships relationships with peers through futures."
+    },
+    {
+        "original_x": "And in Bosnia, the mere discussion of elections has exacerbated ethnic tensions, allowing the most virulent nationalists to gain support, and led to predictions that this democratic procedure could finish the country.",
+        "v0": "And in the, the mere  of ethnic has promptedd tension tensions, leadingallowing the most virulent politicalists to  support, and led to the that the country process could finish  country.",
+        "original_y": "Discussion of elections heightened tensions and threatened stability.",
+        "u": "Political about immigration resultsinvolving securitys, prevent security."
+    },
+    {
+        "original_x": "Oh, Shut Up : John McLaughlin urged the president to augment his racial dialogue with discussion of black racism, jury nullification, hate crimes perpetrated against white people by black people, and violent imagery in rap songs.",
+        "v0": "Oh, thendown, The McLaughlin stepped the president to discuss his roguecial dialogue with black of black people, racism delification, and speech anded by black people  black people, and violent imagery of blackaacious.",
+        "original_y": "Discussion of racial issues and related concerns.",
+        "u": "Violence about religiousterrorismacial profil impact rights to is"
+    },
+    {
+        "original_x": "The three put their heads together, thumbed through '' Mastering the Art of French Cooking '' and '' In Julia's Kitchen, '' and selected what seemed like the honoree's favorites, though with a few twists",
+        "v0": "The three men together heads together, thumbingd through Julia'' Juliaing Cook Honor of Julia Cooking '' and '' selectedju Cook's Kitchen, and'' and selected   like  honor d's favorite, and with somea few twists ",
+        "original_y": "People consulted cookbooks to choose favorite recipes with personal modifications.",
+        "u": "Unique sharedgathered fors and understand from ingredients. minimal preferences."
+    },
+    {
+        "original_x": "The law school has more than 5,700 alumni, approximately 80 % of whom reside in Indiana. eos> The balance practice law throughout the country and live in 48 different states. eos>",
+        "v0": "The law school has more than 700 students, mostly 80 % of whom reside in Indiana. eos> The law law throughoutfully the country throughout live in 48 states states. eos>",
+        "original_y": "Large group of people associated with an institution primarily located in one place.",
+        "u": "Population population of people studying with  organization.. for in  area."
+    },
+    {
+        "original_x": "I am writing to thank you for your past gifts to the IUPUI University Libraries and to ask you to renew that support. eos> Let me give you an example of why your support is important. eos>",
+        "v0": "I am writing to thank you for your support support to the IUPUI Libraries Libraries and asking ask you to renew your support. eos> Let me give you an example of why you support is important. eos>",
+        "original_y": "Request for continued support.",
+        "u": "Request for assistance support with"
+    },
+    {
+        "original_x": "I was delighted at their vivid recollections of some of my favorite shows at the IRT, Midsummer Night's Dream and You Can't Take It With You. eos> They said that because of those high school trips to the IRT ",
+        "v0": "I was delighted with their vivid memoriesexpositionimaginions of some of my favorite shows at the ITV'Midnightr Night,s Night   n't Take You  You. eos> They said that because of those high school trips to the IRT,",
+        "original_y": "Enjoyable memories of beloved performances.",
+        "u": "Celebrationing memories of  ones."
+    }
+]
