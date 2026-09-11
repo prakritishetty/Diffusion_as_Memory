@@ -1,0 +1,42 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+# P0: train the memory autoencoder.
+#   az ml job create -f tools/azure/aml/p0.yaml -g <rg> -w <workspace>
+
+display_name: diffmem-p0
+experiment_name: diffusion-as-memory
+
+code: ../../..
+
+command: >-
+  python -m training.train_p0
+  --preset full
+  --name ${{inputs.run_name}}
+  --data-dir ${{inputs.data}}
+  --epochs ${{inputs.epochs}}
+  --wandb
+
+inputs:
+  run_name: p0-main
+  epochs: 200
+  data:
+    type: uri_folder
+    path: azureml:msr-ladders@latest
+    mode: ro_mount
+
+outputs:
+  runs:
+    type: uri_folder
+    mode: rw_mount
+
+environment:
+  image: mcr.microsoft.com/azureml/curated/acpt-pytorch-2.2-cuda12.1:latest
+  conda_file: ../environment.yml
+
+compute: azureml:gpu-cluster
+
+resources:
+  instance_count: 1
+
+# Spot eviction is a when, not an if -- retry and resume from the last checkpoint.
+queue_settings:
+  job_tier: spot

@@ -1,0 +1,39 @@
+# blobfuse2 mount for the data / cache / checkpoint containers.
+#   sudo blobfuse2 mount /mnt/blob --config-file=blobfuse2.yaml
+#
+# Keep `cache.root` on this mount so a spot eviction does not discard hours of precomputed
+# tokenisation, gist embeddings, P0 latents, rung latents and DDIM trajectories.
+
+allow-other: true
+
+logging:
+  type: syslog
+  level: log_warning
+
+components:
+  - libfuse
+  - file_cache
+  - attr_cache
+  - azstorage
+
+libfuse:
+  attribute-expiration-sec: 120
+  entry-expiration-sec: 120
+  negative-entry-expiration-sec: 240
+
+file_cache:
+  path: /mnt/blobfusetmp
+  timeout-sec: 600
+  # The cache holds a handful of large tensor files rather than many small ones, which is what
+  # blobfuse is good at. Size this to comfortably hold the rung-latent table (~1 GB fp16).
+  max-size-mb: 20480
+
+attr_cache:
+  timeout-sec: 7200
+
+azstorage:
+  type: block
+  account-name: diffmemstore
+  # Prefer managed identity or `az login`; never put a key in this file.
+  mode: azcli
+  container: cache

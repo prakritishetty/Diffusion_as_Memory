@@ -49,7 +49,7 @@ coverage.xml
 *.cover
 *.py,cover
 .hypothesis/
-.pytest_cache/
+/.pytest_cache/
 
 # Translations
 *.mo
@@ -133,3 +133,9 @@ dmypy.json
 **/saved_latent_models
 saved_latent_models_outputs/
 *.pt
+# new stack
+/.venv/
+/cache/
+/runs/
+
+/.pytest_cache/

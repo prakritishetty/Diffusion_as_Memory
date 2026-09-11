@@ -1,0 +1,45 @@
+$schema: https://azuremlschemas.azureedge.net/latest/sweepJob.schema.json
+# P2 sweep over the term that decides who carries the load: G_psi (L_proj) or the decoder (L_CE).
+#   az ml job create -f tools/azure/aml/sweep_p2.yaml -g <rg> -w <workspace>
+
+display_name: diffmem-p2-lambda-sweep
+experiment_name: diffusion-as-memory
+type: sweep
+
+trial:
+  code: ../../..
+  command: >-
+    python -m training.train_p2
+    --p0-checkpoint ${{inputs.p0}}
+    --p1-checkpoint ${{inputs.p1}}
+    --lambda-proj ${{search_space.lambda_proj}}
+    --lambda-ce ${{search_space.lambda_ce}}
+    --name p2-lp${{search_space.lambda_proj}}-lce${{search_space.lambda_ce}}
+    --epochs 100
+    --wandb
+  environment:
+    image: mcr.microsoft.com/azureml/curated/acpt-pytorch-2.2-cuda12.1:latest
+    conda_file: ../environment.yml
+
+search_space:
+  lambda_proj:
+    type: choice
+    values: [0.0, 0.5, 1.0, 2.0]
+  lambda_ce:
+    type: choice
+    values: [0.0, 1.0]
+
+objective:
+  goal: minimize
+  primary_metric: val/loss_total
+
+sampling_algorithm: grid
+
+limits:
+  max_total_trials: 8
+  max_concurrent_trials: 4
+
+compute: azureml:gpu-cluster
+
+queue_settings:
+  job_tier: spot
