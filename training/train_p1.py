@@ -24,8 +24,9 @@ from configs.base import ExperimentConfig
 from models.denoiser_module.denoiser import EMA
 from models.latent_diffusion import LatentDiffusion
 from training.common import (
-    ETATracker, build_cache, build_loaders, build_scheduler, build_tokenizer,
-    config_from_checkpoint, load_checkpoint, prepare_run, save_checkpoint,
+    ETATracker, apply_set_overrides, build_cache, build_loaders, build_scheduler,
+    build_tokenizer, config_from_checkpoint, load_checkpoint, prepare_run,
+    restore_training_state, save_checkpoint,
 )
 
 
@@ -118,6 +119,9 @@ def main(argv=None):
     ap.add_argument("--epochs", type=int, default=None)
     ap.add_argument("--name", default=None)
     ap.add_argument("--wandb", action="store_true")
+    ap.add_argument("--set", nargs="*", default=[], metavar="KEY=VALUE",
+                    help="config override, e.g. --set diffusion.gist_anchored=false")
+    ap.add_argument("--resume", default=None, help="path to a last.pt to continue from")
     args = ap.parse_args(argv)
 
     cfg = config_from_checkpoint(args.p0_checkpoint)
@@ -126,6 +130,7 @@ def main(argv=None):
     if args.epochs: ov["train.epochs"] = args.epochs
     if args.wandb:  ov["wandb_enabled"] = True
     cfg = cfg.override(**ov) if ov else cfg
+    cfg = apply_set_overrides(cfg, args.set)
 
     device, run_dir, logger = prepare_run(cfg, "p1")
     loaders = latent_loaders(cfg, args.p0_checkpoint)
@@ -142,9 +147,16 @@ def main(argv=None):
 
     best = float("inf")
     best_path = os.path.join(run_dir, "best_model.pt")
+    last_path = os.path.join(run_dir, "last.pt")
+    start_epoch = 0
+    if args.resume:
+        start_epoch, best = restore_training_state(
+            args.resume, device, optimizer=optimizer, scheduler=scheduler,
+            diffusion=diffusion, ema=ema,
+        )
     eta = ETATracker(cfg.train.epochs)
 
-    for epoch in range(cfg.train.epochs):
+    for epoch in range(start_epoch, cfg.train.epochs):
         eta.start_epoch()
         metrics = run_epoch(diffusion, loaders["train"], optimizer, scheduler, ema, cfg,
                             device, train=True)
@@ -157,9 +169,12 @@ def main(argv=None):
             score = metrics.get("val/loss_denoise", float("inf"))
             if score < best:
                 best = score
-                save_checkpoint(best_path, cfg, epoch, metrics,
+                save_checkpoint(best_path, cfg, epoch, metrics, best=best,
                                 diffusion=diffusion, ema=ema.state_dict())
             ema.restore(diffusion.denoiser)
+
+        save_checkpoint(last_path, cfg, epoch, metrics, best=best, diffusion=diffusion,
+                        ema=ema.state_dict(), optimizer=optimizer, scheduler=scheduler)
 
         elapsed, eta_str = eta.end_epoch()
         metrics.update({"epoch": epoch + 1, "epoch_time_s": elapsed, "eta": eta_str})

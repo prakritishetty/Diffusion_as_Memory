@@ -75,6 +75,9 @@ setuptools==82.0.1
 shellingham==1.5.4
 six==1.17.0
 smmap==5.0.3
+# Unpinned: info_units falls back to a weaker regex backend without it, so the reported
+# metric numbers silently change. Needs `python -m spacy download en_core_web_sm` too.
+spacy>=3.8,<4
 sympy==1.14.0
 texttable==1.7.0
 tokenizers==0.22.2

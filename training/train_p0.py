@@ -21,8 +21,8 @@ from configs import get as get_preset
 from configs.base import ExperimentConfig
 from models.memory_model import MemoryModel
 from training.common import (
-    ETATracker, autocast_ctx, build_cache, build_loaders, build_scheduler, build_tokenizer,
-    prepare_run, save_checkpoint,
+    ETATracker, apply_set_overrides, autocast_ctx, build_cache, build_loaders, build_scheduler,
+    build_tokenizer, prepare_run, restore_training_state, save_checkpoint,
 )
 from utils.cache import CacheStore
 
@@ -135,6 +135,9 @@ def main(argv=None):
     ap.add_argument("--data-dir", default=None)
     ap.add_argument("--wandb", action="store_true")
     ap.add_argument("--no-cache", action="store_true")
+    ap.add_argument("--set", nargs="*", default=[], metavar="KEY=VALUE",
+                    help="config override, e.g. --set train.batch_size=32 loss.lambda_y=0.0")
+    ap.add_argument("--resume", default=None, help="path to a last.pt to continue from")
     args = ap.parse_args(argv)
 
     cfg = get_preset(args.preset)
@@ -146,6 +149,7 @@ def main(argv=None):
     if args.wandb:       ov["wandb_enabled"] = True
     if args.no_cache:    ov["cache.enabled"] = False
     cfg = cfg.override(**ov) if ov else cfg
+    cfg = apply_set_overrides(cfg, args.set)
 
     device, run_dir, logger = prepare_run(cfg, "p0")
     tokenizer = build_tokenizer(cfg)
@@ -162,9 +166,15 @@ def main(argv=None):
 
     best = float("inf")
     best_path = os.path.join(run_dir, "best_model.pt")
+    last_path = os.path.join(run_dir, "last.pt")
+    start_epoch = 0
+    if args.resume:
+        start_epoch, best = restore_training_state(
+            args.resume, device, optimizer=optimizer, scheduler=scheduler, model=model
+        )
     eta = ETATracker(cfg.train.epochs)
 
-    for epoch in range(cfg.train.epochs):
+    for epoch in range(start_epoch, cfg.train.epochs):
         eta.start_epoch()
         metrics = train_epoch(model, loaders["train"], optimizer, scheduler, cfg, device)
 
@@ -174,11 +184,14 @@ def main(argv=None):
             score = vmetrics.get("val/loss_total", float("inf"))
             if score < best:
                 best = score
-                save_checkpoint(best_path, cfg, epoch, metrics, model=model)
+                save_checkpoint(best_path, cfg, epoch, metrics, best=best, model=model)
             import json
             with open(os.path.join(run_dir, f"samples_epoch{epoch+1}.json"), "w",
                       encoding="utf-8") as f:
                 json.dump(samples, f, indent=2)
+
+        save_checkpoint(last_path, cfg, epoch, metrics, best=best, model=model,
+                        optimizer=optimizer, scheduler=scheduler)
 
         elapsed, eta_str = eta.end_epoch()
         metrics.update({"epoch": epoch + 1, "epoch_time_s": elapsed, "eta": eta_str})

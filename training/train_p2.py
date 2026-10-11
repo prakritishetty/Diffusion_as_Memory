@@ -31,8 +31,9 @@ from models.latent_diffusion import LatentDiffusion
 from models.losses import projection_loss
 from models.memory_model import MemoryModel
 from training.common import (
-    ETATracker, assert_compatible, autocast_ctx, build_cache, build_loaders, build_scheduler,
-    build_tokenizer, config_from_checkpoint, load_checkpoint, prepare_run, save_checkpoint,
+    ETATracker, apply_set_overrides, assert_compatible, autocast_ctx, build_cache, build_loaders,
+    build_scheduler, build_tokenizer, config_from_checkpoint, load_checkpoint, prepare_run,
+    restore_training_state, save_checkpoint,
 )
 from utils.cache import CacheStore, file_hash
 
@@ -159,6 +160,9 @@ def main(argv=None):
     ap.add_argument("--lambda-proj", type=float, default=None)
     ap.add_argument("--lambda-ce", type=float, default=None)
     ap.add_argument("--wandb", action="store_true")
+    ap.add_argument("--set", nargs="*", default=[], metavar="KEY=VALUE",
+                    help="config override, e.g. --set gpsi.use_self_attn=false")
+    ap.add_argument("--resume", default=None, help="path to a last.pt to continue from")
     args = ap.parse_args(argv)
 
     cfg = config_from_checkpoint(args.p0_checkpoint)
@@ -172,6 +176,7 @@ def main(argv=None):
     if args.lambda_ce is not None:   ov["loss.lambda_ce"] = args.lambda_ce
     if args.wandb:           ov["wandb_enabled"] = True
     cfg = cfg.override(**ov) if ov else cfg
+    cfg = apply_set_overrides(cfg, args.set)
 
     device, run_dir, logger = prepare_run(cfg, "p2")
     tokenizer = build_tokenizer(cfg)
@@ -209,9 +214,16 @@ def main(argv=None):
 
     best = float("inf")
     best_path = os.path.join(run_dir, "best_model.pt")
+    last_path = os.path.join(run_dir, "last.pt")
+    start_epoch = 0
+    if args.resume:
+        start_epoch, best = restore_training_state(
+            args.resume, device, optimizer=optimizer, scheduler=scheduler,
+            g_psi=g_psi, decoder=model.decoder_x,
+        )
     eta = ETATracker(cfg.train.epochs)
 
-    for epoch in range(cfg.train.epochs):
+    for epoch in range(start_epoch, cfg.train.epochs):
         eta.start_epoch()
         metrics = run_epoch(model, diffusion, g_psi, loaders["train"], rung["train"],
                             optimizer, scheduler, cfg, device, train=True)
@@ -222,12 +234,15 @@ def main(argv=None):
             score = metrics.get("val/loss_total", float("inf"))
             if score < best:
                 best = score
-                save_checkpoint(best_path, cfg, epoch, metrics,
+                save_checkpoint(best_path, cfg, epoch, metrics, best=best,
                                 g_psi=g_psi, decoder=model.decoder_x)
             with open(os.path.join(run_dir, f"ladders_epoch{epoch+1}.json"), "w",
                       encoding="utf-8") as f:
                 json.dump(sample_ladders(model, diffusion, g_psi, loaders["val"], cfg,
                                          device, tokenizer), f, indent=2)
+
+        save_checkpoint(last_path, cfg, epoch, metrics, best=best, g_psi=g_psi,
+                        decoder=model.decoder_x, optimizer=optimizer, scheduler=scheduler)
 
         elapsed, eta_str = eta.end_epoch()
         metrics.update({"epoch": epoch + 1, "epoch_time_s": elapsed, "eta": eta_str})

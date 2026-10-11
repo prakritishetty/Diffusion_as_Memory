@@ -72,13 +72,37 @@ def build_scheduler(optimizer, cfg: ExperimentConfig, total_steps: int):
     return fn(optimizer, num_warmup_steps=warmup, num_training_steps=total_steps)
 
 
+def apply_set_overrides(cfg: ExperimentConfig, pairs: list[str]) -> ExperimentConfig:
+    """`--set train.epochs=5 loss.lambda_y=0.0 model.v_head_normalize=true` -> a new config.
+
+    Values are parsed as JSON, so use lowercase `true`/`false`/`null`; anything that is not
+    valid JSON is kept as a bare string. `ExperimentConfig.override` raises on unknown keys, so
+    a typo fails immediately rather than silently doing nothing.
+    """
+    if not pairs:
+        return cfg
+    ov: dict[str, Any] = {}
+    for kv in pairs:
+        if "=" not in kv:
+            raise ValueError(f"--set expects KEY=VALUE, got {kv!r}")
+        key, raw = kv.split("=", 1)
+        try:
+            ov[key.strip()] = json.loads(raw)
+        except json.JSONDecodeError:
+            ov[key.strip()] = raw
+    return cfg.override(**ov)
+
+
 # -- checkpoints -------------------------------------------------------------------------------
-def save_checkpoint(path: str, cfg: ExperimentConfig, epoch: int, metrics: dict, **modules):
+def save_checkpoint(path: str, cfg: ExperimentConfig, epoch: int, metrics: dict,
+                    *, best: float | None = None, **modules):
     os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
     payload: dict[str, Any] = {
         "config": cfg.to_dict(), "epoch": epoch, "metrics": metrics,
         "torch_version": torch.__version__,
     }
+    if best is not None:
+        payload["best"] = float(best)
     for name, mod in modules.items():
         if mod is None:
             continue
@@ -89,6 +113,33 @@ def save_checkpoint(path: str, cfg: ExperimentConfig, epoch: int, metrics: dict,
     torch.save(payload, tmp)
     os.replace(tmp, path)
     log.info("saved checkpoint %s (epoch %d)", path, epoch)
+
+
+def restore_training_state(
+    path: str,
+    device,
+    *,
+    optimizer=None,
+    scheduler=None,
+    **modules,
+) -> tuple[int, float]:
+    """Reload a `last.pt` and return `(start_epoch, best)`.
+
+    Only meaningful against a checkpoint written every epoch; `best_model.pt` lags behind.
+    """
+    ck = load_checkpoint(path, device)
+    for name, mod in modules.items():
+        key = f"{name}_state_dict"
+        if mod is not None and key in ck:
+            mod.load_state_dict(ck[key])
+    if optimizer is not None and "optimizer_state_dict" in ck:
+        optimizer.load_state_dict(ck["optimizer_state_dict"])
+    if scheduler is not None and "scheduler_state_dict" in ck:
+        scheduler.load_state_dict(ck["scheduler_state_dict"])
+    start = int(ck.get("epoch", -1)) + 1
+    best = float(ck.get("best", float("inf")))
+    log.info("resumed %s at epoch %d (best %.4f)", path, start, best)
+    return start, best
 
 
 def load_checkpoint(path: str, map_location="cpu") -> dict:
